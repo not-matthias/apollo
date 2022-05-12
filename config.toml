@@ -1,16 +1,75 @@
 # The URL the site will be built for
-base_url = "https://example.com"
+base_url = "//archie-zola.vercel.app/"
+
+# The site title and description; used in feeds by default.
+title = "archie-zola"
+description = "A zola theme forked from https://github.com/athul/archie"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
-build_search_index = false
+build_search_index = true
+
+taxonomies = [
+    {name = "tags"}
+]
 
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-highlight_code = false
+highlight_code = true
+
+highlight_theme = "OneHalfLight"
 
 [extra]
-# Put all your custom variables here
+
+# control dark mode: auto | dark | toggle
+mode = "toggle"
+
+subtitle = "A zola theme forked from [archie](https://github.com/athul/archie)"
+
+# interal CDN resource
+useCDN = true
+
+favicon = "/icon/favicon.png"
+
+copyright = "keith"
+
+# config menu path
+[[extra.menu]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[extra.menu]]
+name = "All posts"
+url = "/posts"
+weight = 2
+
+[[extra.menu]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[extra.menu]]
+name = "Tags"
+url = "/tags"
+weight = 4
+
+# config social icon info in the footer
+[[extra.social]]
+icon = "github"
+name = "GitHub"
+url = "https://github.com/XXXMrG/archie-zola"
+
+[[extra.social]]
+icon = "twitter"
+name = "Twitter"
+url = "https://github.com/your-name/"
+
+[[extra.social]]
+icon = "gitlab"
+name = "GitLab"
+url = "https://gitlab.com/your-name/"
+
