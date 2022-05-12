@@ -1,0 +1,67 @@
+{% import "macros/macros.html" as post_macros %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% if current_path == "/" %}
+    <title>
+        {{ config.title | default(value="Home") }}
+    </title>
+    {% else %}
+    <title>
+        {{ page.title | default(value=config.title) | default(value="Post") }}
+    </title>
+    {% endif %}
+
+    {% if config.extra.favicon %}
+         <link rel="icon" type="image/png" href={{ config.extra.favicon }} />
+    {% endif %}
+
+    {% block site_title %}
+        <title>{{ config.extra.site_title | default(value="Home") }}</title>
+    {% endblock site_title %}
+
+    {# TODO: rss, og:image #}
+
+    {# opengraph, twitter_cards #}
+
+    {# if need icon, load feather.js #}
+    {% if config.extra.social and config.extra.useCDN | default(value=false) %}
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    {% elif config.extra.social or config.extra.mode == "toggle" %}
+        <script src={{ get_url(path="js/feather.min.js") }}></script>
+    {% endif %}
+
+
+    {% if config.extra.useCDN | default(value=false) %}
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    {% else %}
+        <link href={{ get_url(path="css/fonts.css") }} rel="stylesheet" />
+    {% endif %}
+
+    <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="css/main.css") }} />
+
+    {% if config.extra.mode == "auto" or config.extra.mode == "dark" or config.extra.mode == "toggle" %}
+        <link
+            rel="stylesheet"
+            id="darkModeStyle"
+            type="text/css"
+            href={{ get_url(path="css/dark.css") }}
+            {% if config.extra.mode == "auto" %}
+                media="(prefers-color-scheme: dark)"
+            {% endif %}
+            {% if config.extra.mode == "toggle" %}
+                disabled
+            {% endif %}
+        />
+    {% endif %}
+
+
+    {# TODO: custom css and js. #}
+
+
+</head>

@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+
+{% block main_content %}
+    <h1 class="page-title">All tags</h1>
+
+    <div class="tag-cloud">
+        <ul class="tags">
+            {% for term in terms %}
+            <li>
+                <a href="{{ term.permalink | safe }}">
+                    {{ term.name }} ({{ term.pages | length }} post{{ term.pages | length | pluralize }})
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock main_content %}

@@ -1,0 +1,11 @@
+<header>
+    <div class="main" id="main_title">
+        <a href={{ config.base_url }}>{{ config.title }}</a>
+    </div>
+
+    <nav>
+        {% for menu in config.extra.menu %}
+            <a href={{ menu.url }}>{{ menu.name }}</a>
+        {% endfor %}
+    </nav>
+</header>

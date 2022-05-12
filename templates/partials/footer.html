@@ -1,0 +1,21 @@
+<footer>
+    <div style="display:flex">
+      {% for social in config.extra.social %}
+          <a class="soc" href={{ social.url }} title={{ social.name }}>
+              <i data-feather={{ social.icon }}></i>
+          </a>
+      {% endfor %}
+    </div>
+    <div class="footer-info">
+      {{ now() | date(format="%Y") }} © {{ config.extra.copyright }} | <a
+        href="https://github.com/XXXMrG/archie-zola">Archie-Zola Theme</a> | Built with <a href="https://www.getzola.org/">Zola</a>
+    </div>
+  </footer>
+  
+  {# TODO: add GA in there #}
+  
+  {% if config.extra.social %}
+  <script>
+      feather.replace();
+  </script>
+  {% endif %}
