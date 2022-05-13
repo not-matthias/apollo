@@ -10,12 +10,13 @@
 
         {% block main_content %}
         <main class="list">
-            <div class="site-description">
-                {% if config.extra.subtitle %}
-                    {{ config.extra.subtitle | markdown | safe }}
-                {% endif %}
-            </div>
-            
+            {# Header #}
+            <hgroup>
+                <span class="site-header">
+                    Posts<span class="red" style="font-size: 1.6em">.</span>
+                </span>
+            </hgroup>
+        
             {%- if paginator %}
                 {%- set show_pages = paginator.pages -%}
             {% else %}
@@ -43,8 +44,6 @@
         {% endif %}
 
         {% endblock main_content %}
-
-        {% include "partials/footer.html" %}
     </div>
 </body>
 
