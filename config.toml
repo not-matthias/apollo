@@ -1,8 +1,5 @@
-# The URL the site will be built for
-base_url = "//archie-zola.vercel.app/"
-
+base_url = "not-matthias.github.io"
 title = "Blog"
-
 compile_sass = true
 build_search_index = true
 
@@ -11,11 +8,16 @@ taxonomies = [
 ]
 
 [markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
 
-highlight_theme = "OneHalfLight"
+# Other themes that look good:
+# visual-studio-dark
+# inspired-github
+# subway-madrid
+# gray-matter-dark
+# demain
+# 
+highlight_theme = "ayu-light"
 
 [extra]
 
