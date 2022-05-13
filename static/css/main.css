@@ -1,6 +1,6 @@
 /* Custom */
 
-.site-header {
+.page-header {
     font-size: 3em;
     line-height: 100%;
     margin-right: 0;
@@ -26,7 +26,7 @@ hgroup {
 
 html {
     color: #232333;
-    font-family: "Roboto Mono", monospace;
+    font-family: "Jetbrains Mono";
     font-size: 15px;
     line-height: 1.6em;
 }
@@ -46,7 +46,6 @@ body {
 }
 
 p {
-    /* font-family: 'Fira Sans', sans-serif; */
     line-height: 1.5;
 }
 
@@ -261,7 +260,6 @@ article .title {
 }
 
 .callout p {
-    /* font-family: 'IBM Plex Mono', monospace; */
     margin: 0;
 }
 
@@ -310,7 +308,7 @@ svg {
 }
 
 pre {
-    font-family: "Roboto Mono", monospace;
+    font-family: "Jetbrains Mono";
     position: relative;
     -webkit-overflow-scrolling: touch;
 }

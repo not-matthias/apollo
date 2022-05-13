@@ -31,38 +31,28 @@ copyright = "keith"
 
 # config menu path
 [[extra.menu]]
-name = "Home"
+name = "/posts"
 url = "/"
 weight = 1
 
+
 [[extra.menu]]
-name = "All posts"
-url = "/posts"
+name = "/projects"
+url = "/projects"
 weight = 2
 
 [[extra.menu]]
-name = "About"
+name = "/about"
 url = "/about"
 weight = 3
-
-[[extra.menu]]
-name = "Tags"
-url = "/tags"
-weight = 4
-
-# config social icon info in the footer
-[[extra.social]]
-icon = "github"
-name = "GitHub"
-url = "https://github.com/XXXMrG/archie-zola"
 
 [[extra.social]]
 icon = "twitter"
 name = "Twitter"
-url = "https://github.com/your-name/"
+url = "https://github.com/not-matthias/"
 
 [[extra.social]]
-icon = "gitlab"
-name = "GitLab"
-url = "https://gitlab.com/your-name/"
+icon = "twitter"
+name = "Twitter"
+url = "https://twitter.com/not_matthias/"
 

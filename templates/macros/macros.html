@@ -68,18 +68,31 @@
     {% endif -%}
 {% endmacro tags %}
 
+
+{% macro page_header(page) %}
+<hgroup>
+    <span class="page-header">
+        {{ page.title }}<span class="red" style="font-size: 1.6em">.</span>
+    </span>
+</hgroup>
+{% endmacro content %}
+
 {% macro content(page) %}
 <main>
     <article>
         <div class="title">
-            <h1 class="title">{{ page.title }}</h1>
-            <div class="meta">
-                Posted on {{ page.date | date(format="%Y-%m-%d") }}
+            {# Page header #}
+            {{ post_macros::page_header(page=page) }}
 
-                {% if page.draft %}
-                    <span class="draft-label">DRAFT</span> 
-                {% endif %}
-            </div>
+            {% if page.date %}
+                <div class="meta">
+                    Posted on {{ page.date | date(format="%Y-%m-%d") }}
+
+                    {% if page.draft %}
+                        <span class="draft-label">DRAFT</span> 
+                    {% endif %}
+                </div>
+            {% endif %}
         </div>
 
         {% if page.extra.tldr %}

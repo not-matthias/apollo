@@ -2,5 +2,6 @@
 
 {% block main_content %}
     {% set section = get_section(path="posts/_index.md") %}
+    {{ post_macros::page_header(page=section) }}
     {{ post_macros::list_title(pages=section.pages) }}
 {% endblock main_content %}
