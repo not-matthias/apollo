@@ -10,7 +10,7 @@
 }
 
 hgroup {
-    margin: 4rem 64px 1rem 0px;
+    margin: 4rem 0px 1rem 0px;
 }
 
 
@@ -28,7 +28,10 @@ hgroup {
     --bg-2: rgba(0,0,0,12%);
 
     --maincolor: #EF5350;
-    --bordercl: rebeccapurple;
+    
+    /* Used for: block comment, hr, ... */
+    --border-color: var(--bg-1);
+
     --callouctcolor: dodgerblue;
     --hovercolor: navy;
     --darkMaincolor: #50fa7b;
@@ -66,12 +69,12 @@ p {
 
 hr {
     border: 0;
-    border-top: 3px dotted var(--bordercl);
+    border-top: 3px solid var(--border-color);
     margin: 1em 0;
 }
 
 blockquote {
-    border-left: 3px solid var(--bordercl);
+    border-left: 3px solid var(--border-color);
     color: #737373;
     margin: 0;
     padding-left: 1em;
@@ -234,7 +237,7 @@ h6::before {
 footer {
     display: flex;
     align-items: center;
-    border-top: 0.4rem dotted var(--bordercl);
+    border-top: 0.4rem solid var(--border-color);
     padding: 2rem 0rem;
     margin-top: 2rem;
 }
@@ -317,7 +320,7 @@ svg {
 }
 
 .draft-label {
-    color: var(--bordercl);
+    color: var(--border-color);
     text-decoration: none;
     padding: 2px 4px;
     border-radius: 4px;
