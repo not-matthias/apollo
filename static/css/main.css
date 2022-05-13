@@ -143,6 +143,11 @@ code {
 
 pre {
     background-color: #ececec;
+    
+    /* Rounded border */
+    border-radius: 5px;
+    border: 1px solid #ececec;
+
     line-height: 1.4;
     overflow-x: auto;
     padding: 1em;
@@ -338,7 +343,8 @@ pre code[class*="language-"]::before {
     letter-spacing: 0.025rem;
     padding: 0.1rem 0.5rem;
     position: absolute;
-    right: 1rem;
+    right: 0.1rem;
+    margin-top: 0.1rem;
     text-align: right;
     text-transform: uppercase;
     top: 0;
