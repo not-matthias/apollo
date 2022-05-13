@@ -1,14 +1,9 @@
 # The URL the site will be built for
 base_url = "//archie-zola.vercel.app/"
 
-# The site title and description; used in feeds by default.
-title = "archie-zola"
-description = "A zola theme forked from https://github.com/athul/archie"
+title = "Blog"
 
-# Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
-
-# Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
 taxonomies = [
@@ -26,8 +21,6 @@ highlight_theme = "OneHalfLight"
 
 # control dark mode: auto | dark | toggle
 mode = "toggle"
-
-subtitle = "A zola theme forked from [archie](https://github.com/athul/archie)"
 
 # interal CDN resource
 useCDN = true

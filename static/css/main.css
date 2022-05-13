@@ -1,3 +1,20 @@
+/* Custom */
+
+.site-header {
+    font-size: 3em;
+    line-height: 100%;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.red {
+    color: #EF5350;
+}
+
+hgroup {
+    margin: 4rem 64px 4rem 0px;
+}
+
 /* Markdown */
 :root {
     --maincolor: red;
