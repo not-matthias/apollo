@@ -1,7 +1,32 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 
 {% block main_content %}
-    {% set section = get_section(path="posts/_index.md") %}
-    {{ post_macros::page_header(page=section) }}
-    {{ post_macros::list_title(pages=section.pages) }}
+    {{ post_macros::page_header(title="Posts") }}
+
+    <main class="list">
+        {%- if paginator %}
+            {%- set show_pages = paginator.pages -%}
+        {% else %}
+            {% set section = get_section(path="posts/_index.md") %}
+            {%- set show_pages = section.pages -%}
+        {% endif -%}
+
+        {{ post_macros::list_posts(pages=show_pages) }}
+    </main>
+
+    {% if paginator %}
+        <ul class="pagination">
+            {% if paginator.previous %}
+                <span class="page-item page-prev">
+                    <a href={{ paginator.previous }} class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev</span></a>
+                </span>
+            {% endif %}
+
+            {% if paginator.next %}
+                <span class="page-item page-next">
+                    <a href={{ paginator.next }} class="page-link" aria-label="Next"><span aria-hidden="true">Next →</span></a>
+                </span>
+            {% endif %}
+        </ul>
+    {% endif %}
 {% endblock main_content %}

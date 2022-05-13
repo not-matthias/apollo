@@ -1,0 +1,18 @@
+{% import "macros/macros.html" as post_macros %}
+
+<!DOCTYPE html>
+<html>
+{% include "partials/header.html" %}
+
+<body>
+    <div class="content">
+        {% include "partials/head.html" %}
+
+        {# Post page is the default #}
+        {% block main_content %}
+            Nothing here?!
+        {% endblock main_content %}
+    </div>
+</body>
+
+</html>
