@@ -1,20 +1,3 @@
-{% macro list_title(pages, tag_name=false) %}
-    {% if tag_name %}
-        <h1>Entries tagged - "{{ term.name }}"</h1>
-    {% else %}
-        <h1 class="page-title">All articles</h1>
-    {% endif %}
-
-    <ul class="posts">
-        {% for page in pages %}
-            <li class="post">
-                <a href="{{ page.permalink }}">{{ page.title }}</a>
-                <span class="meta">{{ page.date | date(format="%Y-%m-%d") }}</span>
-            </li>
-        {% endfor %}
-    </ul>
-{% endmacro list_title %}
-
 {% macro list_posts(pages) %}
     <ul>
     {%- for page in pages %}
@@ -49,7 +32,6 @@
     </ul>
 {% endmacro list_posts %}
 
-
 {% macro tags(page, short=false) %}
     {%- if page.taxonomies and page.taxonomies.tags %}
         <span class="post-tags-inline">
@@ -68,11 +50,10 @@
     {% endif -%}
 {% endmacro tags %}
 
-
-{% macro page_header(page) %}
+{% macro page_header(title) %}
 <hgroup>
     <span class="page-header">
-        {{ page.title }}<span class="red" style="font-size: 1.6em">.</span>
+        {{ title }}<span class="red" style="font-size: 1.6em">.</span>
     </span>
 </hgroup>
 {% endmacro content %}
@@ -81,8 +62,8 @@
 <main>
     <article>
         <div class="title">
-            {# Page header #}
-            {{ post_macros::page_header(page=page) }}
+            {#<h1 class="title">{{ page.title }}</h1>#}
+            {{ post_macros::page_header(title=page.title) }}
 
             {% if page.date %}
                 <div class="meta">
