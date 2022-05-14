@@ -9,7 +9,7 @@ highlight_theme = "ayu-dark"
 
 [extra]
 toc = true
-use_cdn = true
+use_cdn = false
 favicon = "/icon/favicon.png"
 theme = "auto"      
 
