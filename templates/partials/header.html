@@ -31,21 +31,6 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="css/main.css") }} />
 
-    {% if config.extra.mode == "auto" or config.extra.mode == "dark" or config.extra.mode == "toggle" %}
-        <link
-            rel="stylesheet"
-            id="darkModeStyle"
-            type="text/css"
-            href={{ get_url(path="css/dark.css") }}
-            {% if config.extra.mode == "auto" %}
-                media="(prefers-color-scheme: dark)"
-            {% endif %}
-            {% if config.extra.mode == "toggle" %}
-                disabled
-            {% endif %}
-        />
-    {% endif %}
-
     {# Analytics #}
     {% if config.extra.analytics.enabled and config.extra.analytics.goatcounter_user %}
         {% set user = config.extra.analytics.goatcounter_user %}
