@@ -63,7 +63,7 @@
     {% if config.extra.analytics %}
         <script data-goatcounter="https://not-matthias.goatcounter.com/count" async src="js/count.js"></script>
         <noscript>
-            <img src="https://not-matthias.goatcounter.com/count?p=/noscript">
+            <img src="https://not-matthias.goatcounter.com/count?p={{ current_path }}&t={{ page.title | default(value=config.title) }}">
         </noscript>
     {% endif %}
 
