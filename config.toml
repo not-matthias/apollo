@@ -20,6 +20,7 @@ highlight_code = true
 highlight_theme = "ayu-light"
 
 [extra]
+analytics = true
 
 # control dark mode: auto | dark | toggle
 mode = "toggle"
