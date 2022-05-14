@@ -19,7 +19,6 @@ html {
   background-color: var(--bg-0);
   color: var(--text-0);
   font-family: var(--text-font);
-  font-size: 15px;
   line-height: 1.6em;
 }
 
@@ -28,4 +27,22 @@ html {
   margin: 0 auto;
   padding: 0 24px;
   word-wrap: break-word;
+}
+
+@media all and (min-width:640px) {
+  html {
+    font-size: 16.5px;
+  }
+}
+
+@media all and (min-width:720px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media all and (min-width:960px) {
+  html {
+    font-size: 18px;
+  }
 }

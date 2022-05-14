@@ -25,6 +25,9 @@ header {
 
 header .main {
   font-size: 1.5rem;
+
+  /* Otherwise header and menu is too close on small screens*/
+  margin-bottom: 10px;
 }
 
 .meta {
