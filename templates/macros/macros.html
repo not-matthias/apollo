@@ -83,6 +83,29 @@
             </div>
         {% endif %}
 
+        {# Optional table of contents #}
+        {% if config.extra.toc | default(value=true) %}
+            {% if page.toc %}
+                <h1>Table of Contents</h1>
+                <ul>
+                {% for h1 in page.toc %}
+                    <li>
+                        <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                        {% if h1.children %}
+                            <ul>
+                                {% for h2 in h1.children %}
+                                    <li>
+                                        <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endif %}
+
         <section class="body">
             {{ page.content | safe }}
         </section>
