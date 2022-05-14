@@ -1,12 +1,7 @@
-base_url = "https://not-matthias.github.io/zola-theme/"
+base_url = "https=//not-matthias.github.io/zola-theme/"
 title = "not-matthias"
 build_search_index = true
 generate_feed = true
-minify_html = false
-
-taxonomies = [
-    {name = "tags"}
-]
 
 [markdown]
 highlight_code = true
@@ -18,33 +13,18 @@ use_cdn = true
 favicon = "/icon/favicon.png"
 theme = "dark"      
 
+menu = [
+    { name = "/posts", url= "/posts", weight= 1 },
+    { name= "/projects", url= "/projects", weight= 2 },
+    { name= "/about", url= "/about", weight= 3 },
+]
+
+socials = [
+    { name= "twitter", url= "https://twitter.com/not_matthias", icon= "twitter" },
+    { name= "github", url= "https=//github.com/not-matthias/", icon = "github" },
+]
+
 [extra.analytics]
 enabled = true
 goatcounter_user = "not-matthias"
-goatcounter_host = "example.com"    # default: goatcounter.com
-
-[[extra.menu]]
-name = "/posts"
-url = "/"
-weight = 1
-
-[[extra.menu]]
-name = "/projects"
-url = "/projects"
-weight = 2
-
-[[extra.menu]]
-name = "/about"
-url = "/about"
-weight = 3
-
-[[extra.social]]
-icon = "twitter"
-name = "Twitter"
-url = "https://github.com/not-matthias/"
-
-[[extra.social]]
-icon = "twitter"
-name = "Twitter"
-url = "https://twitter.com/not_matthias/"
-
+goatcounter_host = "example.com"    # default= goatcounter.com
