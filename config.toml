@@ -11,7 +11,7 @@ highlight_theme = "ayu-dark"
 toc = true
 use_cdn = true
 favicon = "/icon/favicon.png"
-theme = "dark"      
+theme = "auto"      
 
 menu = [
     { name = "/posts", url= "/posts", weight= 1 },
