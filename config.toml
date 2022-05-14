@@ -1,5 +1,5 @@
 base_url = "not-matthias.github.io"
-title = "Blog"
+title = "Personal Blog"
 compile_sass = true
 build_search_index = true
 
@@ -20,7 +20,6 @@ highlight_code = true
 highlight_theme = "ayu-light"
 
 [extra]
-analytics = true
 
 # control dark mode: auto | dark | toggle
 mode = "toggle"
@@ -32,7 +31,11 @@ favicon = "/icon/favicon.png"
 
 copyright = "keith"
 
-# config menu path
+[extra.analytics]
+enabled = true
+goatcounter_user = "not-matthias"
+goatcounter_host = "example.com"    # default: goatcounter.com
+
 [[extra.menu]]
 name = "/posts"
 url = "/"

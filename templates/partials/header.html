@@ -60,10 +60,18 @@
     {% endif %}
 
     {# Analytics #}
-    {% if config.extra.analytics %}
-        <script data-goatcounter="https://not-matthias.goatcounter.com/count" async src="{{ get_url(path="js/count.js") }}" />
-        <noscript>
-            <img src="https://not-matthias.goatcounter.com/count?p={{ current_path }}&t={{ page.title | default(value=config.title) }}">
+    {% if config.extra.analytics.enabled and config.extra.analytics.goatcounter_user %}
+        {% set user = config.extra.analytics.goatcounter_user %}
+        {% set host = config.extra.analytics.goatcounter_host | default(value="goatcounter.com") %}
+
+        <script 
+            data-goatcounter="https://{{ user }}.{{ host }}/count" 
+            async src="{{ get_url(path="js/count.js") }}">
+        </script>
+
+        <noscript>            
+            <img src="https://{{ user }}.{{ host }}/count?p={{ current_path }}&t={{ page.title | default(value=config.title) }}">  
+                      
         </noscript>
     {% endif %}
 
