@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {# Site title #}
+    {% set current_path = current_path | default(value="/") %}
     {% if current_path == "/" %}
     <title>
         {{ config.title | default(value="Home") }}
