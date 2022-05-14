@@ -3,6 +3,7 @@
   font-style: normal;
   font-weight: 400;
   src: url('../fonts/JetbrainsMono/JetBrainsMono-Regular.ttf'), local('ttf');
+  font-display: swap;
 }
 
 @font-face {
@@ -10,4 +11,5 @@
   font-style: normal;
   font-weight: 400;
   src: url('../fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf'), local('ttf');
+  font-display: swap;
 }
