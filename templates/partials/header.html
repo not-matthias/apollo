@@ -61,7 +61,7 @@
 
     {# Analytics #}
     {% if config.extra.analytics %}
-        <script data-goatcounter="https://not-matthias.goatcounter.com/count" async src="js/count.js"></script>
+        <script data-goatcounter="https://not-matthias.goatcounter.com/count" async src="{{ get_url(path="js/count.js") }}" />
         <noscript>
             <img src="https://not-matthias.goatcounter.com/count?p={{ current_path }}&t={{ page.title | default(value=config.title) }}">
         </noscript>
