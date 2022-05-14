@@ -37,7 +37,8 @@
 
         <script data-goatcounter="https://{{ user }}.{{ host }}/count" async src="{{ get_url(path="js/count.js") }}"></script>
         <noscript>
-            <img src="https://{{ user }}.{{ host }}/count?p={{ current_path }}&t={{ page.title | default(value=config.title) }}">
+            {# EasyList blocks '.com/count?', so we have to use '.com//count' #}
+            <img src="https://{{ user }}.{{ host }}//count?p={{ current_path }}&t={{ page.title | default(value=config.title) }}">
         </noscript>
     {% endif %}
 
