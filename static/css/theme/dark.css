@@ -1,0 +1,10 @@
+:root {
+  --text-0: rgba(255, 255, 255, 0.87);
+  --text-1: rgba(255, 255, 255, 0.66);
+
+  --bg-0: #000;
+  --bg-1: #383838;
+
+  --primary-color: #1569d6;
+  --hover-color: white;
+}

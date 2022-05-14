@@ -1,0 +1,73 @@
+.page-header {
+  font-size: 3em;
+  line-height: 100%;
+  font-family: var(--header-font);
+  margin: 4rem 0px 1rem 0px;
+}
+
+.centered-header {
+  font-family: var(--header-font);
+
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 4em;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1em 0;
+}
+
+header .main {
+  font-size: 1.5rem;
+}
+
+.meta {
+  color: #999;
+  letter-spacing: -0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1.2rem;
+  margin-top: 2em;
+}
+
+h1::before {
+  color: var(--primary-color);
+  content: "# ";
+}
+
+h2::before {
+  color: var(--primary-color);
+  content: "## ";
+}
+
+h3::before {
+  color: var(--primary-color);
+  content: "### ";
+}
+
+h4::before {
+  color: var(--primary-color);
+  content: "#### ";
+}
+
+h5::before {
+  color: var(--primary-color);
+  content: "##### ";
+}
+
+h6::before {
+  color: var(--primary-color);
+  content: "###### ";
+}

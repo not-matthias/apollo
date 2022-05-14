@@ -30,8 +30,6 @@
         <link href={{ get_url(path="css/fonts.css") }} rel="stylesheet" />
     {% endif %}
 
-    <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="css/main.css") }} />
-
     {# Analytics #}
     {% if config.extra.analytics.enabled and config.extra.analytics.goatcounter_user %}
         {% set user = config.extra.analytics.goatcounter_user %}
@@ -47,4 +45,14 @@
     {% block rss %}
         <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
     {% endblock %}
+
+    {# Dark theme #}
+    {% if config.extra.theme == "dark" %}
+        {% set theme = get_url(path="css/theme/dark.css") %}
+    {% else %}
+        {% set theme = get_url(path="css/theme/light.css") %}
+    {% endif %}
+
+    <link rel="stylesheet" type="text/css" href="{{ theme }}"/>
+    <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="css/main.css") }} />
 </head>

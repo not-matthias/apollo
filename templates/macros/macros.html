@@ -51,11 +51,9 @@
 {% endmacro tags %}
 
 {% macro page_header(title) %}
-<hgroup>
-    <span class="page-header">
-        {{ title }}<span class="red" style="font-size: 1.6em">.</span>
-    </span>
-</hgroup>
+    <div class="page-header">
+        {{ title }}<span class="primary-color" style="font-size: 1.6em">.</span>
+    </div>
 {% endmacro content %}
 
 {% macro content(page) %}
