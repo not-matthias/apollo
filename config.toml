@@ -1,4 +1,4 @@
-base_url = "https=//not-matthias.github.io/zola-theme/"
+base_url = "https://not-matthias.github.io/zola-theme/"
 title = "not-matthias"
 build_search_index = true
 generate_feed = true
