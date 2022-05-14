@@ -1,8 +1,8 @@
-base_url = "not-matthias.github.io"
+base_url = "not-matthias.github.io/zola-theme"
 title = "not-matthias"
-compile_sass = true
 build_search_index = true
 generate_feed = true
+minify_html = true
 
 taxonomies = [
     {name = "tags"}
