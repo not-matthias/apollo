@@ -1,5 +1,5 @@
 base_url = "not-matthias.github.io"
-title = "Blog"
+title = "Personal Blog"
 compile_sass = true
 build_search_index = true
 
@@ -9,34 +9,21 @@ taxonomies = [
 
 [markdown]
 highlight_code = true
-
-# Other themes that look good:
-# visual-studio-dark
-# inspired-github
-# subway-madrid
-# gray-matter-dark
-# demain
-# 
 highlight_theme = "ayu-light"
 
 [extra]
-
-# control dark mode: auto | dark | toggle
-mode = "toggle"
-
-# interal CDN resource
-useCDN = true
-
+use_cdn = true
 favicon = "/icon/favicon.png"
 
-copyright = "keith"
+[extra.analytics]
+enabled = true
+goatcounter_user = "not-matthias"
+goatcounter_host = "example.com"    # default: goatcounter.com
 
-# config menu path
 [[extra.menu]]
 name = "/posts"
 url = "/"
 weight = 1
-
 
 [[extra.menu]]
 name = "/projects"

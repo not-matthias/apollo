@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    {# Site title #}
     {% if current_path == "/" %}
     <title>
         {{ config.title | default(value="Home") }}
@@ -15,27 +16,13 @@
     </title>
     {% endif %}
 
+    {# Favicon #}
     {% if config.extra.favicon %}
-         <link rel="icon" type="image/png" href={{ config.extra.favicon }} />
-    {% endif %}
-
-    {% block site_title %}
-        <title>{{ config.extra.site_title | default(value="Home") }}</title>
-    {% endblock site_title %}
-
-    {# TODO: rss, og:image #}
-
-    {# opengraph, twitter_cards #}
-
-    {# if need icon, load feather.js #}
-    {% if config.extra.social and config.extra.useCDN | default(value=false) %}
-        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    {% elif config.extra.social or config.extra.mode == "toggle" %}
-        <script src={{ get_url(path="js/feather.min.js") }}></script>
+        <link rel="icon" type="image/png" href={{ config.extra.favicon }} />
     {% endif %}
 
     {# Font from cdn or disk #}
-    {% if config.extra.useCDN | default(value=false) %}
+    {% if config.extra.use_cdn | default(value=false) %}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@4.5.8/index.min.css">
     {% else %}
@@ -44,23 +31,14 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="css/main.css") }} />
 
-    {% if config.extra.mode == "auto" or config.extra.mode == "dark" or config.extra.mode == "toggle" %}
-        <link
-            rel="stylesheet"
-            id="darkModeStyle"
-            type="text/css"
-            href={{ get_url(path="css/dark.css") }}
-            {% if config.extra.mode == "auto" %}
-                media="(prefers-color-scheme: dark)"
-            {% endif %}
-            {% if config.extra.mode == "toggle" %}
-                disabled
-            {% endif %}
-        />
+    {# Analytics #}
+    {% if config.extra.analytics.enabled and config.extra.analytics.goatcounter_user %}
+        {% set user = config.extra.analytics.goatcounter_user %}
+        {% set host = config.extra.analytics.goatcounter_host | default(value="goatcounter.com") %}
+
+        <script data-goatcounter="https://{{ user }}.{{ host }}/count" async src="{{ get_url(path="js/count.js") }}"></script>
+        <noscript>
+            <img src="https://{{ user }}.{{ host }}/count?p={{ current_path }}&t={{ page.title | default(value=config.title) }}">
+        </noscript>
     {% endif %}
-
-
-    {# TODO: custom css and js. #}
-
-
 </head>
