@@ -1,0 +1,12 @@
+.tags li::before {
+  content: "🏷 ";
+}
+
+.tags a {
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.tags a:hover {
+  color: var(--hover_color);
+  background-color: var(--primary-color);
+}
