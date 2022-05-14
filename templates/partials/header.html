@@ -41,4 +41,9 @@
             <img src="https://{{ user }}.{{ host }}/count?p={{ current_path }}&t={{ page.title | default(value=config.title) }}">
         </noscript>
     {% endif %}
+
+    {# RSS #}
+    {% block rss %}
+        <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
+    {% endblock %}
 </head>

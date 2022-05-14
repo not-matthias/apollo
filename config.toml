@@ -1,7 +1,8 @@
 base_url = "not-matthias.github.io"
-title = "Personal Blog"
+title = "not-matthias"
 compile_sass = true
 build_search_index = true
+generate_feed = true
 
 taxonomies = [
     {name = "tags"}
