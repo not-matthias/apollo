@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@4.5.8/index.min.css">
     {% else %}
-        <link href={{ get_url(path="css/fonts.css") }} rel="stylesheet" />
+        <link href={{ get_url(path="fonts.css") }} rel="stylesheet" />
     {% endif %}
 
     {# Analytics #}
@@ -50,13 +50,13 @@
     {# Theme #}
     {% set theme = config.extra.theme | default(value="light") %}
     {% if theme == "dark" %}
-        <link rel="stylesheet" type="text/css" href="{{ get_url(path="css/theme/dark.css") }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ get_url(path="theme/dark.css") }}"/>
     {% elif theme == "light" %}
-        <link rel="stylesheet" type="text/css" href="{{ get_url(path="css/theme/light.css") }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ get_url(path="theme/light.css") }}"/>
     {% elif theme == "auto" %}
-        <link rel="stylesheet" type="text/css" href="{{ get_url(path="css/theme/light.css") }}"/>
-        <link rel="stylesheet" type="text/css" href="{{ get_url(path="css/theme/dark.css") }}" media="(prefers-color-scheme: dark)"/>
+        <link rel="stylesheet" type="text/css" href="{{ get_url(path="theme/light.css") }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ get_url(path="theme/dark.css") }}" media="(prefers-color-scheme: dark)"/>
     {% endif %}
 
-    <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="css/main.css") }} />
+    <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="main.css") }} />
 </head>
