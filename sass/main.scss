@@ -1,9 +1,9 @@
-@import "parts/code.css";
-@import "parts/header.css";
-@import "parts/image.css";
-@import "parts/misc.css";
-@import "parts/table.css";
-@import "parts/tags.css";
+@import "parts/_code.scss";
+@import "parts/_header.scss";
+@import "parts/_image.scss";
+@import "parts/misc.scss";
+@import "parts/table.scss";
+@import "parts/tags.scss";
 
 :root {
   /* Used for: block comment, hr, ... */
