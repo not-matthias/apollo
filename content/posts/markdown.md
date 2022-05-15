@@ -15,3 +15,9 @@ fn main() {
 
 > Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.
 - Albert Einstein
+
+
+## Code tags
+
+Lorem ipsum `dolor` sit amet, `consectetur adipiscing` elit. 
+`Lorem ipsum dolor sit amet, consectetur adipiscing elit.`
