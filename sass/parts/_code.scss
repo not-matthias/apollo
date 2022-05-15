@@ -4,7 +4,6 @@ code {
   padding: 0.1em 0.2em;
   border-radius: 5px;
   border: 1px solid var(--border-color);
-
 }
 
 pre {
@@ -22,6 +21,9 @@ pre code {
   color: inherit;
   font-size: 100%;
   padding: 0;
+
+  // We only want a border around `code` and not `pre code` blocks.
+  border: 0;
 }
 
 pre {
