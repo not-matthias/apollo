@@ -31,4 +31,4 @@ cp themes/zola-theme/content content
 
 ## References
 
-This theme is based on the [archie-zola](https://github.com/XXXMrG/archie-zola/).  
+This theme is based on [archie-zola](https://github.com/XXXMrG/archie-zola/).  
