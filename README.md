@@ -1,5 +1,7 @@
-# zola-theme
-Zola theme for my blog.
+# apollo
+
+Blog theme for [Zola](getzola.org). 
+<small>Named after the greek god of knowledge, wisdom and intellect.</small>
 
 ## Demo
 
