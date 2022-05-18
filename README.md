@@ -1,20 +1,29 @@
 # apollo
 
-Blog theme for [Zola](getzola.org). 
-<small>Named after the greek god of knowledge, wisdom and intellect.</small>
+Modern and minimalistic blog theme powered by [Zola](getzola.org). See a live preview [here](https://not-matthias.github.io/apollo).
 
-## Demo
+<sub><sup>Named after the greek god of knowledge, wisdom and intellect</sup></sub>
 
-Checkout the demo [here](https://not-matthias.github.io/apollo).
+<details open>
+  <summary>Dark theme</summary>
+  
+  ![blog-dark](https://user-images.githubusercontent.com/26800596/168986771-4ed049e2-e123-4d0e-8a24-7bf43f47551f.png)
+</details>
 
-
-![Screenshot 2022-05-16 at 09-20-14 not-matthias](https://user-images.githubusercontent.com/26800596/168560950-2a5bc750-f415-4fe2-a8aa-cd0b6b4fe757.png)
+<details>
+  <summary>Light theme</summary>
+  
+![blog-light](https://user-images.githubusercontent.com/26800596/168986766-72a48517-7122-465d-8108-3ae33e1e88b1.png)
+</details>
 
 ## Features
 
-- Pagination
-- Themes (light, dark, auto)
-- Analytics using [GoatCounter](https://www.goatcounter.com/)
+- [X] Pagination
+- [X] Themes (light, dark, auto)
+- [X] Analytics using [GoatCounter](https://www.goatcounter.com/)
+- [ ] Social Links
+- [ ] Search
+- [ ] Categories
 
 ## Installation
 
