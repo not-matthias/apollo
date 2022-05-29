@@ -6,16 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {# Site title #}
-    {% set current_path = current_path | default(value="/") %}
-    {% if current_path == "/" %}
-    <title>
-        {{ config.title | default(value="Home") }}
-    </title>
-    {% else %}
-    <title>
-        {{ page.title | default(value=config.title) | default(value="Post") }}
-    </title>
-    {% endif %}
+    {% block title %}
+        {% set current_path = current_path | default(value="/") %}
+        {% if current_path == "/" %}
+        <title>
+            {{ config.title | default(value="Home") }}
+        </title>
+        {% else %}
+        <title>
+            {{ page.title | default(value=config.title) | default(value="Post") }}
+        </title>
+        {% endif %}
+    {% endblock title %}
 
     {# Favicon #}
     {% if config.extra.favicon %}
@@ -23,24 +25,28 @@
     {% endif %}
 
     {# Font from cdn or disk #}
-    {% if config.extra.use_cdn | default(value=false) %}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@4.5.8/index.min.css">
-    {% else %}
-        <link href={{ get_url(path="fonts.css") }} rel="stylesheet" />
-    {% endif %}
+    {% block cdn %}
+        {% if config.extra.use_cdn | default(value=false) %}
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@4.5.8/index.min.css">
+        {% else %}
+            <link href={{ get_url(path="fonts.css") }} rel="stylesheet" />
+        {% endif %}
+    {% endblock cdn %}
 
     {# Analytics #}
-    {% if config.extra.analytics.enabled and config.extra.analytics.goatcounter_user %}
-        {% set user = config.extra.analytics.goatcounter_user %}
-        {% set host = config.extra.analytics.goatcounter_host | default(value="goatcounter.com") %}
+    {% block analytics %}
+        {% if config.extra.analytics.enabled and config.extra.analytics.goatcounter_user %}
+            {% set user = config.extra.analytics.goatcounter_user %}
+            {% set host = config.extra.analytics.goatcounter_host | default(value="goatcounter.com") %}
 
-        <script data-goatcounter="https://{{ user }}.{{ host }}/count" async src="{{ get_url(path="js/count.js") }}"></script>
-        <noscript>
-            {# EasyList blocks '.com/count?', so we have to use '.com//count' #}
-            <img src="https://{{ user }}.{{ host }}//count?p={{ current_path }}&t={{ page.title | default(value=config.title) }}">
-        </noscript>
-    {% endif %}
+            <script data-goatcounter="https://{{ user }}.{{ host }}/count" async src="{{ get_url(path="js/count.js") }}"></script>
+            <noscript>
+                {# EasyList blocks '.com/count?', so we have to use '.com//count' #}
+                <img src="https://{{ user }}.{{ host }}//count?p={{ current_path }}&t={{ page.title | default(value=config.title) }}">
+            </noscript>
+        {% endif %}
+    {% endblock analytics %}
 
     {# RSS #}
     {% block rss %}
@@ -48,15 +54,17 @@
     {% endblock %}
 
     {# Theme #}
-    {% set theme = config.extra.theme | default(value="light") %}
-    {% if theme == "dark" %}
-        <link rel="stylesheet" type="text/css" href="{{ get_url(path="theme/dark.css") }}"/>
-    {% elif theme == "light" %}
-        <link rel="stylesheet" type="text/css" href="{{ get_url(path="theme/light.css") }}"/>
-    {% elif theme == "auto" %}
-        <link rel="stylesheet" type="text/css" href="{{ get_url(path="theme/light.css") }}"/>
-        <link rel="stylesheet" type="text/css" href="{{ get_url(path="theme/dark.css") }}" media="(prefers-color-scheme: dark)"/>
-    {% endif %}
+    {% block theme %}
+        {% set theme = config.extra.theme | default(value="light") %}
+        {% if theme == "dark" %}
+            <link rel="stylesheet" type="text/css" href="{{ get_url(path="theme/dark.css") }}"/>
+        {% elif theme == "light" %}
+            <link rel="stylesheet" type="text/css" href="{{ get_url(path="theme/light.css") }}"/>
+        {% elif theme == "auto" %}
+            <link rel="stylesheet" type="text/css" href="{{ get_url(path="theme/light.css") }}"/>
+            <link rel="stylesheet" type="text/css" href="{{ get_url(path="theme/dark.css") }}" media="(prefers-color-scheme: dark)"/>
+        {% endif %}
+    {% endblock theme %}
 
     <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="main.css") }} />
 </head>
