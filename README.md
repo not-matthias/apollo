@@ -53,7 +53,7 @@ stylesheets = [
 ]
 ```
 
-These filenames are relative to the root of the site. In this example, the two CSS files would be in the `static` folder (or in the `sass` folder and therefore compiled to CSS files in the `static` folder).
+These filenames are relative to the root of the site. In this example, the two CSS files would be in the `static` folder.
 
 ## References
 
