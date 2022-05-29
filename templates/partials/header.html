@@ -67,4 +67,11 @@
     {% endblock theme %}
 
     <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="main.css") }} />
+
+            
+    {% if config.extra.stylesheets %}
+        {% for stylesheet in config.extra.stylesheets %}
+            <link rel="stylesheet" href="{{ get_url(path=stylesheet) }}">
+        {% endfor %}
+    {% endif %}
 </head>
