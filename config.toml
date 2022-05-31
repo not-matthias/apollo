@@ -16,14 +16,14 @@ favicon = "/icon/favicon.png"
 theme = "auto"      
 
 menu = [
-    { name = "/posts", url= "/posts", weight= 1 },
-    { name= "/projects", url= "/projects", weight= 2 },
-    { name= "/about", url= "/about", weight= 3 },
+    { name = "/posts", url = "/posts", weight = 1 },
+    { name = "/projects", url = "/projects", weight = 2 },
+    { name = "/about", url = "/about", weight = 3 },
 ]
 
 socials = [
-    { name= "twitter", url= "https://twitter.com/not_matthias", icon= "twitter" },
-    { name= "github", url= "https=//github.com/not-matthias/", icon = "github" },
+    { name = "twitter", url = "https://twitter.com/not_matthias", icon = "twitter" },
+    { name = "github", url = "https=//github.com/not-matthias/", icon = "github" },
 ]
 
 custom_css = []
