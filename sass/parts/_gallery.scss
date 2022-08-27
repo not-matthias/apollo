@@ -1,0 +1,32 @@
+.gallery {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    padding: 12px;
+}
+
+@supports (grid-template-rows: masonry) {
+    .gallery {
+        /* currently masonry layout is only supported in firefox with option `layout.css.grid-template-masonry-value.enabled` set to true,
+        see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout. */
+        grid-template-rows: masonry;
+    }
+}
+
+
+.gallery-image {
+    border-bottom: unset;
+    border-image: unset;
+    background: unset;
+    transition: transform 0.2s;
+
+}
+
+.gallery-image:hover {
+    transform: scale(1.1);
+}
+
+.gallery-image>img {
+    box-shadow: 0px 0px 6px var(--bg-2);
+}

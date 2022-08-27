@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div class="taxonomies">
+    <div class="taxonomies-header">
+        <div class="page-title">{{ taxonomy.name | capitalize }}</div>
+
+        <div class="meta">
+            {{ terms | length }} in total
+        </div>
+    </div>
+    <div class="taxonomies-items">
+        {% for tag in terms %}
+        <a class="taxonomies-item" href="{{ tag.permalink }}">
+            {{ tag.name }}
+            <sup>{{ tag.pages | length }}</sup>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock main_content %}

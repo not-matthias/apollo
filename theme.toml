@@ -1,9 +1,9 @@
-name = "apollo"
-description = "Modern and minimalistic blog theme"
+name = "mercury"
+description = "Modern and minimalistic blog theme - Fork of the Apollo theme"
 min_version = "0.14.0"
 license = "MIT"
-homepage = "https://github.com/not-matthias/apollo"
-demo = "https://not-matthias.github.io/apollo"
+homepage = "https://github.com/flxzt/mercury"
+demo = "https://mercury.flxzt.net"
 
 # Any variable there can be overridden in the end user `config.toml`
 # You don't need to prefix variables by the theme name but as this will
@@ -12,5 +12,5 @@ demo = "https://not-matthias.github.io/apollo"
 [extra]
 
 [author]
-name = "not-matthias"
-homepage = "https://github.com/not-matthias"
+name = "Felix Zwettler"
+homepage = "https://github.com/flxzt"

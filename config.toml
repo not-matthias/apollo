@@ -1,34 +1,45 @@
-base_url = "https://not-matthias.github.io/apollo/"
-title = "not-matthias"
+base_url = "https://mercury.flxzt.net/"
+title = "Mercury"
+description = "Modern blog theme"
 build_search_index = true
 generate_feed = true
 compile_sass = true
 minify_html = true
+
+taxonomies = [
+    {name = "tags"},
+]
 
 [markdown]
 highlight_code = true
 highlight_theme = "ayu-dark"
 
 [extra]
-toc = true
 use_cdn = false
-favicon = "/icon/favicon.png"
-theme = "auto"      
+favicon = "/images/favicon.svg"
+theme = "auto"      # either `auto`, `dark` or `light`
+mathjax = true
 
 menu = [
     { name = "/posts", url = "/posts", weight = 1 },
     { name = "/projects", url = "/projects", weight = 2 },
-    { name = "/about", url = "/about", weight = 3 },
+#    { name = "/tags", url = "/tags", weight = 3 },
+    { name = "/about", url = "/about", weight = 99 },
 ]
 
 socials = [
-    { name = "twitter", url = "https://twitter.com/not_matthias", icon = "twitter" },
-    { name = "github", url = "https://github.com/not-matthias/", icon = "github" },
+    { name = "rss", url = "https://mercury.flxzt.net/atom.xml", icon = "rss" },
+    { name = "github", url = "https://github.com/flxzt/mercury", icon = "github" },
 ]
 
 custom_css = []
 
 [extra.analytics]
-enabled = true
+enabled = false
 goatcounter_user = "your_user"
 goatcounter_host = "example.com"    # default= goatcounter.com
+
+[extra.footer]
+enabled = true
+# If footer is enabled, you can either set the text here or overwrite the `partials/footer.html` template for custom html
+text = "John Doe - © 2023"

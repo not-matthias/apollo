@@ -1,48 +1,90 @@
 @import "parts/_code.scss";
-@import "parts/_header.scss";
+@import "parts/_headers.scss";
+@import "parts/_nav.scss";
 @import "parts/_image.scss";
-@import "parts/misc.scss";
-@import "parts/table.scss";
-@import "parts/tags.scss";
+@import "parts/_misc.scss";
+@import "parts/_table.scss";
+@import "parts/_taxonomies.scss";
+@import "parts/_cards.scss";
+@import "parts/_gallery.scss";
+@import "parts/_webapp.scss";
 
 :root {
-  /* Used for: block comment, hr, ... */
-  --border-color: var(--bg-1);
+    /* Used for: block comment, hr, ... */
+    --border-color: var(--bg-0);
 
-  /* Fonts */
-  --text-font: 'Jetbrains Mono';
-  --header-font: 'Space Grotesk';
-  --code-font: 'Jetbrains Mono';
+    /* Fonts */
+    --text-font: 'Roboto';
+    --header-font: 'Roboto';
+    --code-font: 'Inconsolata';
 }
 
 html {
-  background-color: var(--bg-0);
-  color: var(--text-0);
-  font-family: var(--text-font);
-  line-height: 1.6em;
+    background-image: var(--bg-noise-image);
+    color: var(--text-0);
+    font-family: var(--text-font);
+    line-height: 1.5em;
+}
+
+body {
+    margin: 0;
 }
 
 .content {
-  max-width: 944px;
-  margin: 0 auto;
-  padding: 0 24px;
-  word-wrap: break-word;
+    max-width: 900px;
+    min-height: calc(100vh - 24px);
+    margin: 0 auto;
+    padding: 12px;
+    word-wrap: break-word;
+
+    /* container */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-@media all and (min-width:640px) {
-  html {
-    font-size: 16.5px;
-  }
+.main-content {
+    flex-grow: 1;
+
+    padding: 24px;
+    background-color: var(--bg-1);
+    border-radius: 9px;
+    box-shadow: 0 2px 6px var(--bg-2);
+}
+
+footer {
+    background-color: var(--bg-1);
+    border-radius: 9px;
+    box-shadow: 0 2px 6px var(--bg-2);
+    margin-top: auto;
+    padding: 6px;
+    text-align: center;
+}
+
+@media all and (max-width:719px) {
+    html {
+        font-size: 14px;
+    }
+
+    .content {
+        min-height: calc(100vh - 12px);
+        padding: 6px 0;
+        gap: 6px;
+    }
+
+    .main-content {
+        padding: 12px;
+    }
 }
 
 @media all and (min-width:720px) {
-  html {
-    font-size: 17px;
-  }
+    html {
+        font-size: 15px;
+    }
 }
 
-@media all and (min-width:960px) {
-  html {
-    font-size: 18px;
-  }
+@media all and (min-width:900px) {
+    html {
+        font-size: 16px;
+    }
 }

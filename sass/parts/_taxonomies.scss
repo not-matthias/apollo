@@ -1,0 +1,32 @@
+.taxonomies-title {
+    margin-bottom: 0.4em;
+}
+
+.taxonomies-items {
+    margin-top: 1em;
+}
+
+.taxonomies-item+.taxonomies-item {
+    margin-left: 0.4em;
+}
+
+.taxonomy-item {
+    display: flex;
+    flex-direction: row;
+    gap: 0.7em;
+}
+
+.taxonomy-item-title {
+    flex-grow: 1;
+}
+
+.tags {
+    margin: 3px;
+}
+
+.tag {
+    color: var(--text-1);
+    border-radius: 2px;
+    background-color: var(--bg-2);
+    padding: 2px 3px;
+}

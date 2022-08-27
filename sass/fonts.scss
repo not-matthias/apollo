@@ -1,15 +1,23 @@
 @font-face {
-  font-family: 'Jetbrains Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/JetbrainsMono/JetBrainsMono-Regular.ttf'), local('ttf');
-  font-display: swap;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url('../fonts/Roboto/roboto-latin-400-normal.woff2') format('woff2'), url('../fonts/Roboto/roboto-all-400-normal.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Space Grotesk';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf'), local('ttf');
-  font-display: swap;
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url('../fonts/Merriweather/merriweather-latin-400-normal.woff2') format('woff2'), url('../fonts/Merriweather/merriweather-all-400-normal.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url('../fonts/Inconsolata/inconsolata-latin-400-normal.woff2') format('woff2'), url('../fonts/Inconsolata/inconsolata-all-400-normal.woff') format('woff');
 }

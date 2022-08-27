@@ -1,0 +1,74 @@
+header {
+    background-color: var(--accent-bg);
+    box-shadow: 0 2px 6px var(--bg-2);
+    border-radius: 9px;
+
+    /* container */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.7em;
+    padding: 9px 12px 7px 12px;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.site-info {
+    /* child */
+    flex-grow: 1;
+
+    /* container */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 0.7em;
+
+}
+
+.site-title {
+    flex-grow: 0;
+    font-size: 1.5rem;
+}
+
+.socials {
+    /* child */
+    flex-grow: 0;
+
+    /* container */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.social {
+    padding: 2px;
+}
+
+.social:hover {
+    background-color: unset;
+}
+
+.social>img {
+    width: 16px;
+    height: 16px;
+}
+
+.site-menu {
+    flex-grow: 0;
+}
+
+.site-menu-entry+.site-menu-entry {
+    margin-left: 0.4em;
+}
+
+@media (prefers-color-scheme: dark) {
+    .social>img {
+        filter: invert(1);
+    }
+}

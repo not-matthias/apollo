@@ -1,0 +1,27 @@
+{% import "macros/macros.html" as macros %}
+
+<!DOCTYPE html>
+<html lang={{ config.default_language }} class="webapp">
+{% include "partials/header.html" %}
+
+<body class="webapp">
+    <header class="webapp">
+        <div>
+            <a class="site-title" href={{ config.base_url }}>{{ config.title }}</a>
+        </div>
+
+        <div class="webapp-header">{{ page.title }}</div>
+
+        <nav class="site-menu">
+            {% for menu in config.extra.menu %}
+            <a class="site-menu-entry" href={{ menu.url }}>{{ menu.name }}</a>
+            {% endfor %}
+        </nav>
+    </header>
+
+    <iframe class="webapp" src={{ page.extra.webapp }} name="webapp" allowTransparency="true" scrolling="no"
+        frameborder="0">
+    </iframe>
+</body>
+
+</html>

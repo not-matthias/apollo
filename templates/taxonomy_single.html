@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div class="taxonomy">
+        <div class="page-title">{{taxonomy.name }}::{{ term.name }}</div>
+
+        <ul class="taxonomy-list">
+            {% for page in term.pages %}
+                <li>
+                    <div class="taxonomy-item">
+                        <div class="taxonomy-item-title">
+                            {% if page.extra.link_to %}
+                            <a href={{ page.extra.link_to }}>{{page.title}}</a>
+                            {% else %}
+                            <a href={{ page.permalink }}>{{page.title}}</a>
+                            {% endif %}
+                        </div>
+                        {% if page.date %}
+                            <time>{{ page.date | date(format="%F") }}</time>
+                        {% endif %}
+                    </div>
+                </il>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock main_content %}

@@ -1,4 +1,4 @@
-{% import "macros/macros.html" as post_macros %}
+{% import "macros/macros.html" as macros %}
 
 <head>
     <meta charset="UTF-8">
@@ -22,10 +22,19 @@
         <link rel="icon" type="image/png" href={{ config.extra.favicon }} />
     {% endif %}
 
-    {# Font from cdn or disk #}
+    {# MathJax #}
+    {% if config.extra.mathjax | default(value=false) %}
+        <script type="text/javascript" src="{{ get_url(path="js/mathjax-config.js") }}" defer></script>
+        <script type="text/javascript" id="MathJax-script" defer
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+    {% endif %}
+
+    {# Font from cdn or local #}
     {% if config.extra.use_cdn | default(value=false) %}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@4.5.8/index.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/roboto@4.5.8/400.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/merriweather@4.5.14/400.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inconsolata@4.5.9/400.css">
     {% else %}
         <link href={{ get_url(path="fonts.css") }} rel="stylesheet" />
     {% endif %}

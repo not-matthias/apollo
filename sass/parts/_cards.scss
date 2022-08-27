@@ -1,0 +1,61 @@
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: auto;
+    gap: 18px;
+    padding: 12px 0;
+}
+
+@supports (grid-template-rows: masonry) {
+    .cards {
+        /* currently masonry layout is only supported in firefox with option `layout.css.grid-template-masonry-value.enabled` set to true,
+        see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout. */
+        grid-template-rows: masonry;
+    }
+}
+
+.card {
+    min-height: 200px;
+    background: linear-gradient(30deg, var(--bg-2) -100%, var(--bg-1) 110%);
+    border: 1px solid var(--bg-2);
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.card-info {
+    padding: 0px 18px 18px 18px;
+}
+
+.card-header {
+    margin-top: 0.5em;
+    line-height: 1em;
+}
+
+.card-header::before {
+    content: unset;
+}
+
+.card-header:hover:before {
+    color: var(--hover-color);
+}
+
+
+.card-image {
+    width: 100%;
+}
+
+.card-image-placeholder {
+    height: 12px;
+    width: 100%;
+}
+
+.card-description {
+    margin-top: 0.4em;
+    overflow: hidden;
+}
+
+@media all and (max-width:719px) {
+    .cards {
+        gap: 12px;
+    }
+}

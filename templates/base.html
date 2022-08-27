@@ -1,17 +1,28 @@
-{% import "macros/macros.html" as post_macros %}
+{% import "macros/macros.html" as macros %}
 
 <!DOCTYPE html>
-<html>
+<html lang={{ config.default_language }}>
 {% include "partials/header.html" %}
 
 <body>
     <div class="content">
         {% include "partials/nav.html" %}
 
-        {# Post page is the default #}
-        {% block main_content %}
+        <div class="main-content">
+            {# To be overriden by templates which extend the base template #}
+            {% block main_content %}
             Nothing here?!
-        {% endblock main_content %}
+            {% endblock main_content %}
+        </div>
+
+        {% if config.extra.footer.enabled | default(value=false) %}
+
+        <footer>
+            <small>
+                {% include "partials/footer.html" %}
+            </small>
+        </footer>
+        {% endif %}
     </div>
 </body>
 

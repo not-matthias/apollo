@@ -1,19 +1,25 @@
 <header>
-    <div class="main">
-        <a href={{ config.base_url }}>{{ config.title }}</a>
+    <div class="site-info">
+        <a class="site-title" href={{ config.base_url }}>{{ config.title }}</a>
 
-        <div class="socials">
-            {% for social in config.extra.socials %}
-            <a href="{{ social.url }}" class="social">
-                <img alt={{ social.name }} src="/social_icons/{{ social.icon }}.svg">
-            </a>
-            {% endfor %}
+        <div class="site-description">
+            {{ config.description }}
         </div>
     </div>
 
-    <nav>
+    <nav class="site-menu">
         {% for menu in config.extra.menu %}
-            <a href={{ menu.url }} style="margin-left: 0.7em">{{ menu.name }}</a>
+        <a class="site-menu-entry" href={{ menu.url }}>{{ menu.name }}</a>
         {% endfor %}
     </nav>
+
+    {% if config.extra.socials %}
+    <div class="socials">
+        {% for social in config.extra.socials %}
+        <a href="{{ social.url }}" class="social">
+            <img alt={{ social.name }} src="/social_icons/{{ social.icon }}.svg">
+        </a>
+        {% endfor %}
+    </div>
+    {% endif %}
 </header>

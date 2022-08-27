@@ -1,9 +1,102 @@
-{% macro list_posts(pages) %}
-    <ul>
-    {%- for page in pages %}
-        <section class="list-item">
-            <h1 class="title">
+{% macro list_posts(pages, n_pages) %}
+    {%- for page in pages | slice(end=n_pages) %}
+        <div class="list-item">
+            <h1 class="item-title">
+                {% if page.extra.link_to %}
+                <a href={{ page.extra.link_to }}>{{page.title}}</a>
+                {% else %}
                 <a href={{ page.permalink }}>{{page.title}}</a>
+                {% endif %}
+            </h1>
+            {% if page.extra.banner_image %}
+                {% if page.extra.banner_image is matching("[.](jpg|png)$") %}
+                    {% set image = resize_image(path=page.extra.banner_image, width=1200, op="fit_width") %}
+                    <img class="banner-image" alt={{ page.extra.banner_image }} src="{{ image.url }}">
+                {% else %}
+                    <img class="banner-image" alt={{ page.extra.banner_image }} src="{{ get_url(path=page.extra.banner_image) }}">
+                {% endif %}
+            {% endif %}
+
+            <div class="meta">
+                {%- if page.date %}
+                    <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+                {% endif -%}
+                {% if page.draft %}
+                    <span class="draft-label">DRAFT</span> 
+                {% endif %}
+                {{ macros::tags(page=page) }}
+            </div>
+
+            {% if page.description %}
+                <div class="description">{{ page.description }}</div>
+                {% set hide_read_more = true %}
+            {% elif page.summary %}
+                <div class="summary">{{ page.summary | safe }}</div>
+            {% else %}
+                {% set hide_read_more = true %}
+            {% endif %}
+
+            {% if not hide_read_more %}
+                <a class="readmore-link" href={{ page.permalink }}>Read more ..</a>
+            {% endif %}
+        </div>
+    {% endfor -%}
+{% endmacro list_posts %}
+
+{% macro cards_posts(pages) %}
+    <div class="cards">
+    {%- for page in pages %}
+        <div class="card">
+            {% if page.extra.card_image %}
+                {% if page.extra.card_image is matching("[.](jpg|png)$") %}
+                    {% set image = resize_image(path=page.extra.card_image, width=800, op="fit_width") %}
+                    <img class="card-image" alt={{ page.extra.card_image }} src="{{ image.url }}">
+                {% else %}
+                    <img class="card-image" alt={{ page.extra.card_image }} src="{{ get_url(path=page.extra.card_image) }}">
+                {% endif %}
+            {% else %}
+                <div class="card-image-placeholder"></div>
+            {% endif %}
+
+            <div class="card-info">
+                <h1 class="card-header">
+                    {% if page.extra.link_to %}
+                    <a href={{ page.extra.link_to }}>{{page.title}}</a>
+                    {% else %}
+                    <a href={{ page.permalink }}>{{page.title}}</a>
+                    {% endif %}
+                </h1>
+
+                <div class="meta">
+                    {%- if page.date %}
+                        <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+                    {% endif -%}
+                    {% if page.draft %}
+                        <span class="draft-label">DRAFT</span> 
+                    {% endif %}
+                    {{ macros::tags(page=page) }}
+                </div>
+
+                {% if page.description %}
+                    <div class="card-description">{{ page.description }}</div>
+                {% endif %}
+            </div>
+        </div>
+
+    {% endfor -%}
+    </div>
+{% endmacro cards_posts %}
+
+{% macro list_section(section) %}
+    <ul class="list">
+    {%- for page in section.pages %}
+        <div class="list-item">
+            <h1 class="item-title">
+                {% if page.extra.link_to %}
+                <a href={{ page.extra.link_to }}>{{page.title}}</a>
+                {% else %}
+                <a href={{ page.permalink }}>{{page.title}}</a>
+                {% endif %}
             </h1>
 
             <div class="meta">
@@ -13,80 +106,57 @@
                 {% if page.draft %}
                     <span class="draft-label">DRAFT</span> 
                 {% endif %}
+                {{ macros::tags(page=page) }}
             </div>
-
-            <br />
-            <div class="description">
-                {% if page.description %}
-                    {{ page.description }}
-                {% elif page.summary %}
-                    {{ page.summary | safe }}&hellip;
-                {% else %}
-                    {% set hide_read_more = true %}
-                {% endif %}
-            </div>
-
-            {% if not hide_read_more %}
-                <a class="readmore" href={{ page.permalink }}>Read more ⟶</a>
-            {% endif %}
-        </section>
-
+        </div>
     {% endfor -%}
     </ul>
-{% endmacro list_posts %}
-
-{% macro tags(page, short=false) %}
-    {%- if page.taxonomies and page.taxonomies.tags %}
-        <span class="post-tags-inline">
-            {%- if short %}
-                ::
-                {%- set sep = "," -%}
-            {% else %}
-                :: tags:&nbsp;
-                {%- set sep = "&nbsp;" -%}
-            {% endif -%}
-            {%- for tag in page.taxonomies.tags %}
-                <a class="post-tag" href="{{ get_taxonomy_url(kind='tags', name=tag) | safe }}">#{{ tag }}</a>
-                {%- if not loop.last %}{{ sep | safe }}{% endif -%}
-            {% endfor -%}
-        </span>
-    {% endif -%}
-{% endmacro tags %}
-
-{% macro page_header(title) %}
-    <div class="page-header">
-        {{ title }}<span class="primary-color" style="font-size: 1.6em">.</span>
-    </div>
-{% endmacro content %}
+{% endmacro list_section %}
 
 {% macro content(page) %}
 <main>
+    {% if page.extra.link_to %}
+    <meta http-equiv="refresh" content="0; url={{page.extra.link_to}}">
+    <div class="link-title">
+        <a href={{ page.extra.link_to }}>{{page.extra.link_to}}</a>
+    </div>
+    {% else %}
     <article>
-        <div class="title">
-            {#<h1 class="title">{{ page.title }}</h1>#}
-            {{ post_macros::page_header(title=page.title) }}
+        <div>
+            {% if page.extra.banner_image %}
+                {% if page.extra.banner_image is matching("[.](jpg|png)$") %}
+                    {% set image = resize_image(path=page.extra.banner_image, width=1200, op="fit_width") %}
+                    <img class="banner-image" alt={{ page.extra.banner_image }} src="{{ image.url }}">
+                {% else %}
+                    <img class="banner-image" alt={{ page.extra.banner_image }} src="{{ get_url(path=page.extra.banner_image) }}">
+                {% endif %}
+            {% endif %}
 
-                <div class="meta">
-                    {% if page.date %}
-                        Posted on <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
-                    {% endif %}
+            <div class="page-title">{{ page.title }}</div>
 
-                    {% if page.draft %}
-                        <span class="draft-label">DRAFT</span> 
-                    {% endif %}
-                </div>
+            <div class="meta">
+                {% if page.date %}
+                    <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+                {% endif %}
+
+                {% if page.draft %}
+                    <span class="draft-label">DRAFT</span> 
+                {% endif %}
+                {{ macros::tags(page=page) }}
+            </div>
         </div>
 
         {% if page.extra.tldr %}
             <div class="tldr">
-                <strong>tl;dr:</strong>
+                <strong class="primary-color">tl;dr:</strong><br>
                 {{ page.extra.tldr }}
             </div>
         {% endif %}
 
         {# Optional table of contents #}
-        {% if config.extra.toc | default(value=false) %}
+        {% if page.extra.toc | default(value=false) %}
             {% if page.toc %}
+            <div class="toc">
                 <h1>Table of Contents</h1>
                 <ul>
                 {% for h1 in page.toc %}
@@ -114,25 +184,39 @@
                     </li>
                 {% endfor %}
                 </ul>
+            </div>
             {% endif %}
         {% endif %}
 
-        <section class="body">
+        <section>
             {{ page.content | safe }}
         </section>
-
-        {% if page.taxonomies and page.taxonomies.tags %}
-            <div class="post-tags">
-                <nav class="nav tags">
-                    <ul class="tags">
-                        {% for tag in page.taxonomies.tags %}
-                            <li><a href={{ get_taxonomy_url(kind='tags', name=tag) | safe }}>{{ tag }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </nav>
-            </div>
-        {% endif %}
-
     </article>
+    {% endif %}
 </main>
 {% endmacro content %}
+
+{% macro tags(page, short=false) %}
+    {%- if page.taxonomies and page.taxonomies.tags %}
+        <span class="tags">
+            {%- for tag in page.taxonomies.tags %}
+                <small>
+                    <a class="tag" href="{{ get_taxonomy_url(kind='tags', name=tag) | safe }}">{{ tag }}</a>
+                </small>
+            {% endfor -%}
+        </span>
+    {% endif -%}
+{% endmacro tags %}
+
+{% macro gallery(assets) %}
+<div class="gallery">
+{% for asset in assets -%}
+  {%- if asset is matching("[.](jpg|png)$") -%}
+    {% set image = resize_image(path=asset, width=400, op="fit_width") %}
+    <a class="gallery-image" href="{{ get_url(path=asset) }}" target="_blank">
+    <img src="{{ image.url }}" />
+    </a>
+  {%- endif %}
+{%- endfor %}
+</div>
+{% endmacro gallery %}

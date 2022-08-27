@@ -1,1 +1,24 @@
 {% extends "section.html" %}
+
+{% block main_content %}
+    <main>
+        {% for s in section.subsections %}
+            {% set subsection = get_section(path=s) %}
+
+            {%- if subsection.extra.index_n_pages %}
+                {%- set n_pages = subsection.extra.index_n_pages -%}
+            {% else %}
+                {%- set n_pages = 7 -%}
+            {% endif -%}
+
+            {% if subsection.extra.show_in_index %}
+                <div class="page-title">Recent {{ subsection.title }}</div>
+                {{ macros::list_posts(pages=subsection.pages, n_pages=n_pages) }}
+
+                <div class="show-all-div">
+                    <a href={{ subsection.permalink }} class="show-all-link">More ..</a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </main>
+{% endblock main_content %}

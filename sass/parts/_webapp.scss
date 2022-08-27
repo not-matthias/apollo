@@ -1,0 +1,36 @@
+html.webapp {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body.webapp {
+    background-color: var(--bg-1);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    /* flex-container */
+    display: flex;
+    flex-direction: column;
+}
+
+header.webapp {
+    padding: 6px;
+    border-radius: unset;
+}
+
+.webapp-header {
+    font-family: var(--header-font);
+
+    text-align: center;
+    vertical-align: text-top;
+    font-size: 1.8em;
+}
+
+iframe.webapp {
+    /* child */
+    flex: 1;
+
+    border: 1px solid var(--border-color);
+}
