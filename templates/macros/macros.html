@@ -1,10 +1,6 @@
 {% macro list_posts(pages) %}
     <ul>
     {%- for page in pages %}
-        {%- if page.draft %}
-            {% continue %}
-        {% endif -%}
-
         <section class="list-item">
             <h1 class="title">
                 <a href={{ page.permalink }}>{{page.title}}</a>
