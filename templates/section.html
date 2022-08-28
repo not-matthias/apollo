@@ -1,13 +1,16 @@
 {% extends "base.html" %}
 
 {% block main_content %}
-    {{ post_macros::page_header(title="Posts") }}
+    {% if section.extra.section_path -%}
+        {% set section = get_section(path=section.extra.section_path) %}
+    {% endif -%}
+
+    {{ post_macros::page_header(title=section.title) }}
 
     <main class="list">
         {%- if paginator %}
             {%- set show_pages = paginator.pages -%}
         {% else %}
-            {% set section = get_section(path="posts/_index.md") %}
             {%- set show_pages = section.pages -%}
         {% endif -%}
 
