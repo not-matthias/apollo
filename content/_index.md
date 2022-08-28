@@ -1,4 +1,5 @@
 +++
 paginate_by = 7
-sort_by = "date"
+[extra]
+section_path = "posts/_index.md"
 +++
