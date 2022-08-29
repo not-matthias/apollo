@@ -1,16 +1,19 @@
 {% macro list_posts(pages) %}
     <ul>
     {%- for page in pages %}
-        {%- if page.draft %}
-            {% continue %}
-        {% endif -%}
-
         <section class="list-item">
             <h1 class="title">
                 <a href={{ page.permalink }}>{{page.title}}</a>
             </h1>
 
-            <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+            <div class="meta">
+                {%- if page.date %}
+                    <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+                {% endif -%}
+                {% if page.draft %}
+                    <span class="draft-label">DRAFT</span> 
+                {% endif %}
+            </div>
 
             <br />
             <div class="description">
@@ -63,15 +66,15 @@
             {#<h1 class="title">{{ page.title }}</h1>#}
             {{ post_macros::page_header(title=page.title) }}
 
-            {% if page.date %}
                 <div class="meta">
-                    Posted on {{ page.date | date(format="%Y-%m-%d") }}
+                    {% if page.date %}
+                        Posted on <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+                    {% endif %}
 
                     {% if page.draft %}
                         <span class="draft-label">DRAFT</span> 
                     {% endif %}
                 </div>
-            {% endif %}
         </div>
 
         {% if page.extra.tldr %}
