@@ -1,6 +1,14 @@
 <header>
     <div class="main">
         <a href={{ config.base_url }}>{{ config.title }}</a>
+
+        <div class="socials">
+            {% for social in config.extra.socials %}
+            <a href="{{ social.url }}" class="social">
+                <img alt={{ social.name }} src="/social_icons/{{ social.icon }}.svg">
+            </a>
+            {% endfor %}
+        </div>
     </div>
 
     <nav>
