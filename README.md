@@ -21,7 +21,7 @@ Modern and minimalistic blog theme powered by [Zola](getzola.org). See a live pr
 - [X] Pagination
 - [X] Themes (light, dark, auto)
 - [X] Analytics using [GoatCounter](https://www.goatcounter.com/)
-- [ ] Social Links
+- [x] Social Links
 - [ ] Search
 - [ ] Categories
 
