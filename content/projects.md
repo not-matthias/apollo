@@ -1,4 +1,0 @@
-+++
-title = "Projects"
-path = "projects"
-+++
