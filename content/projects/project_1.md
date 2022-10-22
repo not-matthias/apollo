@@ -1,12 +1,11 @@
 +++
-title = "Project 1"
-description = "Example description"
+title = "Apollo"
+description = "Modern and minimalistic blog theme."
 weight = 1
 
 [extra]
-card_image = "/projects/project_1_card_image.png"
+local_image = "/projects/project-1.jpg"
+link_to = "https://github.com/not-matthias/apollo"
 +++
 
 Example project page
-
-Card image: [xkcd.com 730](https://xkcd.com/730/) - CC BY-NC 2.5
