@@ -37,7 +37,7 @@ git submodule add https://github.com/not-matthias/apollo themes/apollo
 3. Copy the example content
 
 ```
-cp themes/apollo/content content
+cp -r themes/apollo/content content
 ```
 
 ## Options
