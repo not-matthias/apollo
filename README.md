@@ -60,11 +60,13 @@ These filenames are relative to the root of the site. In this example, the two C
 ### MathJax
 
 To enable MathJax equation rendering, set the variable `mathjax` to `true` in
-the `extra` section of your config.toml.
+the `extra` section of your config.toml. Set `mathjax_dollar_inline_enable` to 
+`true` to render inline math by surrounding them inside $..$.
 
 ```toml
 [extra]
 mathjax = true
+mathjax_dollar_inline_enable = true
 ```
 ## References
 
