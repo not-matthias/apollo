@@ -1,6 +1,6 @@
 base_url = "https://not-matthias.github.io/apollo/"
 title = "not-matthias"
-build_search_index = true
+build_search_index = false
 generate_feed = true
 compile_sass = true
 minify_html = true
