@@ -106,9 +106,3 @@ h6::before {
   color: var(--primary-color);
   content: "###### ";
 }
-
-@media (prefers-color-scheme: dark) {
-  .social>img {
-    filter: invert(1);
-  }
-}
