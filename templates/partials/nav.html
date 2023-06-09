@@ -13,7 +13,13 @@
 
     <nav>
         {% for menu in config.extra.menu %}
-            <a href={{ menu.url }} style="margin-left: 0.7em">{{ menu.name }}</a>
+        <a href={{ menu.url }} style="margin-left: 0.7em">{{ menu.name }}</a>
         {% endfor %}
+    </nav>
+    <nav>
+        {% if config.extra.theme == "auto" %}
+        | <a id="dark-mode-toggle" onclick="toggleTheme()" href=""></a>
+        <script src={{ get_url(path="js/themetoggle.js" ) }}></script>
+        {% endif %}
     </nav>
 </header>
