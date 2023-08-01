@@ -12,4 +12,19 @@
   .social>img {
     filter: invert(1);
   }
+
+  time {
+    color: #898989
+  }
+
+  .meta {
+    color: #898989
+  }
+
+  blockquote {
+    border-left: 3px solid var(--border-color);
+    color: #8C8C8C;
+    margin: 0;
+    padding-left: 1em;
+  }
 }

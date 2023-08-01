@@ -13,4 +13,20 @@
   .social :hover {
     filter: invert(1)
   }
+
+  time {
+    color: #767675;
+  }
+
+  .meta {
+    color: #767676;
+    letter-spacing: -0.5px;
+  }
+
+  blockquote {
+    border-left: 3px solid var(--border-color);
+    color: #737373;
+    margin: 0;
+    padding-left: 1em;
+  }
 }

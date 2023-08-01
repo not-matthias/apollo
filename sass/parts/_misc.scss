@@ -32,13 +32,6 @@ hr {
   margin: 1em 0;
 }
 
-blockquote {
-  border-left: 3px solid var(--border-color);
-  color: #737373;
-  margin: 0;
-  padding-left: 1em;
-}
-
 a {
   border-bottom: 3px solid var(--primary-color);
   color: inherit;
@@ -50,9 +43,6 @@ a:hover {
   color: var(--hover-color);
 }
 
-time {
-  color: grey;
-}
 
 /* Remove post list padding */
 @media screen and (max-width: 600px) {
