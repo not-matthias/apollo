@@ -10,10 +10,10 @@ highlight_code = true
 highlight_theme = "ayu-dark"
 
 [extra]
-toc = true
+#toc = true
 use_cdn = false
 favicon = "/icon/favicon.png"
-theme = "toggle" # light, dark, auto, toggle
+theme = "dark" # light, dark, auto, toggle
 # mathjax = true
 # mathjax_dollar_inline_enable = true
 
@@ -24,8 +24,8 @@ menu = [
 ]
 
 socials = [
-    { name = "twitter", url = "https://twitter.com/not_matthias", icon = "twitter" },
-    { name = "github", url = "https://github.com/not-matthias/", icon = "github" },
+    { name = "linkedin", url = "https://linkedin.com/sidchintamaneni", icon = "linkedin" },
+    { name = "github", url = "https://github.com/sidchintamaneni/", icon = "github" },
 ]
 
 custom_css = []
