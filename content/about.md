@@ -16,7 +16,7 @@ Cognizant - Data Engineer
 # Contact
 
 Github: [https://github.com/sidchintamaneni](https://github.com/sidchintamaneni) <br />
-LinkedIn: [https://www.linkedin.com/in/sidchintamaneni/](https://github.com/sidchintamaneni) <br />
+LinkedIn: [https://www.linkedin.com/in/sidchintamaneni/](https://linkedin.com/sidchintamaneni) <br />
 Email: sidchintamaneni@vt.edu <br />
 
 I enjoy to have conversion about any sports and my work.
