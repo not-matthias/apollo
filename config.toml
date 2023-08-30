@@ -24,7 +24,7 @@ menu = [
 ]
 
 socials = [
-    { name = "linkedin", url = "https://linkedin.com/sidchintamaneni", icon = "linkedin" },
+    { name = "linkedin", url = "https://linkedin.com/in/sidchintamaneni", icon = "linkedin" },
     { name = "github", url = "https://github.com/sidchintamaneni/", icon = "github" },
 ]
 
