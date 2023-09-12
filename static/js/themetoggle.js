@@ -25,5 +25,17 @@ function toggleTheme() {
     }
 }
 
-var savedTheme = localStorage.getItem("theme-storage") || "light";
-setTheme(savedTheme);
+function getSavedTheme() {
+    let currentTheme = localStorage.getItem("theme-storage");
+    if(!currentTheme) {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            currentTheme = "dark";
+        } else {
+            currentTheme = "light";
+        }
+    }
+
+    return currentTheme;
+}
+
+setTheme(getSavedTheme());
