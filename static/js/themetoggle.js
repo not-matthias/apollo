@@ -4,15 +4,15 @@ function setTheme(mode) {
 
     if (mode === "dark") {
         document.getElementById("darkModeStyle").disabled = false;
-        htmlElement.classList.add("dark")
         htmlElement.classList.remove("light")
+        htmlElement.classList.add("dark")
 
         document.getElementById("sun-icon").style.display = "inline-block";
         document.getElementById("moon-icon").style.display = "none";
     } else if (mode === "light") {
         document.getElementById("darkModeStyle").disabled = true;
-        htmlElement.classList.add("light")
         htmlElement.classList.remove("dark")
+        htmlElement.classList.add("light")
 
         document.getElementById("sun-icon").style.display = "none";
         document.getElementById("moon-icon").style.display = "inline-block";
