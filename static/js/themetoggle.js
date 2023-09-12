@@ -4,16 +4,18 @@ function setTheme(mode) {
 
     if (mode === "dark") {
         document.getElementById("darkModeStyle").disabled = false;
-        document.getElementById("dark-mode-toggle").innerHTML = "<i data-feather=\"sun\"></i>";
-        feather.replace()
         htmlElement.classList.add("dark")
         htmlElement.classList.remove("light")
+
+        document.getElementById("sun-icon").style.display = "inline-block";
+        document.getElementById("moon-icon").style.display = "none";
     } else if (mode === "light") {
         document.getElementById("darkModeStyle").disabled = true;
-        document.getElementById("dark-mode-toggle").innerHTML = "<i data-feather=\"moon\"></i>";
-        feather.replace()
         htmlElement.classList.add("light")
         htmlElement.classList.remove("dark")
+
+        document.getElementById("sun-icon").style.display = "none";
+        document.getElementById("moon-icon").style.display = "inline-block";
     }
 }
 
