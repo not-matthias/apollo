@@ -67,6 +67,13 @@ header .main {
   letter-spacing: -0.5px;
 }
 
+#dark-mode-toggle>img {
+  display: none;
+  width: 15px;
+  height: 15px;
+  border: unset;
+}
+
 h1,
 h2,
 h3,

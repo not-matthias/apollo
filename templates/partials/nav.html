@@ -19,9 +19,9 @@
 
     {% if config.extra.theme == "toggle" %}
     <nav>
-        | <a id="dark-mode-toggle" onclick="toggleTheme()" href="">
-            <img src="feather/sun.svg" id="sun-icon" style="border: unset; filter: invert(1); display: none" height="15"/>
-            <img src="feather/moon.svg" id="moon-icon" style="border: unset; display: none" height="15" />
+        | <a id="dark-mode-toggle" onclick="toggleTheme()" href="#">
+            <img src="feather/sun.svg" id="sun-icon" style="filter: invert(1);" />
+            <img src="feather/moon.svg" id="moon-icon" />
         </a>
         <script src={{ get_url(path="js/themetoggle.js" ) }}></script>
     </nav>
