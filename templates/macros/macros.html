@@ -1,38 +1,40 @@
 {% macro list_posts(pages) %}
-    <ul>
+<ul>
     {%- for page in pages %}
-        <section class="list-item">
-            <h1 class="title">
-                <a href={{ page.permalink }}>{{page.title}}</a>
-            </h1>
+    <section class="list-item">
+        <div class="post-header">
+            <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
 
-            <div class="meta">
-                {%- if page.date %}
-                    <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
-                {% endif -%}
-                {% if page.draft %}
-                    <span class="draft-label">DRAFT</span> 
-                {% endif %}
+            <div>
+                <h1 class="title">
+                    <a href={{ page.permalink }}>{{page.title}}</a>
+
+                    {% if page.draft %}
+                    <span class="draft-label">DRAFT</span>
+                    {% endif %}
+                </h1>
+
+                <div class="meta">
+                    <div class="description">
+                        {% if page.description %}
+                        {{ page.description }}
+                        {% elif page.summary %}
+                        {{ page.summary | safe }}&hellip;
+                        {% else %}
+                        {% set hide_read_more = true %}
+                        {% endif %}
+                    </div>
+
+                    {% if not hide_read_more %}
+                    <a class="readmore" href={{ page.permalink }}>Read more ⟶</a>
+                    {% endif %}
+                </div>
             </div>
-
-            <br />
-            <div class="description">
-                {% if page.description %}
-                    {{ page.description }}
-                {% elif page.summary %}
-                    {{ page.summary | safe }}&hellip;
-                {% else %}
-                    {% set hide_read_more = true %}
-                {% endif %}
-            </div>
-
-            {% if not hide_read_more %}
-                <a class="readmore" href={{ page.permalink }}>Read more ⟶</a>
-            {% endif %}
-        </section>
+        </div>
+    </section>
 
     {% endfor -%}
-    </ul>
+</ul>
 {% endmacro list_posts %}
 
 {% macro tags(page, short=false) %}
