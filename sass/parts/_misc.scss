@@ -99,3 +99,12 @@ time {
     }
   }
 }
+
+/* Remove styling from theme toggle button */
+#dark-mode-toggle {
+  border-bottom: none;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
