@@ -31,6 +31,12 @@ socials = [
 custom_css = []
 
 [extra.analytics]
-enabled = true
-goatcounter_user = "your_user"
-goatcounter_host = "example.com"    # default= goatcounter.com
+enabled = false
+
+[extra.analytics.goatcounter]
+user = "your_user"
+host = "example.com"    # default= goatcounter.com
+
+[extra.analytics.umami]
+website_id = "43929cd1-1e83...."
+host_url = "https://stats.mywebsite.com" # default: https://analytics.eu.umami.is
