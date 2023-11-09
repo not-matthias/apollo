@@ -1,0 +1,6 @@
+{%extends "base.html"%}
+
+{% block main_content %}
+    {{ post_macros::page_header(title=term.name) }}
+    {{ post_macros::list_posts(pages=term.pages) }}
+{% endblock main_content %}
