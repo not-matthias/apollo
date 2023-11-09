@@ -1,0 +1,20 @@
+{% extends "section.html" %}
+
+
+{% block title %}
+    {{ post_macros::page_header(title=term.name) }}
+{% endblock title %}
+
+{% block post_list %}
+    <main class="list">
+        {%- if paginator %}
+            {%- set show_pages = paginator.pages -%}
+        {% else %}
+            {%- set show_pages = term.pages -%}
+        {% endif -%}
+
+        {{ post_macros::list_posts(pages=show_pages) }}
+    </main>
+{% endblock post_list %}
+{% block main_content %}
+{% endblock main_content %}
