@@ -1,0 +1,6 @@
+{%extends "base.html"%}
+
+{% block main_content %}
+    {{ post_macros::page_header(title=taxonomy.name) }}
+    {{ post_macros::list_terms(terms=terms) }}
+{% endblock main_content %}

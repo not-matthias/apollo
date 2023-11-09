@@ -37,6 +37,19 @@
 </ul>
 {% endmacro list_posts %}
 
+{% macro list_terms(terms) %}
+    <ul>
+    {%- for term in terms %}
+        <section class="list-item">
+            <h1 class="title">
+                <a href={{ term.permalink }}>{{term.name}}</a>
+            </h1>
+        </section>
+
+    {% endfor -%}
+    </ul>
+{% endmacro list_terms %}
+
 {% macro tags(page, short=false) %}
     {%- if page.taxonomies and page.taxonomies.tags %}
         <span class="post-tags-inline">
@@ -74,7 +87,7 @@
                     {% endif %}
 
                     {% if page.draft %}
-                        <span class="draft-label">DRAFT</span> 
+                        <span class="draft-label">DRAFT</span>
                     {% endif %}
                 </div>
         </div>
@@ -165,7 +178,7 @@
                         <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
                     {% endif -%}
                     {% if page.draft %}
-                        <span class="draft-label">DRAFT</span> 
+                        <span class="draft-label">DRAFT</span>
                     {% endif %}
                 </div>
 
