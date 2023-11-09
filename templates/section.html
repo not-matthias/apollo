@@ -5,17 +5,21 @@
         {% set section = get_section(path=section.extra.section_path) %}
     {% endif -%}
 
-    {{ post_macros::page_header(title=section.title) }}
+    {% block title %}
+        {{ post_macros::page_header(title=section.title) }}
+    {% endblock title %}
 
-    <main class="list">
-        {%- if paginator %}
-            {%- set show_pages = paginator.pages -%}
-        {% else %}
-            {%- set show_pages = section.pages -%}
-        {% endif -%}
+    {% block post_list %}
+        <main class="list">
+            {%- if paginator %}
+                {%- set show_pages = paginator.pages -%}
+            {% else %}
+                {%- set show_pages = section.pages -%}
+            {% endif -%}
 
-        {{ post_macros::list_posts(pages=show_pages) }}
-    </main>
+            {{ post_macros::list_posts(pages=show_pages) }}
+        </main>
+    {% endblock post_list %}
 
     {% if paginator %}
         <ul class="pagination">
