@@ -157,9 +157,9 @@
     {%- for page in pages %}
         <div class="card">
             {% if page.extra.local_image %}
-                <img class="card-image" alt={{ page.extra.local_image }} src="{{ get_url(path=page.extra.local_image) }}">
+                <img class="card-image" alt={{ page.extra.local_image }} src="{{ get_url(path=page.extra.local_image) }}" />
             {% elif page.extra.remote_image %}
-                <img class="card-image" alt={{ page.extra.remote_image }} src="{{ page.extra.remote_image }}">
+                <img class="card-image" alt={{ page.extra.remote_image }} src="{{ page.extra.remote_image }}" />
             {% else %}
                 <div class="card-image-placeholder"></div>
             {% endif %}
