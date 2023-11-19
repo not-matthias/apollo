@@ -1,7 +1,7 @@
 +++
 title = "Apollo"
 description = "Modern and minimalistic blog theme."
-weight = 1
+weight = 3
 
 [extra]
 local_image = "/projects/project-1.jpg"

@@ -1,0 +1,20 @@
+<footer>
+	<hr>
+	<div class=footContainer>
+	  <div class="footLeft">
+	  <p>
+		  Licensed under <a target="_blank" rel="noopener noreferrer" href="https://mit-license.org">MIT</a><br>
+	      Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a> using 
+		  <a target="_blank" rel="noopener noreferrer" href="https://github.com/not-matthias/Apollo">Apollo</a> theme 
+				<!---->
+	    </p>
+	  </div>
+	
+	  {% if config.generate_feed %}
+	  <div class="footRight">
+	    <a class="icons__background" target="_blank" rel="noopener noreferrer" href="{{ get_url(path="atom.xml", trailing_slash=false) }}" title="Subscribe via RSS for updates."><svg class="icons icons__background"><use href="{{ get_url(path='/icons.svg#rss', trailing_slash=false) | safe }}"></use></svg></a>
+		
+	  </div>
+	  {% endif %}
+	</div>
+</footer>

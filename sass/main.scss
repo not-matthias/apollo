@@ -29,6 +29,20 @@ html {
   padding: 0 24px;
   word-wrap: break-word;
 }
+.footContainer {
+	max-width: 1000px;
+	font-size: 11pt;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10pt;
+	margin: auto;
+}
+
+.footRight a svg{
+	width: 17px;
+}
 
 @media all and (min-width:640px) {
   html {
