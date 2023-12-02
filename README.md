@@ -7,13 +7,13 @@ Modern and minimalistic blog theme powered by [Zola](https://getzola.org). See a
 <details open>
   <summary>Dark theme</summary>
 
-  ![blog-dark](https://user-images.githubusercontent.com/26800596/168986771-4ed049e2-e123-4d0e-8a24-7bf43f47551f.png)
+  ![blog-dark](./screenshot-dark.png)
 </details>
 
 <details>
   <summary>Light theme</summary>
 
-![blog-light](https://user-images.githubusercontent.com/26800596/168986766-72a48517-7122-465d-8108-3ae33e1e88b1.png)
+![blog-light](./screenshot.png)
 </details>
 
 ## Features
