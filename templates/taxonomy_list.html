@@ -1,6 +1,15 @@
 {%extends "base.html"%}
 
 {% block main_content %}
-    {{ post_macros::page_header(title=taxonomy.name) }}
-    {{ post_macros::list_terms(terms=terms) }}
+    <div class="tag-cloud">
+        <ul class="tags">
+            {% for term in terms %}
+            <li>
+                <a href="{{ term.permalink | safe }}">
+                    {{ term.name }} ({{ term.pages | length }} post{{ term.pages | length | pluralize }})
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock main_content %}
