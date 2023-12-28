@@ -4,6 +4,7 @@ build_search_index = false
 generate_feed = true
 compile_sass = true
 minify_html = true
+taxonomies = [{ name = "tags" }]
 
 [markdown]
 highlight_code = true
@@ -21,6 +22,7 @@ menu = [
     { name = "/posts", url = "/posts", weight = 1 },
     { name = "/projects", url = "/projects", weight = 2 },
     { name = "/about", url = "/about", weight = 3 },
+    { name = "/tags", url = "/tags", weight = 4 },
 ]
 
 socials = [
