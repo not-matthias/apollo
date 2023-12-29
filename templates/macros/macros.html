@@ -1,7 +1,8 @@
 {% macro list_posts(pages) %}
 <ul>
     {%- for page in pages %}
-    <section class="list-item">
+    <li class="list-item">
+    <section>
         <div class="post-header">
             <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
 
@@ -32,7 +33,7 @@
             </div>
         </div>
     </section>
-
+  </li>
     {% endfor -%}
 </ul>
 {% endmacro list_posts %}
@@ -185,7 +186,7 @@
                 <div class="card-description">
                     {% if page.description %}
                         {{ page.description }}
-                    {% endif %}
+                    {% endif %} 
                 </div>
             </div>
         </div>
