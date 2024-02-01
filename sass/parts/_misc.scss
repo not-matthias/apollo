@@ -43,6 +43,10 @@ a {
   border-bottom: 3px solid var(--primary-color);
   color: inherit;
   text-decoration: none;
+
+  // Make sure the underline is at the top
+  position: relative; // needed for z-index
+  z-index: 1;
 }
 
 a:hover {
