@@ -5,7 +5,7 @@
         <div class="socials">
             {% for social in config.extra.socials %}
             <a rel="me" href="{{ social.url }}" class="social">
-                <img alt={{ social.name }} src="/social_icons/{{ social.icon }}.svg">
+                <img alt={{ social.name }} src={{ get_url(path="social_icons/" ~ social.icon ~ ".svg") }}>
             </a>
             {% endfor %}
         </div>
@@ -13,15 +13,15 @@
 
     <nav>
         {% for menu in config.extra.menu %}
-        <a href={{ menu.url }} style="margin-left: 0.7em">{{ menu.name }}</a>
+        <a href={{ get_url(path=menu.url) }} style="margin-left: 0.7em">{{ menu.name }}</a>
         {% endfor %}
 
         {% if config.extra.theme == "toggle" %}
         | <a id="dark-mode-toggle" onclick="toggleTheme()" href="javascript:void(0)">
-            <img src="/feather/sun.svg" id="sun-icon" style="filter: invert(1);" />
-            <img src="/feather/moon.svg" id="moon-icon" />
+            <img src={{ get_url(path="feather/sun.svg") }} id="sun-icon" style="filter: invert(1);" />
+            <img src={{ get_url(path="feather/moon.svg") }} id="moon-icon" />
         </a>
-        <script src={{ get_url(path="js/themetoggle.js" ) }}></script>
+        <script src={{ get_url(path="js/themetoggle.js") }}></script>
         {% endif %}
     </nav>
 </header>
