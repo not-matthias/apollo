@@ -14,6 +14,7 @@ toc = true
 use_cdn = false
 favicon = "/icon/favicon.png"
 theme = "toggle" # light, dark, auto, toggle
+comment = false
 # mathjax = true
 # mathjax_dollar_inline_enable = true
 
