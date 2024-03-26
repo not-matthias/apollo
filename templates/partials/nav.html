@@ -17,9 +17,9 @@
         {% endfor %}
 
         {% if config.extra.theme == "toggle" %}
-        | <a id="dark-mode-toggle" onclick="toggleTheme()" href="javascript:void(0)">
-            <img src={{ get_url(path="feather/sun.svg") }} id="sun-icon" style="filter: invert(1);" />
-            <img src={{ get_url(path="feather/moon.svg") }} id="moon-icon" />
+        <a id="dark-mode-toggle" onclick="toggleTheme(); event.preventDefault();" href="#">
+            <img src={{ get_url(path="feather/sun.svg") }} id="sun-icon" style="filter: invert(1);" alt="Light" />
+            <img src={{ get_url(path="feather/moon.svg") }} id="moon-icon" alt="Dark" />
         </a>
         <script src={{ get_url(path="js/themetoggle.js") }}></script>
         {% endif %}
