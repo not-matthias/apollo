@@ -45,6 +45,17 @@ cp -r themes/apollo/content content
 
 ## Options
 
+### Comment
+
+You can enable comment (Giscus) for each page:
+
+```toml
+[extra]
+comment = true
+```
+
+And then save your script from [Giscus](https://giscus.app) to `templates/_giscus_script.html`.
+
 ### Additional stylesheets
 
 You can add stylesheets to override the theme:
