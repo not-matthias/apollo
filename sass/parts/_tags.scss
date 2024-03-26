@@ -1,5 +1,15 @@
+// No indentation inside post
+.tags ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+
 .tags li::before {
   content: "🏷 ";
+}
+
+.tags li {
+  list-style-type: none;
 }
 
 .tags a {
