@@ -15,7 +15,7 @@ highlight_theme = "ayu-dark"
 toc = true
 use_cdn = false
 favicon = "/icon/favicon.png"
-theme = "toggle" # light, dark, auto, toggle
+theme = "toggle"              # light, dark, auto, toggle
 comment = false
 # mathjax = true
 # mathjax_dollar_inline_enable = true
@@ -39,7 +39,7 @@ enabled = false
 
 [extra.analytics.goatcounter]
 user = "your_user"
-host = "example.com"    # default= goatcounter.com
+host = "example.com" # default= goatcounter.com
 
 [extra.analytics.umami]
 website_id = "43929cd1-1e83...."

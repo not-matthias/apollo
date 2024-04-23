@@ -21,7 +21,9 @@
             <img src={{ get_url(path="feather/sun.svg") }} id="sun-icon" style="filter: invert(1);" alt="Light" />
             <img src={{ get_url(path="feather/moon.svg") }} id="moon-icon" alt="Dark" />
         </a>
-        <script src={{ get_url(path="js/themetoggle.js") }}></script>
+
+        <!-- Inititialize the theme toggle icons -->
+        <script>updateItemToggleTheme()</script>
         {% endif %}
     </nav>
 </header>
