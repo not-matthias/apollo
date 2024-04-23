@@ -129,7 +129,7 @@
 
     {% set theme = config.extra.theme %}
     {% if theme == "dark" %}
-        <link rel="stylesheet" type="text/css" href={{ get_url(path="theme/dark.css") }} />
+        <link rel="stylesheet" type="text/css" href="{{ get_url(path='theme/dark.css') }}" />
     {% elif theme == "light" %}
         <link rel="stylesheet" type="text/css" href={{ get_url(path="theme/light.css") }} />
     {% elif theme == "auto" %}
@@ -138,6 +138,24 @@
     {% elif theme == "toggle" %}
         <link rel="stylesheet" type="text/css" href={{ get_url(path="theme/light.css") }} />
         <link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ get_url(path='theme/dark.css') }}" />
+    {% endif %}
+    
+    <!-- Set the correct theme in the script -->
+    <script src={{ get_url(path="js/themetoggle.js") }}></script>
+    {% if theme == "dark" %}
+        <script>setTheme("dark");</script>
+    {% elif theme == "light" %}
+        <script>setTheme("light");</script>
+    {% elif theme == "auto" %}
+        <script>
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                setTheme("dark");
+            } else {
+                setTheme("light");
+            }
+        </script>
+    {% else %}
+        <script>setTheme(getSavedTheme());</script>
     {% endif %}
 
     <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="main.css") }} />
