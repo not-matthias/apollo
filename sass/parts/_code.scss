@@ -1,113 +1,108 @@
+// Define base colors and fonts for light and dark themes
+:root {
+  --bg-primary: #f0f0f0; // Updated light theme background color
+  --border-color: #ccc; // Light theme border color
+  --code-font: 'Courier New', monospace; // Code font
 
-code {
-  background-color: var(--bg-1);
-  padding: 0.1em 0.2em;
-  border-radius: 5px;
-  border: 1px solid var(--border-color);
+  // Define light theme specifics
+  --text-color: black;
+  --label-background: white;
 }
 
-pre {
-  /* Rounded border */
-  border-radius: 5px;
-  border: 1px solid var(--border-color);
+:root.dark {
+  --bg-primary: rgb(15, 20, 25); // Dark theme background color
+  --border-color: #333; // Dark theme border color
 
-  line-height: 1.4;
-  overflow-x: auto;
-  padding: 1em;
+  // Define dark theme specifics
+  --text-color: #f0f0f0;
+  --label-background: black;
 }
 
-pre code {
-  background-color: transparent;
-  color: inherit;
-  font-size: 100%;
-  padding: 0;
 
-  // We only want a border around `code` and not `pre code` blocks.
-  border: 0;
-}
+// Define language colors map
+$language-colors: (
+  "js": (#f7df1e, "JavaScript"),
+  "yaml": (#f71e6a, "YAML"),
+  "shell": (#4eaa25, "Shell"),  // Updated to a more specific green shade
+  "json": (dodgerblue, "JSON"),
+  "python": (#3572A5, "Python"),  // Using the specific Python blue
+  "css": (#264de4, "CSS"),
+  "go": (#00ADD8, "Go"),  // Official Go color
+  "markdown": (#0000ff, "Markdown"),
+  "rust": (#ff4647, "Rust"),  // Adjusted to match Rust's branding
+  "java": (#f89820, "Java"),  // Oracle Java color
+  "csharp": (#178600, "C#"),
+  "ruby": (#701516, "Ruby"),
+  "swift": (#f05138, "Swift"),
+  "php": (#777bb4, "PHP"),
+  "typescript": (#3178c6, "TypeScript"),
+  "scala": (#c22d40, "Scala"),
+  "kotlin": (#F18E33, "Kotlin"),
+  "lua": (#000080, "Lua"),
+  "perl": (#0298c3, "Perl"),
+  "haskell": (#5e5086, "Haskell"),
+  "r": (#198ce7, "R"),
+  "dart": (#00d2b8, "Dart"),
+  "elixir": (#6e4a7e, "Elixir"),
+  "clojure": (#5881d8, "Clojure")
+);
 
-pre {
-  font-family: var(--code-font);
-  position: relative;
-  -webkit-overflow-scrolling: touch;
-}
 
-pre code[class*="language-"] {
-  -webkit-overflow-scrolling: touch;
-}
-
-pre code[class*="language-"]::before {
-  background: black;
+  // Mixin for base label style
+@mixin base-label-style($language) {
+  $color-info: map-get($language-colors, $language);
+  $bg-color: nth($color-info, 1);
+  $label: nth($color-info, 2);
+  
+  content: $label;
+  background: $bg-color;
+  color: var(--text-color);
   border-radius: 0 0 0.25rem 0.25rem;
-  color: white;
   font-size: 12px;
   letter-spacing: 0.025rem;
   padding: 0.1rem 0.5rem;
   position: absolute;
   right: 0.1rem;
+  top: 0;
   margin-top: 0.1rem;
   text-align: right;
   text-transform: uppercase;
-  top: 0;
 }
 
-pre code[class="language-javaScript"]::before,
-pre code[class="language-js"]::before {
-  content: "js";
-  background: #f7df1e;
-  color: black;
+// Dynamic styling for code blocks
+code {
+  background-color: var(--bg-primary);
+  padding: 0.1em 0.2em;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  font-family: var(--code-font);
 }
 
-pre code[class*="language-yml"]::before,
-pre code[class*="language-yaml"]::before {
-  content: "yaml";
-  background: #f71e6a;
-  color: white;
-}
 
-pre code[class*="language-shell"]::before,
-pre code[class*="language-bash"]::before,
-pre code[class*="language-sh"]::before {
-  content: "shell";
-  background: green;
-  color: white;
-}
+pre {
+  background-color: var(--bg-primary) !important;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  line-height: 1.4;
+  overflow-x: auto;
+  padding: 1em;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
 
-pre code[class*="language-json"]::before {
-  content: "json";
-  background: dodgerblue;
-  color: #000000;
-}
+  code {
+    background-color: transparent !important;
+    color: inherit;
+    font-size: 100%;
+    padding: 0;
+    border: none;
+  }
 
-pre code[class*="language-python"]::before,
-pre code[class*="language-py"]::before {
-  content: "py";
-  background: blue;
-  color: yellow;
-}
-
-pre code[class*="language-css"]::before {
-  content: "css";
-  background: cyan;
-  color: black;
-}
-
-pre code[class*="language-go"]::before {
-  content: "Go";
-  background: cyan;
-  color: royalblue;
-}
-
-pre code[class*="language-md"]::before,
-pre code[class*="language-md"]::before {
-  content: "Markdown";
-  background: royalblue;
-  color: whitesmoke;
-}
-
-pre code[class*="language-rust"]::before,
-pre code[class*="language-rs"]::before {
-  content: "rust";
-  background: #fff8f6;
-  color: #ff4647;
+  // Apply the base label style and customize based on language
+  code[class*="language-"] {
+    @each $language, $_ in $language-colors {
+      &.language-#{$language}::before {
+        @include base-label-style($language);
+      }
+    }
+  }
 }
