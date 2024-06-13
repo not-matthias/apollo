@@ -64,7 +64,13 @@ header .main {
 
 .meta {
   color: #999;
-  letter-spacing: -0.5px;
+  display: flexbox; /* This changes the meta class to use flexbox, which ensures inline display */
+  align-items: center; /* Aligns items vertically in the middle */
+  flex-wrap: wrap; /* Allows items to wrap as needed */
+}
+
+.meta>time {
+  color: var(--primary-color);
 }
 
 #dark-mode-toggle>img {

@@ -1,19 +1,19 @@
-{% macro list_title(pages, tag_name=false) %}
+{% macro list_tag_posts(pages, tag_name=false) %}
     {% if tag_name %}
-        <h1>Entries tagged - "{{ term.name }}"</h1>
+    <div class="page-header">
+        Entries tagged :: {{ tag_name }}<span class="primary-color" style="font-size: 1.6em">.</span>
+    </div>
     {% else %}
-        <h1 class="page-title">All articles</h1>
+    <div class="page-header">
+        All articles<span class="primary-color" style="font-size: 1.6em">.</span>
+    </div>
     {% endif %}
 
-    <ul class="posts">
-        {% for page in pages %}
-            <li class="post">
-                <a href="{{ page.permalink }}">{{ page.title }}</a>
-                <span class="meta">{{ page.date | date(format="%Y-%m-%d") }}</span>
-            </li>
-        {% endfor %}
-    </ul>
-{% endmacro list_title %}
+    <main class="list">
+    {{ post_macros::list_posts(pages=pages) }}
+    </main>
+{% endmacro %}
+
 
 {% macro list_posts(pages) %}
 <ul>
@@ -104,9 +104,25 @@
                         Posted on <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
                     {% endif %}
 
+                    {% if page.extra.modified %}
+                        :: Modified on <time>{{ page.extra.modified | date(format="%Y-%m-%d") }}</time>
+                    {% endif %}
+
+                    {# Inline display of tags directly after the date #}
+                    {%- if page.taxonomies and page.taxonomies.tags %}
+                        <span style="margin-left: 10px;">:: Tags:
+                            <span class="tags">
+                                {%- for tag in page.taxonomies.tags %}
+                                    <a href="{{ get_taxonomy_url(kind='tags', name=tag) }}" class="post-tag">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                                {% endfor %}
+                            </span>
+                        </span>
+                    {% endif %}
+
                     {% if page.draft %}
                         <span class="draft-label">DRAFT</span>
                     {% endif %}
+
                 </div>
         </div>
 
@@ -153,19 +169,6 @@
         <section class="body">
             {{ page.content | safe }}
         </section>
-
-        {% if page.taxonomies and page.taxonomies.tags %}
-            <div class="post-tags">
-                <nav class="nav tags">
-                    <ul class="tags">
-                        {% for tag in page.taxonomies.tags %}
-                            <li><a href={{ get_taxonomy_url(kind='tags', name=tag) | safe }}>{{ tag }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </nav>
-            </div>
-        {% endif %}
-
     </article>
 </main>
 {% endmacro content %}
