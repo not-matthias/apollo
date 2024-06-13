@@ -5,7 +5,7 @@
   --code-font: 'Courier New', monospace; // Code font
 
   // Define light theme specifics
-  --text-color: black;
+  --text-color: #333;
   --label-background: white;
 }
 
@@ -69,6 +69,13 @@ $language-colors: (
   text-transform: uppercase;
 }
 
+pre {
+  padding: 1em 2em; /* Increase right padding to give more space for the button */
+  position: relative;
+  overflow: auto; /* Ensure this does not hide the button */
+}
+
+
 // Dynamic styling for code blocks
 code {
   background-color: var(--bg-primary);
@@ -78,14 +85,13 @@ code {
   font-family: var(--code-font);
 }
 
-
 pre {
   background-color: var(--bg-primary) !important;
   border-radius: 5px;
   border: 1px solid var(--border-color);
   line-height: 1.4;
   overflow-x: auto;
-  padding: 1em;
+  padding: 1em; /* Ensure padding is sufficient for icon visibility */
   position: relative;
   -webkit-overflow-scrolling: touch;
 
@@ -105,4 +111,16 @@ pre {
       }
     }
   }
+}
+
+.clipboard-button, .clipboard-button svg {
+  all: unset;  /* This resets all inherited properties */
+  cursor: pointer;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  z-index: 10;
+  background-color: transparent;
+  border: none;
+  fill: #ef5350; /* Specific color for the icon */
 }

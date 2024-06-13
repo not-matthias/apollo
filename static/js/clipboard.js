@@ -10,13 +10,14 @@
      copyBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ef5350" class="bi bi-clipboard" viewBox="0 0 16 16">
   <path d="M10 1.5a.5.5 0 0 1 .5-.5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-9a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h2a.5.5 0 0 1 .5.5V3h3V1.5zM6.5 3V2h3v1h-3zm4 0v1h2a1 1 0 0 0-1-1h-2V3zm-5 0H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H5.5V3z"/>
 </svg>`;
-     copyBtn.style.cursor = 'pointer';
-     copyBtn.style.position = 'absolute';
-     copyBtn.style.bottom = '5px';
-     copyBtn.style.right = '5px';
-     copyBtn.style.zIndex = '10';
-     copyBtn.style.backgroundColor = 'transparent'; // Set background color to transparent
-     copyBtn.style.border = 'none'; // Optionally remove any borders
+		 copyBtn.setAttribute('aria-label', 'Copy code to clipboard');
+     // copyBtn.style.cursor = 'pointer';
+     // copyBtn.style.position = 'absolute';
+     // copyBtn.style.bottom = '16px';
+     // copyBtn.style.right = '16px';
+     // copyBtn.style.zIndex = '10';
+     // copyBtn.style.backgroundColor = 'transparent'; // Set background color to transparent
+     // copyBtn.style.border = 'none'; // Optionally remove any borders
 
      // Add the copy functionality
      copyBtn.addEventListener('click', function() {
