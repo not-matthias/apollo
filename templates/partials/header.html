@@ -69,6 +69,11 @@
         <link rel="icon" type="image/png" href={{ config.extra.favicon }} />
     {% endif %}
 
+    {# CodeBlock Clipboard #}
+    {% if config.extra.codeblock_clipboard %}
+        <script src={{ get_url(path="js/clipboard.js") }}></script>
+    {% endif %}
+
     {# Font from cdn or disk #}
     {% if config.extra.use_cdn | default(value=false) %}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css">
