@@ -4,10 +4,6 @@
   padding-left: 0;
 }
 
-.tags li::before {
-  content: "🏷 ";
-}
-
 .tags li {
   list-style-type: none;
 }
@@ -19,4 +15,9 @@
 .tags a:hover {
   color: var(--hover_color);
   background-color: var(--primary-color);
+}
+
+.tags a::before {
+    content: "🏷 "; /* Ensure there's a space after the emoji for spacing */
+    display: inline;
 }
