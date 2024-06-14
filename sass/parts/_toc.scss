@@ -11,20 +11,19 @@
       transition: transform 0.3s ease; // Smooth transformation
     }
 
-    &:hover+.toc-list,
-    // Show ToC on hover
-    &.expanded+.toc-list {
-      // Show ToC on click
-      display: block;
-    }
-
     &:hover:before,
     &.expanded:before {
       transform: rotate(180deg); // Arrow points up when expanded or on hover
     }
   }
 
+  &:hover .toc-list, // Show ToC when hovering over the container
+  .toc-title.expanded + .toc-list { // Keep ToC visible when expanded
+    display: block;
+  }
+
   .toc-list {
     display: none; // ToC is hidden by default
+    transition: display 0.3s ease; // Smooth display transition
   }
 }
