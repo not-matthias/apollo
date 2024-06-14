@@ -1,4 +1,4 @@
-eocument.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const tocTitle = document.querySelector('.toc-title');
     const tocList = document.querySelector('.toc-list');
 
