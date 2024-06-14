@@ -13,7 +13,7 @@
 
     <nav>
         {% for menu in config.extra.menu %}
-        <a href={{ get_url(path=menu.url) }} style="margin-left: 0.7em">{{ menu.name }}</a>
+        <a href={{ get_url(path=menu.url) }} style="margin-left: 0.5em">{{ menu.name }}</a>
         {% endfor %}
 
         {% if config.extra.theme == "toggle" %}
