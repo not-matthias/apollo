@@ -1,178 +1,217 @@
-{% import "macros/macros.html" as post_macros %}
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    {% if page.extra.meta %}
-         <!-- the meta data config goes here  -->
-         {% for data in page.extra.meta %}
-             <meta
-                 {% for key, value in data%}
-                     {% if key == "property" and value == "og:title"%}
-                         {% set_global page_has_og_title = true -%}
-                     {% endif %}
-                     {% if key == "property" and value == "og:description"%}
-                         {% set_global page_has_og_description = true -%}
-                     {% endif %}
-                     {% if key == "name" and value == "description"%}
-                         {% set_global page_has_description = true -%}
-                     {% endif %}
-                     {{ key }}="{{ value }}"
-                {% endfor %}
-            />
-        {% endfor %}
-    {% endif %}
-
-    {# Site title #}
-    {% set current_path = current_path | default(value="/") %}
-    {% if current_path == "/" %}
-    <title>
-        {{ config.title | default(value="Home") }}
-    </title>
-    {% if not page_has_og_title %}
-        <meta property="og:title" content="{{ config.title | default(value="Home") }}" />
-    {% endif %}
-
+{% macro list_tag_posts(pages, tag_name=false) %}
+    {% if tag_name %}
+    <div class="page-header">
+        Entries tagged :: {{ tag_name }}<span class="primary-color" style="font-size: 1.6em">.</span>
+    </div>
     {% else %}
-    <title>
-        {% if page.title %} {{ page.title }}
-        {% elif section.title %} {{ section.title }}
-        {% elif config.title %} {{ config.title }}
-        {% else %} Post {% endif %}
-    </title>
+    <div class="page-header">
+        All articles<span class="primary-color" style="font-size: 1.6em">.</span>
+    </div>
+    {% endif %}
 
-        {% if not page_has_og_title %}
-            <meta property="og:title" content="{% if page.title -%}{{ page.title }}{% elif config.title -%}{{ config.title }}{% else -%}Post{% endif -%}" />
+    <main class="list">
+    {{ post_macros::list_posts(pages=pages) }}
+    </main>
+{% endmacro %}
+
+{% macro list_posts(pages) %}
+<ul>
+    {%- for page in pages %}
+    <li class="list-item">
+    <section>
+        <div class="post-header">
+            <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+
+            <div>
+                <h1 class="title">
+                    <a href={{ page.permalink }}>{{page.title}}</a>
+
+                    {% if page.draft %}
+                    <span class="draft-label">DRAFT</span>
+                    {% endif %}
+                </h1>
+
+                <div class="meta">
+                    <div class="description">
+                        {% if page.description %}
+                        {{ page.description }}
+                        {% elif page.summary %}
+                        {{ page.summary | safe }}&hellip;
+                        {% else %}
+                        {% set hide_read_more = true %}
+                        {% endif %}
+                    </div>
+
+                    {% if not hide_read_more %}
+                    <a class="readmore" href={{ page.permalink }}>Read more ⟶</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+  </li>
+    {% endfor -%}
+</ul>
+{% endmacro list_posts %}
+
+{% macro list_terms(terms) %}
+    <ul>
+    {%- for term in terms %}
+        <section class="list-item">
+            <h1 class="title">
+                <a href={{ term.permalink }}>{{term.name}}</a>
+            </h1>
+        </section>
+
+    {% endfor -%}
+    </ul>
+{% endmacro list_terms %}
+
+{% macro tags(page, short=false) %}
+    {%- if page.taxonomies and page.taxonomies.tags %}
+        <span class="post-tags-inline">
+            {%- if short %}
+                ::
+                {%- set sep = "," -%}
+            {% else %}
+                :: tags:&nbsp;
+                {%- set sep = "&nbsp;" -%}
+            {% endif -%}
+            {%- for tag in page.taxonomies.tags %}
+                <a class="post-tag" href="{{ get_taxonomy_url(kind='tags', name=tag) | safe }}">#{{ tag }}</a>
+                {%- if not loop.last %}{{ sep | safe }}{% endif -%}
+            {% endfor -%}
+        </span>
+    {% endif -%}
+{% endmacro tags %}
+
+{% macro page_header(title) %}
+    <div class="page-header">
+        {{ title }}<span class="primary-color" style="font-size: 1.6em">.</span>
+    </div>
+{% endmacro content %}
+
+{% macro content(page) %}
+<main>
+    <article>
+        <div class="title">
+            {#<h1 class="title">{{ page.title }}</h1>#}
+            {{ post_macros::page_header(title=page.title) }}
+
+                <div class="meta">
+                    {% if page.date %}
+                        Posted on <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+                    {% endif %}
+
+                    {% if page.extra.modified %}
+                        :: Modified on <time>{{ page.extra.modified | date(format="%Y-%m-%d") }}</time>
+                    {% endif %}
+
+                    {# Inline display of tags directly after the date #}
+                    {%- if page.taxonomies and page.taxonomies.tags %}
+                        <span style="margin-left: 10px;">:: Tags:
+                            <span class="tags">
+                                {%- for tag in page.taxonomies.tags %}
+                                    <a href="{{ get_taxonomy_url(kind='tags', name=tag) }}" class="post-tag">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                                {% endfor %}
+                            </span>
+                        </span>
+                    {% endif %}
+
+                    {% if page.draft %}
+                        <span class="draft-label">DRAFT</span>
+                    {% endif %}
+
+                </div>
+        </div>
+
+        {% if page.extra.tldr %}
+            <div class="tldr">
+                <strong>tl;dr:</strong>
+                {{ page.extra.tldr }}
+            </div>
         {% endif %}
-     {% endif %}
 
-     {% if not page_has_og_description %}
-         {% if page.description %}
-             <meta property="og:description" content="{{ page.description }}" />
-         {% elif config.description %}
-             <meta property="og:description" content="{{ config.description }}" />
-         {% endif %}
-     {% endif %}
+        {# Optional table of contents #}
+        {% if config.extra.toc | default(value=false) %}
+        {% if page.toc %}
+            <div class="toc-container">
+                <h1 class="toc-title">Table of Contents</h1>
+                <ul class="toc-list">
+                    {% for h1 in page.toc %}
+                        <li>
+                            <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                            {% if h1.children %}
+                                <ul>
+                                    {% for h2 in h1.children %}
+                                        <li>
+                                            <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                                        </li>
 
-     {% if not page_has_description %}
-         {% if page.description %}
-             <meta name="description" content="{{ page.description }}" />
-         {% elif config.description %}
-             <meta name="description" content="{{ config.description }}" />
-         {% endif %}
-    {% endif %}
-
-    {# Favicon #}
-    {% if config.extra.favicon %}
-        <link rel="icon" type="image/png" href={{ config.extra.favicon }} />
-    {% endif %}
-
-    {# Font from cdn or disk #}
-    {% if config.extra.use_cdn | default(value=false) %}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@4.5.8/index.min.css">
-    {% else %}
-        <link href={{ get_url(path="fonts.css") }} rel="stylesheet" />
-    {% endif %}
-
-    {# Analytics #}
-    {% if config.extra.analytics.enabled %}
-        {% if config.extra.analytics.umami.website_id %}
-            {% set website_id = config.extra.analytics.umami.website_id %}
-            {% set host_url = config.extra.analytics.umami.host_url | default(value="https://analytics.eu.umami.is") %}
-
-            <script>
-                (function () {
-                  var el = document.createElement('script');
-                  el.setAttribute('src', '/js/imamu.js');
-                  el.setAttribute('data-website-id', '{{ website_id }}');
-                  el.setAttribute('data-host-url', '{{ host_url }}');
-                  document.body.appendChild(el);
-                })();
-              </script>
-            <script async src="/js/imamu.js" data-website-id="{{ website_id }}" data-host-url="{{ host_url }}"></script>
+                                        {% if h2.children %}
+                                            <ul>
+                                                {% for h3 in h2.children %}
+                                                    <li>
+                                                        <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
         {% endif %}
 
-        {% if config.extra.analytics.goatcounter.user %}
-            {% set user = config.extra.analytics.goatcounter.user %}
-            {% set host = config.extra.analytics.goatcounter.host | default(value="goatcounter.com") %}
+        <section class="body">
+            {{ page.content | safe }}
+        </section>
+    </article>
+</main>
+{% endmacro content %}
 
-            <script data-goatcounter="https://{{ user }}.{{ host }}/count" async src="{{ get_url(path="js/count.js") }}"></script>
-            <noscript>
-                {# EasyList blocks '.com/count?', so we have to use '.com//count' #}
-                <img src="https://{{ user }}.{{ host }}//count?p={{ current_path }}&t={{ page.title | default(value=config.title) }}">
-            </noscript>
-        {% endif %}
-    {% endif %}
+{% macro cards_posts(pages) %}
+    <div class="cards">
+    {%- for page in pages %}
+        <div class="card">
+            {% if page.extra.local_image %}
+                <img class="card-image" alt={{ page.extra.local_image }} src="{{ get_url(path=page.extra.local_image) }}" />
+            {% elif page.extra.remote_image %}
+                <img class="card-image" alt={{ page.extra.remote_image }} src="{{ page.extra.remote_image }}" />
+            {% else %}
+                <div class="card-image-placeholder"></div>
+            {% endif %}
 
-    {# CodeBlock Clipboard #}
-    {% if config.extra.codeblock_clipboard %}
-        <script src={{ get_url(path="js/clipboard.js") }}></script>
-    {% endif %}
+            <div class="card-info">
+                <h1 class="card-title">
+                    {% if page.extra.link_to %}
+                    <a href={{ page.extra.link_to }}>{{page.title}}</a>
+                    {% else %}
+                    <a href={{ page.permalink }}>{{page.title}}</a>
+                    {% endif %}
+                </h1>
 
-    {# CodeBlock Clipboard #}
-    {% if config.extra.toc | default(value=false) %}
-        <script src={{ get_url(path="js/toc.js") }}></script>
-    {% endif %}
+                <div class="meta">
+                    {%- if page.date %}
+                        <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+                    {% endif -%}
+                    {% if page.draft %}
+                        <span class="draft-label">DRAFT</span>
+                    {% endif %}
+                </div>
 
+                <div class="card-description">
+                    {% if page.description %}
+                        {{ page.description }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
 
-    {% if config.extra.mathjax | default(value=false) %}
-        {% if config.extra.mathjax_dollar_inline_enable | default(value=false) %}
-            <script>
-            MathJax = {
-              tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']]
-              }
-            };
-            </script>
-        {% endif %}
-        <script type="text/javascript" id="MathJax-script" async
-          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-        </script>
-    {% endif %}
-
-    {# RSS #}
-    <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
-
-
-    {% set theme = config.extra.theme %}
-    {% if theme == "dark" %}
-        <link rel="stylesheet" type="text/css" href="{{ get_url(path='theme/dark.css') }}" />
-    {% elif theme == "light" %}
-        <link rel="stylesheet" type="text/css" href={{ get_url(path="theme/light.css") }} />
-    {% elif theme == "auto" %}
-        <link rel="stylesheet" type="text/css" href={{ get_url(path="theme/light.css") }} />
-        <link rel="stylesheet" type="text/css" href="{{ get_url(path='theme/dark.css') }}" media="(prefers-color-scheme: dark)" />
-    {% elif theme == "toggle" %}
-        <link rel="stylesheet" type="text/css" href={{ get_url(path="theme/light.css") }} />
-        <link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ get_url(path='theme/dark.css') }}" />
-    {% endif %}
-
-    <!-- Set the correct theme in the script -->
-    <script src={{ get_url(path="js/themetoggle.js") }}></script>
-    {% if theme == "dark" %}
-        <script>setTheme("dark");</script>
-    {% elif theme == "light" %}
-        <script>setTheme("light");</script>
-    {% elif theme == "auto" %}
-        <script>
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                setTheme("dark");
-            } else {
-                setTheme("light");
-            }
-        </script>
-    {% else %}
-        <script>setTheme(getSavedTheme());</script>
-    {% endif %}
-
-    <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="main.css") }} />
-
-    {% if config.extra.stylesheets %}
-        {% for stylesheet in config.extra.stylesheets %}
-            <link rel="stylesheet" href="{{ get_url(path=stylesheet) }}">
-        {% endfor %}
-    {% endif %}
-</head>
+    {% endfor -%}
+    </div>
+{% endmacro cards_posts %}
