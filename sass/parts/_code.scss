@@ -1,125 +1,185 @@
 // Define base colors and fonts for light and dark themes
 :root {
-  --bg-primary: #f0f0f0; // Updated light theme background color
-  --border-color: #ccc; // Light theme border color
-  --code-font: 'Courier New', monospace; // Code font
+    --bg-primary: #f0f0f0; // Updated light theme background color
+    --border-color: #ccc; // Light theme border color
+    --code-font: 'Courier New', monospace; // Code font
 
-  // Define light theme specifics
-  --text-color: #333;
-  --label-background: white;
+    // Define light theme specifics
+    --text-color: #333;
+    --label-background: white;
+    --hightlight-color: #DCEBFF;
 }
 
 :root.dark {
-  --bg-primary: rgb(15, 20, 25); // Dark theme background color
-  --border-color: #333; // Dark theme border color
+    --bg-primary: rgb(15, 20, 25); // Dark theme background color
+    --border-color: #333; // Dark theme border color
 
-  // Define dark theme specifics
-  --text-color: #f0f0f0;
-  --label-background: black;
+    // Define dark theme specifics
+    --text-color: #f0f0f0;
+    --label-background: black;
+    --hightlight-color: #204e8a;
 }
 
 
 // Define language colors map
 $language-colors: (
-  "js": (#f7df1e, "JavaScript"),
-  "yaml": (#f71e6a, "YAML"),
-  "shell": (#4eaa25, "Shell"),  // Updated to a more specific green shade
-  "json": (dodgerblue, "JSON"),
-  "python": (#3572A5, "Python"),  // Using the specific Python blue
-  "css": (#264de4, "CSS"),
-  "go": (#00ADD8, "Go"),  // Official Go color
-  "markdown": (#0000ff, "Markdown"),
-  "rust": (#ff4647, "Rust"),  // Adjusted to match Rust's branding
-  "java": (#f89820, "Java"),  // Oracle Java color
-  "csharp": (#178600, "C#"),
-  "ruby": (#701516, "Ruby"),
-  "swift": (#f05138, "Swift"),
-  "php": (#777bb4, "PHP"),
-  "typescript": (#3178c6, "TypeScript"),
-  "scala": (#c22d40, "Scala"),
-  "kotlin": (#F18E33, "Kotlin"),
-  "lua": (#000080, "Lua"),
-  "perl": (#0298c3, "Perl"),
-  "haskell": (#5e5086, "Haskell"),
-  "r": (#198ce7, "R"),
-  "dart": (#00d2b8, "Dart"),
-  "elixir": (#6e4a7e, "Elixir"),
-  "clojure": (#5881d8, "Clojure")
+    "js": (#f7df1e, "JavaScript"),
+    "yaml": (#f71e6a, "YAML"),
+    "shell": (#4eaa25, "Shell"),
+    // Updated to a more specific green shade
+    "json": (dodgerblue, "JSON"),
+    "python": (#3572A5, "Python"),
+    // Using the specific Python blue
+    "css": (#264de4, "CSS"),
+    "go": (#00ADD8, "Go"),
+    // Official Go color
+    "markdown": (#0000ff, "Markdown"),
+    "rust": (#ff4647, "Rust"),
+    // Adjusted to match Rust's branding
+    "java": (#f89820, "Java"),
+    // Oracle Java color
+    "csharp": (#178600, "C#"),
+    "ruby": (#701516, "Ruby"),
+    "swift": (#f05138, "Swift"),
+    "php": (#777bb4, "PHP"),
+    "typescript": (#3178c6, "TypeScript"),
+    "scala": (#c22d40, "Scala"),
+    "kotlin": (#F18E33, "Kotlin"),
+    "lua": (#000080, "Lua"),
+    "perl": (#0298c3, "Perl"),
+    "haskell": (#5e5086, "Haskell"),
+    "r": (#198ce7, "R"),
+    "dart": (#00d2b8, "Dart"),
+    "elixir": (#6e4a7e, "Elixir"),
+    "clojure": (#5881d8, "Clojure")
 );
 
 
-  // Mixin for base label style
+// Mixin for base label style
 @mixin base-label-style($language) {
-  $color-info: map-get($language-colors, $language);
-  $bg-color: nth($color-info, 1);
-  $label: nth($color-info, 2);
-  
-  content: $label;
-  background: $bg-color;
-  color: var(--text-color);
-  border-radius: 0 0 0.25rem 0.25rem;
-  font-size: 12px;
-  letter-spacing: 0.025rem;
-  padding: 0.1rem 0.5rem;
-  position: absolute;
-  right: 0.1rem;
-  top: 0;
-  margin-top: 0.1rem;
-  text-align: right;
-  text-transform: uppercase;
+    $color-info: map-get($language-colors, $language);
+    $bg-color: nth($color-info, 1);
+    $label: nth($color-info, 2);
+
+    content: $label;
+    background: $bg-color;
+    color: var(--text-color);
+    border-radius: 0 0 0.25rem 0.25rem;
+    font-size: 12px;
+    letter-spacing: 0.025rem;
+    padding: 0.1rem 0.5rem;
+    position: absolute;
+    right: 0.1rem;
+    top: 0;
+    margin-top: 0.1rem;
+    text-align: right;
+    text-transform: uppercase;
 }
 
 pre {
-  padding: 1em 2em; /* Increase right padding to give more space for the button */
-  position: relative;
-  overflow: auto; /* Ensure this does not hide the button */
+    padding: 1em 2em;
+    /* Increase right padding to give more space for the button */
+    position: relative;
+    overflow: auto;
+    /* Ensure this does not hide the button */
 }
 
 
 // Dynamic styling for code blocks
 code {
-  background-color: var(--bg-primary);
-  padding: 0.1em 0.2em;
-  border-radius: 5px;
-  border: 1px solid var(--border-color);
-  font-family: var(--code-font);
+    background-color: var(--bg-primary);
+    padding: 0.1em 0.2em;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    font-family: var(--code-font);
 }
+
+// <pre class="language-rust" data-lang="rust" data-linenos="" style="background: rgb(15, 20, 25); color: rgb(191, 186, 176); position: relative;"><code class="language-rust" data-lang="rust"><table><tbody><tr><td>1</td><td><span style="color:#ff7733">fn </span><span style="color:#ffb454">main</span><span>() {
+// </span></td></tr><tr><td><mark style="background:#0a0e12">2</mark></td><td><mark style="background:#0a0e12"><span>    </span><span style="color:#f07178">println!</span><span>(</span><span style="color:#c2d94c">"Hello World"</span><span>)</span><span style="color:#bfbab0cc">;
+// </span></mark></td></tr><tr><td>3</td><td><span>}
+// </span></td></tr></tbody></table></code><button class="clipboard-button" aria-label="Copy code to clipboard"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ef5350" class="bi bi-clipboard" viewBox="0 0 16 16">
+//   <path d="M10 1.5a.5.5 0 0 1 .5-.5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-9a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h2a.5.5 0 0 1 .5.5V3h3V1.5zM6.5 3V2h3v1h-3zm4 0v1h2a1 1 0 0 0-1-1h-2V3zm-5 0H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H5.5V3z"></path>
+// </svg></button></pre>
 
 pre {
-  background-color: var(--bg-primary) !important;
-  border-radius: 5px;
-  border: 1px solid var(--border-color);
-  line-height: 1.4;
-  overflow-x: auto;
-  padding: 1em; /* Ensure padding is sufficient for icon visibility */
-  position: relative;
+    background-color: var(--bg-primary) !important;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    line-height: 1.4;
+    overflow-x: auto;
+    padding: 1em;
+    /* Ensure padding is sufficient for icon visibility */
+    position: relative;
 
-  code {
-    background-color: transparent !important;
-    color: inherit;
-    font-size: 100%;
-    padding: 0;
-    border: none;
-  }
-
-  // Apply the base label style and customize based on language
-  code[class*="language-"] {
-    @each $language, $_ in $language-colors {
-      &.language-#{$language}::before {
-        @include base-label-style($language);
-      }
+    mark {
+        background-color: var(--hightlight-color) !important; // Ensure mark uses the theme background
+        padding: 0;
+        border-radius: 0px;
     }
-  }
+
+    code {
+        background-color: transparent !important;
+        color: inherit;
+        font-size: 100%;
+        padding: 0;
+        border: none;
+
+        table {
+            margin: 0;
+            border-collapse: collapse;
+
+            mark {
+                display: block;
+                color: unset;
+                padding: 0;
+                background-color: var(--hightlight-color);
+                filter: brightness(1.2); // Example to slightly increase brightness
+            }
+
+        }
+
+        td,
+        th,
+        tr {
+            padding: 0;
+            border-bottom: none;
+            border: none; // Ensure no borders around rows
+        }
+
+        tbody td:first-child {
+            text-align: center;
+            user-select: none;
+            min-width: 60px;
+            border-right: none,
+        }
+
+        tbody tr:nth-child(even),
+        thead tr {
+            background-color: unset;
+        }
+    }
+
+    // Apply the base label style and customize based on language
+    code[class*="language-"] {
+        @each $language, $_ in $language-colors {
+            &.language-#{$language}::before {
+                @include base-label-style($language);
+            }
+        }
+    }
 }
 
-.clipboard-button, .clipboard-button svg {
-  all: unset;  /* This resets all inherited properties */
-  cursor: pointer;
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  z-index: 10;
-  background-color: transparent;
-  border: none;
-  fill: #ef5350; /* Specific color for the icon */
+.clipboard-button,
+.clipboard-button svg {
+    all: unset;
+    /* This resets all inherited properties */
+    cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    z-index: 10;
+    background-color: transparent;
+    border: none;
+    fill: #ef5350;
+    /* Specific color for the icon */
 }
