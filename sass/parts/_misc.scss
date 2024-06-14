@@ -33,7 +33,7 @@ hr {
 }
 
 blockquote {
-  border-left: 3px solid var(--border-color);
+  border-left: 3px solid var(--primary-color);
   color: #737373;
   margin: 0;
   padding-left: 1em;
@@ -68,6 +68,12 @@ time {
 .list-item {
   margin-bottom: 30px;
   list-style-type: none;
+}
+
+// change the line-through color
+del {
+    text-decoration-color: var(--primary-color);
+    text-decoration-thickness: 3px;
 }
 
 @media all and (max-width: 640px) {
