@@ -18,6 +18,7 @@ favicon = "/icon/favicon.png"
 theme = "toggle"              # light, dark, auto, toggle
 comment = false
 codeblock_clipboard = true
+dynamic_note = true # a note that can be toggled
 # mathjax = true
 # mathjax_dollar_inline_enable = true
 
