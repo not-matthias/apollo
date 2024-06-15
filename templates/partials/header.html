@@ -69,11 +69,6 @@
         <link rel="icon" type="image/png" href={{ config.extra.favicon }} />
     {% endif %}
 
-    {# CodeBlock Clipboard #}
-    {% if config.extra.codeblock_clipboard %}
-        <script src={{ get_url(path="js/clipboard.js") }}></script>
-    {% endif %}
-
     {# Font from cdn or disk #}
     {% if config.extra.use_cdn | default(value=false) %}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css">
@@ -112,6 +107,16 @@
         {% endif %}
     {% endif %}
 
+    {# CodeBlock Clipboard #}
+    {% if config.extra.codeblock_clipboard %}
+        <script src={{ get_url(path="js/clipboard.js") }}></script>
+    {% endif %}
+
+    {# CodeBlock Clipboard #}
+    {% if config.extra.toc | default(value=false) %}
+        <script src={{ get_url(path="js/toc.js") }}></script>
+    {% endif %}
+
 
     {% if config.extra.mathjax | default(value=false) %}
         {% if config.extra.mathjax_dollar_inline_enable | default(value=false) %}
@@ -144,7 +149,7 @@
         <link rel="stylesheet" type="text/css" href={{ get_url(path="theme/light.css") }} />
         <link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ get_url(path='theme/dark.css') }}" />
     {% endif %}
-    
+
     <!-- Set the correct theme in the script -->
     <script src={{ get_url(path="js/themetoggle.js") }}></script>
     {% if theme == "dark" %}
