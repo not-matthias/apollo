@@ -1,0 +1,19 @@
+<div class="note-container">
+  {% if clickable | default(value=false) %}
+    <button class="note-toggle">
+      <span class="note-icon"></span>
+      {{ header | safe }}
+    </button>
+    <div class="note-content" style="display: none;">
+      {{ text | safe }}
+    </div>
+  {% else %}
+    <div class="note-header">
+      <span class="note-icon"></span>
+      {{ header | safe }}
+    </div>
+    <div class="note-content">
+      {{ text | safe }}
+    </div>
+  {% endif %}
+</div>
