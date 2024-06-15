@@ -14,7 +14,6 @@
     </main>
 {% endmacro %}
 
-
 {% macro list_posts(pages) %}
 <ul>
     {%- for page in pages %}
@@ -135,35 +134,37 @@
 
         {# Optional table of contents #}
         {% if config.extra.toc | default(value=false) %}
-            {% if page.toc %}
-                <h1>Table of Contents</h1>
-                <ul>
-                {% for h1 in page.toc %}
-                    <li>
-                        <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
-                        {% if h1.children %}
-                            <ul>
-                                {% for h2 in h1.children %}
-                                    <li>
-                                        <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
-                                    </li>
+        {% if page.toc %}
+            <div class="toc-container">
+                <h1 class="toc-title">Table of Contents</h1>
+                <ul class="toc-list">
+                    {% for h1 in page.toc %}
+                        <li>
+                            <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                            {% if h1.children %}
+                                <ul>
+                                    {% for h2 in h1.children %}
+                                        <li>
+                                            <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                                        </li>
 
-                                    {% if h2.children %}
-                                    <ul>
-                                        {% for h3 in h2.children %}
-                                            <li>
-                                                <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                    {% endif %}
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
-                    </li>
-                {% endfor %}
+                                        {% if h2.children %}
+                                            <ul>
+                                                {% for h3 in h2.children %}
+                                                    <li>
+                                                        <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
                 </ul>
-            {% endif %}
+            </div>
+        {% endif %}
         {% endif %}
 
         <section class="body">
@@ -206,7 +207,7 @@
                 <div class="card-description">
                     {% if page.description %}
                         {{ page.description }}
-                    {% endif %} 
+                    {% endif %}
                 </div>
             </div>
         </div>
