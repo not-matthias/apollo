@@ -104,8 +104,8 @@
                         Posted on <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
                     {% endif %}
 
-                    {% if page.extra.modified %}
-                        :: Modified on <time>{{ page.extra.modified | date(format="%Y-%m-%d") }}</time>
+                    {% if page.updated %}
+                        :: :odified on <time>{{ page.updated | date(format="%Y-%m-%d") }}</time>
                     {% endif %}
 
                     {# Inline display of tags directly after the date #}

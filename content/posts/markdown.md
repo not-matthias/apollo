@@ -1,9 +1,7 @@
 +++
 title = "Markdown Test"
 date = "2022-01-01"
-
-[extra]
-modified = "2022-05-01"
+updated = "2022-05-01"
 
 [taxonomies]
 tags=["blog"]
@@ -21,7 +19,7 @@ fn main() {
 ## Quote
 
 > Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.
-- Albert Einstein
+> - <cite> Albert Einstein </cite>
 
 
 ## Code tags
