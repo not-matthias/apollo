@@ -74,6 +74,11 @@
         <script src={{ get_url(path="js/clipboard.js") }}></script>
     {% endif %}
 
+    {# Dynamic Note #}
+    {% if config.extra.dynamic_note | default(value=false) %}
+        <script src={{ get_url(path="js/note.js") }}></script>
+    {% endif %}
+
     {# Font from cdn or disk #}
     {% if config.extra.use_cdn | default(value=false) %}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css">
@@ -144,7 +149,7 @@
         <link rel="stylesheet" type="text/css" href={{ get_url(path="theme/light.css") }} />
         <link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ get_url(path='theme/dark.css') }}" />
     {% endif %}
-    
+
     <!-- Set the correct theme in the script -->
     <script src={{ get_url(path="js/themetoggle.js") }}></script>
     {% if theme == "dark" %}
