@@ -107,16 +107,25 @@
         {% endif %}
     {% endif %}
 
-    {# CodeBlock Clipboard #}
-    {% if config.extra.codeblock_clipboard %}
-        <script src={{ get_url(path="js/clipboard.js") }}></script>
+    {# Fancy Codeblock #}
+    {% if config.extra.fancy_code %}
+        <script src={{ get_url(path="js/codeblock.js") }}></script>
     {% endif %}
 
-    {# CodeBlock Clipboard #}
+    {# Table of contents #}
     {% if config.extra.toc | default(value=false) %}
         <script src={{ get_url(path="js/toc.js") }}></script>
     {% endif %}
 
+    {# H_tag anchor links#}
+    {% if config.extra.h_anchor_link | default(value=false) %}
+        <script src={{ get_url(path="js/anchor.js") }}></script>
+    {% endif %}
+
+    {# Dynamic Note #}
+    {% if config.extra.dynamic_note | default(value=false) %}
+        <script src={{ get_url(path="js/note.js") }}></script>
+    {% endif %}
 
     {% if config.extra.mathjax | default(value=false) %}
         {% if config.extra.mathjax_dollar_inline_enable | default(value=false) %}

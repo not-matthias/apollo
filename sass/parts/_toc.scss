@@ -17,13 +17,8 @@
     }
   }
 
-  &:hover .toc-list, // Show ToC when hovering over the container
-  .toc-title.expanded + .toc-list { // Keep ToC visible when expanded
-    display: block;
-  }
-
   .toc-list {
     display: none; // ToC is hidden by default
-    transition: display 0.3s ease; // Smooth display transition
+    // Removed transition on display, not effective
   }
 }
