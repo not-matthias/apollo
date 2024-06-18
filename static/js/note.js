@@ -1,12 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Attach click event listeners to all '.note-toggle' buttons
   document.querySelectorAll('.note-toggle').forEach(function(toggleButton) {
+    var content = toggleButton.nextElementSibling;
+    var isHidden = content.style.display === 'none';
+    toggleButton.setAttribute('aria-expanded', !isHidden);
+
     toggleButton.addEventListener('click', function() {
-      // The '.note-content' is the next sibling element in the DOM structure
-      var content = this.nextElementSibling;
-      var expanded = this.getAttribute('aria-expanded') === 'true' || false;
+      var expanded = this.getAttribute('aria-expanded') === 'true';
       this.setAttribute('aria-expanded', !expanded);
-      content.style.display = !expanded ? 'none' : 'block';
+      content.style.display = expanded ? 'none' : 'block';
     });
   });
 });
+

@@ -1,19 +1,36 @@
 <div class="note-container">
   {% if clickable | default(value=false) %}
     <button class="note-toggle">
-      <span class="note-icon"></span>
-      {{ header | safe }}
+      {% if center | default(value=false) %}
+        <div class="note-center">
+        {{ header | markdown | safe }}
+        </div>
+      {% else %}
+        <span class="note-icon"></span>
+        {{ header | markdown | safe }}
+      {% endif %}
     </button>
-    <div class="note-content" style="display: block;">
-      {{ text | safe }}
-    </div>
+
+      {% if hidden | default(value=false) %}
+      <div class="note-content" style="display: none;">
+      {% else %}
+      <div class="note-content" style="display: block;">
+      {% endif %}
+      {{ body | markdown | safe }}
+      </div>
   {% else %}
     <div class="note-header">
-      <span class="note-icon"></span>
-      {{ header | safe }}
+      {% if center | default(value=false) %}
+        <div class="note-center">
+        {{ header | markdown | safe }}
+        </div>
+      {% else %}
+        <span class="note-icon"></span>
+        {{ header | markdown | safe }}
+      {% endif %}
     </div>
     <div class="note-content">
-      {{ text | safe }}
+      {{ body | markdown | safe }}
     </div>
   {% endif %}
 </div>
