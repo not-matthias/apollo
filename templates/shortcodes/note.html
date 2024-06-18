@@ -6,18 +6,19 @@
         {{ header | markdown | safe }}
         </div>
       {% else %}
-        <span class="note-icon"></span>
+        <div class="note-icon">
         {{ header | markdown | safe }}
+        </div>
       {% endif %}
     </button>
 
-      {% if hidden | default(value=false) %}
-      <div class="note-content" style="display: none;">
-      {% else %}
-      <div class="note-content" style="display: block;">
-      {% endif %}
-      {{ body | markdown | safe }}
-      </div>
+    {% if hidden | default(value=false) %}
+    <div class="note-content" style="display: none;">
+    {% else %}
+    <div class="note-content" style="display: block;">
+    {% endif %}
+    {{ body | markdown | safe }}
+    </div>
   {% else %}
     <div class="note-header">
       {% if center | default(value=false) %}
@@ -25,8 +26,9 @@
         {{ header | markdown | safe }}
         </div>
       {% else %}
-        <span class="note-icon"></span>
+        <div class="note-icon">
         {{ header | markdown | safe }}
+        </div>
       {% endif %}
     </div>
     <div class="note-content">
