@@ -35,6 +35,10 @@
   outline: none;
   font-size: 1.2em;
   transition: background-color 0.3s ease;
+
+  p {
+    margin: 0;
+  }
 }
 
 .note-toggle {
@@ -76,4 +80,20 @@
   mask-repeat: no-repeat;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.note-header > .note-center,
+.note-toggle > .note-center {
+  text-align: center;
+  padding-left: 0; /* Reset the left padding */
+  padding-right: 0;
+  margin-left: -100px;
+}
+
+summary:hover,
+summary:focus {
+  color: var(--note-color);
+  background-color: var(--note-bg);
+  outline: none;
+  padding: 10px;
 }
