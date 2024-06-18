@@ -1,23 +1,26 @@
-// No indentation inside post
-.tags ul {
-  margin-left: 0;
-  padding-left: 0;
-}
+.tags {
+  ul {
+    margin-left: 0;
+    padding-left: 0;
+  }
 
-.tags li {
-  list-style-type: none;
-}
+  li {
+    list-style-type: none;
+  }
 
-.tags a {
-  border-bottom: 3px solid var(--primary-color);
-}
+  a {
+    border-bottom: 3px solid var(--primary-color);
+    font-family: var(--text-font);
+  }
 
-.tags a:hover {
-  color: var(--hover_color);
-  background-color: var(--primary-color);
-}
+  a:hover {
+    color: var(--hover_color);
+    background-color: var(--primary-color);
+  }
 
-.tags a::before {
+  a::before {
     content: "🏷 "; /* Ensure there's a space after the emoji for spacing */
     display: inline;
+    white-space: nowrap !important;
+  }
 }
