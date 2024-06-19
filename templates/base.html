@@ -14,11 +14,18 @@
         {% block main_content %}
             Nothing here?!
         {% endblock main_content %}
-        {% if page.extra.comment is defined %}{% set show_comment = page.extra.comment %}{% else %}{% set show_comment = config.extra.comment %}{% endif %}
+
+        {% if page.extra.comment is defined %}
+            {% set show_comment = page.extra.comment %}
+        {% else %}
+            {% set show_comment = config.extra.comment %}
+        {% endif %}
+
         {% if show_comment %}
         <div class="giscus"></div>
         {% include "_giscus_script.html" %}
         {% endif %}
+
     </div>
 </body>
 
