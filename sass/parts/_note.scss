@@ -26,8 +26,7 @@
 .note-header {
   color: var(--header-color);
   background-color: var(--note-bg);
-  padding: 10px 20px;
-  padding-left: 50px;
+  padding: 10px 25px;
   text-align: left;
   border: none;
   width: 100%;
@@ -35,6 +34,20 @@
   outline: none;
   font-size: 1.2em;
   transition: background-color 0.3s ease;
+
+  p {
+    margin: 0;
+  }
+
+  .note-center {
+    text-align: center;
+    padding-right: 50px;
+  }
+
+  .note-icon,
+  .note-icon {
+    padding-left: 25px;
+  }
 }
 
 .note-toggle {
@@ -45,9 +58,12 @@
 .note-toggle::before {
   content: '▼';
   position: absolute;
-  right: 20px; /* Position the arrow to the right */
-  top: 50%; /* Center vertically */
-  transform: translateY(-50%); /* Center vertically */
+  right: 20px;
+  /* Position the arrow to the right */
+  top: 50%;
+  /* Center vertically */
+  transform: translateY(-50%);
+  /* Center vertically */
 }
 
 .note-toggle:hover,
@@ -62,18 +78,19 @@
   background-color: var(--bg-primary);
 }
 
-.note-icon {
+.note-icon::before {
+  content: '✎';
+  color: var(--note-color);
   position: absolute;
-  left: 10px;
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-  background-color: var(--note-color);
-  -webkit-mask-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/%3E%3C/svg%3E');
-  mask-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/%3E%3C/svg%3E');
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  background-size: contain;
-  background-repeat: no-repeat;
+}
+
+summary:hover,
+summary:focus {
+  color: var(--note-color);
+  background-color: var(--note-bg);
+  outline: none;
+  padding: 10px;
 }
