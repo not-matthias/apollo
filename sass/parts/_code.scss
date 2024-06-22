@@ -6,6 +6,7 @@
 
     // Define light theme specifics
     --text-color: #333;
+    --label-color: #f0f0f0;
     --label-background: white;
     --hightlight-color: #DCEBFF;
 }
@@ -56,7 +57,7 @@ $language-colors: (
     "default": (#333, "Code"),
 );
 
-@mixin base-label-style($bg-color, $text-color: var(--text-color)) {
+@mixin base-label-style($bg-color, $text-color: var(--label-color)) {
     background: $bg-color;
     color: $text-color;
     border-radius: 0 0 0.25rem 0.25rem;
