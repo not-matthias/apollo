@@ -1,5 +1,5 @@
 +++
-title= "Welcome to Apollo's Homepage!"
+title= "Apollo Theme"
 template = "homepage.html"
 +++
 
