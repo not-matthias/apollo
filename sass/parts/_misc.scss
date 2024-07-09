@@ -49,6 +49,10 @@ a {
   z-index: 1;
 }
 
+a.zola-anchor {
+  border-bottom: none;
+}
+
 a:hover {
   background-color: var(--primary-color);
   color: var(--hover-color);
@@ -72,8 +76,8 @@ time {
 
 // change the line-through color
 del {
-    text-decoration-color: var(--primary-color);
-    text-decoration-thickness: 3px;
+  text-decoration-color: var(--primary-color);
+  text-decoration-thickness: 3px;
 }
 
 @media all and (max-width: 640px) {
@@ -120,7 +124,9 @@ del {
   }
 }
 
-.MathJax_Display, .MJXc-display, .MathJax_SVG_Display {
-    overflow-x: auto;
-    overflow-y: hidden;
+.MathJax_Display,
+.MJXc-display,
+.MathJax_SVG_Display {
+  overflow-x: auto;
+  overflow-y: hidden;
 }

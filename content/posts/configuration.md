@@ -8,6 +8,13 @@ tags=["blog"]
 
 # Configuration
 
+## Anchor Links
+
+You can add anchor links by adding the following to your `_index.md`:
+```toml
+insert_anchor_links = "heading"
+```
+
 ## Table of Contents (`toc`)
 
 Enables or disables the table of contents for posts.
@@ -78,16 +85,6 @@ Allows for the creation of togglable note sections in your content.
 - Usage: `dynamic_note = true`
 
 When enabled, you can create expandable/collapsible note sections in your blog posts.
-
-## Header Anchor Links (`h_anchor_link`)
-
-Adds anchor links to headers for easy referencing.
-
-- Type: Boolean
-- Default: true
-- Usage: `h_anchor_link = true`
-
-This feature adds clickable links next to headers, allowing readers to easily share or bookmark specific sections of your posts.
 
 ## Menu
 
