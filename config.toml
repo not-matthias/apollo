@@ -9,7 +9,7 @@ taxonomies = [{ name = "tags" }]
 
 [markdown]
 highlight_code = true
-highlight_theme = "ayu-dark"
+highlight_theme = "ayu-light"
 
 [extra]
 toc = true
@@ -19,8 +19,8 @@ theme = "toggle"              # light, dark, auto, toggle
 comment = false
 fancy_code = true
 dynamic_note = true           # a note that can be toggled
-# mathjax = true
-# mathjax_dollar_inline_enable = true
+mathjax = true
+mathjax_dollar_inline_enable = true
 
 menu = [
     { name = "/posts", url = "/posts", weight = 1 },
