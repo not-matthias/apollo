@@ -134,7 +134,6 @@
 
                     {# View the page on GitHub #}
                     {% if page.extra.repo_view | default(value=false) %}
-
                         {# Use the page's repo_url if defined, otherwise use the global edit_repo_url #}
                         {% if page.extra.repo_url is defined %}
                             {% set repo_url = page.extra.repo_url %}
