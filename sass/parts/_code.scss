@@ -83,6 +83,14 @@ $language-colors: (
     }
 }
 
+code {
+    background-color: var(--bg-primary);
+    padding: 0.1em 0.2em;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    font-family: var(--code-font);
+}
+
 pre {
     background-color: var(--bg-primary) !important;
     border-radius: 5px;
@@ -148,10 +156,13 @@ pre {
     all: unset;
     cursor: pointer;
     position: absolute;
-    bottom: 5px; /* 5px from the bottom */
-    right: 5px; /* 5px from the right */
+    bottom: 5px;
+    /* 5px from the bottom */
+    right: 5px;
+    /* 5px from the right */
     z-index: 10;
     background-color: transparent;
     border: none;
-    fill: #ef5350; /* Sets the color of the SVG, assuming it's an SVG icon */
+    fill: #ef5350;
+    /* Sets the color of the SVG, assuming it's an SVG icon */
 }
