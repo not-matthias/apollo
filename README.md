@@ -50,6 +50,8 @@ socials = [
 menu = [
   # Configure menu bar here
 ]
+
+# See this for more options: https://github.com/not-matthias/apollo/blob/main/config.toml#L14
 ```
 
 3. Copy the example content
