@@ -2,7 +2,7 @@ base_url = "https://not-matthias.github.io/apollo/"
 title = "not-matthias"
 description = "This is an example description"
 build_search_index = false
-generate_feed = true
+generate_feeds = true
 compile_sass = true
 minify_html = true
 taxonomies = [{ name = "tags" }]
@@ -18,7 +18,7 @@ favicon = "/icon/favicon.png"
 theme = "toggle"              # light, dark, auto, toggle
 comment = false
 fancy_code = true
-dynamic_note = true # a note that can be toggled
+dynamic_note = true           # a note that can be toggled
 h_anchor_link = true
 # mathjax = true
 # mathjax_dollar_inline_enable = true
