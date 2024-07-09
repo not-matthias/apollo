@@ -15,13 +15,7 @@
             Nothing here?!
         {% endblock main_content %}
 
-        {% if page.extra.comment is defined %}
-            {% set show_comment = page.extra.comment %}
-        {% else %}
-            {% set show_comment = config.extra.comment %}
-        {% endif %}
-
-        {% if show_comment %}
+        {% if config.extra.comment | default(value=false) %}
         <div class="giscus"></div>
         {% include "_giscus_script.html" %}
         {% endif %}
