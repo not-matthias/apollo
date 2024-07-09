@@ -116,12 +116,7 @@
     {% if config.extra.toc | default(value=false) %}
         <script src={{ get_url(path="js/toc.js") }}></script>
     {% endif %}
-
-    {# H_tag anchor links#}
-    {% if config.extra.h_anchor_link | default(value=false) %}
-        <script src={{ get_url(path="js/anchor.js") }}></script>
-    {% endif %}
-
+    
     {# Dynamic Note #}
     {% if config.extra.dynamic_note | default(value=false) %}
         <script src={{ get_url(path="js/note.js") }}></script>
