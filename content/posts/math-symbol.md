@@ -1,7 +1,12 @@
 +++
-title = "Math Symbol Support Test"
+title = "Math Symbol Example"
 date = "2023-01-06"
+
+[taxonomies]
+tags=["example"]
 +++
+
+Note: This requires the `mathjax` and `mathjax_dollar_inline_enable` option set to `true`.
 
 # Inline Math
 
