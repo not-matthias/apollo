@@ -1,23 +1,14 @@
 // Define base colors and fonts for light and dark themes
 :root {
-    --bg-primary: #DCEBFF; // Updated light theme background color
-    --border-color: #ccc; // Light theme border color
-    --code-font: 'Courier New', monospace; // Code font
+    --code-font: 'Courier New', monospace;
+    --bg-primary: var(--bg-1);
+    --text-color: var(--text-0); // Color of the code text
+    --label-color: #f0f0f0; // Text color of the label
 
-    // Define light theme specifics
-    --text-color: #333;
-    --label-color: #f0f0f0;
-    --label-background: white;
-    --hightlight-color: #DCEBFF;
+    --hightlight-color: #f0f0f0;
 }
 
 :root.dark {
-    --bg-primary: rgb(15, 20, 25); // Dark theme background color
-    --border-color: #333; // Dark theme border color
-
-    // Define dark theme specifics
-    --text-color: #f0f0f0;
-    --label-background: black;
     --hightlight-color: #204e8a;
 }
 
