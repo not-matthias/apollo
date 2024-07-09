@@ -4,6 +4,9 @@ date = "2024-07-09"
 
 [taxonomies]
 tags=["documentation"]
+
+[extra]
+repo_view = true
 +++
 
 ## Theme Mode (`theme`)
@@ -106,6 +109,18 @@ Allows for the creation of togglable note sections in your content.
 - Usage: `dynamic_note = true`
 
 When enabled, you can create expandable/collapsible note sections in your blog posts.
+
+## Source code (`repo_view`)
+
+Do you want to link to the source code of your blog post? You can turn on the `repo_view` inside the `[extra]` section of your blog post.
+
+```toml
+[extra]
+repo_view = true
+repo_url = "https://github.com/not-matthias/apollo/tree/main/content"   # Alternatively add the repo here
+```
+
+The `repo_url` can be set in the `[extra]` section or in your `config.toml`.
 
 ## Anchor Links
 
