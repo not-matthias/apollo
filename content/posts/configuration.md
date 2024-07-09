@@ -1,19 +1,51 @@
 +++
-title = "Configuration"
+title = "Configuring Apollo"
 date = "2024-07-09"
 
 [taxonomies]
-tags=["blog"]
+tags=["documentation"]
 +++
 
-# Configuration
+## Theme Mode (`theme`)
 
-## Anchor Links
+Sets the color theme for your blog.
 
-You can add anchor links by adding the following to your `_index.md`:
-```toml
-insert_anchor_links = "heading"
-```
+- Type: String
+- Options: "light", "dark", "auto", "toggle"
+- Default: "toggle"
+- Usage: `theme = "toggle"`
+
+The "toggle" option allows users to switch between light and dark modes, while "auto" typically follows the user's system preferences.
+
+## Menu 
+
+Defines the navigation menu items for your blog.
+
+- Type: Array of objects
+- Default: []
+- Usage:
+  ```toml
+  menu = [
+      { name = "/posts", url = "/posts", weight = 1 },
+      { name = "/projects", url = "/projects", weight = 2 },
+      { name = "/about", url = "/about", weight = 3 },
+      { name = "/tags", url = "/tags", weight = 4 },
+  ]
+  ```
+
+## Socials
+
+Defines the social media links. 
+
+- Type: Array of objects
+- Default: []
+- Usage:
+  ```toml
+  socials = [
+    { name = "twitter", url = "https://twitter.com/not_matthias", icon = "twitter" },
+    { name = "github", url = "https://github.com/not-matthias/", icon = "github" },
+  ]
+  ```
 
 ## Table of Contents (`toc`)
 
@@ -45,17 +77,6 @@ Specifies the path to the favicon image for your blog.
 
 This sets the small icon that appears in the browser tab for your website.
 
-## Theme Mode (`theme`)
-
-Sets the color theme for your blog.
-
-- Type: String
-- Options: "light", "dark", "auto", "toggle"
-- Default: "toggle"
-- Usage: `theme = "toggle"`
-
-The "toggle" option allows users to switch between light and dark modes, while "auto" typically follows the user's system preferences.
-
 ## Comments (`comment`)
 
 Enables or disables the comment system for posts.
@@ -74,7 +95,7 @@ Enables enhanced styling for code blocks.
 - Default: true
 - Usage: `fancy_code = true`
 
-This option applies additional styling to make code blocks more visually appealing and easier to read.
+This option adds the language label and a copy button.
 
 ## Dynamic Notes (`dynamic_note`)
 
@@ -86,16 +107,9 @@ Allows for the creation of togglable note sections in your content.
 
 When enabled, you can create expandable/collapsible note sections in your blog posts.
 
-## Menu
+## Anchor Links
 
-Defines the navigation menu items for your blog.
-
-- Type: Array of objects
-- Usage:
-  ```toml
-  menu = [
-      { name = "/posts", url = "/posts", weight = 1 },
-      { name = "/projects", url = "/projects", weight = 2 },
-      { name = "/about", url = "/about", weight = 3 },
-      { name = "/tags", url = "/tags", weight = 4 },
-  ]
+You can add anchor links by adding the following to your `_index.md`:
+```toml
+insert_anchor_links = "heading"
+```

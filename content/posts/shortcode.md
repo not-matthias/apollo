@@ -1,6 +1,9 @@
 +++
 title = "Shortcode Example"
 date = "2024-06-14"
+
+[taxonomies]
+tags=["example"]
 +++
 
 

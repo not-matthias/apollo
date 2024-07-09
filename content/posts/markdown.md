@@ -4,8 +4,7 @@ date = "2022-01-01"
 updated = "2022-05-01"
 
 [taxonomies]
-tags=["blog"]
-
+tags=["example"]
 +++
 
 # H1
@@ -64,7 +63,7 @@ fn main() {
 ## Table Inline Markdown
 
 | Italics   | Bold     | Code   | StrikeThrough     |
-| --------  | -------- | ------ | ----------------- |
+| --------- | -------- | ------ | ----------------- |
 | *italics* | **bold** | `code` | ~~strikethrough~~ |
 
 ## Foldable Text
