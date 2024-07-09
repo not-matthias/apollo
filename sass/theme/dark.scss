@@ -1,6 +1,8 @@
 $bg-0: #121212;
-$bg-1: lighten($bg-0, 2%);
-$bg-2: lighten($bg-1, 5%);
+
+// Dark theme needs a bigger contrast compared to the white theme.
+$bg-1: lighten($bg-0, 5%);
+$bg-2: lighten($bg-1, 10%);
 
 $text-0: lighten($bg-0, 87%);
 $text-1: lighten($bg-0, 60%);
