@@ -88,7 +88,9 @@ Enables or disables the comment system for posts.
 - Default: false
 - Usage: `comment = false`
 
+After making `comment = true` save your script from [Giscus](https://giscus.app) to `templates/_giscus_script.html`.
 When enabled, this allows readers to leave comments on your blog posts.
+
 
 ## Fancy Code Styling (`fancy_code`)
 
