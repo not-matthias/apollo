@@ -16,7 +16,6 @@ toc = true
 use_cdn = false
 favicon = "/icon/favicon.png"
 theme = "toggle"              # light, dark, auto, toggle
-comment = false
 fancy_code = true
 dynamic_note = true           # a note that can be toggled
 mathjax = true

@@ -7,7 +7,10 @@ tags=["documentation"]
 
 [extra]
 repo_view = true
+comment = true
 +++
+
+# Site Configuration
 
 ## Theme Mode (`theme`)
 
@@ -20,7 +23,7 @@ Sets the color theme for your blog.
 
 The "toggle" option allows users to switch between light and dark modes, while "auto" typically follows the user's system preferences.
 
-## Menu 
+## Menu
 
 Defines the navigation menu items for your blog.
 
@@ -38,7 +41,7 @@ Defines the navigation menu items for your blog.
 
 ## Socials
 
-Defines the social media links. 
+Defines the social media links.
 
 - Type: Array of objects
 - Default: []
@@ -80,18 +83,6 @@ Specifies the path to the favicon image for your blog.
 
 This sets the small icon that appears in the browser tab for your website.
 
-## Comments (`comment`)
-
-Enables or disables the comment system for posts.
-
-- Type: Boolean
-- Default: false
-- Usage: `comment = false`
-
-After making `comment = true` save your script from [Giscus](https://giscus.app) to `templates/_giscus_script.html`.
-When enabled, this allows readers to leave comments on your blog posts.
-
-
 ## Fancy Code Styling (`fancy_code`)
 
 Enables enhanced styling for code blocks.
@@ -112,6 +103,17 @@ Allows for the creation of togglable note sections in your content.
 
 When enabled, you can create expandable/collapsible note sections in your blog posts.
 
+## Anchor Links
+
+You can add anchor links by adding the following to your `_index.md`:
+```toml
+insert_anchor_links = "heading"
+```
+
+# Page configuration
+
+
+
 ## Source code (`repo_view`)
 
 Do you want to link to the source code of your blog post? You can turn on the `repo_view` inside the `[extra]` section of your blog post.
@@ -124,9 +126,34 @@ repo_url = "https://github.com/not-matthias/apollo/tree/main/content"   # Altern
 
 The `repo_url` can be set in the `[extra]` section or in your `config.toml`.
 
-## Anchor Links
+## Comments (`comment`)
 
-You can add anchor links by adding the following to your `_index.md`:
+Enables or disables the comment system for posts.
+
+- Type: Boolean
+- Default: false
+- Usage: `comment = false`
+
+After making `comment = true` in `[extra]` section of you post, save your script from [Giscus](https://giscus.app) to `templates/_giscus_script.html`.
+When enabled, this allows readers to leave comments on your blog posts. This feature has to be set for each individual post and is not supported at higher levels.
+
+Example configuration in [content/posts/configuration.md](https://github.com/not-matthias/apollo/blob/main/content/posts/configuration.md):
 ```toml
-insert_anchor_links = "heading"
++++
+title = "Configuring Apollo"
+
+[extra]
+comment = true
++++
+```
+
+Comments via [utterances](utteranc.es) can be configured in `template/_giscus_script.html` like this:
+```html
+<script src="https://utteranc.es/client.js"
+        repo="not-matthias/apollo"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 ```

@@ -5,6 +5,9 @@ updated = "2022-05-01"
 
 [taxonomies]
 tags=["example"]
+
+[extra]
+comment = true
 +++
 
 # H1
@@ -80,5 +83,5 @@ fn main() {
 
 ## Code tags
 
-Lorem ipsum `dolor` sit amet, `consectetur adipiscing` elit. 
+Lorem ipsum `dolor` sit amet, `consectetur adipiscing` elit.
 `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`

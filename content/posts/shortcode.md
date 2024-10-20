@@ -4,11 +4,14 @@ date = "2024-06-14"
 
 [taxonomies]
 tags=["example"]
+
+[extra]
+comment = true
 +++
 
 
 ## Note
- 
+
 Here is an example of the `note` shortcode:
 
 This one is static!
