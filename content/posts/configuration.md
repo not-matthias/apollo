@@ -150,7 +150,7 @@ comment = true
 Comments via [utterances](https://utteranc.es) can be configured in `template/_giscus_script.html` like this:
 ```html
 <script src="https://utteranc.es/client.js"
-        repo="not-matthias/apollo"
+        repo="YOUR_NAME/YOUR_REPO"
         issue-term="pathname"
         theme="github-light"
         crossorigin="anonymous"
