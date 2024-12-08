@@ -24,7 +24,7 @@
 
             <div>
                 <h1 class="title">
-                    <a href={{ page.permalink }}>{{page.title}}</a>
+                    <a href={{ page.permalink | safe }}>{{page.title}}</a>
 
                     {% if page.draft %}
                     <span class="draft-label">DRAFT</span>
@@ -43,7 +43,7 @@
                     </div>
 
                     {% if not hide_read_more %}
-                    <a class="readmore" href={{ page.permalink }}>Read more ⟶</a>
+                    <a class="readmore" href={{ page.permalink | safe }}>Read more ⟶</a>
                     {% endif %}
                 </div>
             </div>
@@ -222,7 +222,7 @@
                     {% if page.extra.link_to %}
                     <a href={{ page.extra.link_to }}>{{page.title}}</a>
                     {% else %}
-                    <a href={{ page.permalink }}>{{page.title}}</a>
+                    <a href={{ page.permalink | safe }}>{{page.title}}</a>
                     {% endif %}
                 </h1>
 
