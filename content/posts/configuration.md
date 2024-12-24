@@ -110,9 +110,42 @@ You can add anchor links by adding the following to your `_index.md`:
 insert_anchor_links = "heading"
 ```
 
+## Analytics
+
+Enable or disable analytics tracking:
+
+```toml
+[extra.analytics]
+enabled = false
+```
+
+After enabling analytics, configure GoatCounter or Umami.
+
+### GoatCounter
+
+Configure GoatCounter analytics:
+
+```toml
+[extra.analytics.goatcounter]
+user = "your_user"           # Your GoatCounter username
+host = "example.com"         # Optional: Custom host
+```
+
+### Umami Analytics
+
+Configure Umami analytics:
+
+```toml
+[extra.analytics.umami]
+website_id = "43929cd1-1e83...."                    # Your Umami website ID
+host_url = "https://stats.mywebsite.com"            # Optional: Custom host URL
+```
+
+
+---
+
+
 # Page configuration
-
-
 
 ## Source code (`repo_view`)
 
