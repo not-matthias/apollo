@@ -51,6 +51,22 @@ header .socials {
     justify-content: center;
 }
 
+.logo {
+    border-bottom: unset;
+    background-image: unset;
+}
+
+.logo>img {
+    border: unset;
+    width: auto;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.logo:hover {
+  background-color: transparent;
+}
+
 .socials {
     /* flex-child */
     flex-grow: 0;
