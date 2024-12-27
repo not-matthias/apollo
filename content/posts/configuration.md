@@ -39,6 +39,16 @@ Defines the navigation menu items for your blog.
   ]
   ```
 
+## Logo
+
+Defines the site logo image file.
+
+- Type: String
+- Usage:
+  ```toml
+  logo = "site_logo.svg"
+  ```
+
 ## Socials
 
 Defines the social media links.
