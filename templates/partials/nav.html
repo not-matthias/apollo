@@ -1,6 +1,12 @@
 <header>
     <div class="main">
+        {% if config.extra.logo %}
+        <a href={{ config.base_url }} class="logo">
+            <img alt={{ config.title }} src={{ get_url(path=config.extra.logo) }}>
+        </a>
+        {% else %}
         <a href={{ config.base_url }}>{{ config.title }}</a>
+        {% endif %}
 
         <div class="socials">
             {% for social in config.extra.socials | default(value=[]) %}
