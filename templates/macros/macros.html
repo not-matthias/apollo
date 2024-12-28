@@ -24,7 +24,7 @@
 
             <div>
                 <h1 class="title">
-                    <a href="{{ page.permalink | safe }}>{{page.title}}"</a>
+                    <a href="{{ page.permalink | safe }}">{{page.title}}</a>
 
                     {% if page.draft %}
                     <span class="draft-label">DRAFT</span>
@@ -59,7 +59,7 @@
     {%- for term in terms %}
         <section class="list-item">
             <h1 class="title">
-                <a href="{{ term.permalink }}>{{term.name}}"</a>
+                <a href="{{ term.permalink }}">{{term.name}}</a>
             </h1>
         </section>
 
@@ -220,9 +220,9 @@
             <div class="card-info">
                 <h1 class="card-title">
                     {% if page.extra.link_to %}
-                    <a href="{{ page.extra.link_to }}>{{page.title}}"</a>
+                    <a href="{{ page.extra.link_to }}">{{page.title}}</a>
                     {% else %}
-                    <a href="{{ page.permalink | safe }}>{{page.title}}"</a>
+                    <a href="{{ page.permalink | safe }}">{{page.title}}</a>
                     {% endif %}
                 </h1>
 
