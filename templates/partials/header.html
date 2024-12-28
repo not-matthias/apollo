@@ -66,7 +66,7 @@
 
     {# Favicon #}
     {% if config.extra.favicon %}
-        <link rel="icon" type="image/png" href={{ config.extra.favicon }} />
+        <link rel="icon" type="image/png" href="{{ config.extra.favicon }}" />
     {% endif %}
 
     {# Font from cdn or disk #}
@@ -74,7 +74,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@4.5.8/index.min.css">
     {% else %}
-        <link href={{ get_url(path="fonts.css") }} rel="stylesheet" />
+        <link href="{{ get_url(path="fonts.css") }}" rel="stylesheet" />
     {% endif %}
 
     {# Analytics #}
@@ -136,12 +136,12 @@
     {% if theme == "dark" %}
         <link rel="stylesheet" type="text/css" href="{{ get_url(path='theme/dark.css') }}" />
     {% elif theme == "light" %}
-        <link rel="stylesheet" type="text/css" href={{ get_url(path="theme/light.css") }} />
+        <link rel="stylesheet" type="text/css" href="{{ get_url(path="theme/light.css") }}" />
     {% elif theme == "auto" %}
-        <link rel="stylesheet" type="text/css" href={{ get_url(path="theme/light.css") }} />
+        <link rel="stylesheet" type="text/css" href="{{ get_url(path="theme/light.css") }}" />
         <link rel="stylesheet" type="text/css" href="{{ get_url(path='theme/dark.css') }}" media="(prefers-color-scheme: dark)" />
     {% elif theme == "toggle" %}
-        <link rel="stylesheet" type="text/css" href={{ get_url(path="theme/light.css") }} />
+        <link rel="stylesheet" type="text/css" href="{{ get_url(path="theme/light.css") }}" />
         <link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ get_url(path='theme/dark.css') }}" />
     {% endif %}
 
@@ -163,7 +163,7 @@
         <script>setTheme(getSavedTheme());</script>
     {% endif %}
 
-    <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="main.css") }} />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ get_url(path="main.css") }}" />
 
     {% if config.extra.stylesheets %}
         {% for stylesheet in config.extra.stylesheets %}
