@@ -23,6 +23,18 @@ Enables or disables the search functionality for your blog.
 When enabled, a search index will be generated for your blog, allowing visitors to search for specific content.
 Additionally, a search button will be displayed in the navigation bar.
 
+Configure the search like this:
+```toml
+build_search_index = true
+
+[search]
+include_title = true
+include_description = true
+include_path = true
+include_content = true
+index_format = "elasticlunr_json"
+```
+
 ## Theme Mode (`theme`)
 
 Sets the color theme for your blog.
@@ -83,6 +95,8 @@ Enables or disables the table of contents for posts.
 - Usage: `toc = true`
 
 When enabled, a table of contents will be generated for posts, making it easier for readers to navigate through longer articles.
+
+Note: This feature adds additional JavaScript to your site.
 
 ## CDN Usage (`use_cdn`)
 
