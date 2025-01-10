@@ -28,8 +28,7 @@ Modern and minimalistic blog theme powered by [Zola](https://getzola.org). See a
 - [x] Meta Tags For Individual Pages
 - [x] Custom homepage
 - [x] Comments
-- [ ] Search
-- [ ] Categories
+- [x] Search
 
 ## Installation
 
