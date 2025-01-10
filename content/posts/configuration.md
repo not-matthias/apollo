@@ -12,6 +12,17 @@ comment = true
 
 # Site Configuration
 
+## Search (`build_search_index`)
+
+Enables or disables the search functionality for your blog.
+
+- Type: Boolean
+- Default: false
+- Usage: `build_search_index = false`
+
+When enabled, a search index will be generated for your blog, allowing visitors to search for specific content.
+Additionally, a search button will be displayed in the navigation bar.
+
 ## Theme Mode (`theme`)
 
 Sets the color theme for your blog.
