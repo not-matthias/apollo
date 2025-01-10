@@ -66,7 +66,7 @@
 
     {# Favicon #}
     {% if config.extra.favicon %}
-        <link rel="icon" type="image/png" href="{{ config.extra.favicon }}" />
+        <link rel="icon" type="image/png" href={{ config.extra.favicon }} />
     {% endif %}
 
     {# Font from cdn or disk #}
@@ -74,7 +74,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@4.5.8/index.min.css">
     {% else %}
-        <link href="{{ get_url(path="fonts.css") }}" rel="stylesheet" />
+        <link href={{ get_url(path="fonts.css") }} rel="stylesheet" />
     {% endif %}
 
     {# Analytics #}
@@ -100,17 +100,17 @@
 
     {# Fancy Codeblock #}
     {% if config.extra.fancy_code %}
-        <script src="{{ get_url(path="js/codeblock.js") }}"></script>
+        <script src={{ get_url(path="js/codeblock.js") }}></script>
     {% endif %}
 
     {# Table of contents #}
     {% if config.extra.toc | default(value=false) %}
-        <script src="{{ get_url(path="js/toc.js") }}"></script>
+        <script src={{ get_url(path="js/toc.js") }}></script>
     {% endif %}
 
     {# Dynamic Note #}
     {% if config.extra.dynamic_note | default(value=false) %}
-        <script src="{{ get_url(path="js/note.js") }}"></script>
+        <script src={{ get_url(path="js/note.js") }}></script>
     {% endif %}
 
     {% if config.extra.mathjax | default(value=false) %}
@@ -136,17 +136,17 @@
     {% if theme == "dark" %}
         <link rel="stylesheet" type="text/css" href="{{ get_url(path='theme/dark.css') }}" />
     {% elif theme == "light" %}
-        <link rel="stylesheet" type="text/css" href="{{ get_url(path="theme/light.css") }}" />
+        <link rel="stylesheet" type="text/css" href={{ get_url(path="theme/light.css") }} />
     {% elif theme == "auto" %}
-        <link rel="stylesheet" type="text/css" href="{{ get_url(path="theme/light.css") }}" />
+        <link rel="stylesheet" type="text/css" href={{ get_url(path="theme/light.css") }} />
         <link rel="stylesheet" type="text/css" href="{{ get_url(path='theme/dark.css') }}" media="(prefers-color-scheme: dark)" />
     {% elif theme == "toggle" %}
-        <link rel="stylesheet" type="text/css" href="{{ get_url(path="theme/light.css") }}" />
+        <link rel="stylesheet" type="text/css" href={{ get_url(path="theme/light.css") }} />
         <link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ get_url(path='theme/dark.css') }}" />
     {% endif %}
 
     <!-- Set the correct theme in the script -->
-    <script src="{{ get_url(path="js/themetoggle.js") }}"></script>
+    <script src={{ get_url(path="js/themetoggle.js") }}></script>
     {% if theme == "dark" %}
         <script>setTheme("dark");</script>
     {% elif theme == "light" %}
@@ -163,12 +163,12 @@
         <script>setTheme(getSavedTheme());</script>
     {% endif %}
 
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ get_url(path="main.css") }}" />
+    <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="main.css") }} />
 
     {% if config.extra.stylesheets %}
         {% for stylesheet in config.extra.stylesheets %}
             <link rel="stylesheet" href="{{ get_url(path=stylesheet) }}">
         {% endfor %}
     {% endif %}
-    <script src="{{ get_url(path="js/mermaid.js") }}"></script>
+    <script src={{ get_url(path="js/mermaid.js") }}></script>
 </head>
