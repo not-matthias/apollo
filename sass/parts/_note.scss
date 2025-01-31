@@ -43,6 +43,8 @@
 }
 
 .note-toggle {
+  font-family: inherit; 
+  padding: 10px 25px; /* Stop header intersecting with note-icon */
   cursor: pointer;
   position: relative;
 }
