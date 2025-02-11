@@ -1,6 +1,5 @@
 // GoatCounter: https://www.goatcounter.com
-// This file (and *only* this file) is released under the ISC license:
-// https://opensource.org/licenses/ISC
+// This file (and *only* this file) is released under the ISC license: https://opensource.org/licenses/ISC
 ;(function() {
 	'use strict';
 
@@ -145,24 +144,27 @@
 		var f = goatcounter.filter()
 		if (f)
 			return warn('not counting because of: ' + f)
-
 		var url = goatcounter.url(vars)
 		if (!url)
 			return warn('not counting because path callback returned null')
 
-		var img = document.createElement('img')
-		img.src = url
-		img.style.position = 'absolute'  // Affect layout less.
-		img.style.bottom = '0px'
-		img.style.width = '1px'
-		img.style.height = '1px'
-		img.loading = 'eager'
-		img.setAttribute('alt', '')
-		img.setAttribute('aria-hidden', 'true')
+		if (!navigator.sendBeacon(url)) {
+			// This mostly fails due to being blocked by CSP; try again with an
+			// image-based fallback.
+			var img = document.createElement('img')
+			img.src = url
+			img.style.position = 'absolute'  // Affect layout less.
+			img.style.bottom = '0px'
+			img.style.width = '1px'
+			img.style.height = '1px'
+			img.loading = 'eager'
+			img.setAttribute('alt', '')
+			img.setAttribute('aria-hidden', 'true')
 
-		var rm = function() { if (img && img.parentNode) img.parentNode.removeChild(img) }
-		img.addEventListener('load', rm, false)
-		document.body.appendChild(img)
+			var rm = function() { if (img && img.parentNode) img.parentNode.removeChild(img) }
+			img.addEventListener('load', rm, false)
+			document.body.appendChild(img)
+		}
 	}
 
 	// Get a query parameter.
@@ -267,4 +269,3 @@
 				goatcounter.bind_events()
 		})
 })();
-
