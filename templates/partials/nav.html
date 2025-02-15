@@ -12,7 +12,7 @@
         <div class="socials">
             {% for social in config.extra.socials %}
             <a rel="me" href="{{ social.url }}" class="social">
-                <img alt={{ social.name }} src={{ get_url(path="social_icons/" ~ social.icon ~ ".svg") }}>
+                <img alt={{ social.name }} src={{ get_url(path="icons/social/" ~ social.icon ~ ".svg") }}>
             </a>
             {% endfor %}
         </div>
@@ -30,7 +30,7 @@
             title="$SHORTCUT to open search"
         >
             <img 
-                src="{{ get_url(path='search.svg') }}" 
+                src="{{ get_url(path='icons/search.svg') }}" 
                 alt="Search" 
                 class="search-icon"
             >
@@ -73,8 +73,8 @@
 
         {% if config.extra.theme == "toggle" %}
             <a id="dark-mode-toggle" onclick="toggleTheme(); event.preventDefault();" href="#">
-                <img src={{ get_url(path="feather/sun.svg") }} id="sun-icon" style="filter: invert(1);" alt="Light" />
-                <img src={{ get_url(path="feather/moon.svg") }} id="moon-icon" alt="Dark" />
+                <img src={{ get_url(path="icons/sun.svg") }} id="sun-icon" style="filter: invert(1);" alt="Light" />
+                <img src={{ get_url(path="icons/moon.svg") }} id="moon-icon" alt="Dark" />
             </a>
 
             <!-- Inititialize the theme toggle icons -->
