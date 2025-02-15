@@ -41,7 +41,9 @@ socials = [
     { name = "github", url = "https://github.com/not-matthias/", icon = "github" },
 ]
 
-custom_css = []
+stylesheets = [
+    #"custom.css"    # at /static/custom.css
+]
 
 [extra.analytics]
 enabled = false

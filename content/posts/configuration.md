@@ -118,6 +118,20 @@ Specifies the path to the favicon image for your blog.
 
 This sets the small icon that appears in the browser tab for your website.
 
+## Custom Stylesheets (`stylesheets`)
+
+Allows you to add custom stylesheets to your blog.
+
+- Type: Array of files located in the `static` directory
+- Default: []
+- Usage:
+  ```toml
+  stylesheets = [
+    "custom.css",           # static/custom.css
+    "/css/another.css"      # static/css/another.css
+  ]
+  ```
+
 ## Fancy Code Styling (`fancy_code`)
 
 Enables enhanced styling for code blocks.
