@@ -147,22 +147,23 @@
     {% endif %}
 
     <!-- Set the correct theme in the script -->
-    <script src={{ get_url(path="js/themetoggle.js") }}></script>
-    {% if theme == "dark" %}
-        <script>setTheme("dark");</script>
-    {% elif theme == "light" %}
-        <script>setTheme("light");</script>
-    {% elif theme == "auto" %}
-        <script>
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                setTheme("dark");
-            } else {
-                setTheme("light");
-            }
-        </script>
-    {% else %}
-        <script>setTheme(getSavedTheme());</script>
+
+    {% if theme == "auto" or theme == "toggle" %}
+        <script src={{ get_url(path="js/themetoggle.js") }}></script>
+
+        {% if theme == "auto" %}
+            <script>
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    setTheme("dark");
+                } else {
+                    setTheme("light");
+                }
+            </script>
+        {% else %}
+            <script>setTheme(getSavedTheme());</script>
+        {% endif %}
     {% endif %}
+
 
     <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="main.css") }} />
 
