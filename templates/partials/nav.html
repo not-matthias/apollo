@@ -2,7 +2,7 @@
     <div class="main">
         {% if config.extra.logo %}
             <a href={{ config.base_url }} class="logo">
-                <img alt={{ config.title }} src={{ get_url(path=config.extra.logo) }}>
+                <img alt="{{ config.title }}" src="{{ get_url(path=config.extra.logo) }}">
             </a>
         {% else %}
             <a href={{ config.base_url }}>{{ config.title }}</a>
@@ -24,14 +24,14 @@
         {% endfor %}
 
         {% if config.build_search_index %}
-        <button 
+        <button
             id="search-button"
             class="search-button"
             title="$SHORTCUT to open search"
         >
-            <img 
-                src="{{ get_url(path='icons/search.svg') }}" 
-                alt="Search" 
+            <img
+                src="{{ get_url(path='icons/search.svg') }}"
+                alt="Search"
                 class="search-icon"
             >
         </button>
@@ -40,17 +40,17 @@
             <div id="modal-content">
                 <h1 id="modalTitle" class="page-header">Search</h1>
                 <div id="searchBar">
-                    <input 
-                        id="searchInput" 
-                        role="combobox" 
-                        autocomplete="off" 
-                        spellcheck="false" 
-                        aria-expanded="false" 
-                        aria-controls="results-container" 
+                    <input
+                        id="searchInput"
+                        role="combobox"
+                        autocomplete="off"
+                        spellcheck="false"
+                        aria-expanded="false"
+                        aria-controls="results-container"
                         placeholder="Search..."
                     />
-                    <button 
-                        id="clear-search" 
+                    <button
+                        id="clear-search"
                         class="clear-button"
                         title="Clear search"
                     >
