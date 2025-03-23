@@ -1,128 +1,128 @@
 .page-header {
-    font-size: 2.5em;
-    line-height: 100%;
-    font-family: var(--header-font);
-    margin: 4rem 0px 1rem 0px;
+  font-size: 2.5em;
+  line-height: 100%;
+  font-family: var(--header-font);
+  margin: 4rem 0px 1rem 0px;
 }
 
 .centered-header {
-    font-family: var(--header-font);
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-size: 4em;
+  font-family: var(--header-font);
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 4em;
 }
 
 .centered-header span {
-    line-height: 100%;
+  line-height: 100%;
 }
 
 header {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 1em 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1em 0;
 }
 
 header .main {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 1.5rem;
 
-    /* Otherwise header and menu is too close on small screens*/
-    margin-bottom: 5px;
+  /* Otherwise header and menu is too close on small screens*/
+  margin-bottom: 5px;
 }
 
 header .social img,
 header #dark-mode-toggle img {
-    width: 16px;
-    height: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 header .socials {
-    margin-bottom: 10px;
-    /* Space between social icons and menu items */
+  margin-bottom: 10px;
+  /* Space between social icons and menu items */
 }
 
 #dark-mode-toggle {
-    justify-content: center;
+  justify-content: center;
 }
 
 .logo {
-    border-bottom: unset;
-    background-image: unset;
+  border-bottom: unset;
+  background-image: unset;
 }
 
 .logo > img {
-    border: unset;
-    width: auto;
-    height: 24px;
-    vertical-align: middle;
+  border: unset;
+  width: auto;
+  height: 24px;
+  vertical-align: middle;
 }
 
 .logo:hover {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .socials {
-    /* flex-child */
-    flex-grow: 0;
-    /* flex-container */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-end;
-    gap: 6px;
+  /* flex-child */
+  flex-grow: 0;
+  /* flex-container */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 6px;
 }
 
 .social {
-    border-bottom: unset;
-    background-image: unset;
-    padding: 2px;
+  border-bottom: unset;
+  background-image: unset;
+  padding: 2px;
 }
 
 .social > img {
-    border: unset;
-    width: 24px;
-    height: 24px;
+  border: unset;
+  width: 24px;
+  height: 24px;
 }
 
 /* Mobile-specific adjustments */
 @media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        padding: 1em 0;
-    }
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+  }
 
-    header .main a {
-        font-size: 20px;
-    }
+  header .main a {
+    font-size: 20px;
+  }
 }
 
 .meta {
-    color: #999;
-    display: flexbox;
-    /* This changes the meta class to use flexbox, which ensures inline display */
-    align-items: center;
-    /* Aligns items vertically in the middle */
-    flex-wrap: wrap;
-    /* Allows items to wrap as needed */
+  color: #999;
+  display: flexbox;
+  /* This changes the meta class to use flexbox, which ensures inline display */
+  align-items: center;
+  /* Aligns items vertically in the middle */
+  flex-wrap: wrap;
+  /* Allows items to wrap as needed */
 }
 
 #dark-mode-toggle > img {
-    display: none;
-    width: 15px;
-    height: 15px;
-    border: unset;
+  display: none;
+  width: 15px;
+  height: 15px;
+  border: unset;
 }
 
 h1,
@@ -131,36 +131,36 @@ h3,
 h4,
 h5,
 h6 {
-    font-size: 1.2rem;
-    margin-top: 2em;
+  font-size: 1.2rem;
+  margin-top: 2em;
 }
 
 h1::before {
-    color: var(--primary-color);
-    content: "# ";
+  color: var(--primary-color);
+  content: "# ";
 }
 
 h2::before {
-    color: var(--primary-color);
-    content: "## ";
+  color: var(--primary-color);
+  content: "## ";
 }
 
 h3::before {
-    color: var(--primary-color);
-    content: "### ";
+  color: var(--primary-color);
+  content: "### ";
 }
 
 h4::before {
-    color: var(--primary-color);
-    content: "#### ";
+  color: var(--primary-color);
+  content: "#### ";
 }
 
 h5::before {
-    color: var(--primary-color);
-    content: "##### ";
+  color: var(--primary-color);
+  content: "##### ";
 }
 
 h6::before {
-    color: var(--primary-color);
-    content: "###### ";
+  color: var(--primary-color);
+  content: "###### ";
 }

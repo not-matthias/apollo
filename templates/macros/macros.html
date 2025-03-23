@@ -1,69 +1,65 @@
 {% macro list_tag_posts(pages, tag_name=false) %}
     {% if tag_name %}
-    <div class="page-header">
-        Entries tagged :: {{ tag_name }}<span class="primary-color" style="font-size: 1.6em">.</span>
-    </div>
+        <div class="page-header">
+            Entries tagged :: {{ tag_name }}<span class="primary-color" style="font-size: 1.6em">.</span>
+        </div>
     {% else %}
-    <div class="page-header">
-        All articles<span class="primary-color" style="font-size: 1.6em">.</span>
-    </div>
+        <div class="page-header">
+            All articles<span class="primary-color" style="font-size: 1.6em">.</span>
+        </div>
     {% endif %}
 
     <main class="list">
-    {{ post_macros::list_posts(pages=pages) }}
+        {{ post_macros::list_posts(pages=pages) }}
     </main>
 {% endmacro %}
 
 {% macro list_posts(pages) %}
-<ul>
-    {%- for page in pages %}
-    <li class="list-item">
-    <section>
-        <div class="post-header">
-            <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+    <ul>
+        {%- for page in pages %}
+            <li class="list-item">
+                <section>
+                    <div class="post-header">
+                        <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
 
-            <div>
-                <h1 class="title">
-                    <a href={{ page.permalink | safe }}>{{page.title}}</a>
+                        <div>
+                            <h1 class="title">
+                                <a href={{ page.permalink | safe }}>{{ page.title }}</a>
 
-                    {% if page.draft %}
-                    <span class="draft-label">DRAFT</span>
-                    {% endif %}
-                </h1>
+                                {% if page.draft %}<span class="draft-label">DRAFT</span>{% endif %}
+                            </h1>
 
-                <div class="meta">
-                    <div class="description">
-                        {% if page.description %}
-                        {{ page.description }}
-                        {% elif page.summary %}
-                        {{ page.summary | safe }}&hellip;
-                        {% else %}
-                        {% set hide_read_more = true %}
-                        {% endif %}
+                            <div class="meta">
+                                <div class="description">
+                                    {% if page.description %}
+                                        {{ page.description }}
+                                    {% elif page.summary %}
+                                        {{ page.summary | safe }}&hellip;
+                                    {% else %}
+                                        {% set hide_read_more = true %}
+                                    {% endif %}
+                                </div>
+
+                                {% if not hide_read_more %}<a class="readmore" href={{ page.permalink | safe }}>Read more ⟶</a>{% endif %}
+                            </div>
+                        </div>
                     </div>
-
-                    {% if not hide_read_more %}
-                    <a class="readmore" href={{ page.permalink | safe }}>Read more ⟶</a>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </section>
-  </li>
-    {% endfor -%}
-</ul>
+                </section>
+            </li>
+        {% endfor -%}
+    </ul>
 {% endmacro list_posts %}
 
 {% macro list_terms(terms) %}
     <ul>
-    {%- for term in terms %}
-        <section class="list-item">
-            <h1 class="title">
-                <a href={{ term.permalink }}>{{term.name}}</a>
-            </h1>
-        </section>
+        {%- for term in terms %}
+            <section class="list-item">
+                <h1 class="title">
+                    <a href={{ term.permalink }}>{{ term.name }}</a>
+                </h1>
+            </section>
 
-    {% endfor -%}
+        {% endfor -%}
     </ul>
 {% endmacro list_terms %}
 
@@ -78,8 +74,10 @@
                 {%- set sep = "&nbsp;" -%}
             {% endif -%}
             {%- for tag in page.taxonomies.tags %}
-                <a class="post-tag" href="{{ get_taxonomy_url(kind='tags', name=tag, lang=page.lang) | safe }}">#{{ tag }}</a>
-                {%- if not loop.last %}{{ sep | safe }}{% endif -%}
+                <a class="post-tag"
+                   href="{{ get_taxonomy_url(kind='tags', name=tag, lang=page.lang) | safe }}">#{{ tag }}</a>
+                {%- if not loop.last %}{{ sep | safe }}
+                {% endif -%}
             {% endfor -%}
         </span>
     {% endif -%}
@@ -92,22 +90,22 @@
 {% endmacro content %}
 
 {% macro home_page(section) %}
-<main>
-    <article>
-        <section class="body">
-            {{post_macros::page_header(title=section.title)}}
-            {{ section.content | safe }}
-        </section>
-    </article>
-</main>
+    <main>
+        <article>
+            <section class="body">
+                {{ post_macros::page_header(title=section.title) }}
+                {{ section.content | safe }}
+            </section>
+        </article>
+    </main>
 {% endmacro home_page %}
 
 {% macro content(page) %}
-<main>
-    <article>
-        <div class="title">
-            {#<h1 class="title">{{ page.title }}</h1>#}
-            {{ post_macros::page_header(title=page.title) }}
+    <main>
+        <article>
+            <div class="title">
+                {#<h1 class="title">{{ page.title }}</h1>#}
+                {{ post_macros::page_header(title=page.title) }}
 
                 <div class="meta">
                     {% if page.date %}
@@ -118,22 +116,20 @@
                         :: Updated on <time>{{ page.updated | date(format="%Y-%m-%d") }}</time>
                     {% endif %}
 
-                    {% if page.extra.read_time %}
-                        :: <time>{{ page.reading_time }}</time> Min Read
-                    {% endif %}
+                    {% if page.extra.read_time %}:: <time>{{ page.reading_time }}</time> Min Read{% endif %}
 
-                    {% if page.word_count %}
-                        :: {{ page.word_count }} Words
-                    {% endif %}
+                    {% if page.word_count %}:: {{ page.word_count }} Words{% endif %}
 
                     {# Inline display of tags directly after the date #}
                     {% if page.taxonomies and page.taxonomies.tags %}
-                            <span class="tags-label"> :: Tags:</span>
-                            <span class="tags">
-                                {%- for tag in page.taxonomies.tags %}
-                                    <a href="{{ get_taxonomy_url(kind='tags', name=tag, lang=page.lang) }}" class="post-tag">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-                                {% endfor %}
-                            </span>
+                        <span class="tags-label">:: Tags:</span>
+                        <span class="tags">
+                            {%- for tag in page.taxonomies.tags %}
+                                <a href="{{ get_taxonomy_url(kind='tags', name=tag, lang=page.lang) }}"
+                                   class="post-tag">{{ tag }}</a>
+                                {% if not loop.last %},{% endif %}
+                            {% endfor %}
+                        </span>
                     {% endif %}
 
                     {# View the page on GitHub #}
@@ -149,104 +145,102 @@
 
                         {% if repo_url %}
                             {% set final_url = repo_url ~ page.relative_path %}
-                            :: <a href="{{ final_url }}" target="_blank" rel="noopener noreferrer"> Source Code</a>
+                            :: <a href="{{ final_url }}" target="_blank" rel="noopener noreferrer">Source Code</a>
                         {% endif %}
                     {% endif %}
 
-                    {% if page.draft %}
-                        <span class="draft-label">DRAFT</span>
-                    {% endif %}
+                    {% if page.draft %}<span class="draft-label">DRAFT</span>{% endif %}
 
                 </div>
-        </div>
-
-        {% if page.extra.tldr %}
-            <div class="tldr">
-                <strong>tl;dr:</strong>
-                {{ page.extra.tldr }}
             </div>
-        {% endif %}
 
-        {# Optional table of contents #}
-        {% if config.extra.toc | default(value=false) %}
-        {% if page.toc %}
-            <div class="toc-container">
-                <h1 class="toc-title">Table of Contents</h1>
-                <ul class="toc-list">
-                    {% for h1 in page.toc %}
-                        <li>
-                            <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
-                            {% if h1.children %}
-                                <ul>
-                                    {% for h2 in h1.children %}
-                                        <li>
-                                            <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
-                                        </li>
+            {% if page.extra.tldr %}
+                <div class="tldr">
+                    <strong>tl;dr:</strong>
+                    {{ page.extra.tldr }}
+                </div>
+            {% endif %}
 
-                                        {% if h2.children %}
-                                            <ul>
-                                                {% for h3 in h2.children %}
-                                                    <li>
-                                                        <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        {% endif %}
-                                    {% endfor %}
-                                </ul>
-                            {% endif %}
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
-        {% endif %}
+            {# Optional table of contents #}
+            {% if config.extra.toc | default(value=false) %}
+                {% if page.toc %}
+                    <div class="toc-container">
+                        <h1 class="toc-title">Table of Contents</h1>
+                        <ul class="toc-list">
+                            {% for h1 in page.toc %}
+                                <li>
+                                    <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                                    {% if h1.children %}
+                                        <ul>
+                                            {% for h2 in h1.children %}
+                                                <li>
+                                                    <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                                                </li>
 
-        <section class="body">
-            {{ page.content | safe }}
-        </section>
-    </article>
-</main>
+                                                {% if h2.children %}
+                                                    <ul>
+                                                        {% for h3 in h2.children %}
+                                                            <li>
+                                                                <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            {% endif %}
+
+            <section class="body">
+                {{ page.content | safe }}
+            </section>
+        </article>
+    </main>
 {% endmacro content %}
 
 {% macro cards_posts(pages) %}
     <div class="cards">
-    {%- for page in pages %}
-        <div class="card">
-            {% if page.extra.local_image %}
-                <img class="card-image" alt={{ page.extra.local_image }} src="{{ get_url(path=page.extra.local_image) }}" />
-            {% elif page.extra.remote_image %}
-                <img class="card-image" alt={{ page.extra.remote_image }} src="{{ page.extra.remote_image }}" />
-            {% else %}
-                <div class="card-image-placeholder"></div>
-            {% endif %}
+        {%- for page in pages %}
+            <div class="card">
+                {% if page.extra.local_image %}
+                    <img class="card-image"
+                         alt="{{ page.extra.local_image }}"
+                         src="{{ get_url(path=page.extra.local_image) }}" />
+                {% elif page.extra.remote_image %}
+                    <img class="card-image"
+                         alt="{{ page.extra.remote_image }}"
+                         src="{{ page.extra.remote_image }}" />
+                {% else %}
+                    <div class="card-image-placeholder"></div>
+                {% endif %}
 
-            <div class="card-info">
-                <h1 class="card-title">
-                    {% if page.extra.link_to %}
-                    <a href={{ page.extra.link_to }}>{{page.title}}</a>
-                    {% else %}
-                    <a href={{ page.permalink | safe }}>{{page.title}}</a>
-                    {% endif %}
-                </h1>
+                <div class="card-info">
+                    <h1 class="card-title">
+                        {% if page.extra.link_to %}
+                            <a href={{ page.extra.link_to }}>{{ page.title }}</a>
+                        {% else %}
+                            <a href={{ page.permalink | safe }}>{{ page.title }}</a>
+                        {% endif %}
+                    </h1>
 
-                <div class="meta">
-                    {%- if page.date %}
-                        <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
-                    {% endif -%}
-                    {% if page.draft %}
-                        <span class="draft-label">DRAFT</span>
-                    {% endif %}
-                </div>
+                    <div class="meta">
+                        {%- if page.date %}
+                            <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+                        {% endif -%}
+                        {% if page.draft %}<span class="draft-label">DRAFT</span>{% endif %}
+                    </div>
 
-                <div class="card-description">
-                    {% if page.description %}
-                        {{ page.description }}
-                    {% endif %}
+                    <div class="card-description">
+                        {% if page.description %}{{ page.description }}{% endif %}
+                    </div>
                 </div>
             </div>
-        </div>
 
-    {% endfor -%}
+        {% endfor -%}
     </div>
 {% endmacro cards_posts %}

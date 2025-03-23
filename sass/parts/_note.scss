@@ -4,7 +4,6 @@
   --note-content-bg: var(--bg-1);
 }
 
-
 .note-container {
   border-radius: 4px;
   overflow: hidden;
@@ -43,14 +42,14 @@
 }
 
 .note-toggle {
-  font-family: inherit; 
+  font-family: inherit;
   padding: 10px 25px; /* Stop header intersecting with note-icon */
   cursor: pointer;
   position: relative;
 }
 
 .note-toggle::before {
-  content: '▼';
+  content: "▼";
   position: absolute;
   right: 20px;
   /* Position the arrow to the right */
@@ -73,7 +72,7 @@
 }
 
 .note-icon::before {
-  content: '✎';
+  content: "✎";
   color: var(--primary-color);
   position: absolute;
   left: 20px;

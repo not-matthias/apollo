@@ -42,7 +42,7 @@ socials = [
 ]
 
 stylesheets = [
-    #"custom.css"    # at /static/custom.css
+    # "custom.css"    # at /static/custom.css
 ]
 
 [extra.analytics]
