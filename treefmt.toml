@@ -1,4 +1,5 @@
 walk = "git"
+excludes = ["static/*", "content/*"]
 
 [formatter.nix]
 command = "alejandra"

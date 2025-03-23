@@ -80,10 +80,12 @@
   transform: translateY(-50%);
 }
 
-summary:hover,
-summary:focus {
-  color: var(--primary-color);
-  background-color: var(--note-header-bg);
-  outline: none;
-  padding: 10px;
+summary {
+    padding-left: 0.5em;
+
+    &:hover {
+        background-color: var(--primary-color);
+        color: var(--hover-color);
+        cursor: pointer;
+    }
 }
