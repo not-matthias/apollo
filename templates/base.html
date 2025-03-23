@@ -3,28 +3,28 @@
 <!DOCTYPE html>
 <html lang="en" class="dark light">
 
-{% include "partials/header.html" %}
+    {% include "partials/header.html" %}
 
-<body>
-    <div class="content">
-        {% include "partials/nav.html" %}
+    <body>
+        <div class="content">
+            {% include "partials/nav.html" %}
 
-        {# Post page is the default #}
-        {% block main_content %}
-            Nothing here?!
-        {% endblock main_content %}
+            {# Post page is the default #}
+            {% block main_content %}
+                Nothing here?!
+            {% endblock main_content %}
 
-        {% if page.extra.comment is defined  %}
-            {% set show_comment = page.extra.comment %}
-        {% else %}
-            {% set show_comment = false %}
-        {% endif %}
+            {% if page.extra.comment is defined %}
+                {% set show_comment = page.extra.comment %}
+            {% else %}
+                {% set show_comment = false %}
+            {% endif %}
 
-        {% if show_comment %}
-        <div class="giscus"></div>
-        {% include "_giscus_script.html" %}
-        {% endif %}
-    </div>
-</body>
+            {% if show_comment %}
+                <div class="giscus"></div>
+                {% include "_giscus_script.html" %}
+            {% endif %}
+        </div>
+    </body>
 
 </html>

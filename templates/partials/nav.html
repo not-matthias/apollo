@@ -11,9 +11,10 @@
 
         <div class="socials">
             {% for social in config.extra.socials %}
-            <a rel="me" href="{{ social.url }}" class="social">
-                <img alt={{ social.name }} src={{ get_url(path="icons/social/" ~ social.icon ~ ".svg") }}>
-            </a>
+                <a rel="me" href="{{ social.url }}" class="social">
+                    <img alt="{{ social.name }}"
+                         src="{{ get_url(path="icons/social/" ~ social.icon ~ ".svg") }}">
+                </a>
             {% endfor %}
         </div>
     </div>
@@ -24,56 +25,54 @@
         {% endfor %}
 
         {% if config.build_search_index %}
-        <button
-            id="search-button"
-            class="search-button"
-            title="$SHORTCUT to open search"
-        >
-            <img
-                src="{{ get_url(path='icons/search.svg') }}"
-                alt="Search"
-                class="search-icon"
-            >
-        </button>
+            <button id="search-button"
+                    class="search-button"
+                    title="$SHORTCUT to open search">
+                <img src="{{ get_url(path='icons/search.svg') }}"
+                     alt="Search"
+                     class="search-icon">
+            </button>
 
-        <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
-            <div id="modal-content">
-                <h1 id="modalTitle" class="page-header">Search</h1>
-                <div id="searchBar">
-                    <input
-                        id="searchInput"
-                        role="combobox"
-                        autocomplete="off"
-                        spellcheck="false"
-                        aria-expanded="false"
-                        aria-controls="results-container"
-                        placeholder="Search..."
-                    />
-                    <button
-                        id="clear-search"
-                        class="clear-button"
-                        title="Clear search"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
-                        </svg>
-                    </button>
-                </div>
-                <div id="results-container">
-                    <div id="results-info">
-                        <span id="zero_results" style="display: none;">No results</span>
-                        <span id="one_result" style="display: none;">1 result</span>
-                        <span id="many_results" style="display: none;">$NUMBER results</span>
+            <div id="searchModal"
+                 class="search-modal js"
+                 role="dialog"
+                 aria-labelledby="modalTitle">
+                <div id="modal-content">
+                    <h1 id="modalTitle" class="page-header">Search</h1>
+                    <div id="searchBar">
+                        <input id="searchInput"
+                               role="combobox"
+                               autocomplete="off"
+                               spellcheck="false"
+                               aria-expanded="false"
+                               aria-controls="results-container"
+                               placeholder="Search..." />
+                        <button id="clear-search" class="clear-button" title="Clear search">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                            </svg>
+                        </button>
                     </div>
-                    <div id="results" role="listbox"></div>
+                    <div id="results-container">
+                        <div id="results-info">
+                            <span id="zero_results" style="display: none;">No results</span>
+                            <span id="one_result" style="display: none;">1 result</span>
+                            <span id="many_results" style="display: none;">$NUMBER results</span>
+                        </div>
+                        <div id="results" role="listbox"></div>
+                    </div>
                 </div>
             </div>
-        </div>
         {% endif %}
 
         {% if config.extra.theme == "toggle" %}
-            <a id="dark-mode-toggle" onclick="toggleTheme(); event.preventDefault();" href="#">
-                <img src={{ get_url(path="icons/sun.svg") }} id="sun-icon" style="filter: invert(1);" alt="Light" />
+            <a id="dark-mode-toggle"
+               onclick="toggleTheme(); event.preventDefault();"
+               href="#">
+                <img src="{{ get_url(path="icons/sun.svg") }}"
+                     id="sun-icon"
+                     style="filter: invert(1)"
+                     alt="Light" />
                 <img src={{ get_url(path="icons/moon.svg") }} id="moon-icon" alt="Dark" />
             </a>
 

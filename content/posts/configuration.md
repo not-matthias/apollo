@@ -24,6 +24,7 @@ When enabled, a search index will be generated for your blog, allowing visitors 
 Additionally, a search button will be displayed in the navigation bar.
 
 Configure the search like this:
+
 ```toml
 build_search_index = true
 
@@ -55,10 +56,10 @@ Defines the navigation menu items for your blog.
 - Usage:
   ```toml
   menu = [
-      { name = "/posts", url = "/posts", weight = 1 },
-      { name = "/projects", url = "/projects", weight = 2 },
-      { name = "/about", url = "/about", weight = 3 },
-      { name = "/tags", url = "/tags", weight = 4 },
+    { name = "/posts", url = "/posts", weight = 1 },
+    { name = "/projects", url = "/projects", weight = 2 },
+    { name = "/about", url = "/about", weight = 3 },
+    { name = "/tags", url = "/tags", weight = 4 },
   ]
   ```
 
@@ -155,6 +156,7 @@ When enabled, you can create expandable/collapsible note sections in your blog p
 ## Anchor Links
 
 You can add anchor links by adding the following to your `_index.md`:
+
 ```toml
 insert_anchor_links = "heading"
 ```
@@ -190,9 +192,7 @@ website_id = "43929cd1-1e83...."                    # Your Umami website ID
 host_url = "https://stats.mywebsite.com"            # Optional: Custom host URL
 ```
 
-
 ---
-
 
 # Page configuration
 
@@ -203,7 +203,7 @@ Do you want to link to the source code of your blog post? You can turn on the `r
 ```toml
 [extra]
 repo_view = true
-repo_url = "https://github.com/not-matthias/apollo/tree/main/content"   # Alternatively add the repo here
+repo_url = "https://github.com/not-matthias/apollo/tree/main/content" # Alternatively add the repo here
 ```
 
 The `repo_url` can be set in the `[extra]` section or in your `config.toml`.
@@ -220,6 +220,7 @@ After making `comment = true` in `[extra]` section of you post, save your script
 When enabled, this allows readers to leave comments on your blog posts. This feature has to be set for each individual post and is not supported at higher levels.
 
 Example configuration in [content/posts/configuration.md](https://github.com/not-matthias/apollo/blob/main/content/posts/configuration.md):
+
 ```toml
 +++
 title = "Configuring Apollo"
@@ -230,6 +231,7 @@ comment = true
 ```
 
 Comments via [utterances](https://utteranc.es) can be configured in `template/_giscus_script.html` like this:
+
 ```html
 <script src="https://utteranc.es/client.js"
         repo="YOUR_NAME/YOUR_REPO"

@@ -1,4 +1,4 @@
-{%extends "base.html"%}
+{% extends "base.html" %}
 
 {% block main_content %}
     <div class="tag-cloud">
@@ -9,11 +9,11 @@
         <main class="list">
             <ul class="tags">
                 {% for term in terms %}
-                <li>
-                    <a href="{{ term.permalink | safe }}">
-                        {{ term.name }} ({{ term.pages | length }} post{{ term.pages | length | pluralize }})
-                    </a>
-                </li>
+                    <li>
+                        <a href="{{ term.permalink | safe }}">
+                            {{ term.name }} ({{ term.pages | length }} post{{ term.pages | length | pluralize }})
+                        </a>
+                    </li>
                 {% endfor %}
             </ul>
         </main>

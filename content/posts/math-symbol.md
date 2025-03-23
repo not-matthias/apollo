@@ -13,10 +13,10 @@ Note: This requires the `mathjax` and `mathjax_dollar_inline_enable` option set 
 
 # Inline Math
 
--   $(a+b)^2$ = $a^2 + 2ab + b^2$
--   A polynomial P of degree d over $\mathbb{F}_p$ is an expression of the form
-    $P(s) = a_0 + a_1 . s + a_2 . s^2 + ... + a_d . s^d$ for some
-    $a_0,..,a_d \in \mathbb{F}_p$
+- $(a+b)^2$ = $a^2 + 2ab + b^2$
+- A polynomial P of degree d over $\mathbb{F}_p$ is an expression of the form
+  $P(s) = a_0 + a_1 . s + a_2 . s^2 + ... + a_d . s^d$ for some
+  $a_0,..,a_d \in \mathbb{F}_p$
 
 # Displayed Math
 

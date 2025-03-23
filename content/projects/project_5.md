@@ -1,6 +1,6 @@
 +++
 title = "Project 4"
-description = "Example description" 
+description = "Example description"
 weight = 1
 +++
 

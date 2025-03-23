@@ -10,15 +10,14 @@
 @import "parts/_mermaid.scss";
 @import "parts/_search.scss";
 
-
 :root {
   /* Used for: block comment, hr, ... */
   --border-color: var(--border-color);
 
   /* Fonts */
-  --text-font: 'Jetbrains Mono';
-  --header-font: 'Space Grotesk', 'Helvetica', sans-serif;
-  --code-font: 'Jetbrains Mono';
+  --text-font: "Jetbrains Mono";
+  --header-font: "Space Grotesk", "Helvetica", sans-serif;
+  --code-font: "Jetbrains Mono";
 }
 
 html {
@@ -35,19 +34,19 @@ html {
   word-wrap: break-word;
 }
 
-@media all and (min-width:640px) {
+@media all and (min-width: 640px) {
   html {
     font-size: 16.5px;
   }
 }
 
-@media all and (min-width:720px) {
+@media all and (min-width: 720px) {
   html {
     font-size: 17px;
   }
 }
 
-@media all and (min-width:960px) {
+@media all and (min-width: 960px) {
   html {
     font-size: 18px;
   }
