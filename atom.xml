@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>not-matthias</title>
+    <subtitle>This is an example description</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://not-matthias.github.io/apollo/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-12-26T00:00:00+00:00</updated>
+    <id>https://not-matthias.github.io/apollo/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Mermaid Example</title>
+        <published>2024-12-26T00:00:00+00:00</published>
+        <updated>2024-12-26T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/mermaid/"/>
+        <id>https://not-matthias.github.io/apollo/posts/mermaid/</id>
+        
+        <content type="html" xml:base="https://not-matthias.github.io/apollo/posts/mermaid/">&lt;p&gt;This Theme supports &lt;a href=&quot;https:&#x2F;&#x2F;mermaid.js.org&#x2F;&quot;&gt;mermaid&lt;&#x2F;a&gt; markdown diagram rendering.&lt;&#x2F;p&gt;
+&lt;p&gt;To use mermaid diagrams in your posts, see the example in the raw markdown code.
+https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;not-matthias&#x2F;apollo&#x2F;refs&#x2F;heads&#x2F;main&#x2F;content&#x2F;posts&#x2F;mermaid.md&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;rendered-example&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#rendered-example&quot; aria-label=&quot;Anchor link for: rendered-example&quot;&gt;Rendered Example&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;script src=https:&#x2F;&#x2F;not-matthias.github.io&#x2F;apollo&#x2F;js&#x2F;mermaid.js&gt;&lt;&#x2F;script&gt;
+
+&lt;pre class=&quot;mermaid&quot;&gt;
+  graph LR
+    A[Start] --&gt; B[Initialize]
+    B --&gt; C[Processing]
+    C --&gt; D[Complete]
+    D --&gt; E[Success]
+    
+    style A fill:#f9f,stroke:#333
+    style E fill:#9f9,stroke:#333
+&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Configuring Apollo</title>
+        <published>2024-07-09T00:00:00+00:00</published>
+        <updated>2024-07-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/configuration/"/>
+        <id>https://not-matthias.github.io/apollo/posts/configuration/</id>
+        
+        <content type="html" xml:base="https://not-matthias.github.io/apollo/posts/configuration/">&lt;h1 id=&quot;site-configuration&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#site-configuration&quot; aria-label=&quot;Anchor link for: site-configuration&quot;&gt;Site Configuration&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;search-build-search-index&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#search-build-search-index&quot; aria-label=&quot;Anchor link for: search-build-search-index&quot;&gt;Search (&lt;code&gt;build_search_index&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Enables or disables the search functionality for your blog.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;&#x2F;li&gt;
+&lt;li&gt;Default: false&lt;&#x2F;li&gt;
+&lt;li&gt;Usage: &lt;code&gt;build_search_index = false&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;When enabled, a search index will be generated for your blog, allowing visitors to search for specific content.
+Additionally, a search button will be displayed in the navigation bar.&lt;&#x2F;p&gt;
+&lt;p&gt;Configure the search like this:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#fafafa;color:#61676c;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;build_search_index &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff8f40;&quot;&gt;true
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;search&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;include_title &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff8f40;&quot;&gt;true
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;include_description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff8f40;&quot;&gt;true
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;include_path &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff8f40;&quot;&gt;true
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;include_content &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff8f40;&quot;&gt;true
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;index_format &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;elasticlunr_json&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;theme-mode-theme&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#theme-mode-theme&quot; aria-label=&quot;Anchor link for: theme-mode-theme&quot;&gt;Theme Mode (&lt;code&gt;theme&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Sets the color theme for your blog.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: String&lt;&#x2F;li&gt;
+&lt;li&gt;Options: &quot;light&quot;, &quot;dark&quot;, &quot;auto&quot;, &quot;toggle&quot;&lt;&#x2F;li&gt;
+&lt;li&gt;Default: &quot;toggle&quot;&lt;&#x2F;li&gt;
+&lt;li&gt;Usage: &lt;code&gt;theme = &quot;toggle&quot;&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The &quot;toggle&quot; option allows users to switch between light and dark modes, while &quot;auto&quot; typically follows the user&#x27;s system preferences.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;menu&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#menu&quot; aria-label=&quot;Anchor link for: menu&quot;&gt;Menu&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Defines the navigation menu items for your blog.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Array of objects&lt;&#x2F;li&gt;
+&lt;li&gt;Default: []&lt;&#x2F;li&gt;
+&lt;li&gt;Usage:&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#fafafa;color:#61676c;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;menu &lt;&#x2F;span&gt;&lt;span&gt;= [
+&lt;&#x2F;span&gt;&lt;span&gt;  { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;&#x2F;posts&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;url &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;&#x2F;posts&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;weight &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff8f40;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;  { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;&#x2F;projects&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;url &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;&#x2F;projects&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;weight &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff8f40;&quot;&gt;2 &lt;&#x2F;span&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;  { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;&#x2F;about&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;url &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;&#x2F;about&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;weight &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff8f40;&quot;&gt;3 &lt;&#x2F;span&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;  { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;&#x2F;tags&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;url &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;&#x2F;tags&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;weight &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff8f40;&quot;&gt;4 &lt;&#x2F;span&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;logo&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#logo&quot; aria-label=&quot;Anchor link for: logo&quot;&gt;Logo&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Defines the site logo image file.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: String&lt;&#x2F;li&gt;
+&lt;li&gt;Usage:&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#fafafa;color:#61676c;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;logo &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;site_logo.svg&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;socials&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#socials&quot; aria-label=&quot;Anchor link for: socials&quot;&gt;Socials&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Defines the social media links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Array of objects&lt;&#x2F;li&gt;
+&lt;li&gt;Default: []&lt;&#x2F;li&gt;
+&lt;li&gt;Usage:&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#fafafa;color:#61676c;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;socials &lt;&#x2F;span&gt;&lt;span&gt;= [
+&lt;&#x2F;span&gt;&lt;span&gt;  { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;twitter&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;url &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;https:&#x2F;&#x2F;twitter.com&#x2F;not_matthias&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;icon &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;twitter&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;  { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;github&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;url &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;https:&#x2F;&#x2F;github.com&#x2F;not-matthias&#x2F;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;icon &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;github&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;table-of-contents-toc&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#table-of-contents-toc&quot; aria-label=&quot;Anchor link for: table-of-contents-toc&quot;&gt;Table of Contents (&lt;code&gt;toc&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Enables or disables the table of contents for posts.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;&#x2F;li&gt;
+&lt;li&gt;Default: true&lt;&#x2F;li&gt;
+&lt;li&gt;Usage: &lt;code&gt;toc = true&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;When enabled, a table of contents will be generated for posts, making it easier for readers to navigate through longer articles.&lt;&#x2F;p&gt;
+&lt;p&gt;Note: This feature adds additional JavaScript to your site.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;cdn-usage-use-cdn&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#cdn-usage-use-cdn&quot; aria-label=&quot;Anchor link for: cdn-usage-use-cdn&quot;&gt;CDN Usage (&lt;code&gt;use_cdn&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Determines whether to use a Content Delivery Network (CDN) for assets.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;&#x2F;li&gt;
+&lt;li&gt;Default: false&lt;&#x2F;li&gt;
+&lt;li&gt;Usage: &lt;code&gt;use_cdn = false&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;When set to true, the theme will attempt to load assets from a CDN, which can improve loading times for visitors from different geographic locations.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;favicon-favicon&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#favicon-favicon&quot; aria-label=&quot;Anchor link for: favicon-favicon&quot;&gt;Favicon (&lt;code&gt;favicon&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Specifies the path to the favicon image for your blog.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: String&lt;&#x2F;li&gt;
+&lt;li&gt;Default: &quot;&#x2F;icon&#x2F;favicon.png&quot;&lt;&#x2F;li&gt;
+&lt;li&gt;Usage: &lt;code&gt;favicon = &quot;&#x2F;icon&#x2F;favicon.png&quot;&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This sets the small icon that appears in the browser tab for your website.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;custom-stylesheets-stylesheets&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#custom-stylesheets-stylesheets&quot; aria-label=&quot;Anchor link for: custom-stylesheets-stylesheets&quot;&gt;Custom Stylesheets (&lt;code&gt;stylesheets&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Allows you to add custom stylesheets to your blog.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Array of files located in the &lt;code&gt;static&lt;&#x2F;code&gt; directory&lt;&#x2F;li&gt;
+&lt;li&gt;Default: []&lt;&#x2F;li&gt;
+&lt;li&gt;Usage:&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#fafafa;color:#61676c;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;stylesheets &lt;&#x2F;span&gt;&lt;span&gt;= [
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;custom.css&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;,           &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#abb0b6;&quot;&gt;# static&#x2F;custom.css
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;&#x2F;css&#x2F;another.css&amp;quot;      &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#abb0b6;&quot;&gt;# static&#x2F;css&#x2F;another.css
+&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;fancy-code-styling-fancy-code&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#fancy-code-styling-fancy-code&quot; aria-label=&quot;Anchor link for: fancy-code-styling-fancy-code&quot;&gt;Fancy Code Styling (&lt;code&gt;fancy_code&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Enables enhanced styling for code blocks.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;&#x2F;li&gt;
+&lt;li&gt;Default: true&lt;&#x2F;li&gt;
+&lt;li&gt;Usage: &lt;code&gt;fancy_code = true&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This option adds the language label and a copy button.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;dynamic-notes-dynamic-note&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#dynamic-notes-dynamic-note&quot; aria-label=&quot;Anchor link for: dynamic-notes-dynamic-note&quot;&gt;Dynamic Notes (&lt;code&gt;dynamic_note&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Allows for the creation of togglable note sections in your content.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;&#x2F;li&gt;
+&lt;li&gt;Default: true&lt;&#x2F;li&gt;
+&lt;li&gt;Usage: &lt;code&gt;dynamic_note = true&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;When enabled, you can create expandable&#x2F;collapsible note sections in your blog posts.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;anchor-links&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#anchor-links&quot; aria-label=&quot;Anchor link for: anchor-links&quot;&gt;Anchor Links&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;You can add anchor links by adding the following to your &lt;code&gt;_index.md&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#fafafa;color:#61676c;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;insert_anchor_links &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;heading&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;analytics&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#analytics&quot; aria-label=&quot;Anchor link for: analytics&quot;&gt;Analytics&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Enable or disable analytics tracking:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#fafafa;color:#61676c;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;extra&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;analytics&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;enabled &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff8f40;&quot;&gt;false
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;After enabling analytics, configure GoatCounter or Umami.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;goatcounter&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#goatcounter&quot; aria-label=&quot;Anchor link for: goatcounter&quot;&gt;GoatCounter&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Configure GoatCounter analytics:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#fafafa;color:#61676c;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;extra&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;analytics&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;goatcounter&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;user &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;your_user&amp;quot;           &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#abb0b6;&quot;&gt;# Your GoatCounter username
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;host &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;example.com&amp;quot;         &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#abb0b6;&quot;&gt;# Optional: Custom host
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;umami-analytics&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#umami-analytics&quot; aria-label=&quot;Anchor link for: umami-analytics&quot;&gt;Umami Analytics&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Configure Umami analytics:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#fafafa;color:#61676c;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;extra&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;analytics&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;umami&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;website_id &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;43929cd1-1e83....&amp;quot;                    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#abb0b6;&quot;&gt;# Your Umami website ID
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;host_url &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;https:&#x2F;&#x2F;stats.mywebsite.com&amp;quot;            &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#abb0b6;&quot;&gt;# Optional: Custom host URL
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;hr &#x2F;&gt;
+&lt;h1 id=&quot;page-configuration&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#page-configuration&quot; aria-label=&quot;Anchor link for: page-configuration&quot;&gt;Page configuration&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;source-code-repo-view&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#source-code-repo-view&quot; aria-label=&quot;Anchor link for: source-code-repo-view&quot;&gt;Source code (&lt;code&gt;repo_view&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Do you want to link to the source code of your blog post? You can turn on the &lt;code&gt;repo_view&lt;&#x2F;code&gt; inside the &lt;code&gt;[extra]&lt;&#x2F;code&gt; section of your blog post.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#fafafa;color:#61676c;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;extra&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;repo_view &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff8f40;&quot;&gt;true
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;repo_url &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;https:&#x2F;&#x2F;github.com&#x2F;not-matthias&#x2F;apollo&#x2F;tree&#x2F;main&#x2F;content&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#abb0b6;&quot;&gt;# Alternatively add the repo here
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The &lt;code&gt;repo_url&lt;&#x2F;code&gt; can be set in the &lt;code&gt;[extra]&lt;&#x2F;code&gt; section or in your &lt;code&gt;config.toml&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;comments-comment&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#comments-comment&quot; aria-label=&quot;Anchor link for: comments-comment&quot;&gt;Comments (&lt;code&gt;comment&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Enables or disables the comment system for posts.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;&#x2F;li&gt;
+&lt;li&gt;Default: false&lt;&#x2F;li&gt;
+&lt;li&gt;Usage: &lt;code&gt;comment = false&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;After making &lt;code&gt;comment = true&lt;&#x2F;code&gt; in &lt;code&gt;[extra]&lt;&#x2F;code&gt; section of you post, save your script from &lt;a href=&quot;https:&#x2F;&#x2F;giscus.app&quot;&gt;Giscus&lt;&#x2F;a&gt; to &lt;code&gt;templates&#x2F;_giscus_script.html&lt;&#x2F;code&gt;.
+When enabled, this allows readers to leave comments on your blog posts. This feature has to be set for each individual post and is not supported at higher levels.&lt;&#x2F;p&gt;
+&lt;p&gt;Example configuration in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;not-matthias&#x2F;apollo&#x2F;blob&#x2F;main&#x2F;content&#x2F;posts&#x2F;configuration.md&quot;&gt;content&#x2F;posts&#x2F;configuration.md&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#fafafa;color:#61676c;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span style=&quot;color:#f51818;&quot;&gt;+++
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;title &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;Configuring Apollo&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;extra&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;comment &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff8f40;&quot;&gt;true
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f51818;&quot;&gt;+++
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Comments via &lt;a href=&quot;https:&#x2F;&#x2F;utteranc.es&quot;&gt;utterances&lt;&#x2F;a&gt; can be configured in &lt;code&gt;template&#x2F;_giscus_script.html&lt;&#x2F;code&gt; like this:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#fafafa;color:#61676c;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span style=&quot;color:#55b4d490;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;script &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f29718;&quot;&gt;src&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;https:&#x2F;&#x2F;utteranc.es&#x2F;client.js&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f29718;&quot;&gt;repo&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;YOUR_NAME&#x2F;YOUR_REPO&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f29718;&quot;&gt;issue-term&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;pathname&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f29718;&quot;&gt;theme&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;github-light&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f29718;&quot;&gt;crossorigin&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;anonymous&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f29718;&quot;&gt;async&lt;&#x2F;span&gt;&lt;span style=&quot;color:#55b4d490;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#55b4d490;&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#399ee6;&quot;&gt;script&lt;&#x2F;span&gt;&lt;span style=&quot;color:#55b4d490;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Shortcode Example</title>
+        <published>2024-06-14T00:00:00+00:00</published>
+        <updated>2024-06-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/shortcode/"/>
+        <id>https://not-matthias.github.io/apollo/posts/shortcode/</id>
+        
+        <content type="html" xml:base="https://not-matthias.github.io/apollo/posts/shortcode/">&lt;h2 id=&quot;note&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#note&quot; aria-label=&quot;Anchor link for: note&quot;&gt;Note&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Here is an example of the &lt;code&gt;note&lt;&#x2F;code&gt; shortcode:&lt;&#x2F;p&gt;
+&lt;p&gt;This one is static!
+&lt;div class=&quot;note-container&quot;&gt;
+    
+            &lt;div class=&quot;note-header&quot;&gt;
+                
+                    &lt;div class=&quot;note-icon&quot;&gt;&lt;p&gt;Note!&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+                
+            &lt;&#x2F;div&gt;
+            &lt;div class=&quot;note-content&quot;&gt;&lt;p&gt;This blog assumes basic terminal maturity&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;p&gt;
+&lt;p&gt;This one is clickable!
+&lt;div class=&quot;note-container&quot;&gt;
+    
+        &lt;button class=&quot;note-toggle&quot;&gt;
+            
+                &lt;div class=&quot;note-icon&quot;&gt;&lt;p&gt;Quiz!&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+            
+        &lt;&#x2F;button&gt;
+
+        
+            &lt;div class=&quot;note-content&quot; style=&quot;display: none;&quot;&gt;
+            
+                &lt;p&gt;The answer to the quiz!&lt;&#x2F;p&gt;
+
+            &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;p&gt;
+&lt;p&gt;Syntax:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#fafafa;color:#61676c;&quot;&gt;&lt;code&gt;&lt;span&gt;{{ note(header=&amp;quot;Note!&amp;quot;, body=&amp;quot;This blog assumes basic terminal maturity&amp;quot;) }}
+&lt;&#x2F;span&gt;&lt;span&gt;{{ note(clickable=true, hidden = true, header=&amp;quot;Quiz!&amp;quot;, body=&amp;quot;The answer to the quiz!&amp;quot;) }}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You can also use some HTML in the text:
+&lt;div class=&quot;note-container&quot;&gt;
+    
+            &lt;div class=&quot;note-header&quot;&gt;
+                
+                    &lt;div class=&quot;note-icon&quot;&gt;&lt;p&gt;Note!&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+                
+            &lt;&#x2F;div&gt;
+            &lt;div class=&quot;note-content&quot;&gt;&lt;h1&gt;This blog assumes basic terminal maturity&lt;&#x2F;h1&gt;&lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;p&gt;
+&lt;p&gt;Literal shortcode:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#fafafa;color:#61676c;&quot;&gt;&lt;code&gt;&lt;span&gt;{{ note(header=&amp;quot;Note!&amp;quot;, body=&amp;quot;&amp;lt;h1&amp;gt;This blog assumes basic terminal maturity&amp;lt;&#x2F;h1&amp;gt;&amp;quot;) }}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Pretty cool, right?&lt;&#x2F;p&gt;
+&lt;p&gt;Finally, you can do something like this (hopefully):&lt;&#x2F;p&gt;
+&lt;div class=&quot;note-container&quot;&gt;
+    
+        &lt;button class=&quot;note-toggle&quot;&gt;
+            
+                &lt;div class=&quot;note-icon&quot;&gt;&lt;p&gt;Quiz!&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+            
+        &lt;&#x2F;button&gt;
+
+        
+                &lt;div class=&quot;note-content&quot; style=&quot;display: block;&quot;&gt;
+                
+                &lt;h1 id=&quot;hello-this-is-markdown-inside-a-note-shortcode&quot;&gt;Hello this is markdown inside a note shortcode&lt;&#x2F;h1&gt;
+&lt;pre data-lang=&quot;rust&quot; style=&quot;background-color:#fafafa;color:#61676c;&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span style=&quot;color:#fa6e32;&quot;&gt;fn &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f29718;&quot;&gt;main&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f07171;&quot;&gt;println!&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;Hello World&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;We can&#x27;t call another shortcode inside a shortcode, but this is good enough.&lt;&#x2F;p&gt;
+
+            &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;p&gt;Here is the raw markdown:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;markdown&quot; style=&quot;background-color:#fafafa;color:#61676c;&quot; class=&quot;language-markdown &quot;&gt;&lt;code class=&quot;language-markdown&quot; data-lang=&quot;markdown&quot;&gt;&lt;span&gt;{{ note(clickable=true, header=&amp;quot;Quiz!&amp;quot;) }}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#fa6e32;&quot;&gt;# &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#399ee6;&quot;&gt;Hello this is markdown inside a note shortcode
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#4cbf99;&quot;&gt;\`\`\`&lt;&#x2F;span&gt;&lt;span&gt;rust
+&lt;&#x2F;span&gt;&lt;span&gt;fn main() {
+&lt;&#x2F;span&gt;&lt;span&gt;    println!(&amp;quot;Hello World&amp;quot;);
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#4cbf99;&quot;&gt;\`\`\`
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;We can&amp;#39;t call another shortcode inside a shortcode, but this is good enough.
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;{{&#x2F;* end &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#f07171;&quot;&gt;*&#x2F;}}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Finally, we have center
+&lt;div class=&quot;note-container&quot;&gt;
+    
+            &lt;div class=&quot;note-header&quot;&gt;
+                
+                    &lt;div class=&quot;note-center&quot;&gt;&lt;p&gt;Centered Text&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+                
+            &lt;&#x2F;div&gt;
+            &lt;div class=&quot;note-content&quot;&gt;&lt;p&gt;This is centered text&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;markdown&quot; style=&quot;background-color:#fafafa;color:#61676c;&quot; class=&quot;language-markdown &quot;&gt;&lt;code class=&quot;language-markdown&quot; data-lang=&quot;markdown&quot;&gt;&lt;span&gt;{{ note(center=true, header=&amp;quot;Centered Text&amp;quot;, body=&amp;quot;This is centered text&amp;quot;) }}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;It works good enough for me!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Math Symbol Example</title>
+        <published>2023-01-06T00:00:00+00:00</published>
+        <updated>2023-01-06T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/math-symbol/"/>
+        <id>https://not-matthias.github.io/apollo/posts/math-symbol/</id>
+        
+        <content type="html" xml:base="https://not-matthias.github.io/apollo/posts/math-symbol/">&lt;p&gt;Note: This requires the &lt;code&gt;mathjax&lt;&#x2F;code&gt; and &lt;code&gt;mathjax_dollar_inline_enable&lt;&#x2F;code&gt; option set to &lt;code&gt;true&lt;&#x2F;code&gt; in &lt;code&gt;[extra]&lt;&#x2F;code&gt; section.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;inline-math&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#inline-math&quot; aria-label=&quot;Anchor link for: inline-math&quot;&gt;Inline Math&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;$(a+b)^2$ = $a^2 + 2ab + b^2$&lt;&#x2F;li&gt;
+&lt;li&gt;A polynomial P of degree d over $\mathbb{F}_p$ is an expression of the form
+$P(s) = a_0 + a_1 . s + a_2 . s^2 + ... + a_d . s^d$ for some
+$a_0,..,a_d \in \mathbb{F}_p$&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;displayed-math&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#displayed-math&quot; aria-label=&quot;Anchor link for: displayed-math&quot;&gt;Displayed Math&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;$$
+p := (\sum_{k∈I}{c_k.v_k} + \delta_v.t(x))·(\sum_{k∈I}{c_k.w_k} + \delta_w.t(x)) − (\sum_{k∈I}{c_k.y_k} + \delta_y.t(x))
+$$&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Markdown Test</title>
+        <published>2022-01-01T00:00:00+00:00</published>
+        <updated>2022-05-01T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/markdown/"/>
+        <id>https://not-matthias.github.io/apollo/posts/markdown/</id>
+        
+        <content type="html" xml:base="https://not-matthias.github.io/apollo/posts/markdown/">&lt;h1 id=&quot;h1&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#h1&quot; aria-label=&quot;Anchor link for: h1&quot;&gt;H1&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;h2&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#h2&quot; aria-label=&quot;Anchor link for: h2&quot;&gt;H2&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;h3&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#h3&quot; aria-label=&quot;Anchor link for: h3&quot;&gt;H3&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet sagittis id consectetur purus ut. In pellentesque massa placerat duis ultricies. Neque laoreet suspendisse interdum consectetur libero id. Justo nec ultrices dui sapien eget mi proin. Nunc consequat interdum varius sit amet mattis vulputate. Sollicitudin tempor id eu nisl nunc mi ipsum. Non odio euismod lacinia at quis. Sit amet nisl suscipit adipiscing. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan. Sit amet consectetur adipiscing elit pellentesque habitant. Ac placerat vestibulum lectus mauris. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit sed. &lt;a href=&quot;https:&#x2F;&#x2F;www.google.com&quot;&gt;Google&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;markdown-here.com&#x2F;img&#x2F;icon256.png&quot; alt=&quot;Markdown Logo&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;code-block&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#code-block&quot; aria-label=&quot;Anchor link for: code-block&quot;&gt;Code Block&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre data-lang=&quot;rust&quot; style=&quot;background-color:#fafafa;color:#61676c;&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span style=&quot;color:#fa6e32;&quot;&gt;fn &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f29718;&quot;&gt;main&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f07171;&quot;&gt;println!&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;Hello World&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-linenos data-lang=&quot;rust&quot; style=&quot;background-color:#fafafa;color:#61676c;&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;1&lt;&#x2F;td&gt;&lt;td&gt;&lt;span style=&quot;color:#fa6e32;&quot;&gt;fn &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f29718;&quot;&gt;main&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;&lt;mark style=&quot;background-color:#f3f3f3;&quot;&gt;2&lt;&#x2F;mark&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;mark style=&quot;background-color:#f3f3f3;&quot;&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f07171;&quot;&gt;println!&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#86b300;&quot;&gt;&amp;quot;Hello World&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#61676ccc;&quot;&gt;;
+&lt;&#x2F;span&gt;&lt;&#x2F;mark&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;3&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;ordered-list&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#ordered-list&quot; aria-label=&quot;Anchor link for: ordered-list&quot;&gt;Ordered List&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;First item&lt;&#x2F;li&gt;
+&lt;li&gt;Second item&lt;&#x2F;li&gt;
+&lt;li&gt;Third item&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;unordered-list&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#unordered-list&quot; aria-label=&quot;Anchor link for: unordered-list&quot;&gt;Unordered List&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;List item&lt;&#x2F;li&gt;
+&lt;li&gt;Another item&lt;&#x2F;li&gt;
+&lt;li&gt;And another item&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;nested-list&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#nested-list&quot; aria-label=&quot;Anchor link for: nested-list&quot;&gt;Nested list&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fruit
+&lt;ul&gt;
+&lt;li&gt;Apple&lt;&#x2F;li&gt;
+&lt;li&gt;Orange&lt;&#x2F;li&gt;
+&lt;li&gt;Banana&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Dairy
+&lt;ul&gt;
+&lt;li&gt;Milk&lt;&#x2F;li&gt;
+&lt;li&gt;Cheese&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;quote&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#quote&quot; aria-label=&quot;Anchor link for: quote&quot;&gt;Quote&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Two things are infinite: the universe and human stupidity; and I&#x27;m not sure about the
+universe.&lt;br&gt;
+— &lt;cite&gt;Albert Einstein&lt;&#x2F;cite&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;table-inline-markdown&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#table-inline-markdown&quot; aria-label=&quot;Anchor link for: table-inline-markdown&quot;&gt;Table Inline Markdown&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Italics&lt;&#x2F;th&gt;&lt;th&gt;Bold&lt;&#x2F;th&gt;&lt;th&gt;Code&lt;&#x2F;th&gt;&lt;th&gt;StrikeThrough&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;em&gt;italics&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;strong&gt;bold&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;code&gt;code&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;del&gt;strikethrough&lt;&#x2F;del&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;h2 id=&quot;foldable-text&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#foldable-text&quot; aria-label=&quot;Anchor link for: foldable-text&quot;&gt;Foldable Text&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;details&gt;
+    &lt;summary&gt;Title 1&lt;&#x2F;summary&gt;
+    &lt;p&gt;IT&#x27;S A SECRET TO EVERYBODY.&lt;&#x2F;p&gt;
+&lt;&#x2F;details&gt;
+&lt;details&gt;
+    &lt;summary&gt;Title 2&lt;&#x2F;summary&gt;
+    &lt;p&gt;Stay awhile, and listen!&lt;&#x2F;p&gt;
+&lt;&#x2F;details&gt;
+&lt;h2 id=&quot;code-tags&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#code-tags&quot; aria-label=&quot;Anchor link for: code-tags&quot;&gt;Code tags&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Lorem ipsum &lt;code&gt;dolor&lt;&#x2F;code&gt; sit amet, &lt;code&gt;consectetur adipiscing&lt;&#x2F;code&gt; elit.
+&lt;code&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
