@@ -9,7 +9,7 @@ tags=["example"]
 comment = true
 +++
 
-Note: This requires the `mathjax` and `mathjax_dollar_inline_enable` option set to `true`.
+Note: This requires the `mathjax` and `mathjax_dollar_inline_enable` option set to `true` in `[extra]` section.
 
 # Inline Math
 
