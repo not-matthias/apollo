@@ -62,66 +62,57 @@ time {
   color: grey;
 }
 
-/* Remove post list padding */
-.list > ul {
+.post-list {
+    > ul {
   margin: 0;
   padding: 1rem 0 0 0;
 }
 
-/* Post list */
 .list-item {
-  margin-bottom: 30px;
+        margin-bottom: 0.5rem;
   list-style-type: none;
+}
+
+  .post-header {
+    display: grid;
+      align-items: center;
+
+      @media all and (max-width: 640px) {
+    grid-template-rows: auto 1fr;
+      }
+@media all and (min-width: 640px) {
+          grid-template-columns: auto 1fr;
+    gap: 1rem;
+      }
+
+      @media only screen and (max-width: 640px) {
+        margin: 1.6rem 0px;
+      }
+
+    h1 {
+      margin: 0;
+        font-weight: normal;
+        font-family: var(--header-font);
+
+      a {
+        border-bottom: none;
+      }
+    }
+
+      time {
+          font-family: var(--mono-text-font);
+          text-align: left;
+
+          margin: 0;
+  }
+}
+
 }
 
 // change the line-through color
 del {
   text-decoration-color: var(--primary-color);
   text-decoration-thickness: 3px;
-}
-
-@media all and (max-width: 640px) {
-  .post-header {
-    display: grid;
-    grid-template-rows: auto 1fr;
-
-    h1 {
-      margin-top: 0;
-      // font-size: 130%;
-
-      a {
-        border-bottom: none;
-      }
-    }
-  }
-}
-
-/* Post list */
-@media all and (min-width: 640px) {
-  .post-header {
-    display: grid;
-    gap: 1rem;
-    grid-row-gap: 1.5rem;
-    grid-template-columns: auto 1fr;
-
-    h1 {
-      margin: 0;
-      font-size: 130%;
-
-      a {
-        border-bottom: none;
-      }
-    }
-  }
-}
-
-/* Remove styling from theme toggle button */
-#dark-mode-toggle {
-  border-bottom: none;
-
-  &:hover {
-    background-color: transparent;
-  }
 }
 
 .MathJax_Display,
