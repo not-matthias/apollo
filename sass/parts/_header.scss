@@ -16,30 +16,30 @@
   font-size: 3em;
 
   span {
-  line-height: 100%;
-}
+    line-height: 100%;
+  }
 }
 
 nav {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 0;
 
     /* Mobile-specific adjustments */
     @media (max-width: 600px) {
         flex-direction: column;
         align-items: center;
-}
+    }
 
     /* title and socials */
     .left-nav {
-  display: flex;
-  flex-direction: row;
+      display: flex;
+      flex-direction: row;
       align-items: center;
-  gap: 12px;
-  font-size: 1.5rem;
+      gap: 12px;
+      font-size: 1.5rem;
 
       .socials {
         /* flex-container */
@@ -59,7 +59,7 @@ nav {
         /* Don't display background on hover */
         a:hover {
             background-color: transparent;
-}
+        }
       }
     }
 
@@ -74,35 +74,33 @@ nav {
             padding: 0.1rem;
 
             > img {
-  width: 16px;
-  height: 16px;
-}
+                width: 16px;
+                height: 16px;
+            }
 
             /* Don't display background on hover */
             &:hover {
                 background-color: transparent;
-}
+            }
         }
     }
 }
 
-
-
+/* TODO: Is this still used? */
 .logo {
   border-bottom: unset;
   background-image: unset;
-}
 
-.logo > img {
-  border: unset;
-  width: auto;
-  height: 24px;
-  vertical-align: middle;
-}
+  > img {
+    border: unset;
+    width: auto;
+    height: 24px;
+    vertical-align: middle;
+  }
 
-.logo:hover {
-  background-color: transparent;
-}
+  &:hover {
+    background-color: transparent;
+  }
 }
 
 /* TODO: Is this still used? */
@@ -122,6 +120,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: monospace var(--header-font);
   font-size: 1.2rem;
   margin-top: 2em;
 }
