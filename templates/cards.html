@@ -1,5 +1,48 @@
 {% extends "base.html" %}
 
+
+{% macro cards_posts(pages) %}
+    <div class="cards">
+        {%- for page in pages %}
+            <div class="card">
+                {% if page.extra.local_image %}
+                    <img class="card-image"
+                         alt="{{ page.extra.local_image }}"
+                         src="{{ get_url(path=page.extra.local_image) }}" />
+                {% elif page.extra.remote_image %}
+                    <img class="card-image"
+                         alt="{{ page.extra.remote_image }}"
+                         src="{{ page.extra.remote_image }}" />
+                {% else %}
+                    <div class="card-image-placeholder"></div>
+                {% endif %}
+
+                <div class="card-info">
+                    <h1 class="card-title">
+                        {% if page.extra.link_to %}
+                            <a href={{ page.extra.link_to }}>{{ page.title }}</a>
+                        {% else %}
+                            <a href={{ page.permalink | safe }}>{{ page.title }}</a>
+                        {% endif %}
+                    </h1>
+
+                    <div class="meta">
+                        {%- if page.date %}
+                            <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+                        {% endif -%}
+                        {% if page.draft %}<span class="draft-label">DRAFT</span>{% endif %}
+                    </div>
+
+                    <div class="card-description">
+                        {% if page.description %}{{ page.description }}{% endif %}
+                    </div>
+                </div>
+            </div>
+
+        {% endfor -%}
+    </div>
+{% endmacro cards_posts %}
+
 {% block main_content %}
     {% if section.extra.section_path -%}
         {% set section = get_section(path=section.extra.section_path) %}
@@ -14,7 +57,7 @@
             {%- set show_pages = section.pages -%}
         {% endif -%}
 
-        {{ post_macros::cards_posts(pages=show_pages) }}
+        {{ self::cards_posts(pages=show_pages) }}
     </main>
 
     {% if paginator %}
