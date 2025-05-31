@@ -63,7 +63,7 @@
     {% endif %}
 
     {# Favicon #}
-    {% if config.extra.favicon %}<link rel="icon" type="image/png" href={{ config.extra.favicon }} />{% endif %}
+    {% if config.extra.favicon %}<link rel="icon" type="image/png" href={{ get_url(path=config.extra.favicon) }} />{% endif %}
 
     {# Font from cdn or disk #}
     {% if config.extra.use_cdn | default(value=false) %}
