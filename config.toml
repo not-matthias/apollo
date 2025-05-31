@@ -45,6 +45,10 @@ stylesheets = [
     # "custom.css"    # at /static/custom.css
 ]
 
+[extra.taxonomies]
+sort_by = "page_count"         # e.g. name, page_count
+reverse = true
+
 [extra.analytics]
 enabled = false
 

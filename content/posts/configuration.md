@@ -161,6 +161,47 @@ You can add anchor links by adding the following to your `_index.md`:
 insert_anchor_links = "heading"
 ```
 
+## Tanonomy sorting
+
+You can sort the taxonomies page with the following config: 
+```toml
+[extra.taxonomies]
+sort_by = "page_count"         # e.g. name, page_count
+reverse = true
+```
+
+The `sort_by` argument is directly passed to the `sort_by` function:
+```jinja
+{% set sort_by = config.extra.taxonomies.sort_by | default(value="name") %}
+{% set terms = terms | default(value=[]) | sort(attribute=sort_by) %}
+
+{% if config.extra.taxonomies.reverse | default(value=false) %}
+    {% set terms = terms | reverse %}
+{% endif %}
+
+{% for term in terms %}
+    <li>
+        <a href="{{ term.permalink | safe }}">
+            {{ term.name }} ({{ term.pages | length }} post{{ term.pages | length | pluralize }})
+        </a>
+    </li>
+{% endfor %}
+```
+
+Possible values include anything within the [TaxonomyTerm object](https://www.getzola.org/documentation/templates/taxonomies/): 
+```rust
+name: String;
+slug: String;
+path: String;
+permalink: String;
+pages: Array<Page>;
+page_count: Number;
+```
+
+Examples: 
+- `name` to sort by name
+- `page_count` to sort by page count
+
 ## Analytics
 
 Enable or disable analytics tracking:
