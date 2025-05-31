@@ -8,6 +8,13 @@
 
         <main class="list">
             <ul class="tags">
+                {% set sort_by = config.extra.taxonomies.sort_by | default(value="name") %}
+                {% set terms = terms | default(value=[]) | sort(attribute=sort_by) %}
+
+                {% if config.extra.taxonomies.reverse | default(value=false) %}
+                    {% set terms = terms | reverse %}
+                {% endif %}
+
                 {% for term in terms %}
                     <li>
                         <a href="{{ term.permalink | safe }}">
