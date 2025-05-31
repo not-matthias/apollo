@@ -8,10 +8,6 @@
     list-style-type: none;
   }
 
-  a {
-    border-bottom: 3px solid var(--primary-color);
-    font-family: var(--text-font);
-  }
 
   a:hover {
     color: var(--hover-color);
@@ -19,7 +15,7 @@
   }
 
   a::before {
-    content: "🏷 "; /* Ensure there's a space after the emoji for spacing */
+    content: "#";
     display: inline;
     white-space: nowrap !important;
   }
