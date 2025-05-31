@@ -5,18 +5,19 @@
   margin: 4rem 0px 1rem 0px;
 }
 
-.centered-header {
+/* 404 header */
+.not-found-header {
   font-family: var(--header-font);
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  font-size: 4em;
-}
+  font-size: 3em;
 
-.centered-header span {
+  span {
   line-height: 100%;
+}
 }
 
 header {
