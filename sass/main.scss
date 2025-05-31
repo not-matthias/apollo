@@ -15,39 +15,34 @@
   --border-color: var(--border-color);
 
   /* Fonts */
-  --text-font: "Jetbrains Mono";
-  --header-font: "Space Grotesk", "Helvetica", sans-serif;
+  --font-size-base: 13.5px;
+  --mono-text-font: "Jetbrains Mono";
+  --text-font: "ZedTextFtl";
+  --header-font: "ZedDisplayFtl" "Space Grotesk", "Helvetica", sans-serif;
   --code-font: "Jetbrains Mono";
+
+  --line-height: 1.8;
+  --page-width: 920px;
 }
 
 html {
   background-color: var(--bg-0);
   color: var(--text-0);
   font-family: var(--text-font);
-  line-height: 1.6em;
+  line-height: var(--line-height);
+
+  @media (min-width: 700px) {
+    font-size: calc(var(--font-size-base) * 1.05);
+  }
+
+  @media (min-width: 950px) {
+    font-size: calc(var(--font-size-base) * 1.12);
+  }
 }
 
 .content {
-  max-width: 1000px;
+  max-width: var(--page-width);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0.9rem;
   word-wrap: break-word;
-}
-
-@media all and (min-width: 640px) {
-  html {
-    font-size: 16.5px;
-  }
-}
-
-@media all and (min-width: 720px) {
-  html {
-    font-size: 17px;
-  }
-}
-
-@media all and (min-width: 960px) {
-  html {
-    font-size: 18px;
-  }
 }
