@@ -27,9 +27,9 @@ p {
 }
 
 hr {
-  border: 0;
-  border-top: 3px solid var(--border-color);
-  margin: 1em 0;
+  color: var(--border-color);
+  background: none;
+  margin: 1.2rem auto;
 }
 
 blockquote {
