@@ -20,41 +20,73 @@
 }
 }
 
-header {
+nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 1em 0;
+    padding: 0;
+
+    /* Mobile-specific adjustments */
+    @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
 }
 
-header .main {
+    /* title and socials */
+    .left-nav {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
+      align-items: center;
   gap: 12px;
   font-size: 1.5rem;
 
-  /* Otherwise header and menu is too close on small screens*/
-  margin-bottom: 5px;
-}
+      .socials {
+        /* flex-container */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-end;
+        gap: 6px;
 
-header .social img,
-header #dark-mode-toggle img {
+        .social img {
+          width: 16px;
+          height: 16px;
+
+        }
+
+        /* Don't display background on hover */
+        a:hover {
+            background-color: transparent;
+}
+      }
+    }
+
+    /* navigation + theme toggle */
+    .right-nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        #dark-mode-toggle {
+            margin-left: 0.5rem;
+            padding: 0.1rem;
+
+            > img {
   width: 16px;
   height: 16px;
 }
 
-header .socials {
-  margin-bottom: 10px;
-  /* Space between social icons and menu items */
+            /* Don't display background on hover */
+            &:hover {
+                background-color: transparent;
+}
+        }
+    }
 }
 
-#dark-mode-toggle {
-  justify-content: center;
-}
+
 
 .logo {
   border-bottom: unset;
@@ -71,44 +103,9 @@ header .socials {
 .logo:hover {
   background-color: transparent;
 }
-
-.socials {
-  /* flex-child */
-  flex-grow: 0;
-  /* flex-container */
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-end;
-  gap: 6px;
 }
 
-.social {
-  border-bottom: unset;
-  background-image: unset;
-  padding: 2px;
-}
-
-.social > img {
-  border: unset;
-  width: 24px;
-  height: 24px;
-}
-
-/* Mobile-specific adjustments */
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 1em 0;
-  }
-
-  header .main a {
-    font-size: 20px;
-  }
-}
-
+/* TODO: Is this still used? */
 .meta {
   color: #999;
   display: flexbox;
@@ -117,13 +114,6 @@ header .socials {
   /* Aligns items vertically in the middle */
   flex-wrap: wrap;
   /* Allows items to wrap as needed */
-}
-
-#dark-mode-toggle > img {
-  display: none;
-  width: 15px;
-  height: 15px;
-  border: unset;
 }
 
 h1,
