@@ -5,11 +5,11 @@
   --text-color: var(--text-0); // Color of the code text
   --label-color: #f0f0f0; // Text color of the label
 
-  --hightlight-color: #f0f0f0;
+  --highlight-color: #f0f0f0;
 }
 
 :root.dark {
-  --hightlight-color: #204e8a;
+  --highlight-color: #204e8a;
 }
 
 // Define language colors map
@@ -170,7 +170,7 @@ pre {
 
   mark {
     background-color: var(
-      --hightlight-color
+      --highlight-color
     ) !important; // Ensure mark uses the theme background
     padding: 0;
     border-radius: 0px;
@@ -193,7 +193,7 @@ pre {
         display: block;
         color: unset;
         padding: 0;
-        background-color: var(--hightlight-color) !important;
+        background-color: var(--highlight-color) !important;
         filter: brightness(1.2); // Example to slightly increase brightness
       }
     }
