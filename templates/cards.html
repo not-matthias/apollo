@@ -6,9 +6,10 @@
         {%- for page in pages %}
             <div class="card">
                 {% if page.extra.local_image %}
+                    {% set image = resize_image(path=page.extra.local_image, height=300, op="fit_height", format="avif") %}
                     <img class="card-image"
                          alt="{{ page.extra.local_image }}"
-                         src="{{ get_url(path=page.extra.local_image) }}" />
+                         src="{{ image.url }}" />
                 {% elif page.extra.remote_image %}
                     <img class="card-image"
                          alt="{{ page.extra.remote_image }}"
