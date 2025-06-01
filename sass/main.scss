@@ -22,7 +22,7 @@
   --header-font: "ZedDisplayFtl" "Space Grotesk", "Helvetica", sans-serif;
   --code-font: "Jetbrains Mono";
 
-  --line-height: 1.8;
+  --line-height: 1.5;
   --page-width: 920px;
 }
 
@@ -32,12 +32,14 @@ html {
   font-family: var(--text-font);
   line-height: var(--line-height);
 
-  @media (min-width: 700px) {
-    font-size: calc(var(--font-size-base) * 1.05);
+  @media (max-width: 992px) {
+    font-size: calc(var(--font-size-base) * 0.97);
   }
-
-  @media (min-width: 950px) {
-    font-size: calc(var(--font-size-base) * 1.12);
+  @media (max-width: 768px) {
+      font-size: calc(var(--font-size-base) * 0.95);
+  }
+  @media (max-width: 576px) {
+      font-size: calc(var(--font-size-base) * 0.92);
   }
 }
 
@@ -45,5 +47,7 @@ html {
   max-width: var(--page-width);
   margin: 0 auto;
   padding: 0.9rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
   word-wrap: break-word;
 }

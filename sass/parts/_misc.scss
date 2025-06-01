@@ -22,10 +22,6 @@
   color: var(--hover-color);
 }
 
-p {
-  line-height: 1.5;
-}
-
 hr {
   color: var(--border-color);
   background: none;
@@ -84,7 +80,7 @@ main {
   .meta a, .talks-grid a, .cards a {
     border-bottom: none;
   }
- 
+
   // Don't display border on zola internal links on headers
   .zola-anchor {
     border-bottom: none;
@@ -95,7 +91,7 @@ time {
   color: grey;
 }
 
-.post-list {
+.post-list,.tag-list {
     > ul {
         margin: 0;
         padding: 1rem 0 0 0;

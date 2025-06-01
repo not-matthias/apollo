@@ -1,19 +1,5 @@
+/* Taxonomies for a post */
 .tags {
-  ul {
-    margin-left: 0;
-    padding-left: 0;
-  }
-
-  li {
-    list-style-type: none;
-  }
-
-
-  a:hover {
-    color: var(--hover-color);
-    background-color: var(--primary-color);
-  }
-
   a::before {
     content: "#";
     display: inline;
