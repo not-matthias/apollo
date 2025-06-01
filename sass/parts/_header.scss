@@ -14,10 +14,6 @@
   transform: translate(-50%, -50%);
   text-align: center;
   font-size: 3em;
-
-  span {
-    line-height: 100%;
-  }
 }
 
 nav {
@@ -30,7 +26,6 @@ nav {
     /* Mobile-specific adjustments */
     @media (max-width: 600px) {
         flex-direction: column;
-        align-items: center;
     }
 
     /* title and socials */
