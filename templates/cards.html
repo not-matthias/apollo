@@ -6,7 +6,12 @@
         {%- for page in pages %}
             <div class="card">
                 {% if page.extra.local_image %}
-                    {% set image = resize_image(path=page.extra.local_image, height=300, op="fit_height", format="avif") %}
+                    {% set path = page.extra.local_image %}
+                    {% if path is not starting_with("/") %}
+                        {% set path = section.path ~ "/" ~ page.extra.local_image %}
+                    {% endif %}
+
+                    {% set image = resize_image(path=path, height=300, op="fit_height", format="avif") %}
                     <img class="card-image"
                          alt="{{ page.extra.local_image }}"
                          src="{{ image.url }}" />
