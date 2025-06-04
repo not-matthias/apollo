@@ -67,6 +67,7 @@
 
     {# Font from cdn or disk #}
     {% if config.extra.use_cdn | default(value=false) %}
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
         <link rel="stylesheet"
               href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css">
         <link rel="stylesheet"
@@ -102,10 +103,10 @@
     {% endif %}
 
     {# Fancy Codeblock #}
-    {% if config.extra.fancy_code %}<script src={{ get_url(path="js/codeblock.js") }}></script>{% endif %}
+    {% if config.extra.fancy_code %}<script defer src={{ get_url(path="js/codeblock.js") }}></script>{% endif %}
 
     {# Table of contents #}
-    {% if config.extra.toc | default(value=false) %}<script src={{ get_url(path="js/toc.js") }}></script>{% endif %}
+    {% if config.extra.toc | default(value=false) %}<script defer src={{ get_url(path="js/toc.js") }}></script>{% endif %}
 
     {# Dynamic Note #}
     {% if config.extra.dynamic_note | default(value=false) %}
