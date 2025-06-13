@@ -45,3 +45,5 @@
     </div>
     {% endif %}
 {% endmacro content %}
+
+{% macro site_title() %}{{ config.title | default(value="Home") }}{% endmacro %}

@@ -21,10 +21,10 @@
     {# Site title #}
     {% set current_path = current_path | default(value="/") %}
     {% if current_path == "/" %}
-        <title>{{ config.title | default(value="Home") }}</title>
+        <title>{{ post_macros::site_title() }}</title>
         {% if not page_has_og_title %}
             <meta property="og:title"
-                  content="{{ config.title | default(value="Home") }}" />
+                  content="{{ post_macros::site_title() }}" />
         {% endif %}
 
     {% else %}
@@ -128,10 +128,21 @@
     {% endif %}
 
     {# RSS #}
-    <link rel="alternate"
-          type="application/atom+xml"
-          title="{{ config.title }}"
-          href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
+    {% if config.generate_feeds %}
+        {% for feed_filenames in config.feed_filenames %}
+            {% if feed_filenames == "atom.xml" %}
+            <link rel="alternate"
+                  type="application/atom+xml"
+                  title="{{ post_macros::site_title() }}"
+                  href="{{ get_url(path="atom.xml", trailing_slash=false) }}" />
+            {% elif feed_filenames == "rss.xml" %}
+            <link rel="alternate"
+                  type="application/rss+xml"
+                  title="{{ post_macros::site_title() }}"
+                  href="{{ get_url(path="rss.xml", trailing_slash=false) }}" />
+            {% endif %}
+        {% endfor %}
+    {% endif %}
 
 
     {% set theme = config.extra.theme | default(value="toggle") %}
