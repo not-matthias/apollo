@@ -21,3 +21,4 @@ jobs:
         with:
           # no urls needed, since it uses local folder to scan .html files
           configPath: "./lighthouserc.json"
+          uploadArtifacts: true
