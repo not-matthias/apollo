@@ -4,10 +4,12 @@ $bg-2: darken($bg-1, 8%);
 
 $text-0: darken($bg-0, 87%);
 $text-1: darken($bg-0, 60%);
+$text-2: darken($bg-0, 30%);
 
 :root.light {
   --text-0: #{$text-0};
   --text-1: #{$text-1};
+  --text-2: #{$text-2};
 
   --bg-0: #{$bg-0};
   --bg-1: #{$bg-1};
