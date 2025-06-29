@@ -45,37 +45,51 @@ html {
 
 body {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-
   flex-grow: 1;
   padding: 0;
   margin: 0;
   min-height: calc(100vh - 150px);
-  overflow-y: auto;
+
+  @media (min-width: 992px) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
 
   .content {
+    width: 100%;
     max-width: var(--page-width);
-    padding: 0.9rem;
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
     word-wrap: break-word;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: var(--page-width);
   }
 
   .left-content {
+    width: 100%;
+    
+    @media (min-width: 992px) {
       flex: 1 1 0;
       min-width: 0;
+    }
   }
 
   .right-content {
+    width: 100%;
+
+    @media (min-width: 992px) {
       flex: 1 1 0;
       min-width: 0;
-      height: 100vh;
-      position: sticky;
-      top: 0;
+
+    // Don't move this to the TOC, it won't work 
+    // FIXME: Find a workaround
+    position: sticky;
+    top: 60px;
+    padding: 1em;
+    overflow-y: auto;
+    max-height: calc(100vh - 100px);
+
+    }
+
+
   }
 }
