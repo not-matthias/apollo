@@ -1,5 +1,5 @@
 walk = "git"
-excludes = ["static/*", "content/*"]
+excludes = ["static/**", "content/*"]
 
 [formatter.nix]
 command = "alejandra"
