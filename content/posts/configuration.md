@@ -282,3 +282,58 @@ Comments via [utterances](https://utteranc.es) can be configured in `template/_g
         async>
 </script>
 ```
+
+# Cards Page
+
+The `cards.html` template allows you to display a list of items in a card format. This is ideal for showcasing projects, but can be used for any list of items you want to display in a visually appealing way.
+
+To create a cards page, you need to create a `_index.md` file in a content directory (e.g., `content/projects`). The following front matter is recommended:
+
+```toml
++++
+title = "Projects"
+sort_by = "weight"
+template = "cards.html"
++++
+```
+
+Each item in the list should be a separate markdown file in the same directory. The following front matter is supported:
+
+- `title`: The title of the item.
+- `description`: A short description of the item.
+- `weight`: The order in which the item appears on the page.
+- `local_image`: A path to a local image for the item's thumbnail. See the [Local Image](#local-image) section for more details.
+- `link_to`: A URL the card should link to.
+
+# Talks Page
+
+To create a talks page, you need to create a `_index.md` file in the `content/talks` directory. The following front matter is recommended:
+
+```toml
++++
+title = "Talks"
+sort_by = "date"
+template = "talks.html"
++++
+```
+
+Each talk should be a separate markdown file in the `content/talks` directory. The following front matter is supported:
+
+- `title`: The title of the talk.
+- `description`: A short description of the talk.
+- `local_image`: A path to a local image for the item's thumbnail. See the [Local Image](#local-image) section for more details.
+- `date`: The date of the talk.
+- `video`: A map with a `link` and `thumbnail` for the talk video.
+- `organizer`: A map with a `name` and `link` for the event organizer.
+- `slides`: A URL to the presentation slides.
+- `code`: A URL to the source code.
+
+# Local Image
+
+The `local_image` front matter parameter allows you to specify a path to a local image that will be used as the thumbnail for a page. This is particularly useful for social media previews and other places where a representative image is needed.
+
+The path resolution for `local_image` works as follows:
+
+- If the path starts with a `/`, it is treated as an absolute path from the `content` directory. For example, `local_image = "/projects/project-1.jpg"` will resolve to `content/projects/project-1.jpg`.
+- If the path does not start with a `/`, it is treated as a relative path. The theme will prepend the `section.path` to the `local_image` path. For example, if you are in a page at `content/posts/my-post/index.md` and you set `local_image = "thumbnail.png"`, the theme will look for the image at `posts/my-post/thumbnail.png`.
+
