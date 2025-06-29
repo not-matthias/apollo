@@ -69,7 +69,7 @@ cp -r themes/apollo/content/* content/
 
 ## Configuration
 
-You can find all the configuration options [here](./content/posts/configuration.md)
+Checkout all the [options you can configure](./content/posts/configuration.md) and the [example pages](./content/posts/).
 
 ## References
 
