@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% macro content(page) %}
+<div class="visible-element-observer-root" data-selector="main article p">
     <main>
         <article>
             <div class="title">
@@ -72,49 +73,24 @@
                 </div>
             {% endif %}
 
-            {# Optional table of contents #}
-            {% if config.extra.toc | default(value=false) %}
-                {% if page.toc %}
-                    <div class="toc-container">
-                        <h1 class="toc-title">Table of Contents</h1>
-                        <ul class="toc-list">
-                            {% for h1 in page.toc %}
-                                <li>
-                                    <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
-                                    {% if h1.children %}
-                                        <ul>
-                                            {% for h2 in h1.children %}
-                                                <li>
-                                                    <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
-                                                </li>
-
-                                                {% if h2.children %}
-                                                    <ul>
-                                                        {% for h3 in h2.children %}
-                                                            <li>
-                                                                <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
-                                                            </li>
-                                                        {% endfor %}
-                                                    </ul>
-                                                {% endif %}
-                                            {% endfor %}
-                                        </ul>
-                                    {% endif %}
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                {% endif %}
-            {% endif %}
-
             <section class="body">
                 {{ page.content | safe }}
             </section>
         </article>
     </main>
+</div>
 {% endmacro content %}
 
 
 {% block main_content %}
     {{ self::content(page=page) }}
 {% endblock main_content %}
+
+{% block right_content %}
+    {# Optional table of contents #}
+    {% if config.extra.toc | default(value=false) and page.toc %}
+        {% include "partials/toc.html" %}
+    {% endif %}
+{% endblock right_content %}
+
+
