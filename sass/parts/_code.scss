@@ -1,6 +1,6 @@
 // Define base colors and fonts for light and dark themes
 :root {
-  --code-font: "Courier New", monospace;
+  --code-font: var(--code-font), monospace;
   --bg-primary: var(--bg-1);
   --text-color: var(--text-0); // Color of the code text
   --label-color: #f0f0f0; // Text color of the label
