@@ -38,7 +38,18 @@
                         {% endif %}
                     {% endif %}
 
-                    {# Inline display of tags directly after the date #}
+                    {# Inline display of authors directly after the date #}
+                    {% if page.taxonomies and page.taxonomies.authors %}
+                        <span class="authors-label"> :: </span>
+                        <span class="authors">
+                            {%- for author in page.taxonomies.authors %}
+                                <a href="{{ get_taxonomy_url(kind='authors', name=author, lang=page.lang) }}"
+                                   class="post-authors">{{ author }}</a>
+                            {% endfor %}
+                        </span>
+                    {% endif %}
+
+                    {# Inline display of tags directly after the authors #}
                     {% if page.taxonomies and page.taxonomies.tags %}
                         <span class="tags-label"> :: </span>
                         <span class="tags">

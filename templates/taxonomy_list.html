@@ -3,7 +3,7 @@
 {% block main_content %}
     <div>
         {% block title %}
-            {{ post_macros::page_header(title="Tags") }}
+            {{ post_macros::page_header(title=taxonomy.name | capitalize) }}
         {% endblock title %}
 
         <main class="tag-list">
