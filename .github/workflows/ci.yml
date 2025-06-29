@@ -12,6 +12,10 @@ jobs:
         with:
           tool: zola@0.20.0
 
+      - name: Build the site
+        run: |
+          zola build --output-dir ./dist
+
       - name: Run Lighthouse against a static dist dir
         uses: treosh/lighthouse-ci-action@v12
         with:
