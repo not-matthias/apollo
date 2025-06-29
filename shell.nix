@@ -2,6 +2,7 @@
 pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
     zola
+    pre-commit
 
     # Formatters
     treefmt

@@ -163,7 +163,7 @@ insert_anchor_links = "heading"
 
 ## Tanonomy sorting
 
-You can sort the taxonomies page with the following config: 
+You can sort the taxonomies page with the following config:
 ```toml
 [extra.taxonomies]
 sort_by = "page_count"         # e.g. name, page_count
@@ -188,7 +188,7 @@ The `sort_by` argument is directly passed to the `sort_by` function:
 {% endfor %}
 ```
 
-Possible values include anything within the [TaxonomyTerm object](https://www.getzola.org/documentation/templates/taxonomies/): 
+Possible values include anything within the [TaxonomyTerm object](https://www.getzola.org/documentation/templates/taxonomies/):
 ```rust
 name: String;
 slug: String;
@@ -198,7 +198,7 @@ pages: Array<Page>;
 page_count: Number;
 ```
 
-Examples: 
+Examples:
 - `name` to sort by name
 - `page_count` to sort by page count
 
@@ -336,4 +336,3 @@ The path resolution for `local_image` works as follows:
 
 - If the path starts with a `/`, it is treated as an absolute path from the `content` directory. For example, `local_image = "/projects/project-1.jpg"` will resolve to `content/projects/project-1.jpg`.
 - If the path does not start with a `/`, it is treated as a relative path. The theme will prepend the `section.path` to the `local_image` path. For example, if you are in a page at `content/posts/my-post/index.md` and you set `local_image = "thumbnail.png"`, the theme will look for the image at `posts/my-post/thumbnail.png`.
-

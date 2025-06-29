@@ -14,10 +14,10 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v3
-      
+
     - name: Build and deploy
       uses: shalzz/zola-deploy-action@master
       env:

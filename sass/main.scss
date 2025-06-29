@@ -67,7 +67,7 @@ body {
 
   .left-content {
     width: 100%;
-    
+
     @media (min-width: 992px) {
       flex: 1 1 0;
       min-width: 0;
@@ -81,7 +81,7 @@ body {
       flex: 1 1 0;
       min-width: 0;
 
-    // Don't move this to the TOC, it won't work 
+    // Don't move this to the TOC, it won't work
     // FIXME: Find a workaround
     position: sticky;
     top: 60px;
