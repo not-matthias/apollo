@@ -226,12 +226,9 @@ pre {
   cursor: pointer;
   position: absolute;
   bottom: 5px;
-  /* 5px from the bottom */
   right: 5px;
-  /* 5px from the right */
   z-index: 10;
   background-color: transparent;
   border: none;
-  fill: #ef5350;
-  /* Sets the color of the SVG, assuming it's an SVG icon */
+  fill: var(--text-color);
 }
