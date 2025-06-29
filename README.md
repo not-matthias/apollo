@@ -31,6 +31,9 @@ Modern and minimalistic blog theme powered by [Zola](https://getzola.org). See a
 - [x] Custom homepage
 - [x] Comments
 - [x] Search
+- [x] RSS feeds
+- [x] Mermaid diagram support
+- [x] Table of Contents
 
 ## Installation
 
