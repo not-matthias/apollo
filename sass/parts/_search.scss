@@ -25,14 +25,7 @@ $icon-size: 1.3rem;
   }
 }
 
-// Theme-specific styles for search icon
-html.dark .search-button .search-icon {
-  filter: invert(1);
-}
 
-html.light .search-button .search-icon {
-  filter: invert(0);
-}
 
 // Search modal
 .search-modal {
