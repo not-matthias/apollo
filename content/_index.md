@@ -26,16 +26,16 @@ template = "homepage.html"
 
 # Features
 
-- [Light, dark, and auto themes](/posts/configuration#theme-mode-theme)  
-- [Projects page](/projects/)                                 
+- [Light, dark, and auto themes](@/posts/configuration.md#theme-mode-theme)  
+- [Projects page](@/projects/_index.md)                                 
 - [Talks page](https://not-matthias.github.io/talks/)         
-- [Analytics (GoatCounter, Umami)](/posts/configuration#analytics)                                                                                                  
-- [Social media links](/posts/configuration#socials)                                                                                                     
-- [MathJax rendering](/posts/math-symbol/)                    
-- [Taxonomies](/tags/)                                 
-- [Custom homepage](/posts/custom-homepage/)                  
-- [Comments](/posts/configuration#comments-comment)                   
-- [Search functionality](/posts/configuration#search-build-search-index)         
+- [Analytics (GoatCounter, Umami)](@/posts/configuration.md#analytics)                                                                                                  
+- [Social media links](@/posts/configuration.md#socials)                                                                                                     
+- [MathJax rendering](@/posts/math-symbol.md)                    
+- [Taxonomies](/apollo/tags)
+- [Custom homepage](@/posts/custom-homepage.md)                  
+- [Comments](@/posts/configuration.md#comments-comment)                   
+- [Search functionality](@/posts/configuration.md#search-build-search-index)         
 
 Checkout all the [options you can configure](./content/posts/configuration.md) and the [example pages](./content/posts/).
 
