@@ -161,7 +161,7 @@ You can add anchor links by adding the following to your `_index.md`:
 insert_anchor_links = "heading"
 ```
 
-## Tanonomy sorting
+## Taxonomy sorting
 
 You can sort the taxonomies page with the following config:
 ```toml
