@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>not-matthias</title>
+    <subtitle>This is an example description</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://not-matthias.github.io/apollo/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-06-29T00:00:00+00:00</updated>
+    <id>https://not-matthias.github.io/apollo/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Creating a Custom Homepage</title>
+        <published>2025-06-29T00:00:00+00:00</published>
+        <updated>2025-06-29T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/custom-homepage/"/>
+        <id>https://not-matthias.github.io/apollo/posts/custom-homepage/</id>
+        
+        <content type="html" xml:base="https://not-matthias.github.io/apollo/posts/custom-homepage/">&lt;p&gt;The Apollo theme provides a default homepage that lists your recent blog posts. However, you might want to create a custom homepage that better reflects your personality and work. This guide will walk you through the process of creating a custom homepage with the Apollo theme.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;1-create-a-custom-homepage-template&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#1-create-a-custom-homepage-template&quot; aria-label=&quot;Anchor link for: 1-create-a-custom-homepage-template&quot;&gt;1. Create a Custom Homepage Template&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The first step is to create a custom homepage template. In the root of your Zola project, create a new file at &lt;code&gt;templates&#x2F;home.html&lt;&#x2F;code&gt;. This file will contain the HTML for your custom homepage.&lt;&#x2F;p&gt;
+&lt;p&gt;You can use the following code as a starting point:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;html&quot; class=&quot;language-html z-code&quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;{% extends &amp;quot;base.html&amp;quot; %}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;{% block main_content %}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;    &lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-other z-html&quot;&gt;main&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;        &lt;span class=&quot;z-meta z-tag z-block z-any z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-block z-any z-html&quot;&gt;article&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;            &lt;span class=&quot;z-meta z-tag z-block z-any z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-block z-any z-html&quot;&gt;section&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-attribute-with-value z-class z-html&quot;&gt;&lt;span class=&quot;z-entity z-other z-attribute-name z-class z-html&quot;&gt;class&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-key-value z-html&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-html&quot;&gt;&lt;span class=&quot;z-meta z-class-name z-html&quot;&gt;body&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-end z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;                &lt;span class=&quot;z-meta z-tag z-block z-any z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-block z-any z-html&quot;&gt;h1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;Welcome to my custom homepage!&lt;span class=&quot;z-meta z-tag z-block z-any z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-block z-any z-html&quot;&gt;h1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;                &lt;span class=&quot;z-meta z-tag z-block z-any z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-block z-any z-html&quot;&gt;p&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;This is where you can introduce yourself and your work.&lt;span class=&quot;z-meta z-tag z-block z-any z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-block z-any z-html&quot;&gt;p&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;            &lt;span class=&quot;z-meta z-tag z-block z-any z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-block z-any z-html&quot;&gt;section&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;        &lt;span class=&quot;z-meta z-tag z-block z-any z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-block z-any z-html&quot;&gt;article&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;    &lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-other z-html&quot;&gt;main&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;{% endblock main_content %}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This template extends the theme&#x27;s &lt;code&gt;base.html&lt;&#x2F;code&gt; template and overrides the &lt;code&gt;main_content&lt;&#x2F;code&gt; block with your own content.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;2-set-the-homepage-template&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#2-set-the-homepage-template&quot; aria-label=&quot;Anchor link for: 2-set-the-homepage-template&quot;&gt;2. Set the Homepage Template&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Next, you need to tell Zola to use your custom homepage template. In the &lt;code&gt;content&lt;&#x2F;code&gt; directory of your Zola project, you should have a &lt;code&gt;_index.md&lt;&#x2F;code&gt; file. If you don&#x27;t have one, create one.&lt;&#x2F;p&gt;
+&lt;p&gt;In this file, add the following front matter:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml z-code&quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-invalid z-illegal z-toml&quot;&gt;+++&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;template&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;home.html&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-invalid z-illegal z-toml&quot;&gt;+++&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This tells Zola to use the &lt;code&gt;templates&#x2F;home.html&lt;&#x2F;code&gt; file to render your homepage.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;3-add-content-to-your-homepage&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#3-add-content-to-your-homepage&quot; aria-label=&quot;Anchor link for: 3-add-content-to-your-homepage&quot;&gt;3. Add Content to Your Homepage&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Now you can add content to your homepage. The content of the &lt;code&gt;content&#x2F;_index.md&lt;&#x2F;code&gt; file will be available in your &lt;code&gt;templates&#x2F;home.html&lt;&#x2F;code&gt; template as the &lt;code&gt;section&lt;&#x2F;code&gt; variable.&lt;&#x2F;p&gt;
+&lt;p&gt;For example, you can add a title and some introductory text to your &lt;code&gt;content&#x2F;_index.md&lt;&#x2F;code&gt; file:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml z-code&quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-invalid z-illegal z-toml&quot;&gt;+++&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;title&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;Hey there! 👋🏼&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;template&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;home.html&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-invalid z-illegal z-toml&quot;&gt;+++&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;I&lt;&#x2F;span&gt;&lt;span class=&quot;z-invalid z-illegal z-key z-toml&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;m&lt;&#x2F;span&gt;&lt;span class=&quot;z-invalid z-illegal z-key z-toml&quot;&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;a&lt;&#x2F;span&gt;&lt;span class=&quot;z-invalid z-illegal z-key z-toml&quot;&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;software&lt;&#x2F;span&gt;&lt;span class=&quot;z-invalid z-illegal z-key z-toml&quot;&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;engineer&lt;&#x2F;span&gt;&lt;span class=&quot;z-invalid z-illegal z-key z-toml&quot;&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;who&lt;&#x2F;span&gt;&lt;span class=&quot;z-invalid z-illegal z-key z-toml&quot;&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;loves&lt;&#x2F;span&gt;&lt;span class=&quot;z-invalid z-illegal z-key z-toml&quot;&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;to&lt;&#x2F;span&gt;&lt;span class=&quot;z-invalid z-illegal z-key z-toml&quot;&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;write&lt;&#x2F;span&gt;&lt;span class=&quot;z-invalid z-illegal z-key z-toml&quot;&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;about&lt;&#x2F;span&gt;&lt;span class=&quot;z-invalid z-illegal z-key z-toml&quot;&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;technology&lt;&#x2F;span&gt;&lt;span class=&quot;z-invalid z-illegal z-key z-toml&quot;&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;and&lt;&#x2F;span&gt;&lt;span class=&quot;z-invalid z-illegal z-key z-toml&quot;&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;programming&lt;&#x2F;span&gt;&lt;span class=&quot;z-invalid z-illegal z-key z-toml&quot;&gt;.&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You can then display this content in your &lt;code&gt;templates&#x2F;home.html&lt;&#x2F;code&gt; template:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;html&quot; class=&quot;language-html z-code&quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;{% extends &amp;quot;base.html&amp;quot; %}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;{% macro home_page(section) %}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;    &lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-other z-html&quot;&gt;main&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;        &lt;span class=&quot;z-meta z-tag z-block z-any z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-block z-any z-html&quot;&gt;article&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;            &lt;span class=&quot;z-meta z-tag z-block z-any z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-block z-any z-html&quot;&gt;section&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-attribute-with-value z-class z-html&quot;&gt;&lt;span class=&quot;z-entity z-other z-attribute-name z-class z-html&quot;&gt;class&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-key-value z-html&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-html&quot;&gt;&lt;span class=&quot;z-meta z-class-name z-html&quot;&gt;body&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-end z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;                {{ post_macros::page_header(title=section.title) }}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;                {{ section.content | safe }}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;            &lt;span class=&quot;z-meta z-tag z-block z-any z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-block z-any z-html&quot;&gt;section&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;        &lt;span class=&quot;z-meta z-tag z-block z-any z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-block z-any z-html&quot;&gt;article&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;    &lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-other z-html&quot;&gt;main&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;{% endmacro home_page %}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;{% block main_content %}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;    {{ self::home_page(section=section) }}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;{% endblock main_content %}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;4-displaying-posts&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#4-displaying-posts&quot; aria-label=&quot;Anchor link for: 4-displaying-posts&quot;&gt;4. Displaying Posts&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;You can also display a list of your recent posts on your homepage. The following code shows how to display the 5 most recent posts:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;html&quot; class=&quot;language-html z-code&quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;{% extends &amp;quot;base.html&amp;quot; %}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;{% macro home_page(section) %}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;    &lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-other z-html&quot;&gt;main&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;        &lt;span class=&quot;z-meta z-tag z-block z-any z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-block z-any z-html&quot;&gt;article&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;            &lt;span class=&quot;z-meta z-tag z-block z-any z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-block z-any z-html&quot;&gt;section&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-attribute-with-value z-class z-html&quot;&gt;&lt;span class=&quot;z-entity z-other z-attribute-name z-class z-html&quot;&gt;class&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-key-value z-html&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-html&quot;&gt;&lt;span class=&quot;z-meta z-class-name z-html&quot;&gt;body&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-end z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;                {{ post_macros::page_header(title=section.title) }}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;                {{ section.content | safe }}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;            &lt;span class=&quot;z-meta z-tag z-block z-any z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-block z-any z-html&quot;&gt;section&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;        &lt;span class=&quot;z-meta z-tag z-block z-any z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-block z-any z-html&quot;&gt;article&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;    &lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-other z-html&quot;&gt;main&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;{% endmacro home_page %}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;{% block main_content %}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;    {{ self::home_page(section=section) }}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;    &lt;span class=&quot;z-meta z-tag z-block z-any z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-block z-any z-html&quot;&gt;h1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;Recent articles&lt;span class=&quot;z-meta z-tag z-block z-any z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-block z-any z-html&quot;&gt;h1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;    &lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-other z-html&quot;&gt;main&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-attribute-with-value z-class z-html&quot;&gt;&lt;span class=&quot;z-entity z-other z-attribute-name z-class z-html&quot;&gt;class&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-key-value z-html&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-html&quot;&gt;&lt;span class=&quot;z-meta z-class-name z-html&quot;&gt;post-list&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-end z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;        {% set section = get_section(path=&amp;quot;posts&#x2F;_index.md&amp;quot;) %}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;        {{ post_macros::list_posts(pages=section.pages | slice(end=5)) }}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;    &lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-other z-html&quot;&gt;main&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;{% endblock main_content %}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This code gets the &lt;code&gt;posts&lt;&#x2F;code&gt; section and then uses the &lt;code&gt;post_macros::list_posts&lt;&#x2F;code&gt; macro to display the 5 most recent posts.&lt;&#x2F;p&gt;
+&lt;p&gt;You can also highlight specific posts by getting them by their path:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;html&quot; class=&quot;language-html z-code&quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;{% set highlights = [
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;    get_page(path=&amp;quot;posts&#x2F;my-first-post.md&amp;quot;),
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;    get_page(path=&amp;quot;posts&#x2F;my-second-post.md&amp;quot;),
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;] %}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-other z-html&quot;&gt;main&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-attribute-with-value z-class z-html&quot;&gt;&lt;span class=&quot;z-entity z-other z-attribute-name z-class z-html&quot;&gt;class&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-key-value z-html&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-html&quot;&gt;&lt;span class=&quot;z-meta z-class-name z-html&quot;&gt;post-list&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-end z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;    {{ post_macros::list_posts(pages=highlights) }}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-tag z-other z-html&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-other z-html&quot;&gt;main&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This is just a starting point. You can customize your homepage as much as you want.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Collaborative Article</title>
+        <published>2025-05-24T00:00:00+00:00</published>
+        <updated>2025-05-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            Alice
+          </name>
+        </author>
+        
+        <author>
+          <name>
+            Bob
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/collab-article/"/>
+        <id>https://not-matthias.github.io/apollo/posts/collab-article/</id>
+        
+        <content type="html" xml:base="https://not-matthias.github.io/apollo/posts/collab-article/">&lt;p&gt;Written by Alice and Bob!&lt;&#x2F;p&gt;
+&lt;p&gt;TBA&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Mermaid Example</title>
+        <published>2024-12-26T00:00:00+00:00</published>
+        <updated>2024-12-26T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/mermaid/"/>
+        <id>https://not-matthias.github.io/apollo/posts/mermaid/</id>
+        
+        <content type="html" xml:base="https://not-matthias.github.io/apollo/posts/mermaid/">&lt;p&gt;This Theme supports &lt;a href=&quot;https:&#x2F;&#x2F;mermaid.js.org&#x2F;&quot;&gt;mermaid&lt;&#x2F;a&gt; markdown diagram rendering.&lt;&#x2F;p&gt;
+&lt;p&gt;To use mermaid diagrams in your posts, see the example in the raw markdown code.
+https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;not-matthias&#x2F;apollo&#x2F;refs&#x2F;heads&#x2F;main&#x2F;content&#x2F;posts&#x2F;mermaid.md&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;rendered-example&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#rendered-example&quot; aria-label=&quot;Anchor link for: rendered-example&quot;&gt;Rendered Example&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;script src=https:&#x2F;&#x2F;not-matthias.github.io&#x2F;apollo&#x2F;js&#x2F;mermaid.js&gt;&lt;&#x2F;script&gt;
+
+&lt;pre class=&quot;mermaid&quot;&gt;
+  graph LR
+    A[Start] --&gt; B[Initialize]
+    B --&gt; C[Processing]
+    C --&gt; D[Complete]
+    D --&gt; E[Success]
+
+    style A fill:#f9f,stroke:#333
+    style E fill:#9f9,stroke:#333
+&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Configuring Apollo</title>
+        <published>2024-07-09T00:00:00+00:00</published>
+        <updated>2024-07-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/configuration/"/>
+        <id>https://not-matthias.github.io/apollo/posts/configuration/</id>
+        
+        <content type="html" xml:base="https://not-matthias.github.io/apollo/posts/configuration/">&lt;h1 id=&quot;site-configuration&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#site-configuration&quot; aria-label=&quot;Anchor link for: site-configuration&quot;&gt;Site Configuration&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;search-build-search-index&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#search-build-search-index&quot; aria-label=&quot;Anchor link for: search-build-search-index&quot;&gt;Search (&lt;code&gt;build_search_index&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Enables or disables the search functionality for your blog.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;&#x2F;li&gt;
+&lt;li&gt;Default: false&lt;&#x2F;li&gt;
+&lt;li&gt;Usage: &lt;code&gt;build_search_index = false&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;When enabled, a search index will be generated for your blog, allowing visitors to search for specific content.
+Additionally, a search button will be displayed in the navigation bar.&lt;&#x2F;p&gt;
+&lt;p&gt;Configure the search like this:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml z-code&quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;build_search_index&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-language z-toml&quot;&gt;true&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-table z-begin z-toml&quot;&gt;[&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-tag z-table z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-table z-toml&quot;&gt;search&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-table z-end z-toml&quot;&gt;]&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;include_title&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-language z-toml&quot;&gt;true&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;include_description&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-language z-toml&quot;&gt;true&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;include_path&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-language z-toml&quot;&gt;true&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;include_content&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-language z-toml&quot;&gt;true&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;index_format&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;elasticlunr_json&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;theme-mode-theme&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#theme-mode-theme&quot; aria-label=&quot;Anchor link for: theme-mode-theme&quot;&gt;Theme Mode (&lt;code&gt;theme&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Sets the color theme for your blog.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: String&lt;&#x2F;li&gt;
+&lt;li&gt;Options: &quot;light&quot;, &quot;dark&quot;, &quot;auto&quot;, &quot;toggle&quot;&lt;&#x2F;li&gt;
+&lt;li&gt;Default: &quot;toggle&quot;&lt;&#x2F;li&gt;
+&lt;li&gt;Usage: &lt;code&gt;theme = &quot;toggle&quot;&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The &quot;toggle&quot; option allows users to switch between light and dark modes, while &quot;auto&quot; typically follows the user&#x27;s system preferences.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;menu&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#menu&quot; aria-label=&quot;Anchor link for: menu&quot;&gt;Menu&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Defines the navigation menu items for your blog.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Array of objects&lt;&#x2F;li&gt;
+&lt;li&gt;Default: []&lt;&#x2F;li&gt;
+&lt;li&gt;Usage:&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml z-code&quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;menu&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-array z-begin z-toml&quot;&gt;[&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;  &lt;span class=&quot;z-punctuation z-definition z-inline-table z-begin z-toml&quot;&gt;{&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;name&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&#x2F;posts&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-inline-table z-toml&quot;&gt;,&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;url&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&#x2F;posts&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-inline-table z-toml&quot;&gt;,&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;weight&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-toml&quot;&gt;1&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-inline-table z-end z-toml&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-array z-toml&quot;&gt;,&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;  &lt;span class=&quot;z-punctuation z-definition z-inline-table z-begin z-toml&quot;&gt;{&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;name&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&#x2F;projects&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-inline-table z-toml&quot;&gt;,&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;url&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&#x2F;projects&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-inline-table z-toml&quot;&gt;,&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;weight&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-toml&quot;&gt;2&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-inline-table z-end z-toml&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-array z-toml&quot;&gt;,&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;  &lt;span class=&quot;z-punctuation z-definition z-inline-table z-begin z-toml&quot;&gt;{&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;name&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&#x2F;about&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-inline-table z-toml&quot;&gt;,&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;url&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&#x2F;about&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-inline-table z-toml&quot;&gt;,&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;weight&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-toml&quot;&gt;3&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-inline-table z-end z-toml&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-array z-toml&quot;&gt;,&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;  &lt;span class=&quot;z-punctuation z-definition z-inline-table z-begin z-toml&quot;&gt;{&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;name&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&#x2F;tags&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-inline-table z-toml&quot;&gt;,&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;url&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&#x2F;tags&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-inline-table z-toml&quot;&gt;,&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;weight&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-toml&quot;&gt;4&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-inline-table z-end z-toml&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-array z-toml&quot;&gt;,&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-array z-end z-toml&quot;&gt;]&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;logo&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#logo&quot; aria-label=&quot;Anchor link for: logo&quot;&gt;Logo&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Defines the site logo image file.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: String&lt;&#x2F;li&gt;
+&lt;li&gt;Usage:&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml z-code&quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;logo&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;site_logo.svg&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;socials&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#socials&quot; aria-label=&quot;Anchor link for: socials&quot;&gt;Socials&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Defines the social media links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Array of objects&lt;&#x2F;li&gt;
+&lt;li&gt;Default: []&lt;&#x2F;li&gt;
+&lt;li&gt;Usage:&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml z-code&quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;socials&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-array z-begin z-toml&quot;&gt;[&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;  &lt;span class=&quot;z-punctuation z-definition z-inline-table z-begin z-toml&quot;&gt;{&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;name&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;twitter&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-inline-table z-toml&quot;&gt;,&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;url&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;https:&#x2F;&#x2F;twitter.com&#x2F;not_matthias&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-inline-table z-toml&quot;&gt;,&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;icon&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;twitter&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-inline-table z-end z-toml&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-array z-toml&quot;&gt;,&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;  &lt;span class=&quot;z-punctuation z-definition z-inline-table z-begin z-toml&quot;&gt;{&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;name&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;github&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-inline-table z-toml&quot;&gt;,&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;url&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;https:&#x2F;&#x2F;github.com&#x2F;not-matthias&#x2F;&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-inline-table z-toml&quot;&gt;,&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;icon&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;github&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-inline-table z-end z-toml&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-array z-toml&quot;&gt;,&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-array z-end z-toml&quot;&gt;]&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;table-of-contents-toc&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#table-of-contents-toc&quot; aria-label=&quot;Anchor link for: table-of-contents-toc&quot;&gt;Table of Contents (&lt;code&gt;toc&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Enables or disables the table of contents for posts.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;&#x2F;li&gt;
+&lt;li&gt;Default: true&lt;&#x2F;li&gt;
+&lt;li&gt;Usage: &lt;code&gt;toc = true&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;When enabled, a table of contents will be generated for posts, making it easier for readers to navigate through longer articles.&lt;&#x2F;p&gt;
+&lt;p&gt;Note: This feature adds additional JavaScript to your site.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;cdn-usage-use-cdn&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#cdn-usage-use-cdn&quot; aria-label=&quot;Anchor link for: cdn-usage-use-cdn&quot;&gt;CDN Usage (&lt;code&gt;use_cdn&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Determines whether to use a Content Delivery Network (CDN) for assets.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;&#x2F;li&gt;
+&lt;li&gt;Default: false&lt;&#x2F;li&gt;
+&lt;li&gt;Usage: &lt;code&gt;use_cdn = false&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;When set to true, the theme will attempt to load assets from a CDN, which can improve loading times for visitors from different geographic locations.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;favicon-favicon&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#favicon-favicon&quot; aria-label=&quot;Anchor link for: favicon-favicon&quot;&gt;Favicon (&lt;code&gt;favicon&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Specifies the path to the favicon image for your blog.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: String&lt;&#x2F;li&gt;
+&lt;li&gt;Default: &quot;&#x2F;icon&#x2F;favicon.png&quot;&lt;&#x2F;li&gt;
+&lt;li&gt;Usage: &lt;code&gt;favicon = &quot;&#x2F;icon&#x2F;favicon.png&quot;&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This sets the small icon that appears in the browser tab for your website.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;custom-stylesheets-stylesheets&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#custom-stylesheets-stylesheets&quot; aria-label=&quot;Anchor link for: custom-stylesheets-stylesheets&quot;&gt;Custom Stylesheets (&lt;code&gt;stylesheets&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Allows you to add custom stylesheets to your blog.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Array of files located in the &lt;code&gt;static&lt;&#x2F;code&gt; directory&lt;&#x2F;li&gt;
+&lt;li&gt;Default: []&lt;&#x2F;li&gt;
+&lt;li&gt;Usage:&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml z-code&quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;stylesheets&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-array z-begin z-toml&quot;&gt;[&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;  &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;custom.css&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-array z-toml&quot;&gt;,&lt;&#x2F;span&gt;           &lt;span class=&quot;z-comment z-line z-number-sign z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-toml&quot;&gt;#&lt;&#x2F;span&gt; static&#x2F;custom.css&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;  &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&#x2F;css&#x2F;another.css&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;      &lt;span class=&quot;z-comment z-line z-number-sign z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-toml&quot;&gt;#&lt;&#x2F;span&gt; static&#x2F;css&#x2F;another.css&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-array z-end z-toml&quot;&gt;]&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;fancy-code-styling-fancy-code&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#fancy-code-styling-fancy-code&quot; aria-label=&quot;Anchor link for: fancy-code-styling-fancy-code&quot;&gt;Fancy Code Styling (&lt;code&gt;fancy_code&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Enables enhanced styling for code blocks.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;&#x2F;li&gt;
+&lt;li&gt;Default: true&lt;&#x2F;li&gt;
+&lt;li&gt;Usage: &lt;code&gt;fancy_code = true&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This option adds the language label and a copy button.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;dynamic-notes-dynamic-note&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#dynamic-notes-dynamic-note&quot; aria-label=&quot;Anchor link for: dynamic-notes-dynamic-note&quot;&gt;Dynamic Notes (&lt;code&gt;dynamic_note&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Allows for the creation of togglable note sections in your content.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;&#x2F;li&gt;
+&lt;li&gt;Default: true&lt;&#x2F;li&gt;
+&lt;li&gt;Usage: &lt;code&gt;dynamic_note = true&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;When enabled, you can create expandable&#x2F;collapsible note sections in your blog posts.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;anchor-links&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#anchor-links&quot; aria-label=&quot;Anchor link for: anchor-links&quot;&gt;Anchor Links&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;You can add anchor links by adding the following to your &lt;code&gt;_index.md&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml z-code&quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;insert_anchor_links&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;heading&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;taxonomy-sorting&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#taxonomy-sorting&quot; aria-label=&quot;Anchor link for: taxonomy-sorting&quot;&gt;Taxonomy sorting&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;You can sort the taxonomies page with the following config:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml z-code&quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-table z-begin z-toml&quot;&gt;[&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-tag z-table z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-table z-toml&quot;&gt;extra&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-table z-toml&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-table z-toml&quot;&gt;taxonomies&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-table z-end z-toml&quot;&gt;]&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;sort_by&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;page_count&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;         &lt;span class=&quot;z-comment z-line z-number-sign z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-toml&quot;&gt;#&lt;&#x2F;span&gt; e.g. name, page_count&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;reverse&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-language z-toml&quot;&gt;true&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The &lt;code&gt;sort_by&lt;&#x2F;code&gt; argument is directly passed to the &lt;code&gt;sort_by&lt;&#x2F;code&gt; function:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;jinja&quot; class=&quot;language-jinja z-code&quot;&gt;&lt;code class=&quot;language-jinja&quot; data-lang=&quot;jinja&quot;&gt;&lt;span class=&quot;z-source z-jinja2&quot;&gt;&lt;span class=&quot;z-meta z-scope z-jinja2 z-tag&quot;&gt;&lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-tag&quot;&gt;{%&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-control z-jinja2&quot;&gt;set&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;sort_by&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-assignment z-jinja2&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;config&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-other z-jinja2 z-attribute&quot;&gt;extra&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-other z-jinja2 z-attribute&quot;&gt;taxonomies&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-other z-jinja2 z-attribute&quot;&gt;sort_by&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;|&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;default&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;value&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-jinja2&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-jinja2&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-jinja2&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;name&lt;span class=&quot;z-punctuation z-definition z-string z-end z-jinja2&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;)&lt;&#x2F;span&gt; &lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-tag&quot;&gt;%}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-jinja2&quot;&gt;&lt;span class=&quot;z-meta z-scope z-jinja2 z-tag&quot;&gt;&lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-tag&quot;&gt;{%&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-control z-jinja2&quot;&gt;set&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;terms&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-assignment z-jinja2&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;terms&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;|&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;default&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;value&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-jinja2&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;[&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;]&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;)&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;|&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;sort&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;attribute&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-jinja2&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;sort_by&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;)&lt;&#x2F;span&gt; &lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-tag&quot;&gt;%}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-jinja2&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-jinja2&quot;&gt;&lt;span class=&quot;z-meta z-scope z-jinja2 z-tag&quot;&gt;&lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-tag&quot;&gt;{%&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-control z-jinja2&quot;&gt;if&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;config&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-other z-jinja2 z-attribute&quot;&gt;extra&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-other z-jinja2 z-attribute&quot;&gt;taxonomies&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-other z-jinja2 z-attribute&quot;&gt;reverse&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;|&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;default&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;value&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-jinja2&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-language z-jinja2&quot;&gt;false&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;)&lt;&#x2F;span&gt; &lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-tag&quot;&gt;%}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-jinja2&quot;&gt;    &lt;span class=&quot;z-meta z-scope z-jinja2 z-tag&quot;&gt;&lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-tag&quot;&gt;{%&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-control z-jinja2&quot;&gt;set&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;terms&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-assignment z-jinja2&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;terms&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;|&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;reverse&lt;&#x2F;span&gt; &lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-tag&quot;&gt;%}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-jinja2&quot;&gt;&lt;span class=&quot;z-meta z-scope z-jinja2 z-tag&quot;&gt;&lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-tag&quot;&gt;{%&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-control z-jinja2&quot;&gt;endif&lt;&#x2F;span&gt; &lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-tag&quot;&gt;%}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-jinja2&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-jinja2&quot;&gt;&lt;span class=&quot;z-meta z-scope z-jinja2 z-tag&quot;&gt;&lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-tag&quot;&gt;{%&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-control z-jinja2&quot;&gt;for&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;term&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-control z-jinja2&quot;&gt;in&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;terms&lt;&#x2F;span&gt; &lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-tag&quot;&gt;%}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-jinja2&quot;&gt;    &amp;lt;li&amp;gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-jinja2&quot;&gt;        &amp;lt;a href=&amp;quot;&lt;span class=&quot;z-meta z-scope z-jinja2 z-variable&quot;&gt;&lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-variable&quot;&gt;{{&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;term&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-other z-jinja2 z-attribute&quot;&gt;permalink&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;|&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;safe&lt;&#x2F;span&gt; &lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-variable&quot;&gt;}}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&amp;quot;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-jinja2&quot;&gt;            &lt;span class=&quot;z-meta z-scope z-jinja2 z-variable&quot;&gt;&lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-variable&quot;&gt;{{&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;term&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-other z-jinja2 z-attribute&quot;&gt;name&lt;&#x2F;span&gt; &lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-variable&quot;&gt;}}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; (&lt;span class=&quot;z-meta z-scope z-jinja2 z-variable&quot;&gt;&lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-variable&quot;&gt;{{&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;term&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-other z-jinja2 z-attribute&quot;&gt;pages&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;|&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;length&lt;&#x2F;span&gt; &lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-variable&quot;&gt;}}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; post&lt;span class=&quot;z-meta z-scope z-jinja2 z-variable&quot;&gt;&lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-variable&quot;&gt;{{&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;term&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-other z-jinja2 z-attribute&quot;&gt;pages&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;|&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;length&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-other z-jinja2&quot;&gt;|&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-jinja2&quot;&gt;pluralize&lt;&#x2F;span&gt; &lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-variable&quot;&gt;}}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;)
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-jinja2&quot;&gt;        &amp;lt;&#x2F;a&amp;gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-jinja2&quot;&gt;    &amp;lt;&#x2F;li&amp;gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-jinja2&quot;&gt;&lt;span class=&quot;z-meta z-scope z-jinja2 z-tag&quot;&gt;&lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-tag&quot;&gt;{%&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-control z-jinja2&quot;&gt;endfor&lt;&#x2F;span&gt; &lt;span class=&quot;z-entity z-other z-jinja2 z-delimiter z-tag&quot;&gt;%}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Possible values include anything within the &lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;documentation&#x2F;templates&#x2F;taxonomies&#x2F;&quot;&gt;TaxonomyTerm object&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;rust&quot; class=&quot;language-rust z-code&quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;z-source z-rust&quot;&gt;name&lt;span class=&quot;z-punctuation z-separator z-rust&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-support z-type z-rust&quot;&gt;String&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-rust&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-rust&quot;&gt;slug&lt;span class=&quot;z-punctuation z-separator z-rust&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-support z-type z-rust&quot;&gt;String&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-rust&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-rust&quot;&gt;path&lt;span class=&quot;z-punctuation z-separator z-rust&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-support z-type z-rust&quot;&gt;String&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-rust&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-rust&quot;&gt;permalink&lt;span class=&quot;z-punctuation z-separator z-rust&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-support z-type z-rust&quot;&gt;String&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-rust&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-rust&quot;&gt;pages&lt;span class=&quot;z-punctuation z-separator z-rust&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-generic z-rust&quot;&gt;Array&lt;span class=&quot;z-punctuation z-definition z-generic z-begin z-rust&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;Page&lt;span class=&quot;z-punctuation z-definition z-generic z-end z-rust&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-rust&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-rust&quot;&gt;page_count&lt;span class=&quot;z-punctuation z-separator z-rust&quot;&gt;:&lt;&#x2F;span&gt; Number&lt;span class=&quot;z-punctuation z-terminator z-rust&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Examples:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;name&lt;&#x2F;code&gt; to sort by name&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;page_count&lt;&#x2F;code&gt; to sort by page count&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;analytics&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#analytics&quot; aria-label=&quot;Anchor link for: analytics&quot;&gt;Analytics&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Enable or disable analytics tracking:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml z-code&quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-table z-begin z-toml&quot;&gt;[&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-tag z-table z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-table z-toml&quot;&gt;extra&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-table z-toml&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-table z-toml&quot;&gt;analytics&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-table z-end z-toml&quot;&gt;]&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;enabled&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-language z-toml&quot;&gt;false&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;After enabling analytics, configure GoatCounter or Umami.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;goatcounter&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#goatcounter&quot; aria-label=&quot;Anchor link for: goatcounter&quot;&gt;GoatCounter&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Configure GoatCounter analytics:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml z-code&quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-table z-begin z-toml&quot;&gt;[&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-tag z-table z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-table z-toml&quot;&gt;extra&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-table z-toml&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-table z-toml&quot;&gt;analytics&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-table z-toml&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-table z-toml&quot;&gt;goatcounter&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-table z-end z-toml&quot;&gt;]&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;user&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;your_user&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;           &lt;span class=&quot;z-comment z-line z-number-sign z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-toml&quot;&gt;#&lt;&#x2F;span&gt; Your GoatCounter username&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;host&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;example.com&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;         &lt;span class=&quot;z-comment z-line z-number-sign z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-toml&quot;&gt;#&lt;&#x2F;span&gt; Optional: Custom host&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;umami-analytics&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#umami-analytics&quot; aria-label=&quot;Anchor link for: umami-analytics&quot;&gt;Umami Analytics&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Configure Umami analytics:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml z-code&quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-table z-begin z-toml&quot;&gt;[&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-tag z-table z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-table z-toml&quot;&gt;extra&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-table z-toml&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-table z-toml&quot;&gt;analytics&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-table z-toml&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-table z-toml&quot;&gt;umami&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-table z-end z-toml&quot;&gt;]&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;website_id&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;43929cd1-1e83....&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;                    &lt;span class=&quot;z-comment z-line z-number-sign z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-toml&quot;&gt;#&lt;&#x2F;span&gt; Your Umami website ID&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;host_url&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;https:&#x2F;&#x2F;stats.mywebsite.com&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;            &lt;span class=&quot;z-comment z-line z-number-sign z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-toml&quot;&gt;#&lt;&#x2F;span&gt; Optional: Custom host URL&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;hr &#x2F;&gt;
+&lt;h1 id=&quot;page-configuration&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#page-configuration&quot; aria-label=&quot;Anchor link for: page-configuration&quot;&gt;Page configuration&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;source-code-repo-view&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#source-code-repo-view&quot; aria-label=&quot;Anchor link for: source-code-repo-view&quot;&gt;Source code (&lt;code&gt;repo_view&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Do you want to link to the source code of your blog post? You can turn on the &lt;code&gt;repo_view&lt;&#x2F;code&gt; inside the &lt;code&gt;[extra]&lt;&#x2F;code&gt; section of your blog post.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml z-code&quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-table z-begin z-toml&quot;&gt;[&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-tag z-table z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-table z-toml&quot;&gt;extra&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-table z-end z-toml&quot;&gt;]&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;repo_view&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-language z-toml&quot;&gt;true&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;repo_url&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;https:&#x2F;&#x2F;github.com&#x2F;not-matthias&#x2F;apollo&#x2F;tree&#x2F;main&#x2F;content&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-comment z-line z-number-sign z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-toml&quot;&gt;#&lt;&#x2F;span&gt; Alternatively add the repo here&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The &lt;code&gt;repo_url&lt;&#x2F;code&gt; can be set in the &lt;code&gt;[extra]&lt;&#x2F;code&gt; section or in your &lt;code&gt;config.toml&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;comments-comment&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#comments-comment&quot; aria-label=&quot;Anchor link for: comments-comment&quot;&gt;Comments (&lt;code&gt;comment&lt;&#x2F;code&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Enables or disables the comment system for posts.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;&#x2F;li&gt;
+&lt;li&gt;Default: false&lt;&#x2F;li&gt;
+&lt;li&gt;Usage: &lt;code&gt;comment = false&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;After making &lt;code&gt;comment = true&lt;&#x2F;code&gt; in &lt;code&gt;[extra]&lt;&#x2F;code&gt; section of you post, save your script from &lt;a href=&quot;https:&#x2F;&#x2F;giscus.app&quot;&gt;Giscus&lt;&#x2F;a&gt; to &lt;code&gt;templates&#x2F;_giscus_script.html&lt;&#x2F;code&gt;.
+When enabled, this allows readers to leave comments on your blog posts. This feature has to be set for each individual post and is not supported at higher levels.&lt;&#x2F;p&gt;
+&lt;p&gt;Example configuration in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;not-matthias&#x2F;apollo&#x2F;blob&#x2F;main&#x2F;content&#x2F;posts&#x2F;configuration.md&quot;&gt;content&#x2F;posts&#x2F;configuration.md&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml z-code&quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-invalid z-illegal z-toml&quot;&gt;+++&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;title&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;Configuring Apollo&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-table z-begin z-toml&quot;&gt;[&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-tag z-table z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-table z-toml&quot;&gt;extra&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-table z-end z-toml&quot;&gt;]&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;comment&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-language z-toml&quot;&gt;true&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-invalid z-illegal z-toml&quot;&gt;+++&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Comments via &lt;a href=&quot;https:&#x2F;&#x2F;utteranc.es&quot;&gt;utterances&lt;&#x2F;a&gt; can be configured in &lt;code&gt;template&#x2F;_giscus_script.html&lt;&#x2F;code&gt; like this:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;html&quot; class=&quot;language-html z-code&quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-tag z-script z-begin z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-script z-html&quot;&gt;script&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-tag z-script z-begin z-html&quot;&gt; &lt;span class=&quot;z-meta z-attribute-with-value z-html&quot;&gt;&lt;span class=&quot;z-entity z-other z-attribute-name z-html&quot;&gt;src&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-key-value z-html&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;https:&#x2F;&#x2F;utteranc.es&#x2F;client.js&lt;span class=&quot;z-punctuation z-definition z-string z-end z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-tag z-script z-begin z-html&quot;&gt;        &lt;span class=&quot;z-meta z-attribute-with-value z-html&quot;&gt;&lt;span class=&quot;z-entity z-other z-attribute-name z-html&quot;&gt;repo&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-key-value z-html&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;YOUR_NAME&#x2F;YOUR_REPO&lt;span class=&quot;z-punctuation z-definition z-string z-end z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-tag z-script z-begin z-html&quot;&gt;        &lt;span class=&quot;z-meta z-attribute-with-value z-html&quot;&gt;&lt;span class=&quot;z-entity z-other z-attribute-name z-html&quot;&gt;issue-term&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-key-value z-html&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;pathname&lt;span class=&quot;z-punctuation z-definition z-string z-end z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-tag z-script z-begin z-html&quot;&gt;        &lt;span class=&quot;z-meta z-attribute-with-value z-html&quot;&gt;&lt;span class=&quot;z-entity z-other z-attribute-name z-html&quot;&gt;theme&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-key-value z-html&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;github-light&lt;span class=&quot;z-punctuation z-definition z-string z-end z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-tag z-script z-begin z-html&quot;&gt;        &lt;span class=&quot;z-meta z-attribute-with-value z-html&quot;&gt;&lt;span class=&quot;z-entity z-other z-attribute-name z-html&quot;&gt;crossorigin&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-key-value z-html&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;anonymous&lt;span class=&quot;z-punctuation z-definition z-string z-end z-html&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-tag z-script z-begin z-html&quot;&gt;        &lt;span class=&quot;z-meta z-attribute-with-value z-html&quot;&gt;&lt;span class=&quot;z-entity z-other z-attribute-name z-html&quot;&gt;async&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-basic&quot;&gt;&lt;span class=&quot;z-meta z-tag z-script z-end z-html&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-begin z-html&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag z-script z-html&quot;&gt;script&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-tag z-end z-html&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h1 id=&quot;cards-page&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#cards-page&quot; aria-label=&quot;Anchor link for: cards-page&quot;&gt;Cards Page&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;The &lt;code&gt;cards.html&lt;&#x2F;code&gt; template allows you to display a list of items in a card format. This is ideal for showcasing projects, but can be used for any list of items you want to display in a visually appealing way.&lt;&#x2F;p&gt;
+&lt;p&gt;To create a cards page, you need to create a &lt;code&gt;_index.md&lt;&#x2F;code&gt; file in a content directory (e.g., &lt;code&gt;content&#x2F;projects&lt;&#x2F;code&gt;). The following front matter is recommended:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml z-code&quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-invalid z-illegal z-toml&quot;&gt;+++&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;title&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;Projects&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;sort_by&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;weight&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;template&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;cards.html&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-invalid z-illegal z-toml&quot;&gt;+++&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Each item in the list should be a separate markdown file in the same directory. The following front matter is supported:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;title&lt;&#x2F;code&gt;: The title of the item.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;description&lt;&#x2F;code&gt;: A short description of the item.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;weight&lt;&#x2F;code&gt;: The order in which the item appears on the page.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;local_image&lt;&#x2F;code&gt;: A path to a local image for the item&#x27;s thumbnail. See the &lt;a href=&quot;https:&#x2F;&#x2F;not-matthias.github.io&#x2F;apollo&#x2F;posts&#x2F;configuration&#x2F;#local-image&quot;&gt;Local Image&lt;&#x2F;a&gt; section for more details.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;link_to&lt;&#x2F;code&gt;: A URL the card should link to.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;talks-page&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#talks-page&quot; aria-label=&quot;Anchor link for: talks-page&quot;&gt;Talks Page&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;To create a talks page, you need to create a &lt;code&gt;_index.md&lt;&#x2F;code&gt; file in the &lt;code&gt;content&#x2F;talks&lt;&#x2F;code&gt; directory. The following front matter is recommended:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml z-code&quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-invalid z-illegal z-toml&quot;&gt;+++&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;title&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;Talks&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;sort_by&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;date&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-meta z-tag z-key z-toml&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag z-toml&quot;&gt;template&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-key-value z-toml&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-basic z-toml&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;talks.html&lt;span class=&quot;z-punctuation z-definition z-string z-end z-toml&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-toml&quot;&gt;&lt;span class=&quot;z-invalid z-illegal z-toml&quot;&gt;+++&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Each talk should be a separate markdown file in the &lt;code&gt;content&#x2F;talks&lt;&#x2F;code&gt; directory. The following front matter is supported:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;title&lt;&#x2F;code&gt;: The title of the talk.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;description&lt;&#x2F;code&gt;: A short description of the talk.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;local_image&lt;&#x2F;code&gt;: A path to a local image for the item&#x27;s thumbnail. See the &lt;a href=&quot;https:&#x2F;&#x2F;not-matthias.github.io&#x2F;apollo&#x2F;posts&#x2F;configuration&#x2F;#local-image&quot;&gt;Local Image&lt;&#x2F;a&gt; section for more details.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;date&lt;&#x2F;code&gt;: The date of the talk.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;video&lt;&#x2F;code&gt;: A map with a &lt;code&gt;link&lt;&#x2F;code&gt; and &lt;code&gt;thumbnail&lt;&#x2F;code&gt; for the talk video.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;organizer&lt;&#x2F;code&gt;: A map with a &lt;code&gt;name&lt;&#x2F;code&gt; and &lt;code&gt;link&lt;&#x2F;code&gt; for the event organizer.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;slides&lt;&#x2F;code&gt;: A URL to the presentation slides.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;code&lt;&#x2F;code&gt;: A URL to the source code.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;local-image&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#local-image&quot; aria-label=&quot;Anchor link for: local-image&quot;&gt;Local Image&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;The &lt;code&gt;local_image&lt;&#x2F;code&gt; front matter parameter allows you to specify a path to a local image that will be used as the thumbnail for a page. This is particularly useful for social media previews and other places where a representative image is needed.&lt;&#x2F;p&gt;
+&lt;p&gt;The path resolution for &lt;code&gt;local_image&lt;&#x2F;code&gt; works as follows:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;If the path starts with a &lt;code&gt;&#x2F;&lt;&#x2F;code&gt;, it is treated as an absolute path from the &lt;code&gt;content&lt;&#x2F;code&gt; directory. For example, &lt;code&gt;local_image = &quot;&#x2F;projects&#x2F;project-1.jpg&quot;&lt;&#x2F;code&gt; will resolve to &lt;code&gt;content&#x2F;projects&#x2F;project-1.jpg&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;If the path does not start with a &lt;code&gt;&#x2F;&lt;&#x2F;code&gt;, it is treated as a relative path. The theme will prepend the &lt;code&gt;section.path&lt;&#x2F;code&gt; to the &lt;code&gt;local_image&lt;&#x2F;code&gt; path. For example, if you are in a page at &lt;code&gt;content&#x2F;posts&#x2F;my-post&#x2F;index.md&lt;&#x2F;code&gt; and you set &lt;code&gt;local_image = &quot;thumbnail.png&quot;&lt;&#x2F;code&gt;, the theme will look for the image at &lt;code&gt;posts&#x2F;my-post&#x2F;thumbnail.png&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Shortcode Example</title>
+        <published>2024-06-14T00:00:00+00:00</published>
+        <updated>2024-06-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/shortcode/"/>
+        <id>https://not-matthias.github.io/apollo/posts/shortcode/</id>
+        
+        <content type="html" xml:base="https://not-matthias.github.io/apollo/posts/shortcode/">&lt;h2 id=&quot;note&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#note&quot; aria-label=&quot;Anchor link for: note&quot;&gt;Note&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Here is an example of the &lt;code&gt;note&lt;&#x2F;code&gt; shortcode:&lt;&#x2F;p&gt;
+&lt;p&gt;This one is static!
+&lt;div class=&quot;note-container&quot;&gt;
+    
+            &lt;div class=&quot;note-header&quot;&gt;
+                
+                    &lt;div class=&quot;note-icon&quot;&gt;&lt;p&gt;Note!&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+                
+            &lt;&#x2F;div&gt;
+            &lt;div class=&quot;note-content&quot;&gt;&lt;p&gt;This blog assumes basic terminal maturity&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;p&gt;
+&lt;p&gt;This one is clickable!
+&lt;div class=&quot;note-container&quot;&gt;
+    
+        &lt;button class=&quot;note-toggle&quot;&gt;
+            
+                &lt;div class=&quot;note-icon&quot;&gt;&lt;p&gt;Quiz!&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+            
+        &lt;&#x2F;button&gt;
+
+        
+            &lt;div class=&quot;note-content&quot; style=&quot;display: none;&quot;&gt;
+            
+                &lt;p&gt;The answer to the quiz!&lt;&#x2F;p&gt;
+
+            &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;p&gt;
+&lt;p&gt;Syntax:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;{{ note(header=&amp;quot;Note!&amp;quot;, body=&amp;quot;This blog assumes basic terminal maturity&amp;quot;) }}
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;{{ note(clickable=true, hidden = true, header=&amp;quot;Quiz!&amp;quot;, body=&amp;quot;The answer to the quiz!&amp;quot;) }}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You can also use some HTML in the text:
+&lt;div class=&quot;note-container&quot;&gt;
+    
+            &lt;div class=&quot;note-header&quot;&gt;
+                
+                    &lt;div class=&quot;note-icon&quot;&gt;&lt;p&gt;Note!&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+                
+            &lt;&#x2F;div&gt;
+            &lt;div class=&quot;note-content&quot;&gt;&lt;h1&gt;This blog assumes basic terminal maturity&lt;&#x2F;h1&gt;&lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;p&gt;
+&lt;p&gt;Literal shortcode:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;{{ note(header=&amp;quot;Note!&amp;quot;, body=&amp;quot;&amp;lt;h1&amp;gt;This blog assumes basic terminal maturity&amp;lt;&#x2F;h1&amp;gt;&amp;quot;) }}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Pretty cool, right?&lt;&#x2F;p&gt;
+&lt;p&gt;Finally, you can do something like this (hopefully):&lt;&#x2F;p&gt;
+&lt;div class=&quot;note-container&quot;&gt;
+    
+        &lt;button class=&quot;note-toggle&quot;&gt;
+            
+                &lt;div class=&quot;note-icon&quot;&gt;&lt;p&gt;Quiz!&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+            
+        &lt;&#x2F;button&gt;
+
+        
+                &lt;div class=&quot;note-content&quot; style=&quot;display: block;&quot;&gt;
+                
+                &lt;h1 id=&quot;hello-this-is-markdown-inside-a-note-shortcode&quot;&gt;Hello this is markdown inside a note shortcode&lt;&#x2F;h1&gt;
+&lt;pre data-lang=&quot;rust&quot; class=&quot;language-rust z-code&quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;z-source z-rust&quot;&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-storage z-type z-function z-rust&quot;&gt;fn&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function z-rust&quot;&gt;main&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-meta z-function z-parameters z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-parameters z-begin z-rust&quot;&gt;(&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-meta z-function z-parameters z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-parameters z-end z-rust&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-meta z-block z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-block z-begin z-rust&quot;&gt;{&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-rust&quot;&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-meta z-block z-rust&quot;&gt;    &lt;span class=&quot;z-support z-macro z-rust&quot;&gt;println!&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-rust&quot;&gt;(&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-string z-quoted z-double z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;Hello World&lt;span class=&quot;z-punctuation z-definition z-string z-end z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-rust&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-rust&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-rust&quot;&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-meta z-block z-rust&quot;&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-block z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-rust&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;We can&#x27;t call another shortcode inside a shortcode, but this is good enough.&lt;&#x2F;p&gt;
+
+            &lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;p&gt;Here is the raw markdown:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;markdown&quot; class=&quot;language-markdown z-code&quot;&gt;&lt;code class=&quot;language-markdown&quot; data-lang=&quot;markdown&quot;&gt;&lt;span class=&quot;z-text z-html z-markdown&quot;&gt;&lt;span class=&quot;z-meta z-paragraph z-markdown&quot;&gt;{{ note(clickable=true, header=&amp;quot;Quiz!&amp;quot;) }}
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-markdown&quot;&gt;&lt;span class=&quot;z-meta z-paragraph z-markdown&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-markdown&quot;&gt;&lt;span class=&quot;z-meta z-block-level z-markdown&quot;&gt;&lt;span class=&quot;z-markup z-heading z-1 z-markdown&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-heading z-begin z-markdown&quot;&gt;#&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-markup z-heading z-1 z-markdown&quot;&gt;&lt;span class=&quot;z-entity z-name z-section z-markdown&quot;&gt;Hello this is markdown inside a note shortcode&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-whitespace z-newline z-markdown&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-markdown&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-markdown&quot;&gt;&lt;span class=&quot;z-meta z-paragraph z-markdown&quot;&gt;&lt;span class=&quot;z-constant z-character z-escape z-markdown&quot;&gt;\`&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-character z-escape z-markdown&quot;&gt;\`&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-character z-escape z-markdown&quot;&gt;\`&lt;&#x2F;span&gt;rust
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-markdown&quot;&gt;&lt;span class=&quot;z-meta z-paragraph z-markdown&quot;&gt;fn main() {
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-markdown&quot;&gt;&lt;span class=&quot;z-meta z-paragraph z-markdown&quot;&gt;    println!(&amp;quot;Hello World&amp;quot;);
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-markdown&quot;&gt;&lt;span class=&quot;z-meta z-paragraph z-markdown&quot;&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-markdown&quot;&gt;&lt;span class=&quot;z-meta z-paragraph z-markdown&quot;&gt;&lt;span class=&quot;z-constant z-character z-escape z-markdown&quot;&gt;\`&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-character z-escape z-markdown&quot;&gt;\`&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-character z-escape z-markdown&quot;&gt;\`&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-markdown&quot;&gt;&lt;span class=&quot;z-meta z-paragraph z-markdown&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-markdown&quot;&gt;&lt;span class=&quot;z-meta z-paragraph z-markdown&quot;&gt;We can&amp;#39;t call another shortcode inside a shortcode, but this is good enough.
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-markdown&quot;&gt;&lt;span class=&quot;z-meta z-paragraph z-markdown&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-html z-markdown&quot;&gt;&lt;span class=&quot;z-meta z-paragraph z-markdown&quot;&gt;{{&#x2F;* end &lt;span class=&quot;z-markup z-italic z-markdown&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-italic z-begin z-markdown&quot;&gt;*&lt;&#x2F;span&gt;&#x2F;}}
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Finally, we have center
+&lt;div class=&quot;note-container&quot;&gt;
+    
+            &lt;div class=&quot;note-header&quot;&gt;
+                
+                    &lt;div class=&quot;note-center&quot;&gt;&lt;p&gt;Centered Text&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+                
+            &lt;&#x2F;div&gt;
+            &lt;div class=&quot;note-content&quot;&gt;&lt;p&gt;This is centered text&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;markdown&quot; class=&quot;language-markdown z-code&quot;&gt;&lt;code class=&quot;language-markdown&quot; data-lang=&quot;markdown&quot;&gt;&lt;span class=&quot;z-text z-html z-markdown&quot;&gt;&lt;span class=&quot;z-meta z-paragraph z-markdown&quot;&gt;{{ note(center=true, header=&amp;quot;Centered Text&amp;quot;, body=&amp;quot;This is centered text&amp;quot;) }}
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;It works good enough for me!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Math Symbol Example</title>
+        <published>2023-01-06T00:00:00+00:00</published>
+        <updated>2023-01-06T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/math-symbol/"/>
+        <id>https://not-matthias.github.io/apollo/posts/math-symbol/</id>
+        
+        <content type="html" xml:base="https://not-matthias.github.io/apollo/posts/math-symbol/">&lt;p&gt;Note: This requires the &lt;code&gt;mathjax&lt;&#x2F;code&gt; and &lt;code&gt;mathjax_dollar_inline_enable&lt;&#x2F;code&gt; option set to &lt;code&gt;true&lt;&#x2F;code&gt; in &lt;code&gt;[extra]&lt;&#x2F;code&gt; section.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;inline-math&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#inline-math&quot; aria-label=&quot;Anchor link for: inline-math&quot;&gt;Inline Math&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;$(a+b)^2$ = $a^2 + 2ab + b^2$&lt;&#x2F;li&gt;
+&lt;li&gt;A polynomial P of degree d over $\mathbb{F}_p$ is an expression of the form
+$P(s) = a_0 + a_1 . s + a_2 . s^2 + ... + a_d . s^d$ for some
+$a_0,..,a_d \in \mathbb{F}_p$&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;displayed-math&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#displayed-math&quot; aria-label=&quot;Anchor link for: displayed-math&quot;&gt;Displayed Math&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;$$
+p := (\sum_{k∈I}{c_k.v_k} + \delta_v.t(x))·(\sum_{k∈I}{c_k.w_k} + \delta_w.t(x)) − (\sum_{k∈I}{c_k.y_k} + \delta_y.t(x))
+$$&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Markdown Test</title>
+        <published>2022-01-01T00:00:00+00:00</published>
+        <updated>2022-05-01T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/markdown/"/>
+        <id>https://not-matthias.github.io/apollo/posts/markdown/</id>
+        
+        <content type="html" xml:base="https://not-matthias.github.io/apollo/posts/markdown/">&lt;h1 id=&quot;h1&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#h1&quot; aria-label=&quot;Anchor link for: h1&quot;&gt;H1&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;h2&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#h2&quot; aria-label=&quot;Anchor link for: h2&quot;&gt;H2&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;h3&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#h3&quot; aria-label=&quot;Anchor link for: h3&quot;&gt;H3&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet sagittis id consectetur purus ut. In pellentesque massa placerat duis ultricies. Neque laoreet suspendisse interdum consectetur libero id. Justo nec ultrices dui sapien eget mi proin. Nunc consequat interdum varius sit amet mattis vulputate. Sollicitudin tempor id eu nisl nunc mi ipsum. Non odio euismod lacinia at quis. Sit amet nisl suscipit adipiscing. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan. Sit amet consectetur adipiscing elit pellentesque habitant. Ac placerat vestibulum lectus mauris. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit sed. &lt;a href=&quot;https:&#x2F;&#x2F;www.google.com&quot;&gt;Google&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;markdown-here.com&#x2F;img&#x2F;icon256.png&quot; alt=&quot;Markdown Logo&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;code-block&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#code-block&quot; aria-label=&quot;Anchor link for: code-block&quot;&gt;Code Block&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre data-lang=&quot;rust&quot; class=&quot;language-rust z-code&quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;z-source z-rust&quot;&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-storage z-type z-function z-rust&quot;&gt;fn&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function z-rust&quot;&gt;main&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-meta z-function z-parameters z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-parameters z-begin z-rust&quot;&gt;(&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-meta z-function z-parameters z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-parameters z-end z-rust&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-meta z-block z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-block z-begin z-rust&quot;&gt;{&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-rust&quot;&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-meta z-block z-rust&quot;&gt;    &lt;span class=&quot;z-support z-macro z-rust&quot;&gt;println!&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-rust&quot;&gt;(&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-string z-quoted z-double z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;Hello World&lt;span class=&quot;z-punctuation z-definition z-string z-end z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-rust&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-rust&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-rust&quot;&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-meta z-block z-rust&quot;&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-block z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-rust&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-linenos data-lang=&quot;rust&quot; class=&quot;language-rust z-code&quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;1&lt;&#x2F;td&gt;&lt;td&gt;&lt;span class=&quot;z-source z-rust&quot;&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-storage z-type z-function z-rust&quot;&gt;fn&lt;&#x2F;span&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function z-rust&quot;&gt;main&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-meta z-function z-parameters z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-parameters z-begin z-rust&quot;&gt;(&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-meta z-function z-parameters z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-parameters z-end z-rust&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt; &lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-meta z-block z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-block z-begin z-rust&quot;&gt;{&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;&lt;mark&gt;2&lt;&#x2F;mark&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;mark&gt;&lt;span class=&quot;z-source z-rust&quot;&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-meta z-block z-rust&quot;&gt;    &lt;span class=&quot;z-support z-macro z-rust&quot;&gt;println!&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-rust&quot;&gt;(&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-string z-quoted z-double z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;Hello World&lt;span class=&quot;z-punctuation z-definition z-string z-end z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-rust&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-rust&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;mark&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;3&lt;&#x2F;td&gt;&lt;td&gt;&lt;span class=&quot;z-source z-rust&quot;&gt;&lt;span class=&quot;z-meta z-function z-rust&quot;&gt;&lt;span class=&quot;z-meta z-block z-rust&quot;&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-block z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-block z-end z-rust&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;ordered-list&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#ordered-list&quot; aria-label=&quot;Anchor link for: ordered-list&quot;&gt;Ordered List&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;First item&lt;&#x2F;li&gt;
+&lt;li&gt;Second item&lt;&#x2F;li&gt;
+&lt;li&gt;Third item&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;unordered-list&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#unordered-list&quot; aria-label=&quot;Anchor link for: unordered-list&quot;&gt;Unordered List&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;List item&lt;&#x2F;li&gt;
+&lt;li&gt;Another item&lt;&#x2F;li&gt;
+&lt;li&gt;And another item&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;nested-list&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#nested-list&quot; aria-label=&quot;Anchor link for: nested-list&quot;&gt;Nested list&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fruit
+&lt;ul&gt;
+&lt;li&gt;Apple&lt;&#x2F;li&gt;
+&lt;li&gt;Orange&lt;&#x2F;li&gt;
+&lt;li&gt;Banana&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Dairy
+&lt;ul&gt;
+&lt;li&gt;Milk&lt;&#x2F;li&gt;
+&lt;li&gt;Cheese&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;quote&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#quote&quot; aria-label=&quot;Anchor link for: quote&quot;&gt;Quote&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Two things are infinite: the universe and human stupidity; and I&#x27;m not sure about the
+universe.&lt;br&gt;
+— &lt;cite&gt;Albert Einstein&lt;&#x2F;cite&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;table-inline-markdown&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#table-inline-markdown&quot; aria-label=&quot;Anchor link for: table-inline-markdown&quot;&gt;Table Inline Markdown&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Italics&lt;&#x2F;th&gt;&lt;th&gt;Bold&lt;&#x2F;th&gt;&lt;th&gt;Code&lt;&#x2F;th&gt;&lt;th&gt;StrikeThrough&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;em&gt;italics&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;strong&gt;bold&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;code&gt;code&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;del&gt;strikethrough&lt;&#x2F;del&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;h2 id=&quot;foldable-text&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#foldable-text&quot; aria-label=&quot;Anchor link for: foldable-text&quot;&gt;Foldable Text&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;details&gt;
+    &lt;summary&gt;Title 1&lt;&#x2F;summary&gt;
+    &lt;p&gt;IT&#x27;S A SECRET TO EVERYBODY.&lt;&#x2F;p&gt;
+&lt;&#x2F;details&gt;
+&lt;details&gt;
+    &lt;summary&gt;Title 2&lt;&#x2F;summary&gt;
+    &lt;p&gt;Stay awhile, and listen!&lt;&#x2F;p&gt;
+&lt;&#x2F;details&gt;
+&lt;h2 id=&quot;code-tags&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#code-tags&quot; aria-label=&quot;Anchor link for: code-tags&quot;&gt;Code tags&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Lorem ipsum &lt;code&gt;dolor&lt;&#x2F;code&gt; sit amet, &lt;code&gt;consectetur adipiscing&lt;&#x2F;code&gt; elit.
+&lt;code&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
