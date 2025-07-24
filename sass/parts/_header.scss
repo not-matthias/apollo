@@ -62,6 +62,7 @@ nav {
     .right-nav {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
 
         #dark-mode-toggle {
