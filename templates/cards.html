@@ -26,12 +26,12 @@
                             {% set video_path = section.path ~ "/" ~ page.extra.local_video %}
                         {% endif %}
                         <video class="card-video" controls autoplay loop muted>
-                            <source src="{{ video_path | safe }}" type="video/mp4">
+                            <source src="{{ video_path | safe }}">
                             Your browser does not support the video tag.
                         </video>
                     {% elif page.extra.remote_video %}
                         <video class="card-video" controls autoplay loop muted>
-                            <source src="{{ page.extra.remote_video | safe }}" type="video/mp4">
+                            <source src="{{ page.extra.remote_video | safe }}">
                             Your browser does not support the video tag.
                         </video>
                     {% else %}
