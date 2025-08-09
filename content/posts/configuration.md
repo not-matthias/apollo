@@ -303,6 +303,8 @@ Each item in the list should be a separate markdown file in the same directory. 
 - `description`: A short description of the item.
 - `weight`: The order in which the item appears on the page.
 - `local_image`: A path to a local image for the item's thumbnail. See the [Local Image](#local-image) section for more details.
+- `local_video`: A path to a local video for the item's thumbnail. See the [Local Video](#local-video) section for more details.
+- `remote_video`: A URL to a remote video for the item's thumbnail.
 - `link_to`: A URL the card should link to.
 
 # Talks Page
@@ -336,3 +338,24 @@ The path resolution for `local_image` works as follows:
 
 - If the path starts with a `/`, it is treated as an absolute path from the `content` directory. For example, `local_image = "/projects/project-1.jpg"` will resolve to `content/projects/project-1.jpg`.
 - If the path does not start with a `/`, it is treated as a relative path. The theme will prepend the `section.path` to the `local_image` path. For example, if you are in a page at `content/posts/my-post/index.md` and you set `local_image = "thumbnail.png"`, the theme will look for the image at `posts/my-post/thumbnail.png`.
+
+# Local Video
+
+The `local_video` front matter parameter allows you to specify a path to a local video file that will be displayed as the thumbnail for a page. This is particularly useful for showcasing projects with dynamic content.
+
+The path resolution for `local_video` works the same as `local_image`:
+
+- If the path starts with a `/`, it is treated as an absolute path from the `content` directory. For example, `local_video = "/projects/demo.mp4"` will resolve to `content/projects/demo.mp4`.
+- If the path does not start with a `/`, it is treated as a relative path. The theme will prepend the `section.path` to the `local_video` path. For example, if you are in a page at `content/projects/my-project/index.md` and you set `local_video = "demo.webm"`, the theme will look for the video at `projects/my-project/demo.webm`.
+
+## Remote Video
+
+The `remote_video` front matter parameter allows you to specify a URL to a remote video file that will be displayed as the thumbnail for a page.
+
+Example usage:
+```toml
+[extra]
+remote_video = "https://example.com/videos/demo.mp4"
+```
+
+The browser will automatically detect the video format, so you don't need to worry about specifying the MIME type.
