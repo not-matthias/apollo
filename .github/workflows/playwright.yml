@@ -1,0 +1,52 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./tests
+    steps:
+    - uses: actions/checkout@v4
+    
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+        
+    - name: Install Zola
+      run: |
+        ZOLA_VERSION="0.18.0"
+        curl -sL "https://github.com/getzola/zola/releases/download/v${ZOLA_VERSION}/zola-v${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz" | tar -xz
+        sudo mv zola /usr/local/bin/
+        zola --version
+      working-directory: ./
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+      
+    - name: Start Zola server
+      run: |
+        cd ..
+        zola serve &
+        sleep 5
+        curl -f http://localhost:1111 || exit 1
+        
+    - name: Run Playwright tests
+      run: npx playwright test
+      
+    - uses: actions/upload-artifact@v4
+      if: ${{ !cancelled() }}
+      with:
+        name: playwright-report
+        path: tests/playwright-report/
+        retention-days: 30
