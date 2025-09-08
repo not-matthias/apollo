@@ -10,12 +10,10 @@
 {% set loading = loading | default(value='lazy') %}
 {% set decoding = decoding | default(value='async') %}
 {% set style = style | default(value='') %}
-<img
-    aspect-ratio="{{ width }} / {{ height }}"
-    src="{{ img.url }}"
-    alt="{{ alt }}"
-    style="{{ style }}"
-    loading="{{ loading }}"
-    decoding="{{ decoding }}"
-    class="{{ class | default(value="") }}"
-/>
+<img aspect-ratio="{{ width }} / {{ height }}"
+     src="{{ img.url }}"
+     alt="{{ alt }}"
+     style="{{ style }}"
+     loading="{{ loading }}"
+     decoding="{{ decoding }}"
+     class="{{ class | default(value="") }}" />

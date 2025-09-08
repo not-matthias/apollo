@@ -14,16 +14,14 @@
                 {% set terms = terms | reverse %}
             {% endif %}
 
-            <ul >
+            <ul>
                 {%- for term in terms %}
                     <div class="post-header">
-                            <h1 class="title">
-                                <a href={{ term.permalink }}>{{ term.name }}</a>
-                            </h1>
+                        <h1 class="title">
+                            <a href={{ term.permalink }}>{{ term.name }}</a>
+                        </h1>
 
-                            <small class="meta">
-                                {{ term.page_count }} page{{ term.page_count | pluralize }}
-                            </small>
+                        <small class="meta">{{ term.page_count }} page{{ term.page_count | pluralize }}</small>
                     </div>
                 {% endfor -%}
             </ul>

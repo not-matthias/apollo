@@ -5,7 +5,8 @@
     <div class="cards">
         {%- for page in pages %}
             <div class="card">
-                <div class="card-media"> {# New wrapper div for consistent media sizing #}
+                <div class="card-media">
+                    {# New wrapper div for consistent media sizing #}
                     {% if page.extra.local_image %}
                         {% set path = page.extra.local_image %}
                         {% if path is not starting_with("/") %}
@@ -37,7 +38,8 @@
                     {% else %}
                         <div class="card-image-placeholder"></div>
                     {% endif %}
-                </div> {# End of card-media wrapper #}
+                </div>
+                {# End of card-media wrapper #}
 
                 <div class="card-info">
                     <h1 class="card-title">

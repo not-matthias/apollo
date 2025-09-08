@@ -2,13 +2,9 @@
 
 {% macro list_tag_posts(pages, tag_name=false) %}
     {% if tag_name %}
-        <div class="page-header">
-            Entries tagged :: {{ tag_name }}
-        </div>
+        <div class="page-header">Entries tagged :: {{ tag_name }}</div>
     {% else %}
-        <div class="page-header">
-            All articles
-        </div>
+        <div class="page-header">All articles</div>
     {% endif %}
 
     <main class="post-list">
