@@ -19,6 +19,7 @@
           zola
           pre-commit
           just
+          bun
 
           # Formatters
           treefmt

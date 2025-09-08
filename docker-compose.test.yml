@@ -1,0 +1,27 @@
+services:
+  playwright-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    volumes:
+      - .:/app
+      - /app/node_modules
+    working_dir: /app
+    environment:
+      - CI=true
+    command: npm test
+
+  # Alternative service for interactive testing
+  playwright-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    volumes:
+      - .:/app
+      - /app/node_modules
+    working_dir: /app
+    ports:
+      - "9323:9323"
+    environment:
+      - CI=false
+    command: npx playwright test --ui --ui-host=0.0.0.0
