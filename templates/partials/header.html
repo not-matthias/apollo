@@ -22,10 +22,7 @@
     {% set current_path = current_path | default(value="/") %}
     {% if current_path == "/" %}
         <title>{{ post_macros::site_title() }}</title>
-        {% if not page_has_og_title %}
-            <meta property="og:title"
-                  content="{{ post_macros::site_title() }}" />
-        {% endif %}
+        {% if not page_has_og_title %}<meta property="og:title" content="{{ post_macros::site_title() }}" />{% endif %}
 
     {% else %}
         <title>
@@ -63,7 +60,11 @@
     {% endif %}
 
     {# Favicon #}
-    {% if config.extra.favicon %}<link rel="icon" type="image/png" href={{ get_url(path=config.extra.favicon) }} />{% endif %}
+    {% if config.extra.favicon %}
+        <link rel="icon"
+              type="image/png"
+              href="{{ get_url(path=config.extra.favicon) }}" />
+    {% endif %}
 
     {# Font from cdn or disk #}
     {% if config.extra.use_cdn | default(value=false) %}
@@ -78,8 +79,14 @@
 
     {# Syntax theme #}
     {% if config.markdown.highlight_code and config.markdown.highlight_theme == "css" %}
-        <link rel="stylesheet" type="text/css" href="/syntax-theme-dark.css" media="(prefers-color-scheme: dark)" />
-        <link rel="stylesheet" type="text/css" href="/syntax-theme-light.css" media="(prefers-color-scheme: light)" />
+        <link rel="stylesheet"
+              type="text/css"
+              href="/syntax-theme-dark.css"
+              media="(prefers-color-scheme: dark)" />
+        <link rel="stylesheet"
+              type="text/css"
+              href="/syntax-theme-light.css"
+              media="(prefers-color-scheme: light)" />
     {% endif %}
 
     {# Analytics #}
@@ -109,9 +116,10 @@
 
         {% if config.extra.analytics.google.tracking_id %}
             {% set tracking_id = config.extra.analytics.google.tracking_id %}
-            
+
             <!-- Google tag (gtag.js) -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id={{ tracking_id }}"></script>
+            <script async
+                    src="https://www.googletagmanager.com/gtag/js?id={{ tracking_id }}"></script>
             <script>
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
@@ -150,15 +158,15 @@
     {% if config.generate_feeds %}
         {% for feed_filenames in config.feed_filenames %}
             {% if feed_filenames == "atom.xml" %}
-            <link rel="alternate"
-                  type="application/atom+xml"
-                  title="{{ post_macros::site_title() }}"
-                  href="{{ get_url(path="atom.xml", trailing_slash=false) }}" />
+                <link rel="alternate"
+                      type="application/atom+xml"
+                      title="{{ post_macros::site_title() }}"
+                      href="{{ get_url(path="atom.xml", trailing_slash=false) }}" />
             {% elif feed_filenames == "rss.xml" %}
-            <link rel="alternate"
-                  type="application/rss+xml"
-                  title="{{ post_macros::site_title() }}"
-                  href="{{ get_url(path="rss.xml", trailing_slash=false) }}" />
+                <link rel="alternate"
+                      type="application/rss+xml"
+                      title="{{ post_macros::site_title() }}"
+                      href="{{ get_url(path="rss.xml", trailing_slash=false) }}" />
             {% endif %}
         {% endfor %}
     {% endif %}
