@@ -11,11 +11,6 @@ demo = "https://not-matthias.github.io/apollo"
 # Use snake_casing to be consistent with the rest of Zola
 [extra]
 
-# The theme supports the following analytics providers:
-# - goatcounter
-# - umami  
-# - google
-
 [author]
 name = "not-matthias"
 homepage = "https://github.com/not-matthias"
