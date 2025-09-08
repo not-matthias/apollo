@@ -1,0 +1,21 @@
+{
+  "name": "apollo-theme",
+  "version": "1.0.0",
+  "description": "UI tests for Apollo Zola theme",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:docker-compose": "docker-compose -f docker-compose.test.yml run --rm playwright-tests",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:headed": "playwright test --headed",
+    "test:update-snapshots": "playwright test --update-snapshots",
+    "serve": "zola serve",
+    "build": "zola build"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.46.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
