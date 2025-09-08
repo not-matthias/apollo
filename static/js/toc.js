@@ -33,17 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
       if (s.isIntersecting) {
         let e = paragraphMenuMap[s.target.previousHeader]?.closest("li");
         if ((e?.classList.add("selected"), e === void 0)) continue;
-        let t = e.firstChild;
-        for (
-          console.log(e, t),
-            t.scrollIntoView({
-              block: "nearest",
-              inline: "nearest",
-            });
-          e;
-
-        )
+        // Find the anchor element within the list item
+        let t = e.querySelector("a");
+        if (t) {
+          t.scrollIntoView({
+            block: "nearest",
+            inline: "nearest",
+          });
+        }
+        for (; e; ) {
           e?.classList.add("parent"), (e = e.parentElement.closest("li"));
+        }
       }
   }
 });
