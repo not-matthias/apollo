@@ -62,3 +62,6 @@ host = "example.com" # default= goatcounter.com
 [extra.analytics.umami]
 website_id = "43929cd1-1e83...."
 host_url = "https://stats.mywebsite.com" # default: https://api-gateway.umami.dev/
+
+[extra.analytics.google]
+tracking_id = "G-XXXXXXXXXX"  # Your Google Analytics tracking ID
