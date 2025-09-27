@@ -26,18 +26,18 @@ template = "homepage.html"
 
 # Features
 
-- [Light, dark, and auto themes](@/posts/configuration.md#theme-mode-theme)  
-- [Projects page](@/projects/_index.md)                                 
-- [Talks page](https://not-matthias.github.io/talks/)         
-- [Analytics (GoatCounter, Umami)](@/posts/configuration.md#analytics)                                                                                                  
-- [Social media links](@/posts/configuration.md#socials)                                                                                                     
-- [MathJax rendering](@/posts/math-symbol.md)                    
+- [Light, dark, and auto themes](@/posts/configuration.md#theme-mode-theme)
+- [Projects page](@/projects/_index.md)
+- [Talks page](https://not-matthias.github.io/talks/)
+- [Analytics (GoatCounter, Umami)](@/posts/configuration.md#analytics)
+- [Social media links](@/posts/configuration.md#socials)
+- [MathJax rendering](@/posts/math-symbol.md)
 - [Taxonomies](/apollo/tags)
-- [Custom homepage](@/posts/custom-homepage.md)                  
-- [Comments](@/posts/configuration.md#comments-comment)                   
-- [Search functionality](@/posts/configuration.md#search-build-search-index)         
+- [Custom homepage](@/posts/custom-homepage.md)
+- [Comments](@/posts/configuration.md#comments-comment)
+- [Search functionality](@/posts/configuration.md#search-build-search-index)
 
-Checkout all the [options you can configure](./content/posts/configuration.md) and the [example pages](./content/posts/).
+Checkout all the [options you can configure](@/posts/configuration.md) and the [example pages](@/posts/_index.md).
 
 # Quick Start
 
