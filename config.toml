@@ -33,6 +33,9 @@ mathjax = true
 mathjax_dollar_inline_enable = true
 repo_url = "https://github.com/not-matthias/apollo/tree/main/content/"
 
+fediverse = false    # author attribution
+fediverse_creator = ""    # e.g. @user@instance
+
 menu = [
     { name = "/posts", url = "/posts", weight = 1 },
     { name = "/projects", url = "/projects", weight = 2 },
