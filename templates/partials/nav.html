@@ -10,7 +10,11 @@
 
 
         <div class="socials">
-            {% set link_attrs = 'rel="me noopener" target="_blank"' if config.markdown.external_links_target_blank else 'rel="me"' %}
+            {% if config.markdown.external_links_target_blank %}
+                {% set link_attrs = 'rel="me noopener" target="_blank"' %}
+            {% else %}
+                {% set link_attrs = 'rel="me"' %}
+            {% endif %}
             {% for social in config.extra.socials %}
                 <a {{ link_attrs }} href="{{ social.url }}" class="social">
                     <img alt="{{ social.name }}"
