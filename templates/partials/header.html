@@ -7,9 +7,10 @@
     <meta name="base" content="{{ config.base_url }}">
 
     {% if config.extra.fediverse %}
-        <meta name="fediverse:creator" content="{{ config.extra.fediverse_creator }}">
+        <meta name="fediverse:creator"
+              content="{{ config.extra.fediverse_creator }}">
     {% endif %}
-    
+
     {% if page.extra.meta %}
         <!-- the meta data config goes here  -->
         {% for data in page.extra.meta %}
