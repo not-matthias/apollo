@@ -1,7 +1,8 @@
 {
     "ci": {
         "collect": {
-            "staticDistDir": "./dist"
+            "staticDistDir": "./dist",
+            "autodiscoverUrlBlocklist": ["404.html"]
         },
         "assert": {
             "assertions": {

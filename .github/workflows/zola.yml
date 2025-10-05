@@ -18,9 +18,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - uses: taiki-e/install-action@v2
-      with:
-        tool: minify@2.24
+    - name: Install minify
+      run: |
+        go install github.com/tdewolff/minify/v2/cmd/minify@latest
 
     - name: Build and deploy
       uses: shalzz/zola-deploy-action@master
@@ -31,7 +31,7 @@ jobs:
 
     - name: Minify assets
       run: |
-        minify -r -a -o dist/ dist/
+        ~/go/bin/minify -r -a -o dist/ dist/
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
