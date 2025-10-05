@@ -9,6 +9,12 @@
         {{ post_macros::page_header(title=section.title) }}
     {% endblock title %}
 
+    {% if section.content %}
+        <div class="section-content">
+            {{ section.content | safe }}
+        </div>
+    {% endif %}
+
     {% block post_list %}
         <main class="post-list">
             {%- if paginator %}

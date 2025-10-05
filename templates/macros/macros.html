@@ -40,7 +40,7 @@
 
 {% macro page_header(title) %}
     {% if title %}<div class="page-header">{{ title }}</div>{% endif %}
-{% endmacro content %}
+{% endmacro page_header %}
 
 {% macro site_title() %}
     {{ config.title | default(value="Home") }}
