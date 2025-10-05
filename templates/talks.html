@@ -151,6 +151,12 @@
 
     {{ post_macros::page_header(title=section.title) }}
 
+    {% if section.content %}
+        <div class="section-content">
+            {{ section.content | safe }}
+        </div>
+    {% endif %}
+
     <main>
         {%- if paginator %}
             {%- set show_pages = paginator.pages -%}
