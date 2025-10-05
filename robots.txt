@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://not-matthias.github.io/apollo/sitemap.xml
