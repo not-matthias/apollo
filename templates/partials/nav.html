@@ -2,7 +2,7 @@
     <div class="left-nav">
         {% if config.extra.logo %}
             <a href={{ config.base_url }} class="logo">
-                <img alt="{{ config.title }}" src="{{ get_url(path=config.extra.logo) }}">
+                <img alt="{{ config.title }}" src="{{ get_url(path=config.extra.logo) }}" />
             </a>
         {% else %}
             <a href={{ config.base_url }}>{{ config.title }}</a>
@@ -11,14 +11,14 @@
 
         <div class="socials">
             {% if config.markdown.external_links_target_blank %}
-                {% set link_attrs = 'rel="me noopener" target="_blank"' %}
+                {% set link_attrs = "rel='me noopener' target='_blank'" %}
             {% else %}
-                {% set link_attrs = 'rel="me"' %}
+                {% set link_attrs = "rel='me'" %}
             {% endif %}
             {% for social in config.extra.socials %}
                 <a {{ link_attrs }} href="{{ social.url }}" class="social">
                     <img alt="{{ social.name }}"
-                         src="{{ get_url(path="icons/social/" ~ social.icon ~ ".svg") }}">
+                         src="{{ get_url(path='icons/social/' ~ social.icon ~ '.svg') }}" />
                 </a>
             {% endfor %}
         </div>
@@ -35,7 +35,7 @@
                     title="$SHORTCUT to open search">
                 <img src="{{ get_url(path='icons/search.svg') }}"
                      alt="Search"
-                     class="search-icon">
+                     class="search-icon" />
             </button>
 
             <div id="searchModal"
@@ -43,7 +43,9 @@
                  role="dialog"
                  aria-labelledby="modalTitle">
                 <div id="modal-content">
-                    <h1 id="modalTitle" class="page-header">Search</h1>
+                    <h1 id="modalTitle" class="page-header">
+                        Search
+                    </h1>
                     <div id="searchBar">
                         <input id="searchInput"
                                role="combobox"
@@ -64,7 +66,8 @@
                             <span id="one_result" style="display: none;">1 result</span>
                             <span id="many_results" style="display: none;">$NUMBER results</span>
                         </div>
-                        <div id="results" role="listbox"></div>
+                        <div id="results" role="listbox">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -74,7 +77,7 @@
             <a id="dark-mode-toggle"
                onclick="toggleTheme(); event.preventDefault();"
                href="#">
-                <img src="{{ get_url(path="icons/sun.svg") }}"
+                <img src="{{ get_url(path='icons/sun.svg') }}"
                      id="sun-icon"
                      style="filter: invert(1)"
                      alt="Light" />
@@ -82,7 +85,9 @@
             </a>
 
             <!-- Initialize the theme toggle icons -->
-            <script>updateItemToggleTheme()</script>
+            <script>
+                updateItemToggleTheme()
+            </script>
         {% endif %}
     </div>
 </nav>

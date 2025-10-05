@@ -8,7 +8,9 @@
                     <h1 class="title">
                         <a href={{ page.permalink | safe }}>{{ page.title }}</a>
 
-                        {% if page.draft %}<span class="draft-label">DRAFT</span>{% endif %}
+                        {% if page.draft %}
+                            <span class="draft-label">DRAFT</span>
+                        {% endif %}
                     </h1>
 
                     <div class="meta">
@@ -22,7 +24,9 @@
                             {% endif %}
                         </div>
 
-                        {% if not hide_read_more %}<a class="readmore" href={{ page.permalink | safe }}>Read more ⟶</a>{% endif %}
+                        {% if not hide_read_more %}
+                            <a class="readmore" href={{ page.permalink | safe }}>Read more ⟶</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -39,7 +43,11 @@
 {% endmacro list_posts %}
 
 {% macro page_header(title) %}
-    {% if title %}<div class="page-header">{{ title }}</div>{% endif %}
+    {% if title %}
+        <div class="page-header">
+            {{ title }}
+        </div>
+    {% endif %}
 {% endmacro page_header %}
 
 {% macro site_title() %}

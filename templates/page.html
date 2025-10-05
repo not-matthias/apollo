@@ -18,9 +18,13 @@
                             :: Updated on <time>{{ page.updated | date(format="%Y-%m-%d") }}</time>
                         {% endif %}
 
-                        {% if page.extra.read_time %}:: <time>{{ page.reading_time }}</time> Min Read{% endif %}
+                        {% if page.extra.read_time %}
+                            :: <time>{{ page.reading_time }}</time> Min Read
+                        {% endif %}
 
-                        {% if config.extra.word_count and page.word_count %}:: {{ page.word_count }} Words{% endif %}
+                        {% if config.extra.word_count and page.word_count %}
+                            :: {{ page.word_count }} Words
+                        {% endif %}
 
                         {# View the page on GitHub #}
                         {% if page.extra.repo_view | default(value=config.extra.repo_view) | default(value=false) %}
@@ -61,7 +65,9 @@
                             </span>
                         {% endif %}
 
-                        {% if page.draft %}<span class="draft-label">DRAFT</span>{% endif %}
+                        {% if page.draft %}
+                            <span class="draft-label">DRAFT</span>
+                        {% endif %}
 
                     </div>
                 </div>

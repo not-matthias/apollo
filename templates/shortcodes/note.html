@@ -2,9 +2,13 @@
     {% if clickable | default(value=false) %}
         <button class="note-toggle">
             {% if center | default(value=false) %}
-                <div class="note-center">{{ header | markdown | safe }}</div>
+                <div class="note-center">
+                    {{ header | markdown | safe }}
+                </div>
             {% else %}
-                <div class="note-icon">{{ header | markdown | safe }}</div>
+                <div class="note-icon">
+                    {{ header | markdown | safe }}
+                </div>
             {% endif %}
         </button>
 
@@ -18,11 +22,17 @@
         {% else %}
             <div class="note-header">
                 {% if center | default(value=false) %}
-                    <div class="note-center">{{ header | markdown | safe }}</div>
+                    <div class="note-center">
+                        {{ header | markdown | safe }}
+                    </div>
                 {% else %}
-                    <div class="note-icon">{{ header | markdown | safe }}</div>
+                    <div class="note-icon">
+                        {{ header | markdown | safe }}
+                    </div>
                 {% endif %}
             </div>
-            <div class="note-content">{{ body | markdown | safe }}</div>
+            <div class="note-content">
+                {{ body | markdown | safe }}
+            </div>
         {% endif %}
     </div>
