@@ -3,11 +3,12 @@
   grid-template-rows: auto;
   gap: 24px;
   padding: 12px 0;
+  --cards-min-width: 400px; /* Default min width */
 }
 
 @media all and (min-width: 640px) {
   .cards {
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(var(--cards-min-width), 1fr));
   }
 }
 
