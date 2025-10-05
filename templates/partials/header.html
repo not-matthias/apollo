@@ -151,7 +151,7 @@
 
     {# Dynamic Note #}
     {% if config.extra.dynamic_note | default(value=false) %}
-        <script src={{ get_url(path="js/note.js") }}></script>
+        <script defer src={{ get_url(path="js/note.js") }}></script>
     {% endif %}
 
     {% if config.extra.mathjax | default(value=false) %}
