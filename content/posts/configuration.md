@@ -323,6 +323,29 @@ Each item in the list should be a separate markdown file in the same directory. 
 - `remote_video`: A URL to a remote video for the item's thumbnail.
 - `link_to`: A URL the card should link to.
 
+## Cards Layout Control
+
+The cards template supports configurable column layouts. Add the following to your section's `_index.md`:
+
+```toml
++++
+title = "Projects"
+sort_by = "weight"
+template = "cards.html"
+
+[extra]
+cards_columns = "3"  # Set exact number of columns
++++
+```
+
+**Options:**
+- `cards_columns = "2"` → 2 columns
+- `cards_columns = "3"` → 3 columns  
+- `cards_columns = "4"` → 4 columns
+- No setting → Responsive layout (default)
+
+The system automatically calculates the optimal card width based on the container size and gap spacing.
+
 # Talks Page
 
 To create a talks page, you need to create a `_index.md` file in the `content/talks` directory. The following front matter is recommended:
