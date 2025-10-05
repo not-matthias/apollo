@@ -2,14 +2,15 @@
 
 
 {% macro cards_posts(pages) %}
+    {% set media_height = section.extra.card_media_height | default(value=300) %}
     {% if section.extra.cards_columns %}
         {% set columns_int = section.extra.cards_columns | int %}
         {% set gaps = columns_int - 1 %}
         {% set available_width = 920 - gaps * 24 %}
         {% set min_width = available_width / columns_int | int %}
-        <div class="cards" style="--cards-min-width: {{ min_width }}px;">
+        <div class="cards" style="--cards-min-width: {{ min_width }}px; --card-media-height: {{ media_height }}px;">
     {% else %}
-        <div class="cards">
+        <div class="cards" style="--card-media-height: {{ media_height }}px;">
     {% endif %}
         {%- for page in pages %}
             <div class="card">
@@ -21,7 +22,7 @@
                             {% set path = section.path ~ "/" ~ page.extra.local_image %}
                         {% endif %}
 
-                        {% set image = resize_image(path=path, height=300, op="fit_height", format="webp") %}
+                        {% set image = resize_image(path=path, height=media_height, op="fit_height", format="webp") %}
                         <img class="card-image"
                              alt="{{ page.extra.local_image }}"
                              src="{{ image.url }}" />
