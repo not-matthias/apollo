@@ -316,7 +316,7 @@ card_media_height = 200
 +++
 ```
 
-- `cards_columns`: Set exact number of columns (2, 3, 4) or omit for deafult 2-column layout
+- `cards_columns`: Set exact number of columns (2, 3, 4) or omit for default 2-column layout
 - `card_media_height`: Control the height of card media area in pixels (default: 300)
 
 Each item in the list should be a separate markdown file in the same directory. The following front matter is supported:
