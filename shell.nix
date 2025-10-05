@@ -9,5 +9,8 @@ pkgs.mkShell {
     nodePackages.prettier
     alejandra
     djlint
+
+    # Minification
+    minify
   ];
 }

@@ -18,7 +18,23 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Install minify
+      run: |
+        go install github.com/tdewolff/minify/v2/cmd/minify@latest
+
     - name: Build and deploy
       uses: shalzz/zola-deploy-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BUILD_FLAGS: --output-dir dist
+        BUILD_ONLY: true
+
+    - name: Minify assets
+      run: |
+        ~/go/bin/minify -r -a -o dist/ dist/
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
