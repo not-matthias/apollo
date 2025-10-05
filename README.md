@@ -34,6 +34,7 @@ Modern and minimalistic blog theme powered by [Zola](https://getzola.org). See a
 - [x] RSS feeds
 - [x] Mermaid diagram support
 - [x] Table of Contents
+- [x] Configurable cards layout
 
 ## Installation
 
