@@ -3,15 +3,8 @@
 
 {% macro cards_posts(pages) %}
     {% set media_height = section.extra.card_media_height | default(value=300) %}
-    {% if section.extra.cards_columns %}
-        {% set columns_int = section.extra.cards_columns | int %}
-        {% set gaps = columns_int - 1 %}
-        {% set available_width = 920 - gaps * 24 %}
-        {% set min_width = available_width / columns_int | int %}
-        <div class="cards" style="--cards-min-width: {{ min_width }}px; --card-media-height: {{ media_height }}px;">
-    {% else %}
-        <div class="cards" style="--card-media-height: {{ media_height }}px;">
-    {% endif %}
+    {% set columns_int = section.extra.cards_columns | default(value=2) | int %}
+    <div class="cards" style="--columns: {{ columns_int }}; --media-height: {{ media_height }}px;">
         {%- for page in pages %}
             <div class="card">
                 <div class="card-media">
