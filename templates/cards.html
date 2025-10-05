@@ -3,8 +3,8 @@
 
 {% macro cards_posts(pages) %}
     {% set media_height = section.extra.card_media_height | default(value=300) %}
-    {% set columns_int = section.extra.cards_columns | default(value=2) | int %}
-    <div class="cards" style="--columns: {{ columns_int }}; --media-height: {{ media_height }}px;">
+    {% set columns = section.extra.cards_columns | default(value=2) %}
+    <div class="cards" style="--columns: {{ columns }}; --media-height: {{ media_height }}px;">
         {%- for page in pages %}
             <div class="card">
                 <div class="card-media">
