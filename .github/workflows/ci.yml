@@ -21,7 +21,11 @@ jobs:
 
       - uses: taiki-e/install-action@v2
         with:
-          tool: zola@0.20.0,minify@2.24
+          tool: zola@0.20.0
+
+      - name: Install minify
+        run: |
+          go install github.com/tdewolff/minify/v2/cmd/minify@latest
 
       - name: Build the site
         run: |
@@ -29,7 +33,7 @@ jobs:
 
       - name: Minify assets
         run: |
-          minify -r -a -o dist/ dist/
+          ~/go/bin/minify -r -a -o dist/ dist/
 
       - name: Run Lighthouse against a static dist dir
         uses: treosh/lighthouse-ci-action@v12
