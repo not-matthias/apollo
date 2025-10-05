@@ -312,8 +312,14 @@ To create a cards page, you need to create a `_index.md` file in a content direc
 title = "Projects"
 sort_by = "weight"
 template = "cards.html"
+[extra]
+cards_columns = 3
+card_media_height = 200
 +++
 ```
+
+- `cards_columns`: Set exact number of columns (2, 3, 4) or omit for default 2-column layout
+- `card_media_height`: Control the height of card media area in pixels (default: 300)
 
 Each item in the list should be a separate markdown file in the same directory. The following front matter is supported:
 
