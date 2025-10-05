@@ -1,14 +1,14 @@
 {% import "macros/macros.html" as post_macros %}
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="base" content="{{ config.base_url }}">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="base" content="{{ config.base_url }}" />
 
     {% if config.extra.fediverse %}
         <meta name="fediverse:creator"
-              content="{{ config.extra.fediverse_creator }}">
+              content="{{ config.extra.fediverse_creator }}" />
     {% endif %}
 
     {% if page.extra.meta %}
@@ -27,7 +27,9 @@
     {% set current_path = current_path | default(value="/") %}
     {% if current_path == "/" %}
         <title>{{ post_macros::site_title() }}</title>
-        {% if not page_has_og_title %}<meta property="og:title" content="{{ post_macros::site_title() }}" />{% endif %}
+        {% if not page_has_og_title %}
+            <meta property="og:title" content="{{ post_macros::site_title() }}" />
+        {% endif %}
 
     {% else %}
         <title>
@@ -73,11 +75,11 @@
 
     {# Font from cdn or disk #}
     {% if config.extra.use_cdn | default(value=false) %}
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
         <link rel="stylesheet"
-              href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css">
+              href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css" />
         <link rel="stylesheet"
-              href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@4.5.8/index.min.css">
+              href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@4.5.8/index.min.css" />
     {% else %}
         <link href={{ get_url(path="fonts.css") }} rel="stylesheet" />
     {% endif %}
@@ -115,7 +117,7 @@
                     src="{{ get_url(path="js/count.js") }}"></script>
             <noscript>
                 {# EasyList blocks '.com/count?', so we have to use '.com//count' #}
-                <img src="https://{{ user }}.{{ host }}//count?p={{ current_path }}&t={{ page.title | default(value=config.title) }}">
+                <img src="https://{{ user }}.{{ host }}//count?p={{ current_path }}&t={{ page.title | default(value=config.title) }}" />
             </noscript>
         {% endif %}
 
@@ -127,7 +129,10 @@
                     src="https://www.googletagmanager.com/gtag/js?id={{ tracking_id }}"></script>
             <script>
                 window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
+
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
                 gtag('js', new Date());
                 gtag('config', '{{ tracking_id }}');
             </script>
@@ -135,10 +140,14 @@
     {% endif %}
 
     {# Fancy Codeblock #}
-    {% if config.extra.fancy_code %}<script defer src={{ get_url(path="js/codeblock.js") }}></script>{% endif %}
+    {% if config.extra.fancy_code %}
+        <script defer src={{ get_url(path="js/codeblock.js") }}></script>
+    {% endif %}
 
     {# Table of contents #}
-    {% if config.extra.toc | default(value=false) %}<script defer src={{ get_url(path="js/toc.js") }}></script>{% endif %}
+    {% if config.extra.toc | default(value=false) %}
+        <script defer src={{ get_url(path="js/toc.js") }}></script>
+    {% endif %}
 
     {# Dynamic Note #}
     {% if config.extra.dynamic_note | default(value=false) %}
@@ -148,11 +157,14 @@
     {% if config.extra.mathjax | default(value=false) %}
         {% if config.extra.mathjax_dollar_inline_enable | default(value=false) %}
             <script>
-            MathJax = {
-              tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']]
-              }
-            };
+                MathJax = {
+                    tex: {
+                        inlineMath: [
+                            ['$', '$'],
+                            ['\\(', '\\)']
+                        ]
+                    }
+                };
             </script>
         {% endif %}
         <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
@@ -166,12 +178,12 @@
                 <link rel="alternate"
                       type="application/atom+xml"
                       title="{{ post_macros::site_title() }}"
-                      href="{{ get_url(path="atom.xml", trailing_slash=false) }}" />
+                      href="{{ get_url(path='atom.xml', trailing_slash=false) }}" />
             {% elif feed_filenames == "rss.xml" %}
                 <link rel="alternate"
                       type="application/rss+xml"
                       title="{{ post_macros::site_title() }}"
-                      href="{{ get_url(path="rss.xml", trailing_slash=false) }}" />
+                      href="{{ get_url(path='rss.xml', trailing_slash=false) }}" />
             {% endif %}
         {% endfor %}
     {% endif %}
@@ -185,11 +197,11 @@
     {% elif theme == "light" %}
         <link rel="stylesheet"
               type="text/css"
-              href="{{ get_url(path="theme/light.css") }}" />
+              href="{{ get_url(path='theme/light.css') }}" />
     {% elif theme == "auto" %}
         <link rel="stylesheet"
               type="text/css"
-              href="{{ get_url(path="theme/light.css") }}" />
+              href="{{ get_url(path='theme/light.css') }}" />
         <link rel="stylesheet"
               type="text/css"
               href="{{ get_url(path='theme/dark.css') }}"
@@ -197,7 +209,7 @@
     {% elif theme == "toggle" %}
         <link rel="stylesheet"
               type="text/css"
-              href="{{ get_url(path="theme/light.css") }}" />
+              href="{{ get_url(path='theme/light.css') }}" />
         <link id="darkModeStyle"
               rel="stylesheet"
               type="text/css"
@@ -218,7 +230,9 @@
                 }
             </script>
         {% else %}
-            <script>setTheme(getSavedTheme());</script>
+            <script>
+                setTheme(getSavedTheme());
+            </script>
         {% endif %}
     {% endif %}
 
@@ -226,11 +240,11 @@
     <link rel="stylesheet"
           type="text/css"
           media="screen"
-          href="{{ get_url(path="main.css") }}" />
+          href="{{ get_url(path='main.css') }}" />
 
     {% if config.extra.stylesheets %}
         {% for stylesheet in config.extra.stylesheets %}
-            <link rel="stylesheet" href="{{ get_url(path=stylesheet) }}">
+            <link rel="stylesheet" href="{{ get_url(path=stylesheet) }}" />
         {% endfor %}
     {% endif %}
 
