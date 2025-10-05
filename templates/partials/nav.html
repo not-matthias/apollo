@@ -10,8 +10,13 @@
 
 
         <div class="socials">
+            {% if config.markdown.external_links_target_blank %}
+                {% set link_attrs = 'rel="me noopener" target="_blank"' %}
+            {% else %}
+                {% set link_attrs = 'rel="me"' %}
+            {% endif %}
             {% for social in config.extra.socials %}
-                <a rel="me" href="{{ social.url }}" class="social">
+                <a {{ link_attrs }} href="{{ social.url }}" class="social">
                     <img alt="{{ social.name }}"
                          src="{{ get_url(path="icons/social/" ~ social.icon ~ ".svg") }}">
                 </a>

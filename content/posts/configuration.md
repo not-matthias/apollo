@@ -87,6 +87,8 @@ Defines the social media links.
   ]
   ```
 
+Social links will open in a new tab if `external_links_target_blank` is set to `true` in the `[markdown]` section of your config.
+
 ## Table of Contents (`toc`)
 
 Enables or disables the table of contents for posts.
