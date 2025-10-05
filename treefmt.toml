@@ -7,7 +7,16 @@ includes = ["*.nix"]
 
 [formatter.djlint]
 command = "djlint"
-options = ["--preserve-blank-lines", "--reformat"]
+options = [
+    "--preserve-blank-lines",
+    "--line-break-after-multiline-tag",
+    "--max-blank-lines",
+    "2",
+    "--format-css",
+    "--format-js",
+    "--close-void-tags",
+    "--reformat",
+]
 includes = ["*.html"]
 
 [formatter.scss]

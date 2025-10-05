@@ -64,11 +64,14 @@
                     </h1>
 
                     <div class="talk-description">
-                        {% if page.description %}{{ page.description | truncate(length=300) }}{% endif %}
+                        {% if page.description %}
+                            {{ page.description | truncate(length=300) }}
+                        {% endif %}
                     </div>
 
                     <!-- Filler element to keep the .meta at the bottom -->
-                    <div style="flex-grow: 1;"></div>
+                    <div style="flex-grow: 1;">
+                    </div>
 
                     <div class="meta">
                         {%- if page.date and page.extra.show_date | default(value=false) %}
@@ -134,7 +137,9 @@
                             </a>
                         {% endif %}
 
-                        {% if page.draft %}<span class="draft-label">DRAFT</span>{% endif %}
+                        {% if page.draft %}
+                            <span class="draft-label">DRAFT</span>
+                        {% endif %}
                     </div>
 
                 </div>
