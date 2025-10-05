@@ -1,30 +1,34 @@
 {% extends "base.html" %}
 
+{% macro taxonomy_list(terms) %}
+    <main class="tag-list">
+        {% set sort_by = config.extra.taxonomies.sort_by | default(value="name") %}
+        {% set terms = terms | default(value=[]) | sort(attribute=sort_by) %}
+
+        {% if config.extra.taxonomies.reverse | default(value=false) %}
+            {% set terms = terms | reverse %}
+        {% endif %}
+
+        <ul>
+            {%- for term in terms %}
+                <div class="post-header">
+                    <h1 class="title">
+                        <a href={{ term.permalink }}>{{ term.name }}</a>
+                    </h1>
+
+                    <small class="meta">{{ term.page_count }} page{{ term.page_count | pluralize }}</small>
+                </div>
+            {% endfor -%}
+        </ul>
+    </main>
+{% endmacro taxonomy_list %}
+
 {% block main_content %}
     <div>
         {% block title %}
             {{ post_macros::page_header(title=taxonomy.name | capitalize) }}
         {% endblock title %}
 
-        <main class="tag-list">
-            {% set sort_by = config.extra.taxonomies.sort_by | default(value="name") %}
-            {% set terms = terms | default(value=[]) | sort(attribute=sort_by) %}
-
-            {% if config.extra.taxonomies.reverse | default(value=false) %}
-                {% set terms = terms | reverse %}
-            {% endif %}
-
-            <ul>
-                {%- for term in terms %}
-                    <div class="post-header">
-                        <h1 class="title">
-                            <a href={{ term.permalink }}>{{ term.name }}</a>
-                        </h1>
-
-                        <small class="meta">{{ term.page_count }} page{{ term.page_count | pluralize }}</small>
-                    </div>
-                {% endfor -%}
-            </ul>
-        </main>
+        {{ self::taxonomy_list(terms=terms) }}
     </div>
 {% endblock main_content %}
