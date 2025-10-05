@@ -6,8 +6,9 @@
   --gap: 24px;
   --container-width: 920px;
   --columns: 2;
+  /* Calculate min-width: (total_width - gaps_between_columns) / number_of_columns */
   --min-width: calc((var(--container-width) - (var(--columns) - 1) * var(--gap)) / var(--columns));
-  --media-height: 300px; /* Default card media height */
+  --media-height: 300px;
 }
 
 @media all and (min-width: 640px) {
