@@ -18,12 +18,16 @@
         nativeBuildInputs = with pkgs; [
           zola
           pre-commit
+          just
 
           # Formatters
           treefmt
           nodePackages.prettier
           alejandra
           djlint
+
+          # For minifying assets
+          minify
         ];
 
         shellHook = ''
