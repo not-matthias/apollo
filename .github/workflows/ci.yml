@@ -1,6 +1,8 @@
 name: CI
 
-on: push
+on:
+  push:
+  pull_request:
 
 jobs:
   format-check:
@@ -9,21 +11,18 @@ jobs:
       - uses: actions/checkout@v4
       - uses: cachix/install-nix-action@v31
       - name: Check formatting
-        run: |
-          nix-shell --run "treefmt --fail-on-change"
+        run: nix develop --command treefmt --fail-on-change
 
   lighthouse:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
     steps:
       - uses: actions/checkout@v4
-
-      - uses: taiki-e/install-action@v2
-        with:
-          tool: zola@0.20.0
-
+      - uses: cachix/install-nix-action@v31
       - name: Build the site
-        run: |
-          zola build --output-dir ./dist
+        run: nix develop --command just build
 
       - name: Run Lighthouse against a static dist dir
         uses: treosh/lighthouse-ci-action@v12
@@ -31,3 +30,4 @@ jobs:
           # no urls needed, since it uses local folder to scan .html files
           configPath: "./lighthouserc.json"
           uploadArtifacts: true
+          temporaryPublicStorage: true

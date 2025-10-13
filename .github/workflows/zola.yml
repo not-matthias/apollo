@@ -18,7 +18,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Build and deploy
-      uses: shalzz/zola-deploy-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - uses: cachix/install-nix-action@v31
+    - name: Build the site
+      run: nix develop --command just build
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
