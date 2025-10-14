@@ -29,7 +29,9 @@
         aspect-ratio: 16 / 9;
 
         @media all and (min-width: 1024px) {
-            height: 205px;
+            width: calc(205px * 16 / 9);
+            min-height: 205px;
+            height: 100%;
         }
 
         .talk-image {
@@ -42,10 +44,8 @@
             left: 0;
             bottom: 0;
             right: 0;
-
-            img {
-                object-fit: cover;
-            }
+            display: block;
+            object-fit: cover;
             filter: brightness(75%) grayscale(50%);
         }
 
