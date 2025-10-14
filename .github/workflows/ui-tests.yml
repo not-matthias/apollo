@@ -11,6 +11,17 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
+
+    # Skip installing package docs to avoid wasting time
+    #  See: https://github.com/actions/runner-images/issues/10977#issuecomment-2810713336
+    - name: Skip installing package docs
+      run: |
+        sudo tee /etc/dpkg/dpkg.cfg.d/01_nodoc > /dev/null << 'EOF'
+        path-exclude /usr/share/doc/*
+        path-exclude /usr/share/man/*
+        path-exclude /usr/share/info/*
+        EOF
+
     - uses: actions/checkout@v4
       with:
         lfs: true
