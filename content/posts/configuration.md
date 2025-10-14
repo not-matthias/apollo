@@ -347,10 +347,10 @@ Each talk should be a separate markdown file in the `content/talks` directory. T
 
 - `title`: The title of the talk.
 - `description`: A short description of the talk.
+- `date`: The date of the talk (displayed with a calendar icon).
 - `local_image`: A path to a local image for the item's thumbnail. See the [Local Image](#local-image) section for more details.
-- `date`: The date of the talk.
 - `video`: A map with a `link` and `thumbnail` for the talk video.
-- `organizer`: A map with a `name` and `link` for the event organizer.
+- `organizer`: A map with a `name` and `link` for the event organizer (displayed with a location icon).
 - `slides`: A URL to the presentation slides.
 - `code`: A URL to the source code.
 
