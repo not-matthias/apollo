@@ -1,74 +1,92 @@
 {% extends "base.html" %}
+{% import "macros/macros.html" as post_macros %}
+{% import "macros/components.html" as components %}
 
 
 {% macro cards_posts(pages) %}
-    {% set media_height = section.extra.card_media_height | default(value=300) %}
+    {% set media_height = section.extra.card_media_height | default(value=200) %}
     {% set columns = section.extra.cards_columns | default(value=2) %}
     <div class="cards"
          style="--columns: {{ columns }};
                 --media-height: {{ media_height }}px">
         {%- for page in pages %}
             <div class="card">
-                <div class="card-media">
-                    {# New wrapper div for consistent media sizing #}
-                    {% if page.extra.local_image %}
-                        {% set path = page.extra.local_image %}
-                        {% if path is not starting_with("/") %}
-                            {% set path = section.path ~ "/" ~ page.extra.local_image %}
+                {% if page.extra.local_image or page.extra.remote_image or page.extra.local_video or page.extra.remote_video %}
+                    <div class="card-media">
+                        {% if page.extra.local_image %}
+                            {% set path = page.extra.local_image %}
+                            {% if path is not starting_with("/") %}
+                                {% set path = section.path ~ "/" ~ page.extra.local_image %}
+                            {% endif %}
+                            {% set image = resize_image(path=path, height=media_height, op="fit_height", format="webp") %}
+                            <img class="card-image" alt="{{ page.title }}" src="{{ image.url }}" />
+                        {% elif page.extra.remote_image %}
+                            <img class="card-image"
+                                 alt="{{ page.title }}"
+                                 src="{{ page.extra.remote_image }}" />
+                        {% elif page.extra.local_video %}
+                            {% set video_path = page.extra.local_video %}
+                            {% if video_path is not starting_with("/") %}
+                                {% set video_path = section.path ~ "/" ~ page.extra.local_video %}
+                            {% endif %}
+                            <video class="card-video" controls loop muted>
+                                <source src="{{ video_path | safe }}" />
+                            </video>
+                        {% elif page.extra.remote_video %}
+                            <video class="card-video" controls loop muted>
+                                <source src="{{ page.extra.remote_video | safe }}" />
+                            </video>
                         {% endif %}
+                    </div>
+                {% endif %}
 
-                        {% set image = resize_image(path=path, height=media_height, op="fit_height", format="webp") %}
-                        <img class="card-image"
-                             alt="{{ page.extra.local_image }}"
-                             src="{{ image.url }}" />
-                    {% elif page.extra.remote_image %}
-                        <img class="card-image"
-                             alt="{{ page.extra.remote_image }}"
-                             src="{{ page.extra.remote_image }}" />
-                    {% elif page.extra.local_video %}
-                        {% set video_path = page.extra.local_video %}
-                        {% if video_path is not starting_with("/") %}
-                            {% set video_path = section.path ~ "/" ~ page.extra.local_video %}
-                        {% endif %}
-                        <video class="card-video" controls autoplay loop muted>
-                            <source src="{{ video_path | safe }}" />
-                            Your browser does not support the video tag.
-                        </video>
-                    {% elif page.extra.remote_video %}
-                        <video class="card-video" controls autoplay loop muted>
-                            <source src="{{ page.extra.remote_video | safe }}" />
-                            Your browser does not support the video tag.
-                        </video>
-                    {% else %}
-                        <div class="card-image-placeholder">
-                        </div>
-                    {% endif %}
-                </div>
-                {# End of card-media wrapper #}
-
-                <div class="card-info">
+                <div class="card-content">
                     <h1 class="card-title">
                         {% if page.extra.link_to %}
                             <a href={{ page.extra.link_to }}>{{ page.title }}</a>
-                        {% else %}
+                        {% elif page.content %}
                             <a href={{ page.permalink | safe }}>{{ page.title }}</a>
+                        {% else %}
+                            {{ page.title }}
                         {% endif %}
                     </h1>
 
-                    <div class="meta">
-                        {%- if page.date %}
-                            <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
-                        {% endif -%}
-                        {% if page.draft %}
-                            <span class="draft-label">DRAFT</span>
-                        {% endif %}
-                    </div>
+                    {% if page.extra.tagline %}
+                        <p class="card-tagline">
+                            {{ page.extra.tagline }}
+                        </p>
+                    {% endif %}
 
-                    <div class="card-description">
-                        {% if page.description %}
-                            {{ page.description }}
-                        {% endif %}
-                    </div>
+                    {% if page.extra.github or page.extra.demo or page.extra.tags %}
+                        <div class="card-footer">
+                            {% if page.extra.github or page.extra.demo %}
+                                <div class="card-links">
+                                    {% if page.extra.github %}
+                                        {{ components::icon_button(href=page.extra.github,
+                                                                                text="GitHub",
+                                                                                icon="github",
+                                                                                target="_blank",
+                                                                                rel="noopener") }}
+                                    {% endif %}
+                                    {% if page.extra.demo %}
+                                        {{ components::icon_button(href=page.extra.demo,
+                                                                                text="Demo",
+                                                                                icon="globe",
+                                                                                target="_blank",
+                                                                                rel="noopener") }}
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+
+                            {% if page.extra.tags %}
+                                <div class="card-tags">
+                                    {%- for tag in page.extra.tags | slice(end=4) -%}
+                                        <span class="card-tag">#{{ tag }}</span>
+                                    {%- endfor -%}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
                 </div>
             </div>
 
