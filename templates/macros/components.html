@@ -1,0 +1,16 @@
+{% macro icon_button(href, text, icon="", icon_svg="", class="", target="", rel="") %}
+    <a href="{{ href }}"
+       class="icon-button {{ class }}"
+       {% if target %}target="{{ target }}"{% endif %}
+       {% if rel %}rel="{{ rel }}"{% endif %}>
+        {% if icon %}
+            <img src="{{ get_url(path='icons/social/' ~ icon ~ '.svg') }}"
+                 alt="{{ icon }}"
+                 width="16"
+                 height="16" />
+        {% elif icon_svg %}
+            {{ icon_svg | safe }}
+        {% endif %}
+        {{ text }}
+    </a>
+{% endmacro icon_button %}
