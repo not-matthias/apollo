@@ -1,7 +1,11 @@
 +++
-title = "Project 4"
-description = "Example description"
-weight = 1
-+++
+title = "Exploit Development Framework"
+description = "Proof-of-concept exploit generation toolkit"
+weight = 5
+date = 2023-08-12
 
-Example project page
+[extra]
+tagline = "Research-focused exploit development for security professionals"
+github = "https://github.com/example/exploit-framework"
+tags = ["python", "assembly", "metasploit"]
++++
