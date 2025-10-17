@@ -77,11 +77,15 @@
             <a id="dark-mode-toggle"
                onclick="toggleTheme(); event.preventDefault();"
                href="#">
-                <img src="{{ get_url(path='icons/sun.svg') }}"
-                     id="sun-icon"
+                <img src="{{ get_url(path='icons/sun.svg') }}" id="sun-icon" alt="Light" />
+                <img src="{{ get_url(path='icons/moon.svg') }}"
+                     id="moon-icon"
                      style="filter: invert(1)"
-                     alt="Light" />
-                <img src={{ get_url(path="icons/moon.svg") }} id="moon-icon" alt="Dark" />
+                     alt="Dark" />
+                <img src="{{ get_url(path='icons/auto.svg') }}"
+                     id="auto-icon"
+                     style="filter: invert(1)"
+                     alt="Auto" />
             </a>
 
             <!-- Initialize the theme toggle icons -->
