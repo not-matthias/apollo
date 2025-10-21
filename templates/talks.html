@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% import "macros/components.html" as components %}
+
 {% macro talk_posts(pages) %}
     <div class="talks-grid">
         {%- for page in pages %}
@@ -75,77 +77,19 @@
 
                     <div class="meta">
                         {%- if page.date %}
-                            <span class="meta-item date">
-                                <svg width="24"
-                                     height="24"
-                                     viewBox="0 0 24 24"
-                                     fill="none"
-                                     xmlns="http://www.w3.org/2000/svg"
-                                     class="h-4 w-4 text-zinc-400">
-                                    <path d="M8 2V6M16 2V6M3 10H21M5 4H19C20.1046 4 21 4.89543 21 6V20C21 21.1046 20.1046 22 19 22H5C3.89543 22 3 21.1046 3 20V6C3 4.89543 3.89543 4 5 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    </path>
-                                </svg>
-                                {{ page.date | date(format="%B %d, %Y") }}
-                            </span>
+                            {{ components::icon_button(href="#", text=page.date | date(format="%B %d, %Y") , icon="calendar", disabled=true, icon_path="icons/") }}
                         {% endif -%}
 
                         {% if page.extra.organizer.name and page.extra.organizer.link %}
-                            <a class="meta-item organizer"
-                               href="{{ page.extra.organizer.link }}"
-                               target="_blank"
-                               rel="noopener">
-                                <svg width="24"
-                                     height="24"
-                                     viewBox="0 0 24 24"
-                                     fill="none"
-                                     xmlns="http://www.w3.org/2000/svg"
-                                     class="h-4 w-4 text-zinc-400">
-                                    <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    </path>
-                                    <path d="M12 2C9.87827 2 7.84344 2.84285 6.34315 4.34315C4.84285 5.84344 4 7.87827 4 10C4 11.892 4.402 13.13 5.5 14.5L12 22L18.5 14.5C19.598 13.13 20 11.892 20 10C20 7.87827 19.1571 5.84344 17.6569 4.34315C16.1566 2.84285 14.1217 2 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    </path>
-                                </svg>
-
-                                {{ page.extra.organizer.name }}
-                            </a>
+                            {{ components::icon_button(href=page.extra.organizer.link, text=page.extra.organizer.name, icon="map-pin", icon_path="icons/") }}
                         {% endif %}
 
                         {% if page.extra.slides %}
-                            <a class="meta-item slides-link"
-                               href="{{ page.extra.slides }}"
-                               target="_blank"
-                               rel="noopener">
-                                <svg width="24"
-                                     height="24"
-                                     viewBox="0 0 24 24"
-                                     fill="none"
-                                     xmlns="http://www.w3.org/2000/svg"
-                                     class="h-4 w-4">
-                                    <path d="M5 7C5 6.46957 5.21071 5.96086 5.58579 5.58579C5.96086 5.21071 6.46957 5 7 5H17C17.5304 5 18.0391 5.21071 18.4142 5.58579C18.7893 5.96086 19 6.46957 19 7V17C19 17.5304 18.7893 18.0391 18.4142 18.4142C18.0391 18.7893 17.5304 19 17 19H7C6.46957 19 5.96086 18.7893 5.58579 18.4142C5.21071 18.0391 5 17.5304 5 17V7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    </path>
-                                    <path d="M8 12H16M12 8V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    </path>
-                                </svg>
-                                Slides
-                            </a>
+                            {{ components::icon_button(href=page.extra.slides, text="Slides", icon="presentation", icon_path="icons/") }}
                         {% endif %}
 
                         {% if page.extra.code %}
-                            <a class="meta-item code-link"
-                               href="{{ page.extra.code }}"
-                               target="_blank"
-                               rel="noopener">
-                                <svg width="24"
-                                     height="24"
-                                     viewBox="0 0 24 24"
-                                     fill="none"
-                                     xmlns="http://www.w3.org/2000/svg"
-                                     class="h-4 w-4">
-                                    <path d="M16 18L22 12L16 6M8 6L2 12L8 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    </path>
-                                </svg>
-                                Code
-                            </a>
+                            {{ components::icon_button(href=page.extra.code, text="Code", icon="code", icon_path="icons/") }}
                         {% endif %}
 
                         {% if page.draft %}

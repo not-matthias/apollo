@@ -98,31 +98,6 @@
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-
-            .meta-item {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                gap: 8px;
-                white-space: nowrap;
-
-                color: var(--text-color);
-                border: 2px solid var(--border-color);
-                border-radius: 6px;
-                padding: 2px 4px;
-
-                transition: color 0.2s ease, background-color 0.2s ease;
-
-                &:hover {
-                    color: var(--text-color);
-                    background: var(--bg-2);
-                }
-
-                svg {
-                    height: 1rem;
-                    width: 1rem;
-                }
-            }
         }
     }
 

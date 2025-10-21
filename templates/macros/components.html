@@ -1,16 +1,30 @@
-{% macro icon_button(href, text, icon="", icon_svg="", class="", target="", rel="") %}
-    <a href="{{ href }}"
-       class="icon-button {{ class }}"
-       {% if target %}target="{{ target }}"{% endif %}
-       {% if rel %}rel="{{ rel }}"{% endif %}>
-        {% if icon %}
-            <img src="{{ get_url(path='icons/social/' ~ icon ~ '.svg') }}"
-                 alt="{{ icon }}"
-                 width="16"
-                 height="16" />
-        {% elif icon_svg %}
-            {{ icon_svg | safe }}
-        {% endif %}
-        {{ text }}
-    </a>
+{% macro icon_button(href, text, icon="", icon_svg="", class="", target="_blank", rel="noopener", disabled=false, icon_path="icons/social/") %}
+    {% if disabled %}
+        <span class="icon-button {{ class }} disabled" aria-disabled="true">
+            {% if icon %}
+                <img src="{{ get_url(path=icon_path ~ icon ~ '.svg') }}"
+                     alt="{{ icon }}"
+                     width="16"
+                     height="16" />
+            {% elif icon_svg %}
+                {{ icon_svg | safe }}
+            {% endif %}
+            {{ text }}
+        </span>
+    {% else %}
+        <a href="{{ href }}"
+           class="icon-button {{ class }}"
+           {% if target %}target="{{ target }}"{% endif %}
+           {% if rel %}rel="{{ rel }}"{% endif %}>
+            {% if icon %}
+                <img src="{{ get_url(path=icon_path ~ icon ~ '.svg') }}"
+                     alt="{{ icon }}"
+                     width="16"
+                     height="16" />
+            {% elif icon_svg %}
+                {{ icon_svg | safe }}
+            {% endif %}
+            {{ text }}
+        </a>
+    {% endif %}
 {% endmacro icon_button %}
