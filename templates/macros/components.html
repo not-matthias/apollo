@@ -2,10 +2,7 @@
     {% if disabled %}
         <span class="icon-button {{ class }} disabled" aria-disabled="true">
             {% if icon %}
-                <img src="{{ get_url(path=icon_path ~ icon ~ '.svg') }}"
-                     alt="{{ icon }}"
-                     width="16"
-                     height="16" />
+                <img src="{{ get_url(path=icon_path ~ icon ~ '.svg') }}" alt="{{ icon }}" />
             {% elif icon_svg %}
                 {{ icon_svg | safe }}
             {% endif %}
@@ -17,10 +14,7 @@
            {% if target %}target="{{ target }}"{% endif %}
            {% if rel %}rel="{{ rel }}"{% endif %}>
             {% if icon %}
-                <img src="{{ get_url(path=icon_path ~ icon ~ '.svg') }}"
-                     alt="{{ icon }}"
-                     width="16"
-                     height="16" />
+                <img src="{{ get_url(path=icon_path ~ icon ~ '.svg') }}" alt="{{ icon }}" />
             {% elif icon_svg %}
                 {{ icon_svg | safe }}
             {% endif %}
