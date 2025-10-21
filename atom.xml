@@ -1,4 +1,55 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><title>not-matthias</title><subtitle>This is an example description</subtitle><link rel="self" type="application/atom+xml" href="https://not-matthias.github.io/apollo/atom.xml"/><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/"/><generator uri="https://www.getzola.org/">Zola</generator><updated>2025-06-29T00:00:00+00:00</updated><id>https://not-matthias.github.io/apollo/atom.xml</id><entry xml:lang="en"><title>Creating a Custom Homepage</title><published>2025-06-29T00:00:00+00:00</published><updated>2025-06-29T00:00:00+00:00</updated><author><name>
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><title>not-matthias</title><subtitle>This is an example description</subtitle><link rel="self" type="application/atom+xml" href="https://not-matthias.github.io/apollo/atom.xml"/><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/"/><generator uri="https://www.getzola.org/">Zola</generator><updated>2025-08-11T00:00:00+00:00</updated><id>https://not-matthias.github.io/apollo/atom.xml</id><entry xml:lang="en"><title>Character Shortcodes Example</title><published>2025-08-11T00:00:00+00:00</published><updated>2025-08-11T00:00:00+00:00</updated><author><name>
+Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/character-shortcodes/"/><id>https://not-matthias.github.io/apollo/posts/character-shortcodes/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/character-shortcodes/">&lt;p>Did you know that The oldest programming language still in use is FORTRAN which was created in 1957 by John Backus?&lt;/p>
+&lt;div class="character-note character-hooded character-comment character-right">
+&lt;div class="character-avatar">
+&lt;img src="/images/characters/hooded.png"
+alt="hooded"
+width="80"
+height="80" />
+&lt;/div>
+&lt;div class="character-content">
+&lt;div class="character-bubble">
+&lt;p>Whaaaaaaaaaaaaaaaaaaat, that's almost 70 years ago???&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>I know, it's crazy. Here's an example program:&lt;/p>
+&lt;pre class="z-code">&lt;code>&lt;span class="z-text z-plain">PROGRAM MAIN
+&lt;/span>&lt;span class="z-text z-plain">PRINT *, &amp;#39;HELLO WORLD&amp;#39;
+&lt;/span>&lt;span class="z-text z-plain">STOP
+&lt;/span>&lt;span class="z-text z-plain">END
+&lt;/span>&lt;/code>&lt;/pre>
+&lt;div class="character-note character-hooded character-comment character-right">
+&lt;div class="character-avatar">
+&lt;img src="/images/characters/hooded.png"
+alt="hooded"
+width="80"
+height="80" />
+&lt;/div>
+&lt;div class="character-content">
+&lt;div class="character-bubble">
+&lt;p>There's also a more modern version which is a bit easier to read:&lt;/p>
+&lt;pre class="z-code">&lt;code>&lt;span class="z-text z-plain">program helloWorld
+&lt;/span>&lt;span class="z-text z-plain"> print *, &amp;quot;Hello World!&amp;quot;
+&lt;/span>&lt;span class="z-text z-plain">end program helloWorld
+&lt;/span>&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>Good to know, thanks buddy!&lt;/p>
+&lt;div class="character-note character-hooded character-comment character-left">
+&lt;div class="character-avatar">
+&lt;img src="/images/characters/hooded.png"
+alt="hooded"
+width="80"
+height="80" />
+&lt;/div>
+&lt;div class="character-content">
+&lt;div class="character-bubble">
+&lt;p>:)&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div></content></entry><entry xml:lang="en"><title>Creating a Custom Homepage</title><published>2025-06-29T00:00:00+00:00</published><updated>2025-06-29T00:00:00+00:00</updated><author><name>
 Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/custom-homepage/"/><id>https://not-matthias.github.io/apollo/posts/custom-homepage/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/custom-homepage/">&lt;p>The Apollo theme provides a default homepage that lists your recent blog posts. However, you might want to create a custom homepage that better reflects your personality and work. This guide will walk you through the process of creating a custom homepage with the Apollo theme.&lt;/p>
 &lt;h2 id="1-create-a-custom-homepage-template">&lt;a class="zola-anchor" href="#1-create-a-custom-homepage-template" aria-label="Anchor link for: 1-create-a-custom-homepage-template">1. Create a Custom Homepage Template&lt;/a>&lt;/h2>
 &lt;p>The first step is to create a custom homepage template. In the root of your Zola project, create a new file at &lt;code>templates/home.html&lt;/code>. This file will contain the HTML for your custom homepage.&lt;/p>
@@ -224,6 +275,59 @@ Additionally, a search button will be displayed in the navigation bar.&lt;/p>
 &lt;li>Usage: &lt;code>dynamic_note = true&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;p>When enabled, you can create expandable/collapsible note sections in your blog posts.&lt;/p>
+&lt;h2 id="character-shortcodes">&lt;a class="zola-anchor" href="#character-shortcodes" aria-label="Anchor link for: character-shortcodes">Character Shortcodes&lt;/a>&lt;/h2>
+&lt;p>We support custom character shortcodes for adding dialogue and interactive characters to your blog posts. You can use them via &lt;a href="https://www.getzola.org/documentation/content/shortcodes/">shortcodes&lt;/a>:&lt;/p>
+&lt;pre class="z-code">&lt;code>&lt;span class="z-text z-plain">{{ /* character(name=&amp;quot;character-name&amp;quot;, body=&amp;quot;Character dialogue text&amp;quot;) */ }}
+&lt;/span>&lt;/code>&lt;/pre>
+&lt;p>These are the supported parameters:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>name&lt;/code> (optional): The identifier for the character. Used to determine styling and appearance.&lt;/li>
+&lt;li>&lt;code>body&lt;/code> (optional): The dialogue text for the character. Works with inline shortcodes.&lt;/li>
+&lt;li>&lt;code>position&lt;/code> (optional): Position the character on the left or right. Values: "left" or default (right)&lt;/li>
+&lt;/ul>
+&lt;div class="character-note character-hooded character-comment character-right">
+&lt;div class="character-avatar">
+&lt;img src="/images/characters/hooded.png"
+alt="hooded"
+width="80"
+height="80" />
+&lt;/div>
+&lt;div class="character-content">
+&lt;div class="character-bubble">
+&lt;p>Isn't it amazing?&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="character-note character-hooded character-comment character-left">
+&lt;div class="character-avatar">
+&lt;img src="/images/characters/hooded.png"
+alt="hooded"
+width="80"
+height="80" />
+&lt;/div>
+&lt;div class="character-content">
+&lt;div class="character-bubble">
+&lt;p>Yes! And it's really easy to use&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="character-note character-hooded character-comment character-right">
+&lt;div class="character-avatar">
+&lt;img src="/images/characters/hooded.png"
+alt="hooded"
+width="80"
+height="80" />
+&lt;/div>
+&lt;div class="character-content">
+&lt;div class="character-bubble">
+&lt;p>We can even use multiple lines with code:&lt;/p>
+&lt;pre data-lang="rust" class="language-rust z-code">&lt;code class="language-rust" data-lang="rust">&lt;span class="z-source z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-storage z-type z-function z-rust">fn&lt;/span> &lt;/span>&lt;span class="z-entity z-name z-function z-rust">main&lt;/span>&lt;/span>&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-function z-parameters z-rust">&lt;span class="z-punctuation z-section z-parameters z-begin z-rust">(&lt;/span>&lt;/span>&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-function z-parameters z-rust">&lt;span class="z-punctuation z-section z-parameters z-end z-rust">)&lt;/span>&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-meta z-function z-rust"> &lt;/span>&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-block z-rust">&lt;span class="z-punctuation z-section z-block z-begin z-rust">{&lt;/span>
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-source z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-block z-rust"> &lt;span class="z-support z-macro z-rust">println!&lt;/span>&lt;span class="z-meta z-group z-rust">&lt;span class="z-punctuation z-section z-group z-begin z-rust">(&lt;/span>&lt;/span>&lt;span class="z-meta z-group z-rust">&lt;span class="z-string z-quoted z-double z-rust">&lt;span class="z-punctuation z-definition z-string z-begin z-rust">&amp;quot;&lt;/span>Hey there!&lt;span class="z-punctuation z-definition z-string z-end z-rust">&amp;quot;&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-meta z-group z-rust">&lt;span class="z-punctuation z-section z-group z-end z-rust">)&lt;/span>&lt;/span>&lt;span class="z-punctuation z-terminator z-rust">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-source z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-block z-rust">&lt;/span>&lt;span class="z-meta z-block z-rust">&lt;span class="z-punctuation z-section z-block z-end z-rust">}&lt;/span>&lt;/span>&lt;/span>
+&lt;/span>&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
 &lt;h2 id="anchor-links">&lt;a class="zola-anchor" href="#anchor-links" aria-label="Anchor link for: anchor-links">Anchor Links&lt;/a>&lt;/h2>
 &lt;p>You can add anchor links by adding the following to your &lt;code>_index.md&lt;/code>:&lt;/p>
 &lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">insert_anchor_links&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>heading&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>
