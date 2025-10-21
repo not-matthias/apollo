@@ -22,11 +22,7 @@
     </div>
     <div class="character-content">
         <div class="character-bubble">
-            {% if character_text %}
-                {{ character_text | markdown | safe }}
-            {% else %}
-                {{ body | markdown | safe }}
-            {% endif %}
+            {{ character_text | markdown | safe }}
         </div>
     </div>
 </div>
