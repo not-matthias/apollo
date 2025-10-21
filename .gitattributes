@@ -1,2 +1,1 @@
-tests/visual/responsive-visual.spec.ts-snapshots/*.png filter=lfs diff=lfs merge=lfs -text
-tests/visual/theme-visual.spec.ts-snapshots/*.png filter=lfs diff=lfs merge=lfs -text
+tests/visual/*.ts-snapshots/*.png filter=lfs diff=lfs merge=lfs -text
