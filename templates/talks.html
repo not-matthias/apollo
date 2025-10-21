@@ -22,7 +22,7 @@
                     <div class="talk-video">
                         {% if page.extra.video.thumbnail %}
                             <!-- TODO: Add srcset -->
-                            {% set image = resize_image(path=page.extra.video.thumbnail, width=640, height=360, format="avif") %}
+                            {% set image = resize_image(path=page.extra.video.thumbnail, width=640, height=360, format="webp") %}
                             <img class="talk-image"
                                  loading="lazy"
                                  decoding="async"
@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                         {% else %}
-                            {% set image = resize_image(path='images/talks/default.webp', width=480, height=270, format="avif", quality=10) %}
+                            {% set image = resize_image(path='images/talks/default.webp', width=480, height=270, format="webp", quality=10) %}
                             <img class="talk-image"
                                  alt="Placeholder image for the talk"
                                  src="{{ image.url }}" />
