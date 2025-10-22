@@ -1,12 +1,11 @@
 +++
 title = "Apollo"
-description = "Modern and minimalistic blog theme."
+description = "A modern and minimalistic blog theme for Zola"
 weight = 1
 date = 2023-10-26
 
 [extra]
 local_image = "project-1.jpg"
-tagline = "A modern and minimalistic blog theme for Zola"
 github = "https://github.com/not-matthias/apollo"
 demo = "https://not-matthias.github.io/apollo"
 tags = ["rust", "scss", "javascript", "tera"]
