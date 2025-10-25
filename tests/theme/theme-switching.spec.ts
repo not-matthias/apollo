@@ -98,4 +98,120 @@ test.describe('Theme Switching', () => {
 
     expect(lightColor).not.toBe(darkColor);
   });
+
+  test('auto mode respects system theme preference', async ({ page }) => {
+    // Set to auto mode
+    await helpers.toggleTheme();
+    await helpers.toggleTheme();
+    const currentTheme = await helpers.getCurrentTheme();
+    expect(currentTheme).toBe('auto');
+
+    // Simulate system preference for dark mode
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await page.waitForTimeout(100);
+
+    // Verify dark theme is applied
+    const htmlDark = page.locator('html');
+    await expect(htmlDark).toHaveClass(/dark/);
+
+    // Simulate system preference for light mode
+    await page.emulateMedia({ colorScheme: 'light' });
+    await page.waitForTimeout(100);
+
+    // Verify light theme is applied
+    const htmlLight = page.locator('html');
+    await expect(htmlLight).toHaveClass(/light/);
+  });
+
+  test('auto mode updates when system theme preference changes', async ({ page }) => {
+    // Set to auto mode and ensure it's saved
+    await page.evaluate(() => {
+      localStorage.setItem('theme-storage', 'auto');
+    });
+
+    // Reload page to apply auto mode
+    await page.reload();
+    await helpers.waitForPageReady();
+
+    // Start with dark mode preference
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await page.waitForTimeout(100);
+
+    // Verify dark theme is applied
+    let html = page.locator('html');
+    await expect(html).toHaveClass(/dark/);
+
+    // Simulate system theme change to light
+    await page.emulateMedia({ colorScheme: 'light' });
+    await page.waitForTimeout(100);
+
+    // Verify theme updated to light
+    html = page.locator('html');
+    await expect(html).toHaveClass(/light/);
+    await expect(html).not.toHaveClass(/dark/);
+
+    // Simulate system theme change back to dark
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await page.waitForTimeout(100);
+
+    // Verify theme updated back to dark
+    html = page.locator('html');
+    await expect(html).toHaveClass(/dark/);
+    await expect(html).not.toHaveClass(/light/);
+  });
+
+  test('auto mode icon updates based on system theme preference', async ({ page }) => {
+    // Set to auto mode
+    await helpers.toggleTheme();
+    await helpers.toggleTheme();
+    const currentTheme = await helpers.getCurrentTheme();
+    expect(currentTheme).toBe('auto');
+
+    // Verify auto icon is visible
+    const autoIcon = page.locator('#auto-icon');
+    await expect(autoIcon).toBeVisible();
+
+    // Sun and moon icons should be hidden in auto mode
+    const sunIcon = page.locator('#sun-icon');
+    const moonIcon = page.locator('#moon-icon');
+    await expect(sunIcon).not.toBeVisible();
+    await expect(moonIcon).not.toBeVisible();
+
+    // Test icon filter with dark system preference
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await page.waitForTimeout(100);
+
+    const darkFilter = await autoIcon.evaluate((el: HTMLImageElement) => el.style.filter);
+    expect(darkFilter).toBe('invert(1)');
+
+    // Test icon filter with light system preference
+    await page.emulateMedia({ colorScheme: 'light' });
+    await page.waitForTimeout(100);
+
+    const lightFilter = await autoIcon.evaluate((el: HTMLImageElement) => el.style.filter);
+    expect(lightFilter).toBe('invert(0)');
+  });
+
+  test('non-auto themes do not respond to system theme changes', async ({ page }) => {
+    // Set to light theme and ensure it's saved
+    await page.evaluate(() => {
+      localStorage.setItem('theme-storage', 'light');
+    });
+
+    await page.reload();
+    await helpers.waitForPageReady();
+
+    // Verify light theme is applied
+    let html = page.locator('html');
+    await expect(html).toHaveClass(/light/);
+
+    // Simulate system preference for dark mode
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await page.waitForTimeout(100);
+
+    // Theme should remain light (not respond to system change)
+    html = page.locator('html');
+    await expect(html).toHaveClass(/light/);
+    await expect(html).not.toHaveClass(/dark/);
+  });
 });
