@@ -182,11 +182,17 @@ Additionally, a search button will be displayed in the navigation bar.&lt;/p>
 &lt;p>Sets the color theme for your blog.&lt;/p>
 &lt;ul>
 &lt;li>Type: String&lt;/li>
-&lt;li>Options: "light", "dark", "auto", "toggle"&lt;/li>
+&lt;li>Options:
+&lt;ul>
+&lt;li>"light": Always using the light theme&lt;/li>
+&lt;li>"dark": Always using the dark theme&lt;/li>
+&lt;li>"auto": Automatically uses the system theme&lt;/li>
+&lt;li>"toggle": Automatically uses the system theme, but also shows buttons to change it.&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;li>Default: "toggle"&lt;/li>
 &lt;li>Usage: &lt;code>theme = "toggle"&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;p>The "toggle" option allows users to switch between light and dark modes, while "auto" typically follows the user's system preferences.&lt;/p>
 &lt;h2 id="menu">&lt;a class="zola-anchor" href="#menu" aria-label="Anchor link for: menu">Menu&lt;/a>&lt;/h2>
 &lt;p>Defines the navigation menu items for your blog.&lt;/p>
 &lt;ul>
