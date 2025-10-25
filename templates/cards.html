@@ -18,7 +18,8 @@
             so that they are inserted in a column-balanced way (e.g. 135246 for 6 items in 2 columns).
         #}
         {%- set_global reordered_indices = [] -%}
-        {%- set items_per_column = pages | length / columns | round(method="ceil") | int -%}
+        {%- set items_per_column = pages | length / columns -%}
+        {%- set items_per_column = items_per_column | round(method="ceil") | int -%}
 
         {%- for col in range(end=columns | int) -%}
             {%- for row in range(end=items_per_column) -%}
