@@ -9,7 +9,7 @@
     "test:ui": "playwright test --ui",
     "test:debug": "playwright test --debug",
     "test:headed": "playwright test --headed",
-    "test:update-snapshots": "playwright test --update-snapshots",
+    "test:update-snapshots": "docker-compose -f docker-compose.test.yml run --rm playwright-tests npm run test:update-snapshots",
     "serve": "zola serve",
     "build": "zola build"
   },
