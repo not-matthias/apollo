@@ -6,10 +6,11 @@ function setTheme(mode) {
 //
 
 function toggleTheme() {
-    if (localStorage.getItem("theme-storage") === "light") {
+    const currentTheme = getSavedTheme();
+    if (currentTheme === "light") {
         setTheme("dark");
         updateItemToggleTheme();
-    } else if (localStorage.getItem("theme-storage") === "dark") {
+    } else if (currentTheme === "dark") {
         setTheme("auto");
         updateItemToggleTheme();
     } else {
@@ -37,9 +38,11 @@ function updateItemToggleTheme() {
         sunIcon.style.display = (mode === "light") ? "block" : "none";
         moonIcon.style.display = (mode === "dark") ? "block" : "none";
         autoIcon.style.display = (mode === "auto") ? "block" : "none";
-        
+
         if (mode === "auto") {
             autoIcon.style.filter = getSystemPrefersDark() ? "invert(1)" : "invert(0)";
+        } else {
+            autoIcon.style.filter = "none";
         }
     }
 
