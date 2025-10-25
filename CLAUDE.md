@@ -237,6 +237,7 @@ Apollo includes:
 2. Changes auto-compile via `zola serve`
 3. Run `bun test` to ensure visual tests pass
 4. Update snapshots if changes are intentional: `bun run test:update-snapshots`
+   - If Playwright issues occur on NixOS, use Docker instead: `npm run test:update-snapshots-docker`
 5. Commit both code changes and snapshot updates
 
 ### Running Tests Locally
