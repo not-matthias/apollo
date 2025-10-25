@@ -214,4 +214,37 @@ test.describe('Theme Switching', () => {
     await expect(html).toHaveClass(/light/);
     await expect(html).not.toHaveClass(/dark/);
   });
+
+  test('auto icon filter is reset when switching away from auto mode', async ({ page }) => {
+    // Set to auto mode with dark system preference
+    await page.evaluate(() => {
+      localStorage.setItem('theme-storage', 'auto');
+    });
+
+    await page.reload();
+    await helpers.waitForPageReady();
+
+    // Simulate dark system preference
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await page.waitForTimeout(100);
+
+    // Verify auto icon has dark filter applied
+    const autoIcon = page.locator('#auto-icon');
+    let filterValue = await autoIcon.evaluate((el: HTMLImageElement) => el.style.filter);
+    expect(filterValue).toBe('invert(1)');
+
+    // Switch to light mode
+    await helpers.toggleTheme();
+    const currentTheme = await helpers.getCurrentTheme();
+    expect(currentTheme).toBe('light');
+
+    // Verify auto icon filter is reset
+    filterValue = await autoIcon.evaluate((el: HTMLImageElement) => el.style.filter);
+    expect(filterValue).toBe('none');
+
+    // Verify sun icon is now visible (light mode)
+    const sunIcon = page.locator('#sun-icon');
+    await expect(sunIcon).toBeVisible();
+    await expect(autoIcon).not.toBeVisible();
+  });
 });
