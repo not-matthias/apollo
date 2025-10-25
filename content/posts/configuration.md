@@ -41,11 +41,13 @@ index_format = "elasticlunr_json"
 Sets the color theme for your blog.
 
 - Type: String
-- Options: "light", "dark", "auto", "toggle"
+- Options:
+  - "light": Always using the light theme
+  - "dark": Always using the dark theme
+  - "auto": Automatically uses the system theme
+  - "toggle": Automatically uses the system theme, but also shows buttons to change it.
 - Default: "toggle"
 - Usage: `theme = "toggle"`
-
-The "toggle" option allows users to switch between light and dark modes, while "auto" typically follows the user's system preferences.
 
 ## Menu
 

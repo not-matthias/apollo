@@ -57,11 +57,16 @@ just clean
 
 All tests use **Playwright** and require the dev environment to be active. The Zola server starts automatically during testing.
 
+**⚠️ IMPORTANT: Always run tests in Docker** to match the CI environment exactly and avoid browser compatibility issues on NixOS.
+
 ```bash
 # Install dependencies first
 bun install
 
-# Run all tests
+# Run all tests in Docker (RECOMMENDED)
+bun run test:docker-compose
+
+# Run all tests locally (may have browser issues on NixOS)
 bun test
 
 # Run tests with interactive UI
@@ -74,16 +79,14 @@ bun run test:headed
 bun run test:debug
 
 # Update visual regression baselines (after intentional changes)
-bun run test:update-snapshots
+# IMPORTANT: Always use Docker to ensure consistent screenshots
+docker-compose -f docker-compose.test.yml run --rm playwright-tests npm run test:update-snapshots
 
 # Run specific test suite
 bunx playwright test tests/theme/         # Theme tests only
 bunx playwright test tests/navigation/    # Navigation tests only
 bunx playwright test tests/visual/        # Visual regression tests only
 bunx playwright test tests/content/       # Content rendering tests only
-
-# Run in Docker (matches CI environment exactly)
-bun run test:docker-compose
 ```
 
 Test reports are generated in `playwright-report/` and can be viewed with:
