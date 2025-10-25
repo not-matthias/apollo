@@ -9,7 +9,28 @@
     <div class="cards"
          style="--columns: {{ columns }};
                 --media-height: {{ media_height }}px">
-        {%- for page in pages %}
+
+        {#
+            Create reordered indices array for column-balanced layout
+
+            If we have 6 items, they would be inserted into the left column first, which will put
+            the item 4 in the right column. This looks unbalanced. Instead, we want to reorder the items
+            so that they are inserted in a column-balanced way (e.g. 135246 for 6 items in 2 columns).
+        #}
+        {%- set_global reordered_indices = [] -%}
+        {%- set items_per_column = pages | length / columns | round(method="ceil") | int -%}
+
+        {%- for col in range(end=columns | int) -%}
+            {%- for row in range(end=items_per_column) -%}
+                {%- set idx = row * columns + col -%}
+                {%- if idx < pages | length -%}
+                    {%- set_global reordered_indices = reordered_indices | concat(with=idx) -%}
+                {%- endif -%}
+            {%- endfor -%}
+        {%- endfor -%}
+
+        {%- for idx in reordered_indices %}
+            {%- set page = pages[idx] -%}
             <div class="card">
                 {% if page.extra.local_image or page.extra.remote_image or page.extra.local_video or page.extra.remote_video %}
                     <div class="card-media">
@@ -85,7 +106,6 @@
                     {% endif %}
                 </div>
             </div>
-
         {% endfor -%}
     </div>
 {% endmacro cards_posts %}
