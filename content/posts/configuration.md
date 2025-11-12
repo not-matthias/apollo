@@ -103,16 +103,6 @@ When enabled, a table of contents will be generated for posts, making it easier 
 
 Note: This feature adds additional JavaScript to your site.
 
-## CDN Usage (`use_cdn`)
-
-Determines whether to use a Content Delivery Network (CDN) for assets.
-
-- Type: Boolean
-- Default: false
-- Usage: `use_cdn = false`
-
-When set to true, the theme will attempt to load assets from a CDN, which can improve loading times for visitors from different geographic locations.
-
 ## Favicon (`favicon`)
 
 Specifies the path to the favicon image for your blog.
@@ -262,22 +252,6 @@ Configure Umami analytics:
 website_id = "43929cd1-1e83...."                    # Your Umami website ID
 host_url = "https://stats.mywebsite.com"            # Optional: Custom host URL
 ```
-
-## Fediverse Author Attribution
-
-Enable fediverse author attribution to add a meta tag for fediverse platforms:
-
-```toml
-[extra]
-fediverse = true
-fediverse_creator = "@user@instance.social"
-```
-
-- Type: Boolean
-- Default: false
-- Usage: `fediverse = true`
-
-When enabled, this adds a `fediverse:creator` meta tag to your site's HTML header, allowing fediverse platforms to attribute content to your account. Set `fediverse_creator` to your fediverse handle in the format `@user@instance`.
 
 ---
 

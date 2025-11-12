@@ -24,7 +24,6 @@ highlight_themes_css = [
 
 [extra]
 toc = true
-use_cdn = false
 favicon = "/icon/favicon.png"
 theme = "toggle"              # light, dark, auto, toggle
 fancy_code = true
@@ -32,9 +31,6 @@ dynamic_note = true           # a note that can be toggled
 mathjax = true
 mathjax_dollar_inline_enable = true
 repo_url = "https://github.com/not-matthias/apollo/tree/main/content/"
-
-fediverse = false    # author attribution
-fediverse_creator = ""    # e.g. @user@instance
 
 menu = [
     { name = "/posts", url = "/posts", weight = 1 },
