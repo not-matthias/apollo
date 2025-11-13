@@ -253,6 +253,22 @@ website_id = "43929cd1-1e83...."                    # Your Umami website ID
 host_url = "https://stats.mywebsite.com"            # Optional: Custom host URL
 ```
 
+## Fediverse Author Attribution
+
+Enable fediverse author attribution to add a meta tag for fediverse platforms:
+
+```toml
+[extra]
+fediverse = true
+fediverse_creator = "@user@instance.social"
+```
+
+- Type: Boolean
+- Default: false
+- Usage: `fediverse = true`
+
+When enabled, this adds a `fediverse:creator` meta tag to your site's HTML header, allowing fediverse platforms to attribute content to your account. Set `fediverse_creator` to your fediverse handle in the format `@user@instance`.
+
 ---
 
 # Page configuration
