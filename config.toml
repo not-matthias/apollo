@@ -14,13 +14,11 @@ include_path = true
 include_content = true
 index_format = "elasticlunr_json"
 
-[markdown]
-highlight_code = true
-highlight_theme = "css"
-highlight_themes_css = [
-  { theme = "ayu-dark", filename = "syntax-theme-dark.css" },
-  { theme = "ayu-light", filename = "syntax-theme-light.css" },
-]
+[markdown.highlighting]
+style = "class"
+light_theme = "github-light"
+dark_theme = "github-dark"
+error_on_missing_language = true
 
 [extra]
 toc = true
