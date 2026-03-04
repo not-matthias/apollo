@@ -1,3 +1,6 @@
+// Set by the template: "toggle" (light/dark) or "toggle-auto" (light/dark/auto)
+var themeToggleMode = themeToggleMode || "toggle-auto";
+
 function setTheme(mode) {
     localStorage.setItem("theme-storage", mode);
 }
@@ -7,16 +10,24 @@ function setTheme(mode) {
 
 function toggleTheme() {
     const currentTheme = getSavedTheme();
-    if (currentTheme === "light") {
-        setTheme("dark");
-        updateItemToggleTheme();
-    } else if (currentTheme === "dark") {
-        setTheme("auto");
-        updateItemToggleTheme();
+    if (themeToggleMode === "toggle-auto") {
+        // 3-state: light -> dark -> auto -> light
+        if (currentTheme === "light") {
+            setTheme("dark");
+        } else if (currentTheme === "dark") {
+            setTheme("auto");
+        } else {
+            setTheme("light");
+        }
     } else {
-        setTheme("light");
-        updateItemToggleTheme();
+        // 2-state: light <-> dark
+        if (currentTheme === "light") {
+            setTheme("dark");
+        } else {
+            setTheme("light");
+        }
     }
+    updateItemToggleTheme();
 }
 
 function updateItemToggleTheme() {
@@ -34,15 +45,18 @@ function updateItemToggleTheme() {
     const sunIcon = document.getElementById("sun-icon");
     const moonIcon = document.getElementById("moon-icon");
     const autoIcon = document.getElementById("auto-icon");
-    if (sunIcon && moonIcon && autoIcon) {
+    if (sunIcon && moonIcon) {
         sunIcon.style.display = (mode === "light") ? "block" : "none";
         moonIcon.style.display = (mode === "dark") ? "block" : "none";
-        autoIcon.style.display = (mode === "auto") ? "block" : "none";
 
-        if (mode === "auto") {
-            autoIcon.style.filter = getSystemPrefersDark() ? "invert(1)" : "invert(0)";
-        } else {
-            autoIcon.style.filter = "none";
+        if (autoIcon) {
+            autoIcon.style.display = (mode === "auto") ? "block" : "none";
+
+            if (mode === "auto") {
+                autoIcon.style.filter = getSystemPrefersDark() ? "invert(1)" : "invert(0)";
+            } else {
+                autoIcon.style.filter = "none";
+            }
         }
     }
 
@@ -64,6 +78,12 @@ function getSavedTheme() {
     let currentTheme = localStorage.getItem("theme-storage");
     if(!currentTheme) {
         currentTheme = getSystemPrefersDark() ? "dark" : "light";
+    }
+
+    // In 2-state toggle mode, "auto" is not valid — resolve to system preference
+    if (themeToggleMode === "toggle" && currentTheme === "auto") {
+        currentTheme = getSystemPrefersDark() ? "dark" : "light";
+        setTheme(currentTheme);
     }
 
     return currentTheme;

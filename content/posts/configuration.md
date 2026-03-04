@@ -45,7 +45,8 @@ Sets the color theme for your blog.
   - "light": Always using the light theme
   - "dark": Always using the dark theme
   - "auto": Automatically uses the system theme
-  - "toggle": Automatically uses the system theme, but also shows buttons to change it.
+  - "toggle": Shows a button to switch between light and dark themes
+  - "toggle-auto": Shows a button to cycle through light, dark, and auto (system default) themes
 - Default: "toggle"
 - Usage: `theme = "toggle"`
 
