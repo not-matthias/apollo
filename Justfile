@@ -10,5 +10,11 @@ lighthouse-open:
 
 ci: build lighthouse
 
+test:
+    bun run test:docker-compose
+
+update-snapshots:
+    bun run test:update-snapshots
+
 clean:
     rm -rf dist/ public/ .lighthouseci/
