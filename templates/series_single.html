@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+    {{ post_macros::page_header(title=section.title) }}
+
+    {% set slug = section.components | last %}
+
+    {% if section.extra.status is defined %}
+        <div class="series-detail-meta">
+            <span class="series-status series-status--{{ section.extra.status }}">
+                {{ section.extra.status }}
+            </span>
+        </div>
+    {% endif %}
+
+    {% if section.content %}
+        <div class="series-detail-description">
+            {{ section.content | safe }}
+        </div>
+    {% endif %}
+
+    {% set posts_section = get_section(path="posts/_index.md") %}
+
+    {# Filter and sort posts belonging to this series #}
+    {% set_global parts = [] %}
+    {% for page in posts_section.pages %}
+        {% if page.extra.series is defined and page.extra.series == slug %}
+            {% set_global parts = parts | concat(with=page) %}
+        {% endif %}
+    {% endfor %}
+    {% set parts = parts | sort(attribute="extra.series_weight") %}
+
+    <main class="series-parts">
+        {% if parts | length > 0 %}
+            <ol>
+                {% for part in parts %}
+                    <li class="series-part">
+                        <div class="series-part-header">
+                            <span class="series-part-number">Part {{ loop.index }}</span>
+                            {% if part.date %}
+                                <time>{{ part.date | date(format="%Y-%m-%d") }}</time>
+                            {% endif %}
+                        </div>
+
+                        <h1 class="series-part-title">
+                            <a href="{{ part.permalink | safe }}">{{ part.title }}</a>
+                        </h1>
+
+                        {% if part.description %}
+                            <p class="series-part-description">{{ part.description }}</p>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ol>
+        {% else %}
+            <p>No parts published yet.</p>
+        {% endif %}
+    </main>
+{% endblock main_content %}

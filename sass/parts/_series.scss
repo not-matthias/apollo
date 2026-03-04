@@ -1,0 +1,160 @@
+/* Series listing page (/series) */
+.series-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1rem;
+
+    .series-card {
+        display: block;
+        border: 2px solid var(--border-color);
+        border-radius: 10px;
+        padding: 1.25rem;
+        border-bottom: 2px solid var(--border-color);
+        background: var(--bg-1);
+
+        &:hover {
+            border-color: var(--primary-color);
+            background-color: var(--bg-1);
+            color: inherit;
+        }
+    }
+
+    .series-card-title {
+        margin: 0;
+        font-weight: normal;
+        font-family: var(--header-font);
+    }
+
+    .series-card-meta {
+        color: var(--text-1);
+        font-family: var(--mono-text-font);
+        font-size: 0.9em;
+        margin-top: 0.25rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .series-card-description {
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+        color: var(--text-1);
+    }
+}
+
+/* Series status badge */
+.series-status {
+    font-family: var(--mono-text-font);
+    font-size: 0.85em;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background-color: var(--bg-2);
+}
+
+/* Series detail page (/series/<slug>) */
+.series-detail-meta {
+    margin-top: 0.5rem;
+}
+
+.series-detail-description {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.series-parts {
+    ol {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        counter-reset: series-counter;
+    }
+
+    .series-part {
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--border-color);
+
+        &:first-child {
+            padding-top: 0.5rem;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .series-part-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-family: var(--mono-text-font);
+        font-size: 0.9em;
+        color: var(--text-1);
+    }
+
+    .series-part-number {
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+
+    .series-part-title {
+        margin: 0.25rem 0 0 0;
+        font-weight: normal;
+        font-family: var(--header-font);
+
+        a {
+            border-bottom: none;
+        }
+    }
+
+    .series-part-description {
+        margin: 0.25rem 0 0 0;
+        color: var(--text-1);
+    }
+}
+
+/* Series navigation on post pages */
+.series-nav {
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    background: var(--bg-1);
+
+    .series-nav-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+
+        a {
+            font-family: var(--header-font);
+            font-weight: bold;
+            border-bottom: none;
+        }
+    }
+
+    .series-nav-position {
+        font-family: var(--mono-text-font);
+        font-size: 0.9em;
+        color: var(--text-1);
+    }
+
+    .series-nav-links {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+
+        a {
+            font-size: 0.9em;
+            border-bottom: none;
+        }
+
+        .series-nav-next {
+            margin-left: auto;
+        }
+    }
+}

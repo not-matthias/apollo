@@ -1,0 +1,55 @@
+{% if page.extra.series is defined %}
+    {% set slug = page.extra.series %}
+    {% set series_path = "series/" ~ slug ~ "/_index.md" %}
+    {% set series = get_section(path=series_path) %}
+    {% set posts_section = get_section(path="posts/_index.md") %}
+
+    {# Filter and sort posts belonging to this series #}
+    {% set_global parts = [] %}
+    {% for p in posts_section.pages %}
+        {% if p.extra.series is defined and p.extra.series == slug %}
+            {% set_global parts = parts | concat(with=p) %}
+        {% endif %}
+    {% endfor %}
+    {% set parts = parts | sort(attribute="extra.series_weight") %}
+
+    {# Find current post and its neighbors #}
+    {% set_global prev_part = false %}
+    {% set_global next_part = false %}
+    {% set_global current_idx = -1 %}
+    {% set_global found = false %}
+
+    {% for part in parts %}
+        {% if found and not next_part %}
+            {% set_global next_part = part %}
+        {% endif %}
+        {% if part.permalink == page.permalink %}
+            {% set_global current_idx = loop.index %}
+            {% set_global found = true %}
+        {% endif %}
+        {% if not found %}
+            {% set_global prev_part = part %}
+        {% endif %}
+    {% endfor %}
+
+    {% set total = parts | length %}
+
+    {% if current_idx > 0 %}
+        <div class="series-nav">
+            <div class="series-nav-header">
+                <a href="{{ series.permalink | safe }}">{{ series.title }}</a>
+                <span class="series-nav-position">Part {{ current_idx }} of {{ total }}</span>
+            </div>
+
+            <div class="series-nav-links">
+                {% if prev_part %}
+                    <a href="{{ prev_part.permalink | safe }}" class="series-nav-prev">← {{ prev_part.title }}</a>
+                {% endif %}
+
+                {% if next_part %}
+                    <a href="{{ next_part.permalink | safe }}" class="series-nav-next">{{ next_part.title }} →</a>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+{% endif %}

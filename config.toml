@@ -36,9 +36,10 @@ fediverse_creator = ""    # e.g. @user@instance
 
 menu = [
     { name = "/posts", url = "/posts", weight = 1 },
-    { name = "/projects", url = "/projects", weight = 2 },
-    { name = "/talks", url = "/talks", weight = 3 },
-    { name = "/tags", url = "/tags", weight = 4 },
+    { name = "/series", url = "/series", weight = 2 },
+    { name = "/projects", url = "/projects", weight = 3 },
+    { name = "/talks", url = "/talks", weight = 4 },
+    { name = "/tags", url = "/tags", weight = 5 },
 ]
 
 socials = [
