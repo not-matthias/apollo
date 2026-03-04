@@ -206,7 +206,7 @@
               type="text/css"
               href="{{ get_url(path='theme/dark.css') }}"
               media="(prefers-color-scheme: dark)" />
-    {% elif theme == "toggle" %}
+    {% elif theme == "toggle" or theme == "toggle-auto" %}
         <link rel="stylesheet"
               type="text/css"
               href="{{ get_url(path='theme/light.css') }}" />
@@ -218,7 +218,12 @@
 
     <!-- Set the correct theme in the script -->
 
-    {% if theme == "auto" or theme == "toggle" %}
+    {% if theme == "auto" or theme == "toggle" or theme == "toggle-auto" %}
+        {% if theme == "toggle" or theme == "toggle-auto" %}
+            <script>
+                var themeToggleMode = "{{ theme }}";
+            </script>
+        {% endif %}
         <script src={{ get_url(path="js/themetoggle.js") }}></script>
 
         {% if theme == "auto" %}
