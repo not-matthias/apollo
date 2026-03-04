@@ -14,11 +14,11 @@ height="80" />
 &lt;/div>
 &lt;/div>
 &lt;p>I know, it's crazy. Here's an example program:&lt;/p>
-&lt;pre class="z-code">&lt;code>&lt;span class="z-text z-plain">PROGRAM MAIN
-&lt;/span>&lt;span class="z-text z-plain">PRINT *, &amp;#39;HELLO WORLD&amp;#39;
-&lt;/span>&lt;span class="z-text z-plain">STOP
-&lt;/span>&lt;span class="z-text z-plain">END
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre>&lt;code>PROGRAM MAIN
+PRINT *, &amp;#x27;HELLO WORLD&amp;#x27;
+STOP
+END
+&lt;/code>&lt;/pre>
 &lt;div class="character-note character-hooded character-comment character-right">
 &lt;div class="character-avatar">
 &lt;img src="https://not-matthias.github.io/apollo/images/characters/hooded.png"
@@ -29,10 +29,10 @@ height="80" />
 &lt;div class="character-content">
 &lt;div class="character-bubble">
 &lt;p>There's also a more modern version which is a bit easier to read:&lt;/p>
-&lt;pre class="z-code">&lt;code>&lt;span class="z-text z-plain">program helloWorld
-&lt;/span>&lt;span class="z-text z-plain"> print *, &amp;quot;Hello World!&amp;quot;
-&lt;/span>&lt;span class="z-text z-plain">end program helloWorld
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre>&lt;code>program helloWorld
+print *, &amp;quot;Hello World!&amp;quot;
+end program helloWorld
+&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;/div>
 &lt;/div>
@@ -54,91 +54,84 @@ Unknown</name></author><link rel="alternate" type="text/html" href="https://not-
 &lt;h2 id="1-create-a-custom-homepage-template">&lt;a class="zola-anchor" href="#1-create-a-custom-homepage-template" aria-label="Anchor link for: 1-create-a-custom-homepage-template">1. Create a Custom Homepage Template&lt;/a>&lt;/h2>
 &lt;p>The first step is to create a custom homepage template. In the root of your Zola project, create a new file at &lt;code>templates/home.html&lt;/code>. This file will contain the HTML for your custom homepage.&lt;/p>
 &lt;p>You can use the following code as a starting point:&lt;/p>
-&lt;pre data-lang="html" class="language-html z-code">&lt;code class="language-html" data-lang="html">&lt;span class="z-text z-html z-basic">{% extends &amp;quot;base.html&amp;quot; %}
-&lt;/span>&lt;span class="z-text z-html z-basic">
-&lt;/span>&lt;span class="z-text z-html z-basic">{% block main_content %}
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;&lt;/span>&lt;/span>&lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-entity z-name z-tag z-other z-html">main&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-block z-any z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;&lt;/span>&lt;span class="z-entity z-name z-tag z-block z-any z-html">article&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-block z-any z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;&lt;/span>&lt;span class="z-entity z-name z-tag z-block z-any z-html">section&lt;/span> &lt;span class="z-meta z-attribute-with-value z-class z-html">&lt;span class="z-entity z-other z-attribute-name z-class z-html">class&lt;/span>&lt;span class="z-punctuation z-separator z-key-value z-html">=&lt;/span>&lt;span class="z-string z-quoted z-double z-html">&lt;span class="z-punctuation z-definition z-string z-begin z-html">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-string z-quoted z-double z-html">&lt;span class="z-meta z-class-name z-html">body&lt;/span>&lt;span class="z-punctuation z-definition z-string z-end z-html">&amp;quot;&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-block z-any z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;&lt;/span>&lt;span class="z-entity z-name z-tag z-block z-any z-html">h1&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>Welcome to my custom homepage!&lt;span class="z-meta z-tag z-block z-any z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;/&lt;/span>&lt;span class="z-entity z-name z-tag z-block z-any z-html">h1&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-block z-any z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;&lt;/span>&lt;span class="z-entity z-name z-tag z-block z-any z-html">p&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>This is where you can introduce yourself and your work.&lt;span class="z-meta z-tag z-block z-any z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;/&lt;/span>&lt;span class="z-entity z-name z-tag z-block z-any z-html">p&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-block z-any z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;/&lt;/span>&lt;span class="z-entity z-name z-tag z-block z-any z-html">section&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-block z-any z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;/&lt;/span>&lt;span class="z-entity z-name z-tag z-block z-any z-html">article&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;/&lt;/span>&lt;/span>&lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-entity z-name z-tag z-other z-html">main&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic">{% endblock main_content %}
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="html" class="language-html ">&lt;code class="language-html" data-lang="html">{% extends &amp;quot;base.html&amp;quot; %}
+{% block main_content %}
+&amp;lt;main&amp;gt;
+&amp;lt;article&amp;gt;
+&amp;lt;section class=&amp;quot;body&amp;quot;&amp;gt;
+&amp;lt;h1&amp;gt;Welcome to my custom homepage!&amp;lt;&amp;#x2F;h1&amp;gt;
+&amp;lt;p&amp;gt;This is where you can introduce yourself and your work.&amp;lt;&amp;#x2F;p&amp;gt;
+&amp;lt;&amp;#x2F;section&amp;gt;
+&amp;lt;&amp;#x2F;article&amp;gt;
+&amp;lt;&amp;#x2F;main&amp;gt;
+{% endblock main_content %}
+&lt;/code>&lt;/pre>
 &lt;p>This template extends the theme's &lt;code>base.html&lt;/code> template and overrides the &lt;code>main_content&lt;/code> block with your own content.&lt;/p>
 &lt;h2 id="2-set-the-homepage-template">&lt;a class="zola-anchor" href="#2-set-the-homepage-template" aria-label="Anchor link for: 2-set-the-homepage-template">2. Set the Homepage Template&lt;/a>&lt;/h2>
 &lt;p>Next, you need to tell Zola to use your custom homepage template. In the &lt;code>content&lt;/code> directory of your Zola project, you should have a &lt;code>_index.md&lt;/code> file. If you don't have one, create one.&lt;/p>
 &lt;p>In this file, add the following front matter:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-invalid z-illegal z-toml">+++&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">template&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>home.html&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-invalid z-illegal z-toml">+++&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">+++
+template = &amp;quot;home.html&amp;quot;
++++
+&lt;/code>&lt;/pre>
 &lt;p>This tells Zola to use the &lt;code>templates/home.html&lt;/code> file to render your homepage.&lt;/p>
 &lt;h2 id="3-add-content-to-your-homepage">&lt;a class="zola-anchor" href="#3-add-content-to-your-homepage" aria-label="Anchor link for: 3-add-content-to-your-homepage">3. Add Content to Your Homepage&lt;/a>&lt;/h2>
 &lt;p>Now you can add content to your homepage. The content of the &lt;code>content/_index.md&lt;/code> file will be available in your &lt;code>templates/home.html&lt;/code> template as the &lt;code>section&lt;/code> variable.&lt;/p>
 &lt;p>For example, you can add a title and some introductory text to your &lt;code>content/_index.md&lt;/code> file:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-invalid z-illegal z-toml">+++&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">title&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>Hey there! 👋🏼&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">template&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>home.html&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-invalid z-illegal z-toml">+++&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">I&lt;/span>&lt;span class="z-invalid z-illegal z-key z-toml">&amp;#39;&lt;/span>&lt;span class="z-entity z-name z-tag z-toml">m&lt;/span>&lt;span class="z-invalid z-illegal z-key z-toml"> &lt;/span>&lt;span class="z-entity z-name z-tag z-toml">a&lt;/span>&lt;span class="z-invalid z-illegal z-key z-toml"> &lt;/span>&lt;span class="z-entity z-name z-tag z-toml">software&lt;/span>&lt;span class="z-invalid z-illegal z-key z-toml"> &lt;/span>&lt;span class="z-entity z-name z-tag z-toml">engineer&lt;/span>&lt;span class="z-invalid z-illegal z-key z-toml"> &lt;/span>&lt;span class="z-entity z-name z-tag z-toml">who&lt;/span>&lt;span class="z-invalid z-illegal z-key z-toml"> &lt;/span>&lt;span class="z-entity z-name z-tag z-toml">loves&lt;/span>&lt;span class="z-invalid z-illegal z-key z-toml"> &lt;/span>&lt;span class="z-entity z-name z-tag z-toml">to&lt;/span>&lt;span class="z-invalid z-illegal z-key z-toml"> &lt;/span>&lt;span class="z-entity z-name z-tag z-toml">write&lt;/span>&lt;span class="z-invalid z-illegal z-key z-toml"> &lt;/span>&lt;span class="z-entity z-name z-tag z-toml">about&lt;/span>&lt;span class="z-invalid z-illegal z-key z-toml"> &lt;/span>&lt;span class="z-entity z-name z-tag z-toml">technology&lt;/span>&lt;span class="z-invalid z-illegal z-key z-toml"> &lt;/span>&lt;span class="z-entity z-name z-tag z-toml">and&lt;/span>&lt;span class="z-invalid z-illegal z-key z-toml"> &lt;/span>&lt;span class="z-entity z-name z-tag z-toml">programming&lt;/span>&lt;span class="z-invalid z-illegal z-key z-toml">.&lt;/span>&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">+++
+title = &amp;quot;Hey there! 👋🏼&amp;quot;
+template = &amp;quot;home.html&amp;quot;
++++
+I&amp;#x27;m a software engineer who loves to write about technology and programming.
+&lt;/code>&lt;/pre>
 &lt;p>You can then display this content in your &lt;code>templates/home.html&lt;/code> template:&lt;/p>
-&lt;pre data-lang="html" class="language-html z-code">&lt;code class="language-html" data-lang="html">&lt;span class="z-text z-html z-basic">{% extends &amp;quot;base.html&amp;quot; %}
-&lt;/span>&lt;span class="z-text z-html z-basic">
-&lt;/span>&lt;span class="z-text z-html z-basic">{% macro home_page(section) %}
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;&lt;/span>&lt;/span>&lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-entity z-name z-tag z-other z-html">main&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-block z-any z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;&lt;/span>&lt;span class="z-entity z-name z-tag z-block z-any z-html">article&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-block z-any z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;&lt;/span>&lt;span class="z-entity z-name z-tag z-block z-any z-html">section&lt;/span> &lt;span class="z-meta z-attribute-with-value z-class z-html">&lt;span class="z-entity z-other z-attribute-name z-class z-html">class&lt;/span>&lt;span class="z-punctuation z-separator z-key-value z-html">=&lt;/span>&lt;span class="z-string z-quoted z-double z-html">&lt;span class="z-punctuation z-definition z-string z-begin z-html">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-string z-quoted z-double z-html">&lt;span class="z-meta z-class-name z-html">body&lt;/span>&lt;span class="z-punctuation z-definition z-string z-end z-html">&amp;quot;&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> {{ post_macros::page_header(title=section.title) }}
-&lt;/span>&lt;span class="z-text z-html z-basic"> {{ section.content | safe }}
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-block z-any z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;/&lt;/span>&lt;span class="z-entity z-name z-tag z-block z-any z-html">section&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-block z-any z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;/&lt;/span>&lt;span class="z-entity z-name z-tag z-block z-any z-html">article&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;/&lt;/span>&lt;/span>&lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-entity z-name z-tag z-other z-html">main&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic">{% endmacro home_page %}
-&lt;/span>&lt;span class="z-text z-html z-basic">
-&lt;/span>&lt;span class="z-text z-html z-basic">{% block main_content %}
-&lt;/span>&lt;span class="z-text z-html z-basic"> {{ self::home_page(section=section) }}
-&lt;/span>&lt;span class="z-text z-html z-basic">{% endblock main_content %}
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="html" class="language-html ">&lt;code class="language-html" data-lang="html">{% extends &amp;quot;base.html&amp;quot; %}
+{% macro home_page(section) %}
+&amp;lt;main&amp;gt;
+&amp;lt;article&amp;gt;
+&amp;lt;section class=&amp;quot;body&amp;quot;&amp;gt;
+{{ post_macros::page_header(title=section.title) }}
+{{ section.content | safe }}
+&amp;lt;&amp;#x2F;section&amp;gt;
+&amp;lt;&amp;#x2F;article&amp;gt;
+&amp;lt;&amp;#x2F;main&amp;gt;
+{% endmacro home_page %}
+{% block main_content %}
+{{ self::home_page(section=section) }}
+{% endblock main_content %}
+&lt;/code>&lt;/pre>
 &lt;h2 id="4-displaying-posts">&lt;a class="zola-anchor" href="#4-displaying-posts" aria-label="Anchor link for: 4-displaying-posts">4. Displaying Posts&lt;/a>&lt;/h2>
 &lt;p>You can also display a list of your recent posts on your homepage. The following code shows how to display the 5 most recent posts:&lt;/p>
-&lt;pre data-lang="html" class="language-html z-code">&lt;code class="language-html" data-lang="html">&lt;span class="z-text z-html z-basic">{% extends &amp;quot;base.html&amp;quot; %}
-&lt;/span>&lt;span class="z-text z-html z-basic">
-&lt;/span>&lt;span class="z-text z-html z-basic">{% macro home_page(section) %}
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;&lt;/span>&lt;/span>&lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-entity z-name z-tag z-other z-html">main&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-block z-any z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;&lt;/span>&lt;span class="z-entity z-name z-tag z-block z-any z-html">article&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-block z-any z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;&lt;/span>&lt;span class="z-entity z-name z-tag z-block z-any z-html">section&lt;/span> &lt;span class="z-meta z-attribute-with-value z-class z-html">&lt;span class="z-entity z-other z-attribute-name z-class z-html">class&lt;/span>&lt;span class="z-punctuation z-separator z-key-value z-html">=&lt;/span>&lt;span class="z-string z-quoted z-double z-html">&lt;span class="z-punctuation z-definition z-string z-begin z-html">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-string z-quoted z-double z-html">&lt;span class="z-meta z-class-name z-html">body&lt;/span>&lt;span class="z-punctuation z-definition z-string z-end z-html">&amp;quot;&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> {{ post_macros::page_header(title=section.title) }}
-&lt;/span>&lt;span class="z-text z-html z-basic"> {{ section.content | safe }}
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-block z-any z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;/&lt;/span>&lt;span class="z-entity z-name z-tag z-block z-any z-html">section&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-block z-any z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;/&lt;/span>&lt;span class="z-entity z-name z-tag z-block z-any z-html">article&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;/&lt;/span>&lt;/span>&lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-entity z-name z-tag z-other z-html">main&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic">{% endmacro home_page %}
-&lt;/span>&lt;span class="z-text z-html z-basic">
-&lt;/span>&lt;span class="z-text z-html z-basic">{% block main_content %}
-&lt;/span>&lt;span class="z-text z-html z-basic"> {{ self::home_page(section=section) }}
-&lt;/span>&lt;span class="z-text z-html z-basic">
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-block z-any z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;&lt;/span>&lt;span class="z-entity z-name z-tag z-block z-any z-html">h1&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>Recent articles&lt;span class="z-meta z-tag z-block z-any z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;/&lt;/span>&lt;span class="z-entity z-name z-tag z-block z-any z-html">h1&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;&lt;/span>&lt;/span>&lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-entity z-name z-tag z-other z-html">main&lt;/span> &lt;span class="z-meta z-attribute-with-value z-class z-html">&lt;span class="z-entity z-other z-attribute-name z-class z-html">class&lt;/span>&lt;span class="z-punctuation z-separator z-key-value z-html">=&lt;/span>&lt;span class="z-string z-quoted z-double z-html">&lt;span class="z-punctuation z-definition z-string z-begin z-html">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-string z-quoted z-double z-html">&lt;span class="z-meta z-class-name z-html">post-list&lt;/span>&lt;span class="z-punctuation z-definition z-string z-end z-html">&amp;quot;&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> {% set section = get_section(path=&amp;quot;posts/_index.md&amp;quot;) %}
-&lt;/span>&lt;span class="z-text z-html z-basic"> {{ post_macros::list_posts(pages=section.pages | slice(end=5)) }}
-&lt;/span>&lt;span class="z-text z-html z-basic"> &lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;/&lt;/span>&lt;/span>&lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-entity z-name z-tag z-other z-html">main&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic">{% endblock main_content %}
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="html" class="language-html ">&lt;code class="language-html" data-lang="html">{% extends &amp;quot;base.html&amp;quot; %}
+{% macro home_page(section) %}
+&amp;lt;main&amp;gt;
+&amp;lt;article&amp;gt;
+&amp;lt;section class=&amp;quot;body&amp;quot;&amp;gt;
+{{ post_macros::page_header(title=section.title) }}
+{{ section.content | safe }}
+&amp;lt;&amp;#x2F;section&amp;gt;
+&amp;lt;&amp;#x2F;article&amp;gt;
+&amp;lt;&amp;#x2F;main&amp;gt;
+{% endmacro home_page %}
+{% block main_content %}
+{{ self::home_page(section=section) }}
+&amp;lt;h1&amp;gt;Recent articles&amp;lt;&amp;#x2F;h1&amp;gt;
+&amp;lt;main class=&amp;quot;post-list&amp;quot;&amp;gt;
+{% set section = get_section(path=&amp;quot;posts&amp;#x2F;_index.md&amp;quot;) %}
+{{ post_macros::list_posts(pages=section.pages | slice(end=5)) }}
+&amp;lt;&amp;#x2F;main&amp;gt;
+{% endblock main_content %}
+&lt;/code>&lt;/pre>
 &lt;p>This code gets the &lt;code>posts&lt;/code> section and then uses the &lt;code>post_macros::list_posts&lt;/code> macro to display the 5 most recent posts.&lt;/p>
 &lt;p>You can also highlight specific posts by getting them by their path:&lt;/p>
-&lt;pre data-lang="html" class="language-html z-code">&lt;code class="language-html" data-lang="html">&lt;span class="z-text z-html z-basic">{% set highlights = [
-&lt;/span>&lt;span class="z-text z-html z-basic"> get_page(path=&amp;quot;posts/my-first-post.md&amp;quot;),
-&lt;/span>&lt;span class="z-text z-html z-basic"> get_page(path=&amp;quot;posts/my-second-post.md&amp;quot;),
-&lt;/span>&lt;span class="z-text z-html z-basic">] %}
-&lt;/span>&lt;span class="z-text z-html z-basic">&lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;&lt;/span>&lt;/span>&lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-entity z-name z-tag z-other z-html">main&lt;/span> &lt;span class="z-meta z-attribute-with-value z-class z-html">&lt;span class="z-entity z-other z-attribute-name z-class z-html">class&lt;/span>&lt;span class="z-punctuation z-separator z-key-value z-html">=&lt;/span>&lt;span class="z-string z-quoted z-double z-html">&lt;span class="z-punctuation z-definition z-string z-begin z-html">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-string z-quoted z-double z-html">&lt;span class="z-meta z-class-name z-html">post-list&lt;/span>&lt;span class="z-punctuation z-definition z-string z-end z-html">&amp;quot;&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic"> {{ post_macros::list_posts(pages=highlights) }}
-&lt;/span>&lt;span class="z-text z-html z-basic">&lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;/&lt;/span>&lt;/span>&lt;span class="z-meta z-tag z-other z-html">&lt;span class="z-entity z-name z-tag z-other z-html">main&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="html" class="language-html ">&lt;code class="language-html" data-lang="html">{% set highlights = [
+get_page(path=&amp;quot;posts&amp;#x2F;my-first-post.md&amp;quot;),
+get_page(path=&amp;quot;posts&amp;#x2F;my-second-post.md&amp;quot;),
+] %}
+&amp;lt;main class=&amp;quot;post-list&amp;quot;&amp;gt;
+{{ post_macros::list_posts(pages=highlights) }}
+&amp;lt;&amp;#x2F;main&amp;gt;
+&lt;/code>&lt;/pre>
 &lt;p>This is just a starting point. You can customize your homepage as much as you want.&lt;/p></content></entry><entry xml:lang="en"><title>Collaborative Article</title><published>2025-05-24T00:00:00+00:00</published><updated>2025-05-24T00:00:00+00:00</updated><author><name>
 Alice</name></author><author><name>
 Bob</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/collab-article/"/><id>https://not-matthias.github.io/apollo/posts/collab-article/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/collab-article/">&lt;p>Written by Alice and Bob!&lt;/p>
@@ -169,15 +162,14 @@ Unknown</name></author><link rel="alternate" type="text/html" href="https://not-
 &lt;p>When enabled, a search index will be generated for your blog, allowing visitors to search for specific content.
 Additionally, a search button will be displayed in the navigation bar.&lt;/p>
 &lt;p>Configure the search like this:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">build_search_index&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-constant z-language z-toml">true&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-punctuation z-definition z-table z-begin z-toml">[&lt;/span>&lt;span class="z-meta z-tag z-table z-toml">&lt;span class="z-entity z-name z-table z-toml">search&lt;/span>&lt;/span>&lt;span class="z-punctuation z-definition z-table z-end z-toml">]&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">include_title&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-constant z-language z-toml">true&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">include_description&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-constant z-language z-toml">true&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">include_path&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-constant z-language z-toml">true&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">include_content&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-constant z-language z-toml">true&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">index_format&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>elasticlunr_json&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">build_search_index = true
+[search]
+include_title = true
+include_description = true
+include_path = true
+include_content = true
+index_format = &amp;quot;elasticlunr_json&amp;quot;
+&lt;/code>&lt;/pre>
 &lt;h2 id="theme-mode-theme">&lt;a class="zola-anchor" href="#theme-mode-theme" aria-label="Anchor link for: theme-mode-theme">Theme Mode (&lt;code>theme&lt;/code>)&lt;/a>&lt;/h2>
 &lt;p>Sets the color theme for your blog.&lt;/p>
 &lt;ul>
@@ -198,21 +190,21 @@ Additionally, a search button will be displayed in the navigation bar.&lt;/p>
 &lt;ul>
 &lt;li>Type: Array of objects&lt;/li>
 &lt;li>Default: []&lt;/li>
-&lt;li>Usage:&lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">menu&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-punctuation z-definition z-array z-begin z-toml">[&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml"> &lt;span class="z-punctuation z-definition z-inline-table z-begin z-toml">{&lt;/span> &lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">name&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>/posts&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-punctuation z-separator z-inline-table z-toml">,&lt;/span> &lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">url&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>/posts&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-punctuation z-separator z-inline-table z-toml">,&lt;/span> &lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">weight&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-constant z-numeric z-integer z-toml">1&lt;/span> &lt;span class="z-punctuation z-definition z-inline-table z-end z-toml">}&lt;/span>&lt;span class="z-punctuation z-separator z-array z-toml">,&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml"> &lt;span class="z-punctuation z-definition z-inline-table z-begin z-toml">{&lt;/span> &lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">name&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>/projects&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-punctuation z-separator z-inline-table z-toml">,&lt;/span> &lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">url&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>/projects&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-punctuation z-separator z-inline-table z-toml">,&lt;/span> &lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">weight&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-constant z-numeric z-integer z-toml">2&lt;/span> &lt;span class="z-punctuation z-definition z-inline-table z-end z-toml">}&lt;/span>&lt;span class="z-punctuation z-separator z-array z-toml">,&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml"> &lt;span class="z-punctuation z-definition z-inline-table z-begin z-toml">{&lt;/span> &lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">name&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>/about&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-punctuation z-separator z-inline-table z-toml">,&lt;/span> &lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">url&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>/about&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-punctuation z-separator z-inline-table z-toml">,&lt;/span> &lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">weight&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-constant z-numeric z-integer z-toml">3&lt;/span> &lt;span class="z-punctuation z-definition z-inline-table z-end z-toml">}&lt;/span>&lt;span class="z-punctuation z-separator z-array z-toml">,&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml"> &lt;span class="z-punctuation z-definition z-inline-table z-begin z-toml">{&lt;/span> &lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">name&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>/tags&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-punctuation z-separator z-inline-table z-toml">,&lt;/span> &lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">url&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>/tags&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-punctuation z-separator z-inline-table z-toml">,&lt;/span> &lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">weight&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-constant z-numeric z-integer z-toml">4&lt;/span> &lt;span class="z-punctuation z-definition z-inline-table z-end z-toml">}&lt;/span>&lt;span class="z-punctuation z-separator z-array z-toml">,&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-punctuation z-definition z-array z-end z-toml">]&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;li>Usage:&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">menu = [
+{ name = &amp;quot;&amp;#x2F;posts&amp;quot;, url = &amp;quot;&amp;#x2F;posts&amp;quot;, weight = 1 },
+{ name = &amp;quot;&amp;#x2F;projects&amp;quot;, url = &amp;quot;&amp;#x2F;projects&amp;quot;, weight = 2 },
+{ name = &amp;quot;&amp;#x2F;about&amp;quot;, url = &amp;quot;&amp;#x2F;about&amp;quot;, weight = 3 },
+{ name = &amp;quot;&amp;#x2F;tags&amp;quot;, url = &amp;quot;&amp;#x2F;tags&amp;quot;, weight = 4 },
+]
+&lt;/code>&lt;/pre>
 &lt;/li>
 &lt;/ul>
 &lt;h2 id="logo">&lt;a class="zola-anchor" href="#logo" aria-label="Anchor link for: logo">Logo&lt;/a>&lt;/h2>
 &lt;p>Defines the site logo image file.&lt;/p>
 &lt;ul>
 &lt;li>Type: String&lt;/li>
-&lt;li>Usage:&lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">logo&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>site_logo.svg&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;li>Usage:&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">logo = &amp;quot;site_logo.svg&amp;quot;
+&lt;/code>&lt;/pre>
 &lt;/li>
 &lt;/ul>
 &lt;h2 id="socials">&lt;a class="zola-anchor" href="#socials" aria-label="Anchor link for: socials">Socials&lt;/a>&lt;/h2>
@@ -220,11 +212,11 @@ Additionally, a search button will be displayed in the navigation bar.&lt;/p>
 &lt;ul>
 &lt;li>Type: Array of objects&lt;/li>
 &lt;li>Default: []&lt;/li>
-&lt;li>Usage:&lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">socials&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-punctuation z-definition z-array z-begin z-toml">[&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml"> &lt;span class="z-punctuation z-definition z-inline-table z-begin z-toml">{&lt;/span> &lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">name&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>twitter&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-punctuation z-separator z-inline-table z-toml">,&lt;/span> &lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">url&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>https://twitter.com/not_matthias&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-punctuation z-separator z-inline-table z-toml">,&lt;/span> &lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">icon&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>twitter&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-inline-table z-end z-toml">}&lt;/span>&lt;span class="z-punctuation z-separator z-array z-toml">,&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml"> &lt;span class="z-punctuation z-definition z-inline-table z-begin z-toml">{&lt;/span> &lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">name&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>github&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-punctuation z-separator z-inline-table z-toml">,&lt;/span> &lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">url&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>https://github.com/not-matthias/&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-punctuation z-separator z-inline-table z-toml">,&lt;/span> &lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">icon&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>github&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-inline-table z-end z-toml">}&lt;/span>&lt;span class="z-punctuation z-separator z-array z-toml">,&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-punctuation z-definition z-array z-end z-toml">]&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;li>Usage:&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">socials = [
+{ name = &amp;quot;twitter&amp;quot;, url = &amp;quot;https:&amp;#x2F;&amp;#x2F;twitter.com&amp;#x2F;not_matthias&amp;quot;, icon = &amp;quot;twitter&amp;quot; },
+{ name = &amp;quot;github&amp;quot;, url = &amp;quot;https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;not-matthias&amp;#x2F;&amp;quot;, icon = &amp;quot;github&amp;quot; },
+]
+&lt;/code>&lt;/pre>
 &lt;/li>
 &lt;/ul>
 &lt;p>Social links will open in a new tab if &lt;code>external_links_target_blank&lt;/code> is set to &lt;code>true&lt;/code> in the &lt;code>[markdown]&lt;/code> section of your config.&lt;/p>
@@ -258,11 +250,11 @@ Additionally, a search button will be displayed in the navigation bar.&lt;/p>
 &lt;ul>
 &lt;li>Type: Array of files located in the &lt;code>static&lt;/code> directory&lt;/li>
 &lt;li>Default: []&lt;/li>
-&lt;li>Usage:&lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">stylesheets&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-punctuation z-definition z-array z-begin z-toml">[&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml"> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>custom.css&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-punctuation z-separator z-array z-toml">,&lt;/span> &lt;span class="z-comment z-line z-number-sign z-toml">&lt;span class="z-punctuation z-definition z-comment z-toml">#&lt;/span> static/custom.css&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml"> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>/css/another.css&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span> &lt;span class="z-comment z-line z-number-sign z-toml">&lt;span class="z-punctuation z-definition z-comment z-toml">#&lt;/span> static/css/another.css&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-punctuation z-definition z-array z-end z-toml">]&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;li>Usage:&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">stylesheets = [
+&amp;quot;custom.css&amp;quot;, # static&amp;#x2F;custom.css
+&amp;quot;&amp;#x2F;css&amp;#x2F;another.css&amp;quot; # static&amp;#x2F;css&amp;#x2F;another.css
+]
+&lt;/code>&lt;/pre>
 &lt;/li>
 &lt;/ul>
 &lt;h2 id="fancy-code-styling-fancy-code">&lt;a class="zola-anchor" href="#fancy-code-styling-fancy-code" aria-label="Anchor link for: fancy-code-styling-fancy-code">Fancy Code Styling (&lt;code>fancy_code&lt;/code>)&lt;/a>&lt;/h2>
@@ -283,8 +275,8 @@ Additionally, a search button will be displayed in the navigation bar.&lt;/p>
 &lt;p>When enabled, you can create expandable/collapsible note sections in your blog posts.&lt;/p>
 &lt;h2 id="character-shortcodes">&lt;a class="zola-anchor" href="#character-shortcodes" aria-label="Anchor link for: character-shortcodes">Character Shortcodes&lt;/a>&lt;/h2>
 &lt;p>We support custom character shortcodes for adding dialogue and interactive characters to your blog posts. You can use them via &lt;a href="https://www.getzola.org/documentation/content/shortcodes/">shortcodes&lt;/a>:&lt;/p>
-&lt;pre class="z-code">&lt;code>&lt;span class="z-text z-plain">{{ /* character(name=&amp;quot;character-name&amp;quot;, body=&amp;quot;Character dialogue text&amp;quot;) */ }}
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre>&lt;code>{{ &amp;#x2F;* character(name=&amp;quot;character-name&amp;quot;, body=&amp;quot;Character dialogue text&amp;quot;) *&amp;#x2F; }}
+&lt;/code>&lt;/pre>
 &lt;p>These are the supported parameters:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>name&lt;/code> (optional): The identifier for the character. Used to determine styling and appearance.&lt;/li>
@@ -327,47 +319,45 @@ height="80" />
 &lt;div class="character-content">
 &lt;div class="character-bubble">
 &lt;p>We can even use multiple lines with code:&lt;/p>
-&lt;pre data-lang="rust" class="language-rust z-code">&lt;code class="language-rust" data-lang="rust">&lt;span class="z-source z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-storage z-type z-function z-rust">fn&lt;/span> &lt;/span>&lt;span class="z-entity z-name z-function z-rust">main&lt;/span>&lt;/span>&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-function z-parameters z-rust">&lt;span class="z-punctuation z-section z-parameters z-begin z-rust">(&lt;/span>&lt;/span>&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-function z-parameters z-rust">&lt;span class="z-punctuation z-section z-parameters z-end z-rust">)&lt;/span>&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-meta z-function z-rust"> &lt;/span>&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-block z-rust">&lt;span class="z-punctuation z-section z-block z-begin z-rust">{&lt;/span>
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-source z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-block z-rust"> &lt;span class="z-support z-macro z-rust">println!&lt;/span>&lt;span class="z-meta z-group z-rust">&lt;span class="z-punctuation z-section z-group z-begin z-rust">(&lt;/span>&lt;/span>&lt;span class="z-meta z-group z-rust">&lt;span class="z-string z-quoted z-double z-rust">&lt;span class="z-punctuation z-definition z-string z-begin z-rust">&amp;quot;&lt;/span>Hey there!&lt;span class="z-punctuation z-definition z-string z-end z-rust">&amp;quot;&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-meta z-group z-rust">&lt;span class="z-punctuation z-section z-group z-end z-rust">)&lt;/span>&lt;/span>&lt;span class="z-punctuation z-terminator z-rust">;&lt;/span>
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-source z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-block z-rust">&lt;/span>&lt;span class="z-meta z-block z-rust">&lt;span class="z-punctuation z-section z-block z-end z-rust">}&lt;/span>&lt;/span>&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="rust" class="language-rust ">&lt;code class="language-rust" data-lang="rust">fn main() {
+println!(&amp;quot;Hey there!&amp;quot;);
+}
+&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;h2 id="anchor-links">&lt;a class="zola-anchor" href="#anchor-links" aria-label="Anchor link for: anchor-links">Anchor Links&lt;/a>&lt;/h2>
 &lt;p>You can add anchor links by adding the following to your &lt;code>_index.md&lt;/code>:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">insert_anchor_links&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>heading&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">insert_anchor_links = &amp;quot;heading&amp;quot;
+&lt;/code>&lt;/pre>
 &lt;h2 id="taxonomy-sorting">&lt;a class="zola-anchor" href="#taxonomy-sorting" aria-label="Anchor link for: taxonomy-sorting">Taxonomy sorting&lt;/a>&lt;/h2>
 &lt;p>You can sort the taxonomies page with the following config:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-punctuation z-definition z-table z-begin z-toml">[&lt;/span>&lt;span class="z-meta z-tag z-table z-toml">&lt;span class="z-entity z-name z-table z-toml">extra&lt;/span>&lt;span class="z-punctuation z-separator z-table z-toml">.&lt;/span>&lt;span class="z-entity z-name z-table z-toml">taxonomies&lt;/span>&lt;/span>&lt;span class="z-punctuation z-definition z-table z-end z-toml">]&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">sort_by&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>page_count&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span> &lt;span class="z-comment z-line z-number-sign z-toml">&lt;span class="z-punctuation z-definition z-comment z-toml">#&lt;/span> e.g. name, page_count&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">reverse&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-constant z-language z-toml">true&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">[extra.taxonomies]
+sort_by = &amp;quot;page_count&amp;quot; # e.g. name, page_count
+reverse = true
+&lt;/code>&lt;/pre>
 &lt;p>The &lt;code>sort_by&lt;/code> argument is directly passed to the &lt;code>sort_by&lt;/code> function:&lt;/p>
-&lt;pre data-lang="jinja" class="language-jinja z-code">&lt;code class="language-jinja" data-lang="jinja">&lt;span class="z-source z-jinja2">&lt;span class="z-meta z-scope z-jinja2 z-tag">&lt;span class="z-entity z-other z-jinja2 z-delimiter z-tag">{%&lt;/span> &lt;span class="z-keyword z-control z-jinja2">set&lt;/span> &lt;span class="z-variable z-other z-jinja2">sort_by&lt;/span> &lt;span class="z-keyword z-operator z-assignment z-jinja2">=&lt;/span> &lt;span class="z-variable z-other z-jinja2">config&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">.&lt;/span>&lt;span class="z-variable z-other z-jinja2 z-attribute">extra&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">.&lt;/span>&lt;span class="z-variable z-other z-jinja2 z-attribute">taxonomies&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">.&lt;/span>&lt;span class="z-variable z-other z-jinja2 z-attribute">sort_by&lt;/span> &lt;span class="z-punctuation z-other z-jinja2">|&lt;/span> &lt;span class="z-variable z-other z-jinja2">default&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">(&lt;/span>&lt;span class="z-variable z-other z-jinja2">value&lt;/span>&lt;span class="z-keyword z-operator z-assignment z-jinja2">=&lt;/span>&lt;span class="z-string z-quoted z-double z-jinja2">&lt;span class="z-punctuation z-definition z-string z-begin z-jinja2">&amp;quot;&lt;/span>name&lt;span class="z-punctuation z-definition z-string z-end z-jinja2">&amp;quot;&lt;/span>&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">)&lt;/span> &lt;span class="z-entity z-other z-jinja2 z-delimiter z-tag">%}&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-source z-jinja2">&lt;span class="z-meta z-scope z-jinja2 z-tag">&lt;span class="z-entity z-other z-jinja2 z-delimiter z-tag">{%&lt;/span> &lt;span class="z-keyword z-control z-jinja2">set&lt;/span> &lt;span class="z-variable z-other z-jinja2">terms&lt;/span> &lt;span class="z-keyword z-operator z-assignment z-jinja2">=&lt;/span> &lt;span class="z-variable z-other z-jinja2">terms&lt;/span> &lt;span class="z-punctuation z-other z-jinja2">|&lt;/span> &lt;span class="z-variable z-other z-jinja2">default&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">(&lt;/span>&lt;span class="z-variable z-other z-jinja2">value&lt;/span>&lt;span class="z-keyword z-operator z-assignment z-jinja2">=&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">[&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">]&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">)&lt;/span> &lt;span class="z-punctuation z-other z-jinja2">|&lt;/span> &lt;span class="z-variable z-other z-jinja2">sort&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">(&lt;/span>&lt;span class="z-variable z-other z-jinja2">attribute&lt;/span>&lt;span class="z-keyword z-operator z-assignment z-jinja2">=&lt;/span>&lt;span class="z-variable z-other z-jinja2">sort_by&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">)&lt;/span> &lt;span class="z-entity z-other z-jinja2 z-delimiter z-tag">%}&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-source z-jinja2">
-&lt;/span>&lt;span class="z-source z-jinja2">&lt;span class="z-meta z-scope z-jinja2 z-tag">&lt;span class="z-entity z-other z-jinja2 z-delimiter z-tag">{%&lt;/span> &lt;span class="z-keyword z-control z-jinja2">if&lt;/span> &lt;span class="z-variable z-other z-jinja2">config&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">.&lt;/span>&lt;span class="z-variable z-other z-jinja2 z-attribute">extra&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">.&lt;/span>&lt;span class="z-variable z-other z-jinja2 z-attribute">taxonomies&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">.&lt;/span>&lt;span class="z-variable z-other z-jinja2 z-attribute">reverse&lt;/span> &lt;span class="z-punctuation z-other z-jinja2">|&lt;/span> &lt;span class="z-variable z-other z-jinja2">default&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">(&lt;/span>&lt;span class="z-variable z-other z-jinja2">value&lt;/span>&lt;span class="z-keyword z-operator z-assignment z-jinja2">=&lt;/span>&lt;span class="z-constant z-language z-jinja2">false&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">)&lt;/span> &lt;span class="z-entity z-other z-jinja2 z-delimiter z-tag">%}&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-source z-jinja2"> &lt;span class="z-meta z-scope z-jinja2 z-tag">&lt;span class="z-entity z-other z-jinja2 z-delimiter z-tag">{%&lt;/span> &lt;span class="z-keyword z-control z-jinja2">set&lt;/span> &lt;span class="z-variable z-other z-jinja2">terms&lt;/span> &lt;span class="z-keyword z-operator z-assignment z-jinja2">=&lt;/span> &lt;span class="z-variable z-other z-jinja2">terms&lt;/span> &lt;span class="z-punctuation z-other z-jinja2">|&lt;/span> &lt;span class="z-variable z-other z-jinja2">reverse&lt;/span> &lt;span class="z-entity z-other z-jinja2 z-delimiter z-tag">%}&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-source z-jinja2">&lt;span class="z-meta z-scope z-jinja2 z-tag">&lt;span class="z-entity z-other z-jinja2 z-delimiter z-tag">{%&lt;/span> &lt;span class="z-keyword z-control z-jinja2">endif&lt;/span> &lt;span class="z-entity z-other z-jinja2 z-delimiter z-tag">%}&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-source z-jinja2">
-&lt;/span>&lt;span class="z-source z-jinja2">&lt;span class="z-meta z-scope z-jinja2 z-tag">&lt;span class="z-entity z-other z-jinja2 z-delimiter z-tag">{%&lt;/span> &lt;span class="z-keyword z-control z-jinja2">for&lt;/span> &lt;span class="z-variable z-other z-jinja2">term&lt;/span> &lt;span class="z-keyword z-control z-jinja2">in&lt;/span> &lt;span class="z-variable z-other z-jinja2">terms&lt;/span> &lt;span class="z-entity z-other z-jinja2 z-delimiter z-tag">%}&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-source z-jinja2"> &amp;lt;li&amp;gt;
-&lt;/span>&lt;span class="z-source z-jinja2"> &amp;lt;a href=&amp;quot;&lt;span class="z-meta z-scope z-jinja2 z-variable">&lt;span class="z-entity z-other z-jinja2 z-delimiter z-variable">{{&lt;/span> &lt;span class="z-variable z-other z-jinja2">term&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">.&lt;/span>&lt;span class="z-variable z-other z-jinja2 z-attribute">permalink&lt;/span> &lt;span class="z-punctuation z-other z-jinja2">|&lt;/span> &lt;span class="z-variable z-other z-jinja2">safe&lt;/span> &lt;span class="z-entity z-other z-jinja2 z-delimiter z-variable">}}&lt;/span>&lt;/span>&amp;quot;&amp;gt;
-&lt;/span>&lt;span class="z-source z-jinja2"> &lt;span class="z-meta z-scope z-jinja2 z-variable">&lt;span class="z-entity z-other z-jinja2 z-delimiter z-variable">{{&lt;/span> &lt;span class="z-variable z-other z-jinja2">term&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">.&lt;/span>&lt;span class="z-variable z-other z-jinja2 z-attribute">name&lt;/span> &lt;span class="z-entity z-other z-jinja2 z-delimiter z-variable">}}&lt;/span>&lt;/span> (&lt;span class="z-meta z-scope z-jinja2 z-variable">&lt;span class="z-entity z-other z-jinja2 z-delimiter z-variable">{{&lt;/span> &lt;span class="z-variable z-other z-jinja2">term&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">.&lt;/span>&lt;span class="z-variable z-other z-jinja2 z-attribute">pages&lt;/span> &lt;span class="z-punctuation z-other z-jinja2">|&lt;/span> &lt;span class="z-variable z-other z-jinja2">length&lt;/span> &lt;span class="z-entity z-other z-jinja2 z-delimiter z-variable">}}&lt;/span>&lt;/span> post&lt;span class="z-meta z-scope z-jinja2 z-variable">&lt;span class="z-entity z-other z-jinja2 z-delimiter z-variable">{{&lt;/span> &lt;span class="z-variable z-other z-jinja2">term&lt;/span>&lt;span class="z-punctuation z-other z-jinja2">.&lt;/span>&lt;span class="z-variable z-other z-jinja2 z-attribute">pages&lt;/span> &lt;span class="z-punctuation z-other z-jinja2">|&lt;/span> &lt;span class="z-variable z-other z-jinja2">length&lt;/span> &lt;span class="z-punctuation z-other z-jinja2">|&lt;/span> &lt;span class="z-variable z-other z-jinja2">pluralize&lt;/span> &lt;span class="z-entity z-other z-jinja2 z-delimiter z-variable">}}&lt;/span>&lt;/span>)
-&lt;/span>&lt;span class="z-source z-jinja2"> &amp;lt;/a&amp;gt;
-&lt;/span>&lt;span class="z-source z-jinja2"> &amp;lt;/li&amp;gt;
-&lt;/span>&lt;span class="z-source z-jinja2">&lt;span class="z-meta z-scope z-jinja2 z-tag">&lt;span class="z-entity z-other z-jinja2 z-delimiter z-tag">{%&lt;/span> &lt;span class="z-keyword z-control z-jinja2">endfor&lt;/span> &lt;span class="z-entity z-other z-jinja2 z-delimiter z-tag">%}&lt;/span>&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="jinja" class="language-jinja ">&lt;code class="language-jinja" data-lang="jinja">{% set sort_by = config.extra.taxonomies.sort_by | default(value=&amp;quot;name&amp;quot;) %}
+{% set terms = terms | default(value=[]) | sort(attribute=sort_by) %}
+{% if config.extra.taxonomies.reverse | default(value=false) %}
+{% set terms = terms | reverse %}
+{% endif %}
+{% for term in terms %}
+&amp;lt;li&amp;gt;
+&amp;lt;a href=&amp;quot;{{ term.permalink | safe }}&amp;quot;&amp;gt;
+{{ term.name }} ({{ term.pages | length }} post{{ term.pages | length | pluralize }})
+&amp;lt;&amp;#x2F;a&amp;gt;
+&amp;lt;&amp;#x2F;li&amp;gt;
+{% endfor %}
+&lt;/code>&lt;/pre>
 &lt;p>Possible values include anything within the &lt;a href="https://www.getzola.org/documentation/templates/taxonomies/">TaxonomyTerm object&lt;/a>:&lt;/p>
-&lt;pre data-lang="rust" class="language-rust z-code">&lt;code class="language-rust" data-lang="rust">&lt;span class="z-source z-rust">name&lt;span class="z-punctuation z-separator z-rust">:&lt;/span> &lt;span class="z-support z-type z-rust">String&lt;/span>&lt;span class="z-punctuation z-terminator z-rust">;&lt;/span>
-&lt;/span>&lt;span class="z-source z-rust">slug&lt;span class="z-punctuation z-separator z-rust">:&lt;/span> &lt;span class="z-support z-type z-rust">String&lt;/span>&lt;span class="z-punctuation z-terminator z-rust">;&lt;/span>
-&lt;/span>&lt;span class="z-source z-rust">path&lt;span class="z-punctuation z-separator z-rust">:&lt;/span> &lt;span class="z-support z-type z-rust">String&lt;/span>&lt;span class="z-punctuation z-terminator z-rust">;&lt;/span>
-&lt;/span>&lt;span class="z-source z-rust">permalink&lt;span class="z-punctuation z-separator z-rust">:&lt;/span> &lt;span class="z-support z-type z-rust">String&lt;/span>&lt;span class="z-punctuation z-terminator z-rust">;&lt;/span>
-&lt;/span>&lt;span class="z-source z-rust">pages&lt;span class="z-punctuation z-separator z-rust">:&lt;/span> &lt;span class="z-meta z-generic z-rust">Array&lt;span class="z-punctuation z-definition z-generic z-begin z-rust">&amp;lt;&lt;/span>Page&lt;span class="z-punctuation z-definition z-generic z-end z-rust">&amp;gt;&lt;/span>&lt;/span>&lt;span class="z-punctuation z-terminator z-rust">;&lt;/span>
-&lt;/span>&lt;span class="z-source z-rust">page_count&lt;span class="z-punctuation z-separator z-rust">:&lt;/span> Number&lt;span class="z-punctuation z-terminator z-rust">;&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="rust" class="language-rust ">&lt;code class="language-rust" data-lang="rust">name: String;
+slug: String;
+path: String;
+permalink: String;
+pages: Array&amp;lt;Page&amp;gt;;
+page_count: Number;
+&lt;/code>&lt;/pre>
 &lt;p>Examples:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>name&lt;/code> to sort by name&lt;/li>
@@ -375,28 +365,28 @@ height="80" />
 &lt;/ul>
 &lt;h2 id="analytics">&lt;a class="zola-anchor" href="#analytics" aria-label="Anchor link for: analytics">Analytics&lt;/a>&lt;/h2>
 &lt;p>Enable or disable analytics tracking:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-punctuation z-definition z-table z-begin z-toml">[&lt;/span>&lt;span class="z-meta z-tag z-table z-toml">&lt;span class="z-entity z-name z-table z-toml">extra&lt;/span>&lt;span class="z-punctuation z-separator z-table z-toml">.&lt;/span>&lt;span class="z-entity z-name z-table z-toml">analytics&lt;/span>&lt;/span>&lt;span class="z-punctuation z-definition z-table z-end z-toml">]&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">enabled&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-constant z-language z-toml">false&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">[extra.analytics]
+enabled = false
+&lt;/code>&lt;/pre>
 &lt;p>After enabling analytics, configure GoatCounter or Umami.&lt;/p>
 &lt;h3 id="goatcounter">&lt;a class="zola-anchor" href="#goatcounter" aria-label="Anchor link for: goatcounter">GoatCounter&lt;/a>&lt;/h3>
 &lt;p>Configure GoatCounter analytics:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-punctuation z-definition z-table z-begin z-toml">[&lt;/span>&lt;span class="z-meta z-tag z-table z-toml">&lt;span class="z-entity z-name z-table z-toml">extra&lt;/span>&lt;span class="z-punctuation z-separator z-table z-toml">.&lt;/span>&lt;span class="z-entity z-name z-table z-toml">analytics&lt;/span>&lt;span class="z-punctuation z-separator z-table z-toml">.&lt;/span>&lt;span class="z-entity z-name z-table z-toml">goatcounter&lt;/span>&lt;/span>&lt;span class="z-punctuation z-definition z-table z-end z-toml">]&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">user&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>your_user&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span> &lt;span class="z-comment z-line z-number-sign z-toml">&lt;span class="z-punctuation z-definition z-comment z-toml">#&lt;/span> Your GoatCounter username&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">host&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>example.com&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span> &lt;span class="z-comment z-line z-number-sign z-toml">&lt;span class="z-punctuation z-definition z-comment z-toml">#&lt;/span> Optional: Custom host&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">[extra.analytics.goatcounter]
+user = &amp;quot;your_user&amp;quot; # Your GoatCounter username
+host = &amp;quot;example.com&amp;quot; # Optional: Custom host
+&lt;/code>&lt;/pre>
 &lt;h3 id="umami-analytics">&lt;a class="zola-anchor" href="#umami-analytics" aria-label="Anchor link for: umami-analytics">Umami Analytics&lt;/a>&lt;/h3>
 &lt;p>Configure Umami analytics:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-punctuation z-definition z-table z-begin z-toml">[&lt;/span>&lt;span class="z-meta z-tag z-table z-toml">&lt;span class="z-entity z-name z-table z-toml">extra&lt;/span>&lt;span class="z-punctuation z-separator z-table z-toml">.&lt;/span>&lt;span class="z-entity z-name z-table z-toml">analytics&lt;/span>&lt;span class="z-punctuation z-separator z-table z-toml">.&lt;/span>&lt;span class="z-entity z-name z-table z-toml">umami&lt;/span>&lt;/span>&lt;span class="z-punctuation z-definition z-table z-end z-toml">]&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">website_id&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>43929cd1-1e83....&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span> &lt;span class="z-comment z-line z-number-sign z-toml">&lt;span class="z-punctuation z-definition z-comment z-toml">#&lt;/span> Your Umami website ID&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">host_url&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>https://stats.mywebsite.com&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span> &lt;span class="z-comment z-line z-number-sign z-toml">&lt;span class="z-punctuation z-definition z-comment z-toml">#&lt;/span> Optional: Custom host URL&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">[extra.analytics.umami]
+website_id = &amp;quot;43929cd1-1e83....&amp;quot; # Your Umami website ID
+host_url = &amp;quot;https:&amp;#x2F;&amp;#x2F;stats.mywebsite.com&amp;quot; # Optional: Custom host URL
+&lt;/code>&lt;/pre>
 &lt;h2 id="fediverse-author-attribution">&lt;a class="zola-anchor" href="#fediverse-author-attribution" aria-label="Anchor link for: fediverse-author-attribution">Fediverse Author Attribution&lt;/a>&lt;/h2>
 &lt;p>Enable fediverse author attribution to add a meta tag for fediverse platforms:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-punctuation z-definition z-table z-begin z-toml">[&lt;/span>&lt;span class="z-meta z-tag z-table z-toml">&lt;span class="z-entity z-name z-table z-toml">extra&lt;/span>&lt;/span>&lt;span class="z-punctuation z-definition z-table z-end z-toml">]&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">fediverse&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-constant z-language z-toml">true&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">fediverse_creator&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>@user@instance.social&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">[extra]
+fediverse = true
+fediverse_creator = &amp;quot;@user@instance.social&amp;quot;
+&lt;/code>&lt;/pre>
 &lt;ul>
 &lt;li>Type: Boolean&lt;/li>
 &lt;li>Default: false&lt;/li>
@@ -407,10 +397,10 @@ height="80" />
 &lt;h1 id="page-configuration">&lt;a class="zola-anchor" href="#page-configuration" aria-label="Anchor link for: page-configuration">Page configuration&lt;/a>&lt;/h1>
 &lt;h2 id="source-code-repo-view">&lt;a class="zola-anchor" href="#source-code-repo-view" aria-label="Anchor link for: source-code-repo-view">Source code (&lt;code>repo_view&lt;/code>)&lt;/a>&lt;/h2>
 &lt;p>Do you want to link to the source code of your blog post? You can turn on the &lt;code>repo_view&lt;/code> inside the &lt;code>[extra]&lt;/code> section of your blog post.&lt;/p>
-&lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-punctuation z-definition z-table z-begin z-toml">[&lt;/span>&lt;span class="z-meta z-tag z-table z-toml">&lt;span class="z-entity z-name z-table z-toml">extra&lt;/span>&lt;/span>&lt;span class="z-punctuation z-definition z-table z-end z-toml">]&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">repo_view&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-constant z-language z-toml">true&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">repo_url&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>https://github.com/not-matthias/apollo/tree/main/content&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span> &lt;span class="z-comment z-line z-number-sign z-toml">&lt;span class="z-punctuation z-definition z-comment z-toml">#&lt;/span> Alternatively add the repo here&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">[extra]
+repo_view = true
+repo_url = &amp;quot;https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;not-matthias&amp;#x2F;apollo&amp;#x2F;tree&amp;#x2F;main&amp;#x2F;content&amp;quot; # Alternatively add the repo here
+&lt;/code>&lt;/pre>
 &lt;p>The &lt;code>repo_url&lt;/code> can be set in the &lt;code>[extra]&lt;/code> section or in your &lt;code>config.toml&lt;/code>.&lt;/p>
 &lt;h2 id="comments-comment">&lt;a class="zola-anchor" href="#comments-comment" aria-label="Anchor link for: comments-comment">Comments (&lt;code>comment&lt;/code>)&lt;/a>&lt;/h2>
 &lt;p>Enables or disables the comment system for posts.&lt;/p>
@@ -422,34 +412,33 @@ height="80" />
 &lt;p>After making &lt;code>comment = true&lt;/code> in &lt;code>[extra]&lt;/code> section of you post, save your script from &lt;a href="https://giscus.app">Giscus&lt;/a> to &lt;code>templates/_giscus_script.html&lt;/code>.
 When enabled, this allows readers to leave comments on your blog posts. This feature has to be set for each individual post and is not supported at higher levels.&lt;/p>
 &lt;p>Example configuration in &lt;a href="https://github.com/not-matthias/apollo/blob/main/content/posts/configuration.md">content/posts/configuration.md&lt;/a>:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-invalid z-illegal z-toml">+++&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">title&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>Configuring Apollo&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-punctuation z-definition z-table z-begin z-toml">[&lt;/span>&lt;span class="z-meta z-tag z-table z-toml">&lt;span class="z-entity z-name z-table z-toml">extra&lt;/span>&lt;/span>&lt;span class="z-punctuation z-definition z-table z-end z-toml">]&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">comment&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-constant z-language z-toml">true&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-invalid z-illegal z-toml">+++&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">+++
+title = &amp;quot;Configuring Apollo&amp;quot;
+[extra]
+comment = true
++++
+&lt;/code>&lt;/pre>
 &lt;p>Comments via &lt;a href="https://utteranc.es">utterances&lt;/a> can be configured in &lt;code>template/_giscus_script.html&lt;/code> like this:&lt;/p>
-&lt;pre data-lang="html" class="language-html z-code">&lt;code class="language-html" data-lang="html">&lt;span class="z-text z-html z-basic">&lt;span class="z-meta z-tag z-script z-begin z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;&lt;/span>&lt;span class="z-entity z-name z-tag z-script z-html">script&lt;/span>&lt;/span>&lt;span class="z-meta z-tag z-script z-begin z-html"> &lt;span class="z-meta z-attribute-with-value z-html">&lt;span class="z-entity z-other z-attribute-name z-html">src&lt;/span>&lt;span class="z-punctuation z-separator z-key-value z-html">=&lt;/span>&lt;span class="z-string z-quoted z-double z-html">&lt;span class="z-punctuation z-definition z-string z-begin z-html">&amp;quot;&lt;/span>https://utteranc.es/client.js&lt;span class="z-punctuation z-definition z-string z-end z-html">&amp;quot;&lt;/span>&lt;/span>&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="z-text z-html z-basic">&lt;span class="z-meta z-tag z-script z-begin z-html"> &lt;span class="z-meta z-attribute-with-value z-html">&lt;span class="z-entity z-other z-attribute-name z-html">repo&lt;/span>&lt;span class="z-punctuation z-separator z-key-value z-html">=&lt;/span>&lt;span class="z-string z-quoted z-double z-html">&lt;span class="z-punctuation z-definition z-string z-begin z-html">&amp;quot;&lt;/span>YOUR_NAME/YOUR_REPO&lt;span class="z-punctuation z-definition z-string z-end z-html">&amp;quot;&lt;/span>&lt;/span>&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="z-text z-html z-basic">&lt;span class="z-meta z-tag z-script z-begin z-html"> &lt;span class="z-meta z-attribute-with-value z-html">&lt;span class="z-entity z-other z-attribute-name z-html">issue-term&lt;/span>&lt;span class="z-punctuation z-separator z-key-value z-html">=&lt;/span>&lt;span class="z-string z-quoted z-double z-html">&lt;span class="z-punctuation z-definition z-string z-begin z-html">&amp;quot;&lt;/span>pathname&lt;span class="z-punctuation z-definition z-string z-end z-html">&amp;quot;&lt;/span>&lt;/span>&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="z-text z-html z-basic">&lt;span class="z-meta z-tag z-script z-begin z-html"> &lt;span class="z-meta z-attribute-with-value z-html">&lt;span class="z-entity z-other z-attribute-name z-html">theme&lt;/span>&lt;span class="z-punctuation z-separator z-key-value z-html">=&lt;/span>&lt;span class="z-string z-quoted z-double z-html">&lt;span class="z-punctuation z-definition z-string z-begin z-html">&amp;quot;&lt;/span>github-light&lt;span class="z-punctuation z-definition z-string z-end z-html">&amp;quot;&lt;/span>&lt;/span>&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="z-text z-html z-basic">&lt;span class="z-meta z-tag z-script z-begin z-html"> &lt;span class="z-meta z-attribute-with-value z-html">&lt;span class="z-entity z-other z-attribute-name z-html">crossorigin&lt;/span>&lt;span class="z-punctuation z-separator z-key-value z-html">=&lt;/span>&lt;span class="z-string z-quoted z-double z-html">&lt;span class="z-punctuation z-definition z-string z-begin z-html">&amp;quot;&lt;/span>anonymous&lt;span class="z-punctuation z-definition z-string z-end z-html">&amp;quot;&lt;/span>&lt;/span>&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="z-text z-html z-basic">&lt;span class="z-meta z-tag z-script z-begin z-html"> &lt;span class="z-meta z-attribute-with-value z-html">&lt;span class="z-entity z-other z-attribute-name z-html">async&lt;/span>&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-text z-html z-basic">&lt;span class="z-meta z-tag z-script z-end z-html">&lt;span class="z-punctuation z-definition z-tag z-begin z-html">&amp;lt;/&lt;/span>&lt;span class="z-entity z-name z-tag z-script z-html">script&lt;/span>&lt;span class="z-punctuation z-definition z-tag z-end z-html">&amp;gt;&lt;/span>&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="html" class="language-html ">&lt;code class="language-html" data-lang="html">&amp;lt;script src=&amp;quot;https:&amp;#x2F;&amp;#x2F;utteranc.es&amp;#x2F;client.js&amp;quot;
+repo=&amp;quot;YOUR_NAME&amp;#x2F;YOUR_REPO&amp;quot;
+issue-term=&amp;quot;pathname&amp;quot;
+theme=&amp;quot;github-light&amp;quot;
+crossorigin=&amp;quot;anonymous&amp;quot;
+async&amp;gt;
+&amp;lt;&amp;#x2F;script&amp;gt;
+&lt;/code>&lt;/pre>
 &lt;h1 id="cards-page">&lt;a class="zola-anchor" href="#cards-page" aria-label="Anchor link for: cards-page">Cards Page&lt;/a>&lt;/h1>
 &lt;p>The &lt;code>cards.html&lt;/code> template allows you to display a list of items in a card format. This is ideal for showcasing projects, but can be used for any list of items you want to display in a visually appealing way.&lt;/p>
 &lt;p>To create a cards page, you need to create a &lt;code>_index.md&lt;/code> file in a content directory (e.g., &lt;code>content/projects&lt;/code>). The following front matter is recommended:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-invalid z-illegal z-toml">+++&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">title&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>Projects&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">sort_by&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>weight&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">template&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>cards.html&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-punctuation z-definition z-table z-begin z-toml">[&lt;/span>&lt;span class="z-meta z-tag z-table z-toml">&lt;span class="z-entity z-name z-table z-toml">extra&lt;/span>&lt;/span>&lt;span class="z-punctuation z-definition z-table z-end z-toml">]&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">cards_columns&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-constant z-numeric z-integer z-toml">3&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">card_media_height&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-constant z-numeric z-integer z-toml">200&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-invalid z-illegal z-toml">+++&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">+++
+title = &amp;quot;Projects&amp;quot;
+sort_by = &amp;quot;weight&amp;quot;
+template = &amp;quot;cards.html&amp;quot;
+[extra]
+cards_columns = 3
+card_media_height = 200
++++
+&lt;/code>&lt;/pre>
 &lt;ul>
 &lt;li>&lt;code>cards_columns&lt;/code>: Set exact number of columns (2, 3, 4) or omit for default 2-column layout&lt;/li>
 &lt;li>&lt;code>card_media_height&lt;/code>: Control the height of card media area in pixels (default: 300)&lt;/li>
@@ -466,12 +455,12 @@ When enabled, this allows readers to leave comments on your blog posts. This fea
 &lt;/ul>
 &lt;h1 id="talks-page">&lt;a class="zola-anchor" href="#talks-page" aria-label="Anchor link for: talks-page">Talks Page&lt;/a>&lt;/h1>
 &lt;p>To create a talks page, you need to create a &lt;code>_index.md&lt;/code> file in the &lt;code>content/talks&lt;/code> directory. The following front matter is recommended:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-invalid z-illegal z-toml">+++&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">title&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>Talks&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">sort_by&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>date&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">template&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>talks.html&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-invalid z-illegal z-toml">+++&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">+++
+title = &amp;quot;Talks&amp;quot;
+sort_by = &amp;quot;date&amp;quot;
+template = &amp;quot;talks.html&amp;quot;
++++
+&lt;/code>&lt;/pre>
 &lt;p>Each talk should be a separate markdown file in the &lt;code>content/talks&lt;/code> directory. The following front matter is supported:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>title&lt;/code>: The title of the talk.&lt;/li>
@@ -500,9 +489,9 @@ When enabled, this allows readers to leave comments on your blog posts. This fea
 &lt;h2 id="remote-video">&lt;a class="zola-anchor" href="#remote-video" aria-label="Anchor link for: remote-video">Remote Video&lt;/a>&lt;/h2>
 &lt;p>The &lt;code>remote_video&lt;/code> front matter parameter allows you to specify a URL to a remote video file that will be displayed as the thumbnail for a page.&lt;/p>
 &lt;p>Example usage:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml z-code">&lt;code class="language-toml" data-lang="toml">&lt;span class="z-source z-toml">&lt;span class="z-punctuation z-definition z-table z-begin z-toml">[&lt;/span>&lt;span class="z-meta z-tag z-table z-toml">&lt;span class="z-entity z-name z-table z-toml">extra&lt;/span>&lt;/span>&lt;span class="z-punctuation z-definition z-table z-end z-toml">]&lt;/span>
-&lt;/span>&lt;span class="z-source z-toml">&lt;span class="z-meta z-tag z-key z-toml">&lt;span class="z-entity z-name z-tag z-toml">remote_video&lt;/span>&lt;/span> &lt;span class="z-punctuation z-definition z-key-value z-toml">=&lt;/span> &lt;span class="z-string z-quoted z-double z-basic z-toml">&lt;span class="z-punctuation z-definition z-string z-begin z-toml">&amp;quot;&lt;/span>https://example.com/videos/demo.mp4&lt;span class="z-punctuation z-definition z-string z-end z-toml">&amp;quot;&lt;/span>&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">[extra]
+remote_video = &amp;quot;https:&amp;#x2F;&amp;#x2F;example.com&amp;#x2F;videos&amp;#x2F;demo.mp4&amp;quot;
+&lt;/code>&lt;/pre>
 &lt;p>The browser will automatically detect the video format, so you don't need to worry about specifying the MIME type.&lt;/p></content></entry><entry xml:lang="en"><title>Building Lightning-Fast Static Sites with Zola</title><published>2024-06-22T00:00:00+00:00</published><updated>2024-06-22T00:00:00+00:00</updated><author><name>
 Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/talks/building-fast-static-sites/"/><id>https://not-matthias.github.io/apollo/talks/building-fast-static-sites/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/talks/building-fast-static-sites/">&lt;p>An introduction to Zola and static site generation, demonstrating how to achieve sub-second build times and perfect Lighthouse scores.&lt;/p></content></entry><entry xml:lang="en"><title>Shortcode Example</title><published>2024-06-14T00:00:00+00:00</published><updated>2024-06-14T00:00:00+00:00</updated><author><name>
 Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/shortcode/"/><id>https://not-matthias.github.io/apollo/posts/shortcode/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/shortcode/">&lt;h2 id="note">&lt;a class="zola-anchor" href="#note" aria-label="Anchor link for: note">Note&lt;/a>&lt;/h2>
@@ -532,9 +521,9 @@ Unknown</name></author><link rel="alternate" type="text/html" href="https://not-
 &lt;/div>
 &lt;/p>
 &lt;p>Syntax:&lt;/p>
-&lt;pre class="z-code">&lt;code>&lt;span class="z-text z-plain">{{ note(header=&amp;quot;Note!&amp;quot;, body=&amp;quot;This blog assumes basic terminal maturity&amp;quot;) }}
-&lt;/span>&lt;span class="z-text z-plain">{{ note(clickable=true, hidden = true, header=&amp;quot;Quiz!&amp;quot;, body=&amp;quot;The answer to the quiz!&amp;quot;) }}
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre>&lt;code>{{ note(header=&amp;quot;Note!&amp;quot;, body=&amp;quot;This blog assumes basic terminal maturity&amp;quot;) }}
+{{ note(clickable=true, hidden = true, header=&amp;quot;Quiz!&amp;quot;, body=&amp;quot;The answer to the quiz!&amp;quot;) }}
+&lt;/code>&lt;/pre>
 &lt;p>You can also use some HTML in the text:
 &lt;div class="note-container">
 &lt;div class="note-header">
@@ -548,8 +537,8 @@ Unknown</name></author><link rel="alternate" type="text/html" href="https://not-
 &lt;/div>
 &lt;/p>
 &lt;p>Literal shortcode:&lt;/p>
-&lt;pre class="z-code">&lt;code>&lt;span class="z-text z-plain">{{ note(header=&amp;quot;Note!&amp;quot;, body=&amp;quot;&amp;lt;h1&amp;gt;This blog assumes basic terminal maturity&amp;lt;/h1&amp;gt;&amp;quot;) }}
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre>&lt;code>{{ note(header=&amp;quot;Note!&amp;quot;, body=&amp;quot;&amp;lt;h1&amp;gt;This blog assumes basic terminal maturity&amp;lt;&amp;#x2F;h1&amp;gt;&amp;quot;) }}
+&lt;/code>&lt;/pre>
 &lt;p>Pretty cool, right?&lt;/p>
 &lt;p>Finally, you can do something like this (hopefully):&lt;/p>
 &lt;div class="note-container">
@@ -560,28 +549,24 @@ Unknown</name></author><link rel="alternate" type="text/html" href="https://not-
 &lt;/button>
 &lt;div class="note-content" style="display: block;">
 &lt;h1 id="hello-this-is-markdown-inside-a-note-shortcode">Hello this is markdown inside a note shortcode&lt;/h1>
-&lt;pre data-lang="rust" class="language-rust z-code">&lt;code class="language-rust" data-lang="rust">&lt;span class="z-source z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-storage z-type z-function z-rust">fn&lt;/span> &lt;/span>&lt;span class="z-entity z-name z-function z-rust">main&lt;/span>&lt;/span>&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-function z-parameters z-rust">&lt;span class="z-punctuation z-section z-parameters z-begin z-rust">(&lt;/span>&lt;/span>&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-function z-parameters z-rust">&lt;span class="z-punctuation z-section z-parameters z-end z-rust">)&lt;/span>&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-meta z-function z-rust"> &lt;/span>&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-block z-rust">&lt;span class="z-punctuation z-section z-block z-begin z-rust">{&lt;/span>
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-source z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-block z-rust"> &lt;span class="z-support z-macro z-rust">println!&lt;/span>&lt;span class="z-meta z-group z-rust">&lt;span class="z-punctuation z-section z-group z-begin z-rust">(&lt;/span>&lt;/span>&lt;span class="z-meta z-group z-rust">&lt;span class="z-string z-quoted z-double z-rust">&lt;span class="z-punctuation z-definition z-string z-begin z-rust">&amp;quot;&lt;/span>Hello World&lt;span class="z-punctuation z-definition z-string z-end z-rust">&amp;quot;&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-meta z-group z-rust">&lt;span class="z-punctuation z-section z-group z-end z-rust">)&lt;/span>&lt;/span>&lt;span class="z-punctuation z-terminator z-rust">;&lt;/span>
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-source z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-block z-rust">&lt;/span>&lt;span class="z-meta z-block z-rust">&lt;span class="z-punctuation z-section z-block z-end z-rust">}&lt;/span>&lt;/span>&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="rust" class="language-rust ">&lt;code class="language-rust" data-lang="rust">fn main() {
+println!(&amp;quot;Hello World&amp;quot;);
+}
+&lt;/code>&lt;/pre>
 &lt;p>We can't call another shortcode inside a shortcode, but this is good enough.&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;p>Here is the raw markdown:&lt;/p>
-&lt;pre data-lang="markdown" class="language-markdown z-code">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="z-text z-html z-markdown">&lt;span class="z-meta z-paragraph z-markdown">{{ note(clickable=true, header=&amp;quot;Quiz!&amp;quot;) }}
-&lt;/span>&lt;/span>&lt;span class="z-text z-html z-markdown">&lt;span class="z-meta z-paragraph z-markdown">
-&lt;/span>&lt;/span>&lt;span class="z-text z-html z-markdown">&lt;span class="z-meta z-block-level z-markdown">&lt;span class="z-markup z-heading z-1 z-markdown">&lt;span class="z-punctuation z-definition z-heading z-begin z-markdown">#&lt;/span> &lt;/span>&lt;span class="z-markup z-heading z-1 z-markdown">&lt;span class="z-entity z-name z-section z-markdown">Hello this is markdown inside a note shortcode&lt;/span>&lt;span class="z-meta z-whitespace z-newline z-markdown">
-&lt;/span>&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-text z-html z-markdown">
-&lt;/span>&lt;span class="z-text z-html z-markdown">&lt;span class="z-meta z-paragraph z-markdown">&lt;span class="z-constant z-character z-escape z-markdown">\`&lt;/span>&lt;span class="z-constant z-character z-escape z-markdown">\`&lt;/span>&lt;span class="z-constant z-character z-escape z-markdown">\`&lt;/span>rust
-&lt;/span>&lt;/span>&lt;span class="z-text z-html z-markdown">&lt;span class="z-meta z-paragraph z-markdown">fn main() {
-&lt;/span>&lt;/span>&lt;span class="z-text z-html z-markdown">&lt;span class="z-meta z-paragraph z-markdown"> println!(&amp;quot;Hello World&amp;quot;);
-&lt;/span>&lt;/span>&lt;span class="z-text z-html z-markdown">&lt;span class="z-meta z-paragraph z-markdown">}
-&lt;/span>&lt;/span>&lt;span class="z-text z-html z-markdown">&lt;span class="z-meta z-paragraph z-markdown">&lt;span class="z-constant z-character z-escape z-markdown">\`&lt;/span>&lt;span class="z-constant z-character z-escape z-markdown">\`&lt;/span>&lt;span class="z-constant z-character z-escape z-markdown">\`&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="z-text z-html z-markdown">&lt;span class="z-meta z-paragraph z-markdown">
-&lt;/span>&lt;/span>&lt;span class="z-text z-html z-markdown">&lt;span class="z-meta z-paragraph z-markdown">We can&amp;#39;t call another shortcode inside a shortcode, but this is good enough.
-&lt;/span>&lt;/span>&lt;span class="z-text z-html z-markdown">&lt;span class="z-meta z-paragraph z-markdown">
-&lt;/span>&lt;/span>&lt;span class="z-text z-html z-markdown">&lt;span class="z-meta z-paragraph z-markdown">{{/* end &lt;span class="z-markup z-italic z-markdown">&lt;span class="z-punctuation z-definition z-italic z-begin z-markdown">*&lt;/span>/}}
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="markdown" class="language-markdown ">&lt;code class="language-markdown" data-lang="markdown">{{ note(clickable=true, header=&amp;quot;Quiz!&amp;quot;) }}
+# Hello this is markdown inside a note shortcode
+\`\`\`rust
+fn main() {
+println!(&amp;quot;Hello World&amp;quot;);
+}
+\`\`\`
+We can&amp;#x27;t call another shortcode inside a shortcode, but this is good enough.
+{{&amp;#x2F;* end *&amp;#x2F;}}
+&lt;/code>&lt;/pre>
 &lt;p>Finally, we have center
 &lt;div class="note-container">
 &lt;div class="note-header">
@@ -594,8 +579,8 @@ Unknown</name></author><link rel="alternate" type="text/html" href="https://not-
 &lt;/div>
 &lt;/div>
 &lt;/p>
-&lt;pre data-lang="markdown" class="language-markdown z-code">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="z-text z-html z-markdown">&lt;span class="z-meta z-paragraph z-markdown">{{ note(center=true, header=&amp;quot;Centered Text&amp;quot;, body=&amp;quot;This is centered text&amp;quot;) }}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>
+&lt;pre data-lang="markdown" class="language-markdown ">&lt;code class="language-markdown" data-lang="markdown">{{ note(center=true, header=&amp;quot;Centered Text&amp;quot;, body=&amp;quot;This is centered text&amp;quot;) }}
+&lt;/code>&lt;/pre>
 &lt;p>It works good enough for me!&lt;/p></content></entry><entry xml:lang="en"><title>DevSecOps Pipeline Toolkit</title><published>2024-06-10T00:00:00+00:00</published><updated>2024-06-10T00:00:00+00:00</updated><author><name>
 Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/projects/bacteria-in-porous-media/"/><id>https://not-matthias.github.io/apollo/projects/bacteria-in-porous-media/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/projects/bacteria-in-porous-media/">&lt;p>A comprehensive DevSecOps toolkit that integrates security scanning directly into CI/CD pipelines. Features automated vulnerability detection, container scanning, infrastructure-as-code validation, and compliance checking. Built for cloud-native environments with support for multi-cloud deployments. Includes customizable security policies, detailed reporting, and automated remediation suggestions.&lt;/p></content></entry><entry xml:lang="en"><title>Kernel Fuzzing Framework</title><published>2024-03-15T00:00:00+00:00</published><updated>2024-03-15T00:00:00+00:00</updated><author><name>
 Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/projects/project-2/"/><id>https://not-matthias.github.io/apollo/projects/project-2/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/projects/project-2/"/></entry><entry xml:lang="en"><title>Debugging Kernel Drivers: Tools and Techniques</title><published>2024-03-10T00:00:00+00:00</published><updated>2024-03-10T00:00:00+00:00</updated><author><name>
@@ -623,14 +608,14 @@ Unknown</name></author><link rel="alternate" type="text/html" href="https://not-
 &lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet sagittis id consectetur purus ut. In pellentesque massa placerat duis ultricies. Neque laoreet suspendisse interdum consectetur libero id. Justo nec ultrices dui sapien eget mi proin. Nunc consequat interdum varius sit amet mattis vulputate. Sollicitudin tempor id eu nisl nunc mi ipsum. Non odio euismod lacinia at quis. Sit amet nisl suscipit adipiscing. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan. Sit amet consectetur adipiscing elit pellentesque habitant. Ac placerat vestibulum lectus mauris. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit sed. &lt;a href="https://www.google.com">Google&lt;/a>&lt;/p>
 &lt;p>&lt;img src="https://markdown-here.com/img/icon256.png" alt="Markdown Logo" />&lt;/p>
 &lt;h2 id="code-block">&lt;a class="zola-anchor" href="#code-block" aria-label="Anchor link for: code-block">Code Block&lt;/a>&lt;/h2>
-&lt;pre data-lang="rust" class="language-rust z-code">&lt;code class="language-rust" data-lang="rust">&lt;span class="z-source z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-storage z-type z-function z-rust">fn&lt;/span> &lt;/span>&lt;span class="z-entity z-name z-function z-rust">main&lt;/span>&lt;/span>&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-function z-parameters z-rust">&lt;span class="z-punctuation z-section z-parameters z-begin z-rust">(&lt;/span>&lt;/span>&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-function z-parameters z-rust">&lt;span class="z-punctuation z-section z-parameters z-end z-rust">)&lt;/span>&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-meta z-function z-rust"> &lt;/span>&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-block z-rust">&lt;span class="z-punctuation z-section z-block z-begin z-rust">{&lt;/span>
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-source z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-block z-rust"> &lt;span class="z-support z-macro z-rust">println!&lt;/span>&lt;span class="z-meta z-group z-rust">&lt;span class="z-punctuation z-section z-group z-begin z-rust">(&lt;/span>&lt;/span>&lt;span class="z-meta z-group z-rust">&lt;span class="z-string z-quoted z-double z-rust">&lt;span class="z-punctuation z-definition z-string z-begin z-rust">&amp;quot;&lt;/span>Hello World&lt;span class="z-punctuation z-definition z-string z-end z-rust">&amp;quot;&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-meta z-group z-rust">&lt;span class="z-punctuation z-section z-group z-end z-rust">)&lt;/span>&lt;/span>&lt;span class="z-punctuation z-terminator z-rust">;&lt;/span>
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-source z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-block z-rust">&lt;/span>&lt;span class="z-meta z-block z-rust">&lt;span class="z-punctuation z-section z-block z-end z-rust">}&lt;/span>&lt;/span>&lt;/span>
-&lt;/span>&lt;/code>&lt;/pre>
-&lt;pre data-linenos data-lang="rust" class="language-rust z-code">&lt;code class="language-rust" data-lang="rust">&lt;table>&lt;tbody>&lt;tr>&lt;td>1&lt;/td>&lt;td>&lt;span class="z-source z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-storage z-type z-function z-rust">fn&lt;/span> &lt;/span>&lt;span class="z-entity z-name z-function z-rust">main&lt;/span>&lt;/span>&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-function z-parameters z-rust">&lt;span class="z-punctuation z-section z-parameters z-begin z-rust">(&lt;/span>&lt;/span>&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-function z-parameters z-rust">&lt;span class="z-punctuation z-section z-parameters z-end z-rust">)&lt;/span>&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-meta z-function z-rust"> &lt;/span>&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-block z-rust">&lt;span class="z-punctuation z-section z-block z-begin z-rust">{&lt;/span>
-&lt;/span>&lt;/span>&lt;/span>&lt;/td>&lt;/tr>&lt;tr>&lt;td>&lt;mark>2&lt;/mark>&lt;/td>&lt;td>&lt;mark>&lt;span class="z-source z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-block z-rust"> &lt;span class="z-support z-macro z-rust">println!&lt;/span>&lt;span class="z-meta z-group z-rust">&lt;span class="z-punctuation z-section z-group z-begin z-rust">(&lt;/span>&lt;/span>&lt;span class="z-meta z-group z-rust">&lt;span class="z-string z-quoted z-double z-rust">&lt;span class="z-punctuation z-definition z-string z-begin z-rust">&amp;quot;&lt;/span>Hello World&lt;span class="z-punctuation z-definition z-string z-end z-rust">&amp;quot;&lt;/span>&lt;/span>&lt;/span>&lt;span class="z-meta z-group z-rust">&lt;span class="z-punctuation z-section z-group z-end z-rust">)&lt;/span>&lt;/span>&lt;span class="z-punctuation z-terminator z-rust">;&lt;/span>
-&lt;/span>&lt;/span>&lt;/span>&lt;/mark>&lt;/td>&lt;/tr>&lt;tr>&lt;td>3&lt;/td>&lt;td>&lt;span class="z-source z-rust">&lt;span class="z-meta z-function z-rust">&lt;span class="z-meta z-block z-rust">&lt;/span>&lt;span class="z-meta z-block z-rust">&lt;span class="z-punctuation z-section z-block z-end z-rust">}&lt;/span>&lt;/span>&lt;/span>
-&lt;/span>&lt;/td>&lt;/tr>&lt;/tbody>&lt;/table>&lt;/code>&lt;/pre>
+&lt;pre data-lang="rust" class="language-rust ">&lt;code class="language-rust" data-lang="rust">fn main() {
+println!(&amp;quot;Hello World&amp;quot;);
+}
+&lt;/code>&lt;/pre>
+&lt;pre data-linenos data-lang="rust" class="language-rust ">&lt;code class="language-rust" data-lang="rust">&lt;table>&lt;tbody>&lt;tr>&lt;td>1&lt;/td>&lt;td>fn main() {
+&lt;/td>&lt;/tr>&lt;tr>&lt;td>&lt;mark>2&lt;/mark>&lt;/td>&lt;td>&lt;mark> println!(&amp;quot;Hello World&amp;quot;);
+&lt;/mark>&lt;/td>&lt;/tr>&lt;tr>&lt;td>3&lt;/td>&lt;td>}
+&lt;/td>&lt;/tr>&lt;/tbody>&lt;/table>&lt;/code>&lt;/pre>
 &lt;h2 id="ordered-list">&lt;a class="zola-anchor" href="#ordered-list" aria-label="Anchor link for: ordered-list">Ordered List&lt;/a>&lt;/h2>
 &lt;ol>
 &lt;li>First item&lt;/li>
