@@ -73,7 +73,8 @@
             </div>
         {% endif %}
 
-        {% if config.extra.theme == "toggle" %}
+        {% set theme = config.extra.theme | default(value="toggle") %}
+        {% if theme == "toggle" or theme == "toggle-auto" %}
             <a id="dark-mode-toggle"
                onclick="toggleTheme(); event.preventDefault();"
                href="#">
@@ -82,10 +83,12 @@
                      id="moon-icon"
                      style="filter: invert(1)"
                      alt="Dark" />
-                <img src="{{ get_url(path='icons/auto.svg') }}"
-                     id="auto-icon"
-                     style="filter: invert(1)"
-                     alt="Auto" />
+                {% if theme == "toggle-auto" %}
+                    <img src="{{ get_url(path='icons/auto.svg') }}"
+                         id="auto-icon"
+                         style="filter: invert(1)"
+                         alt="Auto" />
+                {% endif %}
             </a>
 
             <!-- Initialize the theme toggle icons -->

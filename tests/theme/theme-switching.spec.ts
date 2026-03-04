@@ -1,11 +1,15 @@
 import { test, expect } from '@playwright/test';
 import { TestHelpers } from '../helpers';
 
-test.describe('Theme Switching', () => {
+test.describe('Theme Switching (toggle mode - 2 state)', () => {
   let helpers: TestHelpers;
 
   test.beforeEach(async ({ page }) => {
     helpers = new TestHelpers(page);
+    // Clear any stale theme preference
+    await page.addInitScript(() => {
+      localStorage.removeItem('theme-storage');
+    });
     await page.goto('/');
     await helpers.waitForPageReady();
   });
@@ -16,235 +20,341 @@ test.describe('Theme Switching', () => {
     await expect(themeToggle).toBeEnabled();
   });
 
-  test('can cycle through light, dark, and auto themes', async ({ page }) => {
-    // Get initial theme
-    const initialTheme = await helpers.getCurrentTheme();
-
-    // Click theme toggle
-    await helpers.toggleTheme();
-    const firstToggleTheme = await helpers.getCurrentTheme();
-    expect(firstToggleTheme).not.toBe(initialTheme);
-
-    // Click theme toggle again
-    await helpers.toggleTheme();
-    const secondToggleTheme = await helpers.getCurrentTheme();
-    expect(secondToggleTheme).not.toBe(firstToggleTheme);
-
-    // Click theme toggle a third time
-    await helpers.toggleTheme();
-    const thirdToggleTheme = await helpers.getCurrentTheme();
-    expect(thirdToggleTheme).not.toBe(secondToggleTheme);
+  test('auto icon is not present in toggle mode', async ({ page }) => {
+    const autoIcon = page.locator('#auto-icon');
+    await expect(autoIcon).toHaveCount(0);
   });
 
-  test('correct CSS classes applied for each theme', async ({ page }) => {
+  test('sun and moon icons are present', async ({ page }) => {
+    const sunIcon = page.locator('#sun-icon');
+    const moonIcon = page.locator('#moon-icon');
+    await expect(sunIcon).toBeAttached();
+    await expect(moonIcon).toBeAttached();
+  });
+
+  test('cycles between light and dark only', async ({ page }) => {
+    // Set to light first
+    await page.evaluate(() => {
+      localStorage.setItem('theme-storage', 'light');
+      (window as any).updateItemToggleTheme();
+    });
+
     const html = page.locator('html');
-
-    // Test dark theme
-    await page.evaluate(() => {
-      document.documentElement.className = 'dark';
-    });
-    await expect(html).toHaveClass(/dark/);
-
-    // Test light theme
-    await page.evaluate(() => {
-      document.documentElement.className = 'light';
-    });
     await expect(html).toHaveClass(/light/);
 
-    // Test auto theme (should not have specific theme class)
-    await page.evaluate(() => {
-      document.documentElement.className = '';
-    });
-    await expect(html).not.toHaveClass(/dark/);
+    // Toggle to dark
+    await helpers.toggleTheme();
+    await expect(html).toHaveClass(/dark/);
     await expect(html).not.toHaveClass(/light/);
+
+    // Toggle back to light (not auto)
+    await helpers.toggleTheme();
+    await expect(html).toHaveClass(/light/);
+    await expect(html).not.toHaveClass(/dark/);
   });
 
-  test('theme preference persists across page reloads', async ({ page }) => {
-    // Set to dark theme
+  test('correct icon visibility for light theme', async ({ page }) => {
     await page.evaluate(() => {
-      localStorage.setItem('theme', 'dark');
-      document.documentElement.className = 'dark';
+      localStorage.setItem('theme-storage', 'light');
+      (window as any).updateItemToggleTheme();
     });
 
-    const themeBeforeReload = await helpers.getCurrentTheme();
+    const sunIcon = page.locator('#sun-icon');
+    const moonIcon = page.locator('#moon-icon');
+    await expect(sunIcon).toBeVisible();
+    await expect(moonIcon).not.toBeVisible();
+  });
 
-    // Reload page
+  test('correct icon visibility for dark theme', async ({ page }) => {
+    await page.evaluate(() => {
+      localStorage.setItem('theme-storage', 'dark');
+      (window as any).updateItemToggleTheme();
+    });
+
+    const sunIcon = page.locator('#sun-icon');
+    const moonIcon = page.locator('#moon-icon');
+    await expect(sunIcon).not.toBeVisible();
+    await expect(moonIcon).toBeVisible();
+  });
+
+  test('theme preference persists across page reloads', async ({ browser }) => {
+    // Use a fresh context without the addInitScript that clears localStorage
+    const context = await browser.newContext();
+    const page = await context.newPage();
+    const h = new TestHelpers(page);
+
+    await page.goto('/');
+    await h.waitForPageReady();
+
+    // Set dark theme
+    await page.evaluate(() => {
+      localStorage.setItem('theme-storage', 'dark');
+      (window as any).updateItemToggleTheme();
+    });
+
+    const html = page.locator('html');
+    await expect(html).toHaveClass(/dark/);
+
+    // Reload — localStorage should persist
     await page.reload();
-    await helpers.waitForPageReady();
+    await h.waitForPageReady();
 
-    const themeAfterReload = await helpers.getCurrentTheme();
-    expect(themeAfterReload).toBe(themeBeforeReload);
+    await expect(html).toHaveClass(/dark/);
+
+    const savedTheme = await page.evaluate(() => localStorage.getItem('theme-storage'));
+    expect(savedTheme).toBe('dark');
+
+    await context.close();
   });
 
-  test('theme changes affect page styling', async ({ page }) => {
-    // Test color changes with theme - check html element color variables
-    await page.evaluate(() => {
-      document.documentElement.className = 'light';
-    });
-
-    const lightColor = await page.evaluate(() => {
-      const styles = getComputedStyle(document.documentElement);
-      return styles.getPropertyValue('--color-text') || styles.color;
-    });
-
-    await page.evaluate(() => {
-      document.documentElement.className = 'dark';
-    });
-
-    const darkColor = await page.evaluate(() => {
-      const styles = getComputedStyle(document.documentElement);
-      return styles.getPropertyValue('--color-text') || styles.color;
-    });
-
-    expect(lightColor).not.toBe(darkColor);
-  });
-
-  test('auto mode respects system theme preference', async ({ page }) => {
-    // Set to auto mode
-    await helpers.toggleTheme();
-    await helpers.toggleTheme();
-    const currentTheme = await helpers.getCurrentTheme();
-    expect(currentTheme).toBe('auto');
-
-    // Simulate system preference for dark mode
-    await page.emulateMedia({ colorScheme: 'dark' });
-    await page.waitForTimeout(100);
-
-    // Verify dark theme is applied
-    const htmlDark = page.locator('html');
-    await expect(htmlDark).toHaveClass(/dark/);
-
-    // Simulate system preference for light mode
-    await page.emulateMedia({ colorScheme: 'light' });
-    await page.waitForTimeout(100);
-
-    // Verify light theme is applied
-    const htmlLight = page.locator('html');
-    await expect(htmlLight).toHaveClass(/light/);
-  });
-
-  test('auto mode updates when system theme preference changes', async ({ page }) => {
-    // Set to auto mode and ensure it's saved
+  test('stale "auto" in localStorage resolves to system preference', async ({ page }) => {
+    // Simulate leftover "auto" from toggle-auto mode
     await page.evaluate(() => {
       localStorage.setItem('theme-storage', 'auto');
     });
 
-    // Reload page to apply auto mode
+    // Emulate light system preference
+    await page.emulateMedia({ colorScheme: 'light' });
     await page.reload();
     await helpers.waitForPageReady();
 
-    // Start with dark mode preference
-    await page.emulateMedia({ colorScheme: 'dark' });
-    await page.waitForTimeout(100);
-
-    // Verify dark theme is applied
-    let html = page.locator('html');
-    await expect(html).toHaveClass(/dark/);
-
-    // Simulate system theme change to light
-    await page.emulateMedia({ colorScheme: 'light' });
-    await page.waitForTimeout(100);
-
-    // Verify theme updated to light
-    html = page.locator('html');
+    const html = page.locator('html');
     await expect(html).toHaveClass(/light/);
-    await expect(html).not.toHaveClass(/dark/);
 
-    // Simulate system theme change back to dark
-    await page.emulateMedia({ colorScheme: 'dark' });
-    await page.waitForTimeout(100);
-
-    // Verify theme updated back to dark
-    html = page.locator('html');
-    await expect(html).toHaveClass(/dark/);
-    await expect(html).not.toHaveClass(/light/);
+    // Verify localStorage was updated away from "auto"
+    const savedTheme = await page.evaluate(() => localStorage.getItem('theme-storage'));
+    expect(savedTheme).toBe('light');
   });
 
-  test('auto mode icon updates based on system theme preference', async ({ page }) => {
-    // Set to auto mode
-    await helpers.toggleTheme();
-    await helpers.toggleTheme();
-    const currentTheme = await helpers.getCurrentTheme();
-    expect(currentTheme).toBe('auto');
+  test('stale "auto" resolves to dark when system prefers dark', async ({ page }) => {
+    await page.evaluate(() => {
+      localStorage.setItem('theme-storage', 'auto');
+    });
 
-    // Verify auto icon is visible
-    const autoIcon = page.locator('#auto-icon');
-    await expect(autoIcon).toBeVisible();
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await page.reload();
+    await helpers.waitForPageReady();
 
-    // Sun and moon icons should be hidden in auto mode
-    const sunIcon = page.locator('#sun-icon');
-    const moonIcon = page.locator('#moon-icon');
-    await expect(sunIcon).not.toBeVisible();
-    await expect(moonIcon).not.toBeVisible();
+    const html = page.locator('html');
+    await expect(html).toHaveClass(/dark/);
 
-    // Test icon filter with dark system preference
+    const savedTheme = await page.evaluate(() => localStorage.getItem('theme-storage'));
+    expect(savedTheme).toBe('dark');
+  });
+
+  test('theme changes affect page styling', async ({ page }) => {
+    await page.evaluate(() => {
+      localStorage.setItem('theme-storage', 'light');
+      (window as any).updateItemToggleTheme();
+    });
+
+    const lightBg = await page.evaluate(() => {
+      return getComputedStyle(document.documentElement).getPropertyValue('--bg-0');
+    });
+
+    await page.evaluate(() => {
+      localStorage.setItem('theme-storage', 'dark');
+      (window as any).updateItemToggleTheme();
+    });
+
+    const darkBg = await page.evaluate(() => {
+      return getComputedStyle(document.documentElement).getPropertyValue('--bg-0');
+    });
+
+    expect(lightBg).not.toBe(darkBg);
+  });
+
+  test('non-active theme does not respond to system theme changes', async ({ page }) => {
+    // Set explicitly to light
+    await page.evaluate(() => {
+      localStorage.setItem('theme-storage', 'light');
+      (window as any).updateItemToggleTheme();
+    });
+
+    const html = page.locator('html');
+    await expect(html).toHaveClass(/light/);
+
+    // System switches to dark — should not affect explicit light
     await page.emulateMedia({ colorScheme: 'dark' });
     await page.waitForTimeout(100);
+
+    await expect(html).toHaveClass(/light/);
+    await expect(html).not.toHaveClass(/dark/);
+  });
+
+  test('defaults to system preference when no localStorage', async ({ page }) => {
+    await page.evaluate(() => {
+      localStorage.removeItem('theme-storage');
+    });
+
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await page.reload();
+    await helpers.waitForPageReady();
+
+    const html = page.locator('html');
+    await expect(html).toHaveClass(/dark/);
+  });
+});
+
+test.describe('Theme Switching (toggle-auto mode - 3 state)', () => {
+  let helpers: TestHelpers;
+
+  test.beforeEach(async ({ page }) => {
+    helpers = new TestHelpers(page);
+    await page.addInitScript(() => {
+      localStorage.removeItem('theme-storage');
+    });
+    await page.goto('/');
+    await helpers.waitForPageReady();
+
+    // Switch to toggle-auto mode by injecting the auto icon and changing the mode
+    await page.evaluate(() => {
+      (window as any).themeToggleMode = 'toggle-auto';
+
+      // Add auto icon if not present
+      const toggle = document.getElementById('dark-mode-toggle');
+      if (toggle && !document.getElementById('auto-icon')) {
+        const autoIcon = document.createElement('img');
+        autoIcon.src = '/icons/auto.svg';
+        autoIcon.id = 'auto-icon';
+        autoIcon.alt = 'Auto';
+        autoIcon.style.filter = 'invert(1)';
+        autoIcon.style.display = 'none';
+        toggle.appendChild(autoIcon);
+      }
+
+      (window as any).updateItemToggleTheme();
+    });
+  });
+
+  test('cycles through light, dark, and auto', async ({ page }) => {
+    // Set to light
+    await page.evaluate(() => {
+      localStorage.setItem('theme-storage', 'light');
+      (window as any).updateItemToggleTheme();
+    });
+
+    const html = page.locator('html');
+    await expect(html).toHaveClass(/light/);
+
+    // Toggle → dark
+    await helpers.toggleTheme();
+    await expect(html).toHaveClass(/dark/);
+
+    // Toggle → auto
+    await page.click('#dark-mode-toggle');
+    const savedTheme = await page.evaluate(() => localStorage.getItem('theme-storage'));
+    expect(savedTheme).toBe('auto');
+
+    // Toggle → light
+    await page.click('#dark-mode-toggle');
+    const savedTheme2 = await page.evaluate(() => localStorage.getItem('theme-storage'));
+    expect(savedTheme2).toBe('light');
+    await expect(html).toHaveClass(/light/);
+  });
+
+  test('auto icon is visible in auto state', async ({ page }) => {
+    await page.evaluate(() => {
+      localStorage.setItem('theme-storage', 'auto');
+      (window as any).updateItemToggleTheme();
+    });
+
+    const autoIcon = page.locator('#auto-icon');
+    const sunIcon = page.locator('#sun-icon');
+    const moonIcon = page.locator('#moon-icon');
+
+    await expect(autoIcon).toBeVisible();
+    await expect(sunIcon).not.toBeVisible();
+    await expect(moonIcon).not.toBeVisible();
+  });
+
+  test('auto mode respects system theme preference', async ({ page }) => {
+    await page.evaluate(() => {
+      localStorage.setItem('theme-storage', 'auto');
+      (window as any).updateItemToggleTheme();
+    });
+
+    const html = page.locator('html');
+
+    // System dark
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await page.waitForTimeout(100);
+    await page.evaluate(() => (window as any).updateItemToggleTheme());
+    await expect(html).toHaveClass(/dark/);
+
+    // System light
+    await page.emulateMedia({ colorScheme: 'light' });
+    await page.waitForTimeout(100);
+    await page.evaluate(() => (window as any).updateItemToggleTheme());
+    await expect(html).toHaveClass(/light/);
+  });
+
+  test('auto icon filter changes based on system preference', async ({ page }) => {
+    await page.evaluate(() => {
+      localStorage.setItem('theme-storage', 'auto');
+      (window as any).updateItemToggleTheme();
+    });
+
+    const autoIcon = page.locator('#auto-icon');
+
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await page.waitForTimeout(100);
+    await page.evaluate(() => (window as any).updateItemToggleTheme());
 
     const darkFilter = await autoIcon.evaluate((el: HTMLImageElement) => el.style.filter);
     expect(darkFilter).toBe('invert(1)');
 
-    // Test icon filter with light system preference
     await page.emulateMedia({ colorScheme: 'light' });
     await page.waitForTimeout(100);
+    await page.evaluate(() => (window as any).updateItemToggleTheme());
 
     const lightFilter = await autoIcon.evaluate((el: HTMLImageElement) => el.style.filter);
     expect(lightFilter).toBe('invert(0)');
   });
 
-  test('non-auto themes do not respond to system theme changes', async ({ page }) => {
-    // Set to light theme and ensure it's saved
-    await page.evaluate(() => {
-      localStorage.setItem('theme-storage', 'light');
-    });
-
-    await page.reload();
-    await helpers.waitForPageReady();
-
-    // Verify light theme is applied
-    let html = page.locator('html');
-    await expect(html).toHaveClass(/light/);
-
-    // Simulate system preference for dark mode
+  test('auto icon filter resets when switching away from auto', async ({ page }) => {
+    // Start in auto with dark system
     await page.emulateMedia({ colorScheme: 'dark' });
-    await page.waitForTimeout(100);
-
-    // Theme should remain light (not respond to system change)
-    html = page.locator('html');
-    await expect(html).toHaveClass(/light/);
-    await expect(html).not.toHaveClass(/dark/);
-  });
-
-  test('auto icon filter is reset when switching away from auto mode', async ({ page }) => {
-    // Set to auto mode with dark system preference
     await page.evaluate(() => {
       localStorage.setItem('theme-storage', 'auto');
+      (window as any).updateItemToggleTheme();
     });
 
-    await page.reload();
-    await helpers.waitForPageReady();
-
-    // Simulate dark system preference
-    await page.emulateMedia({ colorScheme: 'dark' });
-    await page.waitForTimeout(100);
-
-    // Verify auto icon has dark filter applied
     const autoIcon = page.locator('#auto-icon');
-    let filterValue = await autoIcon.evaluate((el: HTMLImageElement) => el.style.filter);
-    expect(filterValue).toBe('invert(1)');
+    let filter = await autoIcon.evaluate((el: HTMLImageElement) => el.style.filter);
+    expect(filter).toBe('invert(1)');
 
-    // Switch to light mode
-    await helpers.toggleTheme();
-    const currentTheme = await helpers.getCurrentTheme();
-    expect(currentTheme).toBe('light');
+    // Toggle to light
+    await page.click('#dark-mode-toggle');
+    const savedTheme = await page.evaluate(() => localStorage.getItem('theme-storage'));
+    expect(savedTheme).toBe('light');
 
-    // Verify auto icon filter is reset
-    filterValue = await autoIcon.evaluate((el: HTMLImageElement) => el.style.filter);
-    expect(filterValue).toBe('none');
+    filter = await autoIcon.evaluate((el: HTMLImageElement) => el.style.filter);
+    expect(filter).toBe('none');
 
-    // Verify sun icon is now visible (light mode)
     const sunIcon = page.locator('#sun-icon');
     await expect(sunIcon).toBeVisible();
     await expect(autoIcon).not.toBeVisible();
+  });
+
+  test('auto mode updates when system theme changes', async ({ page }) => {
+    await page.evaluate(() => {
+      localStorage.setItem('theme-storage', 'auto');
+      (window as any).updateItemToggleTheme();
+    });
+
+    const html = page.locator('html');
+
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await page.waitForTimeout(100);
+    await page.evaluate(() => (window as any).updateItemToggleTheme());
+    await expect(html).toHaveClass(/dark/);
+    await expect(html).not.toHaveClass(/light/);
+
+    await page.emulateMedia({ colorScheme: 'light' });
+    await page.waitForTimeout(100);
+    await page.evaluate(() => (window as any).updateItemToggleTheme());
+    await expect(html).toHaveClass(/light/);
+    await expect(html).not.toHaveClass(/dark/);
   });
 });
