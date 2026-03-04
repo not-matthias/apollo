@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+    {{ post_macros::page_header(title=section.title) }}
+
+    {% if section.content %}
+        <div class="section-content">
+            {{ section.content | safe }}
+        </div>
+    {% endif %}
+
+    {% set posts_section = get_section(path="posts/_index.md") %}
+
+    <main class="series-list">
+        {% for subsection_path in section.subsections %}
+            {% set s = get_section(path=subsection_path) %}
+            {% set slug = s.components | last %}
+
+            {# Filter posts belonging to this series #}
+            {% set_global parts = [] %}
+            {% for page in posts_section.pages %}
+                {% if page.extra.series is defined and page.extra.series == slug %}
+                    {% set_global parts = parts | concat(with=page) %}
+                {% endif %}
+            {% endfor %}
+
+            <a href="{{ s.permalink | safe }}" class="series-card">
+                <div class="series-card-content">
+                    <h1 class="series-card-title">{{ s.title }}</h1>
+
+                    <div class="series-card-meta">
+                        <span>{{ parts | length }} part{{ parts | length | pluralize }}</span>
+
+                        {% if s.extra.status is defined %}
+                            <span class="series-status series-status--{{ s.extra.status }}">
+                                {{ s.extra.status }}
+                            </span>
+                        {% endif %}
+                    </div>
+
+                    {% if s.content %}
+                        <p class="series-card-description">
+                            {{ s.content | striptags | truncate(length=200) }}
+                        </p>
+                    {% endif %}
+                </div>
+            </a>
+        {% endfor %}
+    </main>
+{% endblock main_content %}
