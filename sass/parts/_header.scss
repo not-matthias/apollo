@@ -102,7 +102,7 @@ nav {
 /* TODO: Is this still used? */
 .meta {
   color: #999;
-  display: flexbox;
+  display: flex;
   /* This changes the meta class to use flexbox, which ensures inline display */
   align-items: center;
   /* Aligns items vertically in the middle */
@@ -116,7 +116,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: monospace var(--header-font);
+  font-family: var(--header-font);
   font-size: 1.2rem;
   margin-top: 2em;
 }

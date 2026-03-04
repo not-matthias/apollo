@@ -15,9 +15,6 @@
 @import "parts/_components.scss";
 
 :root {
-  /* Used for: block comment, hr, ... */
-  --border-color: var(--border-color);
-
   /* Fonts */
   --font-size-base: 13.5px;
   --mono-text-font: "Jetbrains Mono";
