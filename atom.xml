@@ -179,7 +179,8 @@ index_format = &amp;quot;elasticlunr_json&amp;quot;
 &lt;li>"light": Always using the light theme&lt;/li>
 &lt;li>"dark": Always using the dark theme&lt;/li>
 &lt;li>"auto": Automatically uses the system theme&lt;/li>
-&lt;li>"toggle": Automatically uses the system theme, but also shows buttons to change it.&lt;/li>
+&lt;li>"toggle": Shows a button to switch between light and dark themes&lt;/li>
+&lt;li>"toggle-auto": Shows a button to cycle through light, dark, and auto (system default) themes&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Default: "toggle"&lt;/li>
