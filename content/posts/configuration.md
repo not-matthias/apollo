@@ -296,6 +296,37 @@ repo_url = "https://github.com/not-matthias/apollo/tree/main/content" # Alternat
 
 The `repo_url` can be set in the `[extra]` section or in your `config.toml`.
 
+## MathJax (`mathjax`)
+
+Enables MathJax for rendering mathematical equations.
+
+- Type: Boolean
+- Default: false
+
+MathJax can be enabled globally (loads on every page) or per-page (loads only where needed).
+
+**Per-page**: add to a post's front matter
+
+```toml
++++
+title = "My Math Post"
+
+[extra]
+mathjax = true
++++
+```
+
+**Global**: add to your `config.toml`
+
+```toml
+[extra]
+mathjax = true
+```
+
+Inline `$...$` math is always enabled when MathJax is active.
+
+See [math-symbol.md](https://github.com/not-matthias/apollo/blob/main/content/posts/math-symbol.md) for a full example.
+
 ## Comments (`comment`)
 
 Enables or disables the comment system for posts.
