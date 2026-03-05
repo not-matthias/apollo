@@ -103,11 +103,9 @@ nav {
 .meta {
   color: #999;
   display: flex;
-  /* This changes the meta class to use flexbox, which ensures inline display */
   align-items: center;
-  /* Aligns items vertically in the middle */
   flex-wrap: wrap;
-  /* Allows items to wrap as needed */
+  gap: 0 0.3em;
 }
 
 h1,
