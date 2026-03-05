@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Visual Regression - Character Shortcodes Post', () => {
+test.describe('Visual Regression - Configuration Post', () => {
   test.skip(({ browserName }) => browserName === 'webkit', 'Skip visual tests on Safari mobile due to rendering variability');
 
-  test('character shortcodes post visual comparison - light theme', async ({ page }) => {
+  test('configuration post visual comparison - light theme', async ({ page }) => {
     test.setTimeout(45000);
 
     // Set theme via localStorage before navigation so it initializes correctly
@@ -11,13 +11,13 @@ test.describe('Visual Regression - Character Shortcodes Post', () => {
       localStorage.setItem('theme-storage', 'light');
     });
 
-    await page.goto('/posts/character-shortcodes');
+    await page.goto('/posts/configuration/');
     await page.waitForLoadState('networkidle');
 
-    await expect(page).toHaveScreenshot('character-shortcodes-light.png');
+    await expect(page).toHaveScreenshot('configuration-post-light.png');
   });
 
-  test('character shortcodes post visual comparison - dark theme', async ({ page }) => {
+  test('configuration post visual comparison - dark theme', async ({ page }) => {
     test.setTimeout(45000);
 
     // Set theme via localStorage before navigation so it initializes correctly
@@ -25,9 +25,9 @@ test.describe('Visual Regression - Character Shortcodes Post', () => {
       localStorage.setItem('theme-storage', 'dark');
     });
 
-    await page.goto('/posts/character-shortcodes');
+    await page.goto('/posts/configuration/');
     await page.waitForLoadState('networkidle');
 
-    await expect(page).toHaveScreenshot('character-shortcodes-dark.png');
+    await expect(page).toHaveScreenshot('configuration-post-dark.png');
   });
 });

@@ -4,23 +4,15 @@ test.describe('Visual Regression - Talks Page', () => {
   test.skip(({ browserName }) => browserName === 'webkit', 'Skip visual tests on Safari mobile due to rendering variability');
 
   test('talks page visual comparison', async ({ page }) => {
-    test.setTimeout(45000); // Timeout for screenshot
+    test.setTimeout(45000);
+
+    // Set theme via localStorage before navigation so it initializes correctly
+    await page.addInitScript(() => {
+      localStorage.setItem('theme-storage', 'light');
+    });
 
     await page.goto('/talks');
-    await page.waitForLoadState('domcontentloaded');
-
-    // Set to light theme
-    await page.evaluate(() => {
-      document.documentElement.className = 'light';
-    });
-
-    // Wait for theme class to be applied
-    await page.waitForFunction(() => {
-      return document.documentElement.className === 'light';
-    });
-
-    // Wait a moment for CSS to apply
-    await page.waitForTimeout(500);
+    await page.waitForLoadState('networkidle');
 
     await expect(page).toHaveScreenshot('talks-page.png');
   });
