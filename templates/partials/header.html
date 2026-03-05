@@ -142,19 +142,17 @@
         <script defer src={{ get_url(path="js/note.js") }}></script>
     {% endif %}
 
-    {% if config.extra.mathjax | default(value=false) %}
-        {% if config.extra.mathjax_dollar_inline_enable | default(value=false) %}
-            <script>
-                MathJax = {
-                    tex: {
-                        inlineMath: [
-                            ['$', '$'],
-                            ['\\(', '\\)']
-                        ]
-                    }
-                };
-            </script>
-        {% endif %}
+    {% if config.extra.mathjax | default(value=false) or page.extra.mathjax | default(value=false) %}
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [
+                        ['$', '$'],
+                        ['\\(', '\\)']
+                    ]
+                }
+            };
+        </script>
         <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
         </script>
     {% endif %}

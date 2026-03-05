@@ -6,10 +6,11 @@ date = "2023-01-06"
 tags=["example"]
 
 [extra]
+mathjax = true
 comment = true
 +++
 
-Note: This requires the `mathjax` and `mathjax_dollar_inline_enable` option set to `true` in `[extra]` section.
+Note: This requires `mathjax = true` in the page's `[extra]` section (per-page) or in the site's `config.toml` `[extra]` section (global).
 
 # Inline Math
 
