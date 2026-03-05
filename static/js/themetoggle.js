@@ -33,13 +33,18 @@ function toggleTheme() {
 function updateItemToggleTheme() {
     let mode = getSavedTheme();
 
+    const useDark = (mode === "dark" || (mode === "auto" && getSystemPrefersDark()));
+
     const darkModeStyle = document.getElementById("darkModeStyle");
     if (darkModeStyle) {
-        if (mode === "dark" || (mode === "auto" && getSystemPrefersDark())) {
-            darkModeStyle.disabled = false;
-        } else {
-            darkModeStyle.disabled = true;
-        }
+        darkModeStyle.disabled = !useDark;
+    }
+
+    const syntaxDarkStyle = document.getElementById("syntaxDarkStyle");
+    const syntaxLightStyle = document.getElementById("syntaxLightStyle");
+    if (syntaxDarkStyle && syntaxLightStyle) {
+        syntaxDarkStyle.disabled = !useDark;
+        syntaxLightStyle.disabled = useDark;
     }
 
     const sunIcon = document.getElementById("sun-icon");
