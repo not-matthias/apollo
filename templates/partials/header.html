@@ -84,18 +84,6 @@
         <link href={{ get_url(path="fonts.css") }} rel="stylesheet" />
     {% endif %}
 
-    {# Syntax theme #}
-    {% if config.markdown.highlighting and config.markdown.highlighting.style == "class" %}
-        <link rel="stylesheet"
-              type="text/css"
-              href="{{ get_url(path='giallo-dark.css') }}"
-              media="(prefers-color-scheme: dark)" />
-        <link rel="stylesheet"
-              type="text/css"
-              href="{{ get_url(path='giallo-light.css') }}"
-              media="(prefers-color-scheme: light)" />
-    {% endif %}
-
     {# Analytics #}
     {% if config.extra.analytics.enabled %}
         {% if config.extra.analytics.umami.website_id %}
@@ -190,6 +178,40 @@
 
 
     {% set theme = config.extra.theme | default(value="toggle") %}
+
+    {# Syntax theme #}
+    {% if config.markdown.highlighting and config.markdown.highlighting.style == "class" %}
+        {% if theme == "dark" %}
+            <link rel="stylesheet"
+                  type="text/css"
+                  href="{{ get_url(path='giallo-dark.css') }}" />
+        {% elif theme == "light" %}
+            <link rel="stylesheet"
+                  type="text/css"
+                  href="{{ get_url(path='giallo-light.css') }}" />
+        {% elif theme == "auto" %}
+            <link rel="stylesheet"
+                  type="text/css"
+                  href="{{ get_url(path='giallo-dark.css') }}"
+                  media="(prefers-color-scheme: dark)" />
+            <link rel="stylesheet"
+                  type="text/css"
+                  href="{{ get_url(path='giallo-light.css') }}"
+                  media="(prefers-color-scheme: light)" />
+        {% elif theme == "toggle" or theme == "toggle-auto" %}
+            <link id="syntaxLightStyle"
+                  rel="stylesheet"
+                  type="text/css"
+                  href="{{ get_url(path='giallo-light.css') }}" />
+            <link id="syntaxDarkStyle"
+                  rel="stylesheet"
+                  type="text/css"
+                  href="{{ get_url(path='giallo-dark.css') }}"
+                  disabled />
+        {% endif %}
+    {% endif %}
+
+    {# Global theme #}
     {% if theme == "dark" %}
         <link rel="stylesheet"
               type="text/css"
@@ -215,8 +237,6 @@
               type="text/css"
               href="{{ get_url(path='theme/dark.css') }}" />
     {% endif %}
-
-    <!-- Set the correct theme in the script -->
 
     {% if theme == "auto" or theme == "toggle" or theme == "toggle-auto" %}
         {% if theme == "toggle" or theme == "toggle-auto" %}
