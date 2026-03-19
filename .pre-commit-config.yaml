@@ -1,5 +1,3 @@
-exclude: ^(static/|content/)
-
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
@@ -12,8 +10,11 @@ repos:
       - id: check-toml
       - id: check-yaml
       - id: end-of-file-fixer
+        exclude: ^(static/|content/)
       - id: mixed-line-ending
+        exclude: ^(static/|content/)
       - id: trailing-whitespace
+        exclude: ^(static/|content/)
 
   - repo: local
     hooks:
@@ -21,6 +22,7 @@ repos:
         name: treefmt
         entry: treefmt
         language: system
+        exclude: ^(static/|content/)
         types:
           - nix
           - toml
