@@ -60,15 +60,6 @@ jobs:
         path: test-results/
         retention-days: 30
 
-    - name: Deploy report to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      if: failure() && github.event_name == 'pull_request'
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./playwright-report
-        destination_dir: pr-${{ github.event.pull_request.number }}
-        keep_files: true
-
     - name: Find existing PR comment
       uses: peter-evans/find-comment@v3
       if: always() && github.event_name == 'pull_request'
@@ -88,7 +79,7 @@ jobs:
         body: |
           ## Playwright Tests failed!
 
-          [View report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr-${{ github.event.pull_request.number }})
+          Download the [test report](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) from the workflow artifacts.
 
     - name: Comment test success on PR
       uses: peter-evans/create-or-update-comment@v5
