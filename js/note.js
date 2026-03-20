@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".note-toggle").forEach(function(e){var t=e.nextElementSibling,n=t.style.display==="none";e.setAttribute("aria-expanded",!n),e.addEventListener("click",function(){var e=this.getAttribute("aria-expanded")==="true";this.setAttribute("aria-expanded",!e),t.style.display=e?"none":"block"})})})
