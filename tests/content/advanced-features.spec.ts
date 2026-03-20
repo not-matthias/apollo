@@ -150,6 +150,26 @@ test.describe('Advanced Features', () => {
     }
   });
 
+  test('code block language labels show actual language, not DEFAULT', async ({ page }) => {
+    // Regression test for https://github.com/not-matthias/apollo/issues/164
+    // Zola uses `data-lang` attribute on <code> elements, not `class="language-*"`
+    await page.goto('/posts/configuration');
+    await helpers.waitForPageReady();
+
+    // Find code blocks that have a data-lang attribute (i.e. a language was specified)
+    const codeBlocksWithLang = page.locator('pre code[data-lang]');
+    const count = await codeBlocksWithLang.count();
+    expect(count).toBeGreaterThan(0);
+
+    // For each code block with a language, verify the label shows that language, not DEFAULT
+    for (let i = 0; i < count; i++) {
+      const pre = codeBlocksWithLang.nth(i).locator('..');
+      const label = pre.locator('.code-label');
+      const text = await label.textContent();
+      expect(text).not.toBe('DEFAULT');
+    }
+  });
+
   test('toggleable notes feature works', async ({ page }) => {
     await page.goto('/posts');
     await helpers.waitForPageReady();

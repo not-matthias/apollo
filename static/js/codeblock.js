@@ -78,8 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        const langClass = codeBlock.className.match(/language-(\w+)/);
-        const lang = langClass ? langClass[1] : 'default';
+        const lang = codeBlock.getAttribute('data-lang') || 'default';
 
         // Create and append the label
         const label = document.createElement('span');
