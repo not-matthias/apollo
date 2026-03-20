@@ -91,7 +91,7 @@
             {% set host_url = config.extra.analytics.umami.host_url | default(value="https://api-gateway.umami.dev/") %}
 
             <script defer
-                    src="/js/imamu.js"
+                    src="{{ get_url(path='js/imamu.js') }}"
                     data-website-id="{{ website_id }}"
                     data-host-url="{{ host_url }}"></script>
         {% endif %}
