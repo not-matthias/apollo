@@ -1,6 +1,7 @@
 {% import "macros/macros.html" as post_macros %}
 
 <head>
+    {% include "apollo/head_start.html" ignore missing %}
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -292,4 +293,6 @@
         <script defer
                 src="{{ get_url(path='js/searchElasticlunr.min.js', cachebust=true) | safe }}"></script>
     {%- endif -%}
+
+    {% include "apollo/head_end.html" ignore missing %}
 </head>

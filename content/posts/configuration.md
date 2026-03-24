@@ -138,6 +138,34 @@ Allows you to add custom stylesheets to your blog.
   ]
   ```
 
+## Custom Head / Body HTML
+
+Allows you to inject arbitrary HTML into `<head>` or `<body>` without modifying the theme's templates. This is useful for adding custom `<meta>` tags, inline styles with Tera logic, third-party scripts, or anything else that `stylesheets` can't cover.
+
+To use, create the corresponding file in your site's `templates/apollo/` directory:
+
+- `head_start.html` — injected at the start of `<head>`
+- `head_end.html` — injected at the end of `<head>`
+- `body_start.html` — injected at the start of `<body>`
+- `body_end.html` — injected at the end of `<body>`
+
+These files are optional. If they don't exist, nothing is injected.
+
+**Example** `templates/apollo/head_end.html`:
+```html
+<style>
+  :root { --accent-color: #ff6600; }
+</style>
+<meta name="custom-tag" content="value" />
+```
+
+**Example** `templates/apollo/body_end.html`:
+```html
+<script src="https://example.com/widget.js" defer></script>
+```
+
+Since these are full Tera templates, you can use conditionals, macros, and access `config`, `page`, and `section` variables.
+
 ## Fancy Code Styling (`fancy_code`)
 
 Enables enhanced styling for code blocks.

@@ -6,6 +6,7 @@
     {% include "partials/header.html" %}
 
     <body>
+        {% include "apollo/body_start.html" ignore missing %}
         <div class="left-content">
             {% block left_content %}
             {% endblock left_content %}
@@ -36,6 +37,7 @@
             {% block right_content %}
             {% endblock right_content %}
         </div>
+        {% include "apollo/body_end.html" ignore missing %}
     </body>
 
 </html>
