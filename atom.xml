@@ -258,6 +258,26 @@ index_format = &amp;quot;elasticlunr_json&amp;quot;
 &lt;/code>&lt;/pre>
 &lt;/li>
 &lt;/ul>
+&lt;h2 id="custom-head-body-html">&lt;a class="zola-anchor" href="#custom-head-body-html" aria-label="Anchor link for: custom-head-body-html">Custom Head / Body HTML&lt;/a>&lt;/h2>
+&lt;p>Allows you to inject arbitrary HTML into &lt;code>&amp;lt;head&amp;gt;&lt;/code> or &lt;code>&amp;lt;body&amp;gt;&lt;/code> without modifying the theme's templates. This is useful for adding custom &lt;code>&amp;lt;meta&amp;gt;&lt;/code> tags, inline styles with Tera logic, third-party scripts, or anything else that &lt;code>stylesheets&lt;/code> can't cover.&lt;/p>
+&lt;p>To use, create the corresponding file in your site's &lt;code>templates/apollo/&lt;/code> directory:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>head_start.html&lt;/code> — injected at the start of &lt;code>&amp;lt;head&amp;gt;&lt;/code>&lt;/li>
+&lt;li>&lt;code>head_end.html&lt;/code> — injected at the end of &lt;code>&amp;lt;head&amp;gt;&lt;/code>&lt;/li>
+&lt;li>&lt;code>body_start.html&lt;/code> — injected at the start of &lt;code>&amp;lt;body&amp;gt;&lt;/code>&lt;/li>
+&lt;li>&lt;code>body_end.html&lt;/code> — injected at the end of &lt;code>&amp;lt;body&amp;gt;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>These files are optional. If they don't exist, nothing is injected.&lt;/p>
+&lt;p>&lt;strong>Example&lt;/strong> &lt;code>templates/apollo/head_end.html&lt;/code>:&lt;/p>
+&lt;pre data-lang="html" class="language-html ">&lt;code class="language-html" data-lang="html">&amp;lt;style&amp;gt;
+:root { --accent-color: #ff6600; }
+&amp;lt;&amp;#x2F;style&amp;gt;
+&amp;lt;meta name=&amp;quot;custom-tag&amp;quot; content=&amp;quot;value&amp;quot; &amp;#x2F;&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example&lt;/strong> &lt;code>templates/apollo/body_end.html&lt;/code>:&lt;/p>
+&lt;pre data-lang="html" class="language-html ">&lt;code class="language-html" data-lang="html">&amp;lt;script src=&amp;quot;https:&amp;#x2F;&amp;#x2F;example.com&amp;#x2F;widget.js&amp;quot; defer&amp;gt;&amp;lt;&amp;#x2F;script&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;p>Since these are full Tera templates, you can use conditionals, macros, and access &lt;code>config&lt;/code>, &lt;code>page&lt;/code>, and &lt;code>section&lt;/code> variables.&lt;/p>
 &lt;h2 id="fancy-code-styling-fancy-code">&lt;a class="zola-anchor" href="#fancy-code-styling-fancy-code" aria-label="Anchor link for: fancy-code-styling-fancy-code">Fancy Code Styling (&lt;code>fancy_code&lt;/code>)&lt;/a>&lt;/h2>
 &lt;p>Enables enhanced styling for code blocks.&lt;/p>
 &lt;ul>
