@@ -98,7 +98,7 @@
 
                             {% if page.extra.tags %}
                                 <div class="card-tags">
-                                    {%- for tag in page.extra.tags | slice(end=4) -%}
+                                    {%- for tag in page.extra.tags | sort | slice(end=4) -%}
                                         <span class="card-tag">#{{ tag }}</span>
                                     {%- endfor -%}
                                 </div>

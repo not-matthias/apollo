@@ -58,7 +58,7 @@
                         {% if page.taxonomies and page.taxonomies.tags %}
                             <span class="tags-label">::</span>
                             <span class="tags">
-                                {%- for tag in page.taxonomies.tags %}
+                                {%- for tag in page.taxonomies.tags | sort %}
                                     <a href="{{ get_taxonomy_url(kind='tags', name=tag, lang=page.lang) }}"
                                        class="post-tag">{{ tag }}</a>
                                 {% endfor %}
