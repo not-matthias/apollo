@@ -23,7 +23,7 @@
 
           # Formatters
           treefmt
-          nodePackages.prettier
+          prettier
           alejandra
           djlint
 

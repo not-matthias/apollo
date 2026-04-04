@@ -3,11 +3,11 @@ FROM mcr.microsoft.com/playwright:v1.55.0-noble
 # Install Zola
 RUN apt-get update && \
     apt-get install -y wget && \
-    wget https://github.com/getzola/zola/releases/download/v0.19.2/zola-v0.19.2-x86_64-unknown-linux-gnu.tar.gz && \
-    tar -xzf zola-v0.19.2-x86_64-unknown-linux-gnu.tar.gz && \
+    wget https://github.com/getzola/zola/releases/download/v0.22.1/zola-v0.22.1-x86_64-unknown-linux-gnu.tar.gz && \
+    tar -xzf zola-v0.22.1-x86_64-unknown-linux-gnu.tar.gz && \
     mv zola /usr/local/bin/ && \
     chmod +x /usr/local/bin/zola && \
-    rm zola-v0.19.2-x86_64-unknown-linux-gnu.tar.gz && \
+    rm zola-v0.22.1-x86_64-unknown-linux-gnu.tar.gz && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
