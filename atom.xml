@@ -1,709 +1,734 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><title>not-matthias</title><subtitle>This is an example description</subtitle><link rel="self" type="application/atom+xml" href="https://not-matthias.github.io/apollo/atom.xml"/><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/"/><generator uri="https://www.getzola.org/">Zola</generator><updated>2025-08-11T00:00:00+00:00</updated><id>https://not-matthias.github.io/apollo/atom.xml</id><entry xml:lang="en"><title>Character Shortcodes Example</title><published>2025-08-11T00:00:00+00:00</published><updated>2025-08-11T00:00:00+00:00</updated><author><name>
-Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/character-shortcodes/"/><id>https://not-matthias.github.io/apollo/posts/character-shortcodes/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/character-shortcodes/">&lt;p>Did you know that The oldest programming language still in use is FORTRAN which was created in 1957 by John Backus?&lt;/p>
-&lt;div class="character-note character-hooded character-comment character-right">
-&lt;div class="character-avatar">
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><title>not-matthias</title><subtitle>This is an example description</subtitle><link rel="self" type="application/atom+xml" href="https://not-matthias.github.io/apollo/atom.xml"/><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/"/><generator uri="https://www.getzola.org/">Zola</generator><updated>2026-04-04T00:00:00+00:00</updated><id>https://not-matthias.github.io/apollo/atom.xml</id><entry xml:lang="en"><title>Line Highlighting Example</title><published>2026-04-04T00:00:00+00:00</published><updated>2026-04-04T00:00:00+00:00</updated><author><name>
+Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/linenos-test/"/><id>https://not-matthias.github.io/apollo/posts/linenos-test/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/linenos-test/">&lt;p&gt;This page demonstrates Zola's &lt;a rel="external" href="https://www.getzola.org/documentation/content/syntax-highlighting/"&gt;code block annotations&lt;/a&gt; supported by the Apollo theme.&lt;/p&gt;
+&lt;h1 id="line-numbers"&gt;&lt;a class="zola-anchor" href="#line-numbers" aria-label="Anchor link for: line-numbers"&gt;Line Numbers&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Use &lt;code&gt;linenos&lt;/code&gt; to enable line numbering.&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="plain"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;```rust,linenos&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;fn main() {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; println!(&amp;quot;Hello World&amp;quot;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; let x = 42;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;```&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;pre class="giallo z-code"&gt;&lt;code data-lang="rust"&gt;&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;1&lt;/span&gt;&lt;span class="z-keyword"&gt;fn&lt;/span&gt;&lt;span class="z-entity z-name"&gt; main&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;2&lt;/span&gt;&lt;span class="z-entity z-name"&gt; println!&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;Hello World&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;3&lt;/span&gt;&lt;span class="z-storage z-type"&gt; let&lt;/span&gt;&lt;span class="z-variable z-other"&gt; x&lt;/span&gt;&lt;span class="z-keyword"&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; 42&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;4&lt;/span&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id="single-line-highlighting"&gt;&lt;a class="zola-anchor" href="#single-line-highlighting" aria-label="Anchor link for: single-line-highlighting"&gt;Single Line Highlighting&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Use &lt;code&gt;hl_lines=2&lt;/code&gt; to highlight a specific line.&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="plain"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;```rust,linenos,hl_lines=2&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;fn main() {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; println!(&amp;quot;Hello World&amp;quot;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; let x = 42;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;```&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;pre class="giallo z-code"&gt;&lt;code data-lang="rust"&gt;&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;1&lt;/span&gt;&lt;span class="z-keyword"&gt;fn&lt;/span&gt;&lt;span class="z-entity z-name"&gt; main&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l z-hl"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;2&lt;/span&gt;&lt;span class="z-entity z-name"&gt; println!&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;Hello World&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;3&lt;/span&gt;&lt;span class="z-storage z-type"&gt; let&lt;/span&gt;&lt;span class="z-variable z-other"&gt; x&lt;/span&gt;&lt;span class="z-keyword"&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; 42&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;4&lt;/span&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id="multi-line-highlighting"&gt;&lt;a class="zola-anchor" href="#multi-line-highlighting" aria-label="Anchor link for: multi-line-highlighting"&gt;Multi-Line Highlighting&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Use &lt;code&gt;hl_lines=2 3&lt;/code&gt; to highlight multiple lines.&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="plain"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;```rust,linenos,hl_lines=2 3&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;fn main() {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; println!(&amp;quot;Hello World&amp;quot;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; let x = 42;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;```&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;pre class="giallo z-code"&gt;&lt;code data-lang="rust"&gt;&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;1&lt;/span&gt;&lt;span class="z-keyword"&gt;fn&lt;/span&gt;&lt;span class="z-entity z-name"&gt; main&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l z-hl"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;2&lt;/span&gt;&lt;span class="z-entity z-name"&gt; println!&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;Hello World&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l z-hl"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;3&lt;/span&gt;&lt;span class="z-storage z-type"&gt; let&lt;/span&gt;&lt;span class="z-variable z-other"&gt; x&lt;/span&gt;&lt;span class="z-keyword"&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; 42&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;4&lt;/span&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id="range-highlighting"&gt;&lt;a class="zola-anchor" href="#range-highlighting" aria-label="Anchor link for: range-highlighting"&gt;Range Highlighting&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Use &lt;code&gt;hl_lines=1-3&lt;/code&gt; to highlight a range of lines.&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="plain"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;```rust,linenos,hl_lines=1-3&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;fn main() {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; println!(&amp;quot;Hello World&amp;quot;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; let x = 42;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;```&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;pre class="giallo z-code"&gt;&lt;code data-lang="rust"&gt;&lt;span class="giallo-l z-hl"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;1&lt;/span&gt;&lt;span class="z-keyword"&gt;fn&lt;/span&gt;&lt;span class="z-entity z-name"&gt; main&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l z-hl"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;2&lt;/span&gt;&lt;span class="z-entity z-name"&gt; println!&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;Hello World&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l z-hl"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;3&lt;/span&gt;&lt;span class="z-storage z-type"&gt; let&lt;/span&gt;&lt;span class="z-variable z-other"&gt; x&lt;/span&gt;&lt;span class="z-keyword"&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; 42&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;4&lt;/span&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id="custom-line-number-start"&gt;&lt;a class="zola-anchor" href="#custom-line-number-start" aria-label="Anchor link for: custom-line-number-start"&gt;Custom Line Number Start&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Use &lt;code&gt;linenostart=10&lt;/code&gt; to start line numbers at a specific value.&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="plain"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;```rust,linenos,linenostart=10&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;fn main() {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; println!(&amp;quot;Hello World&amp;quot;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; let x = 42;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;```&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;pre class="giallo z-code"&gt;&lt;code data-lang="rust"&gt;&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;10&lt;/span&gt;&lt;span class="z-keyword"&gt;fn&lt;/span&gt;&lt;span class="z-entity z-name"&gt; main&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;11&lt;/span&gt;&lt;span class="z-entity z-name"&gt; println!&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;Hello World&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;12&lt;/span&gt;&lt;span class="z-storage z-type"&gt; let&lt;/span&gt;&lt;span class="z-variable z-other"&gt; x&lt;/span&gt;&lt;span class="z-keyword"&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; 42&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;13&lt;/span&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id="hidden-lines"&gt;&lt;a class="zola-anchor" href="#hidden-lines" aria-label="Anchor link for: hidden-lines"&gt;Hidden Lines&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Use &lt;code&gt;hide_lines=2&lt;/code&gt; to hide specific lines from the output.&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="plain"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;```rust,linenos,hide_lines=2&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;fn main() {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; println!(&amp;quot;Hello World&amp;quot;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; let x = 42;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;```&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;pre class="giallo z-code"&gt;&lt;code data-lang="rust"&gt;&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;1&lt;/span&gt;&lt;span class="z-keyword"&gt;fn&lt;/span&gt;&lt;span class="z-entity z-name"&gt; main&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;3&lt;/span&gt;&lt;span class="z-storage z-type"&gt; let&lt;/span&gt;&lt;span class="z-variable z-other"&gt; x&lt;/span&gt;&lt;span class="z-keyword"&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; 42&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;4&lt;/span&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;</content></entry><entry xml:lang="en"><title>Character Shortcodes Example</title><published>2025-08-11T00:00:00+00:00</published><updated>2025-08-11T00:00:00+00:00</updated><author><name>
+Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/character-shortcodes/"/><id>https://not-matthias.github.io/apollo/posts/character-shortcodes/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/character-shortcodes/">&lt;p&gt;Did you know that The oldest programming language still in use is FORTRAN which was created in 1957 by John Backus?&lt;/p&gt;
+&lt;div class="character-note character-hooded character-comment character-right"&gt;
+&lt;div class="character-avatar"&gt;
 &lt;img src="https://not-matthias.github.io/apollo/images/characters/hooded.png"
 alt="hooded"
 width="80"
-height="80" />
-&lt;/div>
-&lt;div class="character-content">
-&lt;div class="character-bubble">
-&lt;p>Whaaaaaaaaaaaaaaaaaaat, that's almost 70 years ago???&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;p>I know, it's crazy. Here's an example program:&lt;/p>
-&lt;pre>&lt;code>PROGRAM MAIN
-PRINT *, &amp;#x27;HELLO WORLD&amp;#x27;
-STOP
-END
-&lt;/code>&lt;/pre>
-&lt;div class="character-note character-hooded character-comment character-right">
-&lt;div class="character-avatar">
+height="80" /&gt;
+&lt;/div&gt;
+&lt;div class="character-content"&gt;
+&lt;div class="character-bubble"&gt;
+&lt;p&gt;Whaaaaaaaaaaaaaaaaaaat, that's almost 70 years ago???&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;I know, it's crazy. Here's an example program:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="plain"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;PROGRAM MAIN&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;PRINT *, &amp;#39;HELLO WORLD&amp;#39;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;STOP&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;END&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="character-note character-hooded character-comment character-right"&gt;
+&lt;div class="character-avatar"&gt;
 &lt;img src="https://not-matthias.github.io/apollo/images/characters/hooded.png"
 alt="hooded"
 width="80"
-height="80" />
-&lt;/div>
-&lt;div class="character-content">
-&lt;div class="character-bubble">
-&lt;p>There's also a more modern version which is a bit easier to read:&lt;/p>
-&lt;pre>&lt;code>program helloWorld
-print *, &amp;quot;Hello World!&amp;quot;
-end program helloWorld
-&lt;/code>&lt;/pre>
-&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;p>Good to know, thanks buddy!&lt;/p>
-&lt;div class="character-note character-hooded character-comment character-left">
-&lt;div class="character-avatar">
+height="80" /&gt;
+&lt;/div&gt;
+&lt;div class="character-content"&gt;
+&lt;div class="character-bubble"&gt;
+&lt;p&gt;There's also a more modern version which is a bit easier to read:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="plain"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;program helloWorld&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; print *, &amp;quot;Hello World!&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;end program helloWorld&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Good to know, thanks buddy!&lt;/p&gt;
+&lt;div class="character-note character-hooded character-comment character-left"&gt;
+&lt;div class="character-avatar"&gt;
 &lt;img src="https://not-matthias.github.io/apollo/images/characters/hooded.png"
 alt="hooded"
 width="80"
-height="80" />
-&lt;/div>
-&lt;div class="character-content">
-&lt;div class="character-bubble">
-&lt;p>:)&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;/div></content></entry><entry xml:lang="en"><title>Creating a Custom Homepage</title><published>2025-06-29T00:00:00+00:00</published><updated>2025-06-29T00:00:00+00:00</updated><author><name>
-Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/custom-homepage/"/><id>https://not-matthias.github.io/apollo/posts/custom-homepage/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/custom-homepage/">&lt;p>The Apollo theme provides a default homepage that lists your recent blog posts. However, you might want to create a custom homepage that better reflects your personality and work. This guide will walk you through the process of creating a custom homepage with the Apollo theme.&lt;/p>
-&lt;h2 id="1-create-a-custom-homepage-template">&lt;a class="zola-anchor" href="#1-create-a-custom-homepage-template" aria-label="Anchor link for: 1-create-a-custom-homepage-template">1. Create a Custom Homepage Template&lt;/a>&lt;/h2>
-&lt;p>The first step is to create a custom homepage template. In the root of your Zola project, create a new file at &lt;code>templates/home.html&lt;/code>. This file will contain the HTML for your custom homepage.&lt;/p>
-&lt;p>You can use the following code as a starting point:&lt;/p>
-&lt;pre data-lang="html" class="language-html ">&lt;code class="language-html" data-lang="html">{% extends &amp;quot;base.html&amp;quot; %}
-{% block main_content %}
-&amp;lt;main&amp;gt;
-&amp;lt;article&amp;gt;
-&amp;lt;section class=&amp;quot;body&amp;quot;&amp;gt;
-&amp;lt;h1&amp;gt;Welcome to my custom homepage!&amp;lt;&amp;#x2F;h1&amp;gt;
-&amp;lt;p&amp;gt;This is where you can introduce yourself and your work.&amp;lt;&amp;#x2F;p&amp;gt;
-&amp;lt;&amp;#x2F;section&amp;gt;
-&amp;lt;&amp;#x2F;article&amp;gt;
-&amp;lt;&amp;#x2F;main&amp;gt;
-{% endblock main_content %}
-&lt;/code>&lt;/pre>
-&lt;p>This template extends the theme's &lt;code>base.html&lt;/code> template and overrides the &lt;code>main_content&lt;/code> block with your own content.&lt;/p>
-&lt;h2 id="2-set-the-homepage-template">&lt;a class="zola-anchor" href="#2-set-the-homepage-template" aria-label="Anchor link for: 2-set-the-homepage-template">2. Set the Homepage Template&lt;/a>&lt;/h2>
-&lt;p>Next, you need to tell Zola to use your custom homepage template. In the &lt;code>content&lt;/code> directory of your Zola project, you should have a &lt;code>_index.md&lt;/code> file. If you don't have one, create one.&lt;/p>
-&lt;p>In this file, add the following front matter:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">+++
-template = &amp;quot;home.html&amp;quot;
-+++
-&lt;/code>&lt;/pre>
-&lt;p>This tells Zola to use the &lt;code>templates/home.html&lt;/code> file to render your homepage.&lt;/p>
-&lt;h2 id="3-add-content-to-your-homepage">&lt;a class="zola-anchor" href="#3-add-content-to-your-homepage" aria-label="Anchor link for: 3-add-content-to-your-homepage">3. Add Content to Your Homepage&lt;/a>&lt;/h2>
-&lt;p>Now you can add content to your homepage. The content of the &lt;code>content/_index.md&lt;/code> file will be available in your &lt;code>templates/home.html&lt;/code> template as the &lt;code>section&lt;/code> variable.&lt;/p>
-&lt;p>For example, you can add a title and some introductory text to your &lt;code>content/_index.md&lt;/code> file:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">+++
-title = &amp;quot;Hey there! 👋🏼&amp;quot;
-template = &amp;quot;home.html&amp;quot;
-+++
-I&amp;#x27;m a software engineer who loves to write about technology and programming.
-&lt;/code>&lt;/pre>
-&lt;p>You can then display this content in your &lt;code>templates/home.html&lt;/code> template:&lt;/p>
-&lt;pre data-lang="html" class="language-html ">&lt;code class="language-html" data-lang="html">{% extends &amp;quot;base.html&amp;quot; %}
-{% macro home_page(section) %}
-&amp;lt;main&amp;gt;
-&amp;lt;article&amp;gt;
-&amp;lt;section class=&amp;quot;body&amp;quot;&amp;gt;
-{{ post_macros::page_header(title=section.title) }}
-{{ section.content | safe }}
-&amp;lt;&amp;#x2F;section&amp;gt;
-&amp;lt;&amp;#x2F;article&amp;gt;
-&amp;lt;&amp;#x2F;main&amp;gt;
-{% endmacro home_page %}
-{% block main_content %}
-{{ self::home_page(section=section) }}
-{% endblock main_content %}
-&lt;/code>&lt;/pre>
-&lt;h2 id="4-displaying-posts">&lt;a class="zola-anchor" href="#4-displaying-posts" aria-label="Anchor link for: 4-displaying-posts">4. Displaying Posts&lt;/a>&lt;/h2>
-&lt;p>You can also display a list of your recent posts on your homepage. The following code shows how to display the 5 most recent posts:&lt;/p>
-&lt;pre data-lang="html" class="language-html ">&lt;code class="language-html" data-lang="html">{% extends &amp;quot;base.html&amp;quot; %}
-{% macro home_page(section) %}
-&amp;lt;main&amp;gt;
-&amp;lt;article&amp;gt;
-&amp;lt;section class=&amp;quot;body&amp;quot;&amp;gt;
-{{ post_macros::page_header(title=section.title) }}
-{{ section.content | safe }}
-&amp;lt;&amp;#x2F;section&amp;gt;
-&amp;lt;&amp;#x2F;article&amp;gt;
-&amp;lt;&amp;#x2F;main&amp;gt;
-{% endmacro home_page %}
-{% block main_content %}
-{{ self::home_page(section=section) }}
-&amp;lt;h1&amp;gt;Recent articles&amp;lt;&amp;#x2F;h1&amp;gt;
-&amp;lt;main class=&amp;quot;post-list&amp;quot;&amp;gt;
-{% set section = get_section(path=&amp;quot;posts&amp;#x2F;_index.md&amp;quot;) %}
-{{ post_macros::list_posts(pages=section.pages | slice(end=5)) }}
-&amp;lt;&amp;#x2F;main&amp;gt;
-{% endblock main_content %}
-&lt;/code>&lt;/pre>
-&lt;p>This code gets the &lt;code>posts&lt;/code> section and then uses the &lt;code>post_macros::list_posts&lt;/code> macro to display the 5 most recent posts.&lt;/p>
-&lt;p>You can also highlight specific posts by getting them by their path:&lt;/p>
-&lt;pre data-lang="html" class="language-html ">&lt;code class="language-html" data-lang="html">{% set highlights = [
-get_page(path=&amp;quot;posts&amp;#x2F;my-first-post.md&amp;quot;),
-get_page(path=&amp;quot;posts&amp;#x2F;my-second-post.md&amp;quot;),
-] %}
-&amp;lt;main class=&amp;quot;post-list&amp;quot;&amp;gt;
-{{ post_macros::list_posts(pages=highlights) }}
-&amp;lt;&amp;#x2F;main&amp;gt;
-&lt;/code>&lt;/pre>
-&lt;p>This is just a starting point. You can customize your homepage as much as you want.&lt;/p></content></entry><entry xml:lang="en"><title>Collaborative Article</title><published>2025-05-24T00:00:00+00:00</published><updated>2025-05-24T00:00:00+00:00</updated><author><name>
+height="80" /&gt;
+&lt;/div&gt;
+&lt;div class="character-content"&gt;
+&lt;div class="character-bubble"&gt;
+&lt;p&gt;:)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content></entry><entry xml:lang="en"><title>Creating a Custom Homepage</title><published>2025-06-29T00:00:00+00:00</published><updated>2025-06-29T00:00:00+00:00</updated><author><name>
+Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/custom-homepage/"/><id>https://not-matthias.github.io/apollo/posts/custom-homepage/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/custom-homepage/">&lt;p&gt;The Apollo theme provides a default homepage that lists your recent blog posts. However, you might want to create a custom homepage that better reflects your personality and work. This guide will walk you through the process of creating a custom homepage with the Apollo theme.&lt;/p&gt;
+&lt;h2 id="1-create-a-custom-homepage-template"&gt;&lt;a class="zola-anchor" href="#1-create-a-custom-homepage-template" aria-label="Anchor link for: 1-create-a-custom-homepage-template"&gt;1. Create a Custom Homepage Template&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The first step is to create a custom homepage template. In the root of your Zola project, create a new file at &lt;code&gt;templates/home.html&lt;/code&gt;. This file will contain the HTML for your custom homepage.&lt;/p&gt;
+&lt;p&gt;You can use the following code as a starting point:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="html"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;{% extends &amp;quot;base.html&amp;quot; %}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;{% block main_content %}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;main&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;article&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;section&lt;/span&gt;&lt;span class="z-entity"&gt; class&lt;/span&gt;&lt;span&gt;=&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;body&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;h1&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;span&gt;Welcome to my custom homepage!&lt;/span&gt;&lt;span&gt;&amp;lt;/&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;h1&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;p&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;span&gt;This is where you can introduce yourself and your work.&lt;/span&gt;&lt;span&gt;&amp;lt;/&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;p&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;/&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;section&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;/&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;article&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;/&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;main&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;{% endblock main_content %}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This template extends the theme's &lt;code&gt;base.html&lt;/code&gt; template and overrides the &lt;code&gt;main_content&lt;/code&gt; block with your own content.&lt;/p&gt;
+&lt;h2 id="2-set-the-homepage-template"&gt;&lt;a class="zola-anchor" href="#2-set-the-homepage-template" aria-label="Anchor link for: 2-set-the-homepage-template"&gt;2. Set the Homepage Template&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Next, you need to tell Zola to use your custom homepage template. In the &lt;code&gt;content&lt;/code&gt; directory of your Zola project, you should have a &lt;code&gt;_index.md&lt;/code&gt; file. If you don't have one, create one.&lt;/p&gt;
+&lt;p&gt;In this file, add the following front matter:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span class="z-invalid z-illegal"&gt;+++&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;template&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;home.html&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-invalid z-illegal"&gt;+++&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This tells Zola to use the &lt;code&gt;templates/home.html&lt;/code&gt; file to render your homepage.&lt;/p&gt;
+&lt;h2 id="3-add-content-to-your-homepage"&gt;&lt;a class="zola-anchor" href="#3-add-content-to-your-homepage" aria-label="Anchor link for: 3-add-content-to-your-homepage"&gt;3. Add Content to Your Homepage&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Now you can add content to your homepage. The content of the &lt;code&gt;content/_index.md&lt;/code&gt; file will be available in your &lt;code&gt;templates/home.html&lt;/code&gt; template as the &lt;code&gt;section&lt;/code&gt; variable.&lt;/p&gt;
+&lt;p&gt;For example, you can add a title and some introductory text to your &lt;code&gt;content/_index.md&lt;/code&gt; file:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span class="z-invalid z-illegal"&gt;+++&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;title&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;Hey there! 👋🏼&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;template&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;home.html&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-invalid z-illegal"&gt;+++&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-invalid z-illegal"&gt;I&amp;#39;m &lt;/span&gt;&lt;span class="z-invalid z-illegal"&gt;a &lt;/span&gt;&lt;span class="z-invalid z-illegal"&gt;software &lt;/span&gt;&lt;span class="z-invalid z-illegal"&gt;engineer &lt;/span&gt;&lt;span class="z-invalid z-illegal"&gt;who &lt;/span&gt;&lt;span class="z-invalid z-illegal"&gt;loves &lt;/span&gt;&lt;span class="z-invalid z-illegal"&gt;to &lt;/span&gt;&lt;span class="z-invalid z-illegal"&gt;write &lt;/span&gt;&lt;span class="z-invalid z-illegal"&gt;about &lt;/span&gt;&lt;span class="z-invalid z-illegal"&gt;technology &lt;/span&gt;&lt;span class="z-invalid z-illegal"&gt;and &lt;/span&gt;&lt;span class="z-invalid z-illegal"&gt;programming.&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can then display this content in your &lt;code&gt;templates/home.html&lt;/code&gt; template:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="html"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;{% extends &amp;quot;base.html&amp;quot; %}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;{% macro home_page(section) %}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;main&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;article&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;section&lt;/span&gt;&lt;span class="z-entity"&gt; class&lt;/span&gt;&lt;span&gt;=&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;body&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; {{ post_macros::page_header(title=section.title) }}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; {{ section.content | safe }}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;/&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;section&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;/&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;article&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;/&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;main&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;{% endmacro home_page %}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;{% block main_content %}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; {{ self::home_page(section=section) }}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;{% endblock main_content %}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="4-displaying-posts"&gt;&lt;a class="zola-anchor" href="#4-displaying-posts" aria-label="Anchor link for: 4-displaying-posts"&gt;4. Displaying Posts&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You can also display a list of your recent posts on your homepage. The following code shows how to display the 5 most recent posts:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="html"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;{% extends &amp;quot;base.html&amp;quot; %}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;{% macro home_page(section) %}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;main&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;article&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;section&lt;/span&gt;&lt;span class="z-entity"&gt; class&lt;/span&gt;&lt;span&gt;=&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;body&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; {{ post_macros::page_header(title=section.title) }}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; {{ section.content | safe }}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;/&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;section&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;/&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;article&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;/&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;main&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;{% endmacro home_page %}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;{% block main_content %}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; {{ self::home_page(section=section) }}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;h1&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;span&gt;Recent articles&lt;/span&gt;&lt;span&gt;&amp;lt;/&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;h1&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;main&lt;/span&gt;&lt;span class="z-entity"&gt; class&lt;/span&gt;&lt;span&gt;=&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;post-list&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; {% set section = get_section(path=&amp;quot;posts/_index.md&amp;quot;) %}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; {{ post_macros::list_posts(pages=section.pages | slice(end=5)) }}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;/&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;main&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;{% endblock main_content %}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This code gets the &lt;code&gt;posts&lt;/code&gt; section and then uses the &lt;code&gt;post_macros::list_posts&lt;/code&gt; macro to display the 5 most recent posts.&lt;/p&gt;
+&lt;p&gt;You can also highlight specific posts by getting them by their path:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="html"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;{% set highlights = [&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; get_page(path=&amp;quot;posts/my-first-post.md&amp;quot;),&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; get_page(path=&amp;quot;posts/my-second-post.md&amp;quot;),&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;] %}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;&amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;main&lt;/span&gt;&lt;span class="z-entity"&gt; class&lt;/span&gt;&lt;span&gt;=&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;post-list&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; {{ post_macros::list_posts(pages=highlights) }}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;&amp;lt;/&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;main&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is just a starting point. You can customize your homepage as much as you want.&lt;/p&gt;</content></entry><entry xml:lang="en"><title>Collaborative Article</title><published>2025-05-24T00:00:00+00:00</published><updated>2025-05-24T00:00:00+00:00</updated><author><name>
 Alice</name></author><author><name>
-Bob</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/collab-article/"/><id>https://not-matthias.github.io/apollo/posts/collab-article/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/collab-article/">&lt;p>Written by Alice and Bob!&lt;/p>
-&lt;p>TBA&lt;/p></content></entry><entry xml:lang="en"><title>Mermaid Example</title><published>2024-12-26T00:00:00+00:00</published><updated>2024-12-26T00:00:00+00:00</updated><author><name>
-Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/mermaid/"/><id>https://not-matthias.github.io/apollo/posts/mermaid/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/mermaid/">&lt;p>This Theme supports &lt;a href="https://mermaid.js.org/">mermaid&lt;/a> markdown diagram rendering.&lt;/p>
-&lt;p>To use mermaid diagrams in your posts, see the example in the raw markdown code.
-https://raw.githubusercontent.com/not-matthias/apollo/refs/heads/main/content/posts/mermaid.md&lt;/p>
-&lt;h2 id="rendered-example">&lt;a class="zola-anchor" href="#rendered-example" aria-label="Anchor link for: rendered-example">Rendered Example&lt;/a>&lt;/h2>
-&lt;script src=https://not-matthias.github.io/apollo/js/mermaid.js>&lt;/script>
-&lt;pre class="mermaid">
+Bob</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/collab-article/"/><id>https://not-matthias.github.io/apollo/posts/collab-article/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/collab-article/">&lt;p&gt;Written by Alice and Bob!&lt;/p&gt;
+&lt;p&gt;TBA&lt;/p&gt;</content></entry><entry xml:lang="en"><title>Mermaid Example</title><published>2024-12-26T00:00:00+00:00</published><updated>2024-12-26T00:00:00+00:00</updated><author><name>
+Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/mermaid/"/><id>https://not-matthias.github.io/apollo/posts/mermaid/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/mermaid/">&lt;p&gt;This Theme supports &lt;a rel="external" href="https://mermaid.js.org/"&gt;mermaid&lt;/a&gt; markdown diagram rendering.&lt;/p&gt;
+&lt;p&gt;To use mermaid diagrams in your posts, see the example in the raw markdown code.
+https://raw.githubusercontent.com/not-matthias/apollo/refs/heads/main/content/posts/mermaid.md&lt;/p&gt;
+&lt;h2 id="rendered-example"&gt;&lt;a class="zola-anchor" href="#rendered-example" aria-label="Anchor link for: rendered-example"&gt;Rendered Example&lt;/a&gt;&lt;/h2&gt;
+&lt;script src=https://not-matthias.github.io/apollo/js/mermaid.js&gt;&lt;/script&gt;
+&lt;pre class="mermaid"&gt;
 graph LR
-A[Start] --> B[Initialize]
-B --> C[Processing]
-C --> D[Complete]
-D --> E[Success]
+A[Start] --&gt; B[Initialize]
+B --&gt; C[Processing]
+C --&gt; D[Complete]
+D --&gt; E[Success]
 style A fill:#f9f,stroke:#333
 style E fill:#9f9,stroke:#333
-&lt;/pre></content></entry><entry xml:lang="en"><title>Rust Security Best Practices</title><published>2024-09-15T00:00:00+00:00</published><updated>2024-09-15T00:00:00+00:00</updated><author><name>
-Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/talks/rust-security-best-practices/"/><id>https://not-matthias.github.io/apollo/talks/rust-security-best-practices/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/talks/rust-security-best-practices/">&lt;p>This talk covers essential security practices for Rust developers, including how to leverage Rust's type system for security, managing unsafe code, and auditing dependencies.&lt;/p></content></entry><entry xml:lang="en"><title>Configuring Apollo</title><published>2024-07-09T00:00:00+00:00</published><updated>2024-07-09T00:00:00+00:00</updated><author><name>
-Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/configuration/"/><id>https://not-matthias.github.io/apollo/posts/configuration/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/configuration/">&lt;h1 id="site-configuration">&lt;a class="zola-anchor" href="#site-configuration" aria-label="Anchor link for: site-configuration">Site Configuration&lt;/a>&lt;/h1>
-&lt;h2 id="search-build-search-index">&lt;a class="zola-anchor" href="#search-build-search-index" aria-label="Anchor link for: search-build-search-index">Search (&lt;code>build_search_index&lt;/code>)&lt;/a>&lt;/h2>
-&lt;p>Enables or disables the search functionality for your blog.&lt;/p>
-&lt;ul>
-&lt;li>Type: Boolean&lt;/li>
-&lt;li>Default: false&lt;/li>
-&lt;li>Usage: &lt;code>build_search_index = false&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>When enabled, a search index will be generated for your blog, allowing visitors to search for specific content.
-Additionally, a search button will be displayed in the navigation bar.&lt;/p>
-&lt;p>Configure the search like this:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">build_search_index = true
-[search]
-include_title = true
-include_description = true
-include_path = true
-include_content = true
-index_format = &amp;quot;elasticlunr_json&amp;quot;
-&lt;/code>&lt;/pre>
-&lt;h2 id="theme-mode-theme">&lt;a class="zola-anchor" href="#theme-mode-theme" aria-label="Anchor link for: theme-mode-theme">Theme Mode (&lt;code>theme&lt;/code>)&lt;/a>&lt;/h2>
-&lt;p>Sets the color theme for your blog.&lt;/p>
-&lt;ul>
-&lt;li>Type: String&lt;/li>
-&lt;li>Options:
-&lt;ul>
-&lt;li>"light": Always using the light theme&lt;/li>
-&lt;li>"dark": Always using the dark theme&lt;/li>
-&lt;li>"auto": Automatically uses the system theme&lt;/li>
-&lt;li>"toggle": Shows a button to switch between light and dark themes&lt;/li>
-&lt;li>"toggle-auto": Shows a button to cycle through light, dark, and auto (system default) themes&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Default: "toggle"&lt;/li>
-&lt;li>Usage: &lt;code>theme = "toggle"&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h2 id="menu">&lt;a class="zola-anchor" href="#menu" aria-label="Anchor link for: menu">Menu&lt;/a>&lt;/h2>
-&lt;p>Defines the navigation menu items for your blog.&lt;/p>
-&lt;ul>
-&lt;li>Type: Array of objects&lt;/li>
-&lt;li>Default: []&lt;/li>
-&lt;li>Usage:&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">menu = [
-{ name = &amp;quot;&amp;#x2F;posts&amp;quot;, url = &amp;quot;&amp;#x2F;posts&amp;quot;, weight = 1 },
-{ name = &amp;quot;&amp;#x2F;projects&amp;quot;, url = &amp;quot;&amp;#x2F;projects&amp;quot;, weight = 2 },
-{ name = &amp;quot;&amp;#x2F;about&amp;quot;, url = &amp;quot;&amp;#x2F;about&amp;quot;, weight = 3 },
-{ name = &amp;quot;&amp;#x2F;tags&amp;quot;, url = &amp;quot;&amp;#x2F;tags&amp;quot;, weight = 4 },
-]
-&lt;/code>&lt;/pre>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="logo">&lt;a class="zola-anchor" href="#logo" aria-label="Anchor link for: logo">Logo&lt;/a>&lt;/h2>
-&lt;p>Defines the site logo image file.&lt;/p>
-&lt;ul>
-&lt;li>Type: String&lt;/li>
-&lt;li>Usage:&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">logo = &amp;quot;site_logo.svg&amp;quot;
-&lt;/code>&lt;/pre>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="socials">&lt;a class="zola-anchor" href="#socials" aria-label="Anchor link for: socials">Socials&lt;/a>&lt;/h2>
-&lt;p>Defines the social media links.&lt;/p>
-&lt;ul>
-&lt;li>Type: Array of objects&lt;/li>
-&lt;li>Default: []&lt;/li>
-&lt;li>Usage:&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">socials = [
-{ name = &amp;quot;twitter&amp;quot;, url = &amp;quot;https:&amp;#x2F;&amp;#x2F;twitter.com&amp;#x2F;not_matthias&amp;quot;, icon = &amp;quot;twitter&amp;quot; },
-{ name = &amp;quot;github&amp;quot;, url = &amp;quot;https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;not-matthias&amp;#x2F;&amp;quot;, icon = &amp;quot;github&amp;quot; },
-]
-&lt;/code>&lt;/pre>
-&lt;/li>
-&lt;/ul>
-&lt;p>Social links will open in a new tab if &lt;code>external_links_target_blank&lt;/code> is set to &lt;code>true&lt;/code> in the &lt;code>[markdown]&lt;/code> section of your config.&lt;/p>
-&lt;h2 id="table-of-contents-toc">&lt;a class="zola-anchor" href="#table-of-contents-toc" aria-label="Anchor link for: table-of-contents-toc">Table of Contents (&lt;code>toc&lt;/code>)&lt;/a>&lt;/h2>
-&lt;p>Enables or disables the table of contents for posts.&lt;/p>
-&lt;ul>
-&lt;li>Type: Boolean&lt;/li>
-&lt;li>Default: true&lt;/li>
-&lt;li>Usage: &lt;code>toc = true&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>When enabled, a table of contents will be generated for posts, making it easier for readers to navigate through longer articles.&lt;/p>
-&lt;p>Note: This feature adds additional JavaScript to your site.&lt;/p>
-&lt;h2 id="cdn-usage-use-cdn">&lt;a class="zola-anchor" href="#cdn-usage-use-cdn" aria-label="Anchor link for: cdn-usage-use-cdn">CDN Usage (&lt;code>use_cdn&lt;/code>)&lt;/a>&lt;/h2>
-&lt;p>Determines whether to use a Content Delivery Network (CDN) for assets.&lt;/p>
-&lt;ul>
-&lt;li>Type: Boolean&lt;/li>
-&lt;li>Default: false&lt;/li>
-&lt;li>Usage: &lt;code>use_cdn = false&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>When set to true, the theme will attempt to load assets from a CDN, which can improve loading times for visitors from different geographic locations.&lt;/p>
-&lt;h2 id="favicon-favicon">&lt;a class="zola-anchor" href="#favicon-favicon" aria-label="Anchor link for: favicon-favicon">Favicon (&lt;code>favicon&lt;/code>)&lt;/a>&lt;/h2>
-&lt;p>Specifies the path to the favicon image for your blog.&lt;/p>
-&lt;ul>
-&lt;li>Type: String&lt;/li>
-&lt;li>Default: "/icon/favicon.png"&lt;/li>
-&lt;li>Usage: &lt;code>favicon = "/icon/favicon.png"&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>This sets the small icon that appears in the browser tab for your website.&lt;/p>
-&lt;h2 id="custom-stylesheets-stylesheets">&lt;a class="zola-anchor" href="#custom-stylesheets-stylesheets" aria-label="Anchor link for: custom-stylesheets-stylesheets">Custom Stylesheets (&lt;code>stylesheets&lt;/code>)&lt;/a>&lt;/h2>
-&lt;p>Allows you to add custom stylesheets to your blog.&lt;/p>
-&lt;ul>
-&lt;li>Type: Array of files located in the &lt;code>static&lt;/code> directory&lt;/li>
-&lt;li>Default: []&lt;/li>
-&lt;li>Usage:&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">stylesheets = [
-&amp;quot;custom.css&amp;quot;, # static&amp;#x2F;custom.css
-&amp;quot;&amp;#x2F;css&amp;#x2F;another.css&amp;quot; # static&amp;#x2F;css&amp;#x2F;another.css
-]
-&lt;/code>&lt;/pre>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="custom-head-body-html">&lt;a class="zola-anchor" href="#custom-head-body-html" aria-label="Anchor link for: custom-head-body-html">Custom Head / Body HTML&lt;/a>&lt;/h2>
-&lt;p>Allows you to inject arbitrary HTML into &lt;code>&amp;lt;head&amp;gt;&lt;/code> or &lt;code>&amp;lt;body&amp;gt;&lt;/code> without modifying the theme's templates. This is useful for adding custom &lt;code>&amp;lt;meta&amp;gt;&lt;/code> tags, inline styles with Tera logic, third-party scripts, or anything else that &lt;code>stylesheets&lt;/code> can't cover.&lt;/p>
-&lt;p>To use, create the corresponding file in your site's &lt;code>templates/apollo/&lt;/code> directory:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>head_start.html&lt;/code> — injected at the start of &lt;code>&amp;lt;head&amp;gt;&lt;/code>&lt;/li>
-&lt;li>&lt;code>head_end.html&lt;/code> — injected at the end of &lt;code>&amp;lt;head&amp;gt;&lt;/code>&lt;/li>
-&lt;li>&lt;code>body_start.html&lt;/code> — injected at the start of &lt;code>&amp;lt;body&amp;gt;&lt;/code>&lt;/li>
-&lt;li>&lt;code>body_end.html&lt;/code> — injected at the end of &lt;code>&amp;lt;body&amp;gt;&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>These files are optional. If they don't exist, nothing is injected.&lt;/p>
-&lt;p>&lt;strong>Example&lt;/strong> &lt;code>templates/apollo/head_end.html&lt;/code>:&lt;/p>
-&lt;pre data-lang="html" class="language-html ">&lt;code class="language-html" data-lang="html">&amp;lt;style&amp;gt;
-:root { --accent-color: #ff6600; }
-&amp;lt;&amp;#x2F;style&amp;gt;
-&amp;lt;meta name=&amp;quot;custom-tag&amp;quot; content=&amp;quot;value&amp;quot; &amp;#x2F;&amp;gt;
-&lt;/code>&lt;/pre>
-&lt;p>&lt;strong>Example&lt;/strong> &lt;code>templates/apollo/body_end.html&lt;/code>:&lt;/p>
-&lt;pre data-lang="html" class="language-html ">&lt;code class="language-html" data-lang="html">&amp;lt;script src=&amp;quot;https:&amp;#x2F;&amp;#x2F;example.com&amp;#x2F;widget.js&amp;quot; defer&amp;gt;&amp;lt;&amp;#x2F;script&amp;gt;
-&lt;/code>&lt;/pre>
-&lt;p>Since these are full Tera templates, you can use conditionals, macros, and access &lt;code>config&lt;/code>, &lt;code>page&lt;/code>, and &lt;code>section&lt;/code> variables.&lt;/p>
-&lt;h2 id="fancy-code-styling-fancy-code">&lt;a class="zola-anchor" href="#fancy-code-styling-fancy-code" aria-label="Anchor link for: fancy-code-styling-fancy-code">Fancy Code Styling (&lt;code>fancy_code&lt;/code>)&lt;/a>&lt;/h2>
-&lt;p>Enables enhanced styling for code blocks.&lt;/p>
-&lt;ul>
-&lt;li>Type: Boolean&lt;/li>
-&lt;li>Default: true&lt;/li>
-&lt;li>Usage: &lt;code>fancy_code = true&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>This option adds the language label and a copy button.&lt;/p>
-&lt;h2 id="dynamic-notes-dynamic-note">&lt;a class="zola-anchor" href="#dynamic-notes-dynamic-note" aria-label="Anchor link for: dynamic-notes-dynamic-note">Dynamic Notes (&lt;code>dynamic_note&lt;/code>)&lt;/a>&lt;/h2>
-&lt;p>Allows for the creation of togglable note sections in your content.&lt;/p>
-&lt;ul>
-&lt;li>Type: Boolean&lt;/li>
-&lt;li>Default: true&lt;/li>
-&lt;li>Usage: &lt;code>dynamic_note = true&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>When enabled, you can create expandable/collapsible note sections in your blog posts.&lt;/p>
-&lt;h2 id="character-shortcodes">&lt;a class="zola-anchor" href="#character-shortcodes" aria-label="Anchor link for: character-shortcodes">Character Shortcodes&lt;/a>&lt;/h2>
-&lt;p>We support custom character shortcodes for adding dialogue and interactive characters to your blog posts. You can use them via &lt;a href="https://www.getzola.org/documentation/content/shortcodes/">shortcodes&lt;/a>:&lt;/p>
-&lt;pre>&lt;code>{{ &amp;#x2F;* character(name=&amp;quot;character-name&amp;quot;, body=&amp;quot;Character dialogue text&amp;quot;) *&amp;#x2F; }}
-&lt;/code>&lt;/pre>
-&lt;p>These are the supported parameters:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>name&lt;/code> (optional): The identifier for the character. Used to determine styling and appearance.&lt;/li>
-&lt;li>&lt;code>body&lt;/code> (optional): The dialogue text for the character. Works with inline shortcodes.&lt;/li>
-&lt;li>&lt;code>position&lt;/code> (optional): Position the character on the left or right. Values: "left" or default (right)&lt;/li>
-&lt;/ul>
-&lt;div class="character-note character-hooded character-comment character-right">
-&lt;div class="character-avatar">
+&lt;/pre&gt;</content></entry><entry xml:lang="en"><title>Rust Security Best Practices</title><published>2024-09-15T00:00:00+00:00</published><updated>2024-09-15T00:00:00+00:00</updated><author><name>
+Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/talks/rust-security-best-practices/"/><id>https://not-matthias.github.io/apollo/talks/rust-security-best-practices/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/talks/rust-security-best-practices/">&lt;p&gt;This talk covers essential security practices for Rust developers, including how to leverage Rust's type system for security, managing unsafe code, and auditing dependencies.&lt;/p&gt;</content></entry><entry xml:lang="en"><title>Configuring Apollo</title><published>2024-07-09T00:00:00+00:00</published><updated>2024-07-09T00:00:00+00:00</updated><author><name>
+Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/configuration/"/><id>https://not-matthias.github.io/apollo/posts/configuration/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/configuration/">&lt;h1 id="site-configuration"&gt;&lt;a class="zola-anchor" href="#site-configuration" aria-label="Anchor link for: site-configuration"&gt;Site Configuration&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="search-build-search-index"&gt;&lt;a class="zola-anchor" href="#search-build-search-index" aria-label="Anchor link for: search-build-search-index"&gt;Search (&lt;code&gt;build_search_index&lt;/code&gt;)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Enables or disables the search functionality for your blog.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;/li&gt;
+&lt;li&gt;Default: false&lt;/li&gt;
+&lt;li&gt;Usage: &lt;code&gt;build_search_index = false&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When enabled, a search index will be generated for your blog, allowing visitors to search for specific content.
+Additionally, a search button will be displayed in the navigation bar.&lt;/p&gt;
+&lt;p&gt;Configure the search like this:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;build_search_index&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; true&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;[&lt;/span&gt;&lt;span class="z-entity z-name"&gt;search&lt;/span&gt;&lt;span&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;include_title&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; true&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;include_description&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; true&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;include_path&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; true&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;include_content&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; true&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;index_format&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;elasticlunr_json&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="theme-mode-theme"&gt;&lt;a class="zola-anchor" href="#theme-mode-theme" aria-label="Anchor link for: theme-mode-theme"&gt;Theme Mode (&lt;code&gt;theme&lt;/code&gt;)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Sets the color theme for your blog.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: String&lt;/li&gt;
+&lt;li&gt;Options:
+&lt;ul&gt;
+&lt;li&gt;"light": Always using the light theme&lt;/li&gt;
+&lt;li&gt;"dark": Always using the dark theme&lt;/li&gt;
+&lt;li&gt;"auto": Automatically uses the system theme&lt;/li&gt;
+&lt;li&gt;"toggle": Shows a button to switch between light and dark themes&lt;/li&gt;
+&lt;li&gt;"toggle-auto": Shows a button to cycle through light, dark, and auto (system default) themes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Default: "toggle"&lt;/li&gt;
+&lt;li&gt;Usage: &lt;code&gt;theme = "toggle"&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="menu"&gt;&lt;a class="zola-anchor" href="#menu" aria-label="Anchor link for: menu"&gt;Menu&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Defines the navigation menu items for your blog.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Array of objects&lt;/li&gt;
+&lt;li&gt;Default: []&lt;/li&gt;
+&lt;li&gt;Usage:&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;menu&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span&gt; [&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; {&lt;/span&gt;&lt;span class="z-variable z-other"&gt; name&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;/posts&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span class="z-variable z-other"&gt; url&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;/posts&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span class="z-variable z-other"&gt; weight&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; 1&lt;/span&gt;&lt;span&gt; }&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; {&lt;/span&gt;&lt;span class="z-variable z-other"&gt; name&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;/projects&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span class="z-variable z-other"&gt; url&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;/projects&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span class="z-variable z-other"&gt; weight&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; 2&lt;/span&gt;&lt;span&gt; }&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; {&lt;/span&gt;&lt;span class="z-variable z-other"&gt; name&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;/about&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span class="z-variable z-other"&gt; url&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;/about&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span class="z-variable z-other"&gt; weight&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; 3&lt;/span&gt;&lt;span&gt; }&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; {&lt;/span&gt;&lt;span class="z-variable z-other"&gt; name&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;/tags&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span class="z-variable z-other"&gt; url&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;/tags&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span class="z-variable z-other"&gt; weight&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; 4&lt;/span&gt;&lt;span&gt; }&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="logo"&gt;&lt;a class="zola-anchor" href="#logo" aria-label="Anchor link for: logo"&gt;Logo&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Defines the site logo image file.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: String&lt;/li&gt;
+&lt;li&gt;Usage:&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;logo&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;site_logo.svg&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="socials"&gt;&lt;a class="zola-anchor" href="#socials" aria-label="Anchor link for: socials"&gt;Socials&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Defines the social media links.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Array of objects&lt;/li&gt;
+&lt;li&gt;Default: []&lt;/li&gt;
+&lt;li&gt;Usage:&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;socials&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span&gt; [&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; {&lt;/span&gt;&lt;span class="z-variable z-other"&gt; name&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;twitter&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span class="z-variable z-other"&gt; url&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;https://twitter.com/not_matthias&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span class="z-variable z-other"&gt; icon&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;twitter&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt; }&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; {&lt;/span&gt;&lt;span class="z-variable z-other"&gt; name&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;github&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span class="z-variable z-other"&gt; url&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;https://github.com/not-matthias/&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span class="z-variable z-other"&gt; icon&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;github&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt; }&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Social links will open in a new tab if &lt;code&gt;external_links_target_blank&lt;/code&gt; is set to &lt;code&gt;true&lt;/code&gt; in the &lt;code&gt;[markdown]&lt;/code&gt; section of your config.&lt;/p&gt;
+&lt;h2 id="table-of-contents-toc"&gt;&lt;a class="zola-anchor" href="#table-of-contents-toc" aria-label="Anchor link for: table-of-contents-toc"&gt;Table of Contents (&lt;code&gt;toc&lt;/code&gt;)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Enables or disables the table of contents for posts.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;/li&gt;
+&lt;li&gt;Default: true&lt;/li&gt;
+&lt;li&gt;Usage: &lt;code&gt;toc = true&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When enabled, a table of contents will be generated for posts, making it easier for readers to navigate through longer articles.&lt;/p&gt;
+&lt;p&gt;Note: This feature adds additional JavaScript to your site.&lt;/p&gt;
+&lt;h2 id="cdn-usage-use-cdn"&gt;&lt;a class="zola-anchor" href="#cdn-usage-use-cdn" aria-label="Anchor link for: cdn-usage-use-cdn"&gt;CDN Usage (&lt;code&gt;use_cdn&lt;/code&gt;)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Determines whether to use a Content Delivery Network (CDN) for assets.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;/li&gt;
+&lt;li&gt;Default: false&lt;/li&gt;
+&lt;li&gt;Usage: &lt;code&gt;use_cdn = false&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When set to true, the theme will attempt to load assets from a CDN, which can improve loading times for visitors from different geographic locations.&lt;/p&gt;
+&lt;h2 id="favicon-favicon"&gt;&lt;a class="zola-anchor" href="#favicon-favicon" aria-label="Anchor link for: favicon-favicon"&gt;Favicon (&lt;code&gt;favicon&lt;/code&gt;)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Specifies the path to the favicon image for your blog.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: String&lt;/li&gt;
+&lt;li&gt;Default: "/icon/favicon.png"&lt;/li&gt;
+&lt;li&gt;Usage: &lt;code&gt;favicon = "/icon/favicon.png"&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This sets the small icon that appears in the browser tab for your website.&lt;/p&gt;
+&lt;h2 id="custom-stylesheets-stylesheets"&gt;&lt;a class="zola-anchor" href="#custom-stylesheets-stylesheets" aria-label="Anchor link for: custom-stylesheets-stylesheets"&gt;Custom Stylesheets (&lt;code&gt;stylesheets&lt;/code&gt;)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Allows you to add custom stylesheets to your blog.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Array of files located in the &lt;code&gt;static&lt;/code&gt; directory&lt;/li&gt;
+&lt;li&gt;Default: []&lt;/li&gt;
+&lt;li&gt;Usage:&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;stylesheets&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span&gt; [&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;custom.css&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span class="z-punctuation z-definition z-comment"&gt; #&lt;/span&gt;&lt;span class="z-comment"&gt; static/custom.css&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;/css/another.css&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-punctuation z-definition z-comment"&gt; #&lt;/span&gt;&lt;span class="z-comment"&gt; static/css/another.css&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="custom-head-body-html"&gt;&lt;a class="zola-anchor" href="#custom-head-body-html" aria-label="Anchor link for: custom-head-body-html"&gt;Custom Head / Body HTML&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Allows you to inject arbitrary HTML into &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; or &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; without modifying the theme's templates. This is useful for adding custom &lt;code&gt;&amp;lt;meta&amp;gt;&lt;/code&gt; tags, inline styles with Tera logic, third-party scripts, or anything else that &lt;code&gt;stylesheets&lt;/code&gt; can't cover.&lt;/p&gt;
+&lt;p&gt;To use, create the corresponding file in your site's &lt;code&gt;templates/apollo/&lt;/code&gt; directory:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;head_start.html&lt;/code&gt; — injected at the start of &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;head_end.html&lt;/code&gt; — injected at the end of &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;body_start.html&lt;/code&gt; — injected at the start of &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;body_end.html&lt;/code&gt; — injected at the end of &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These files are optional. If they don't exist, nothing is injected.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt; &lt;code&gt;templates/apollo/head_end.html&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="html"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;&amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;style&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-entity"&gt; :&lt;/span&gt;&lt;span class="z-entity"&gt;root&lt;/span&gt;&lt;span&gt; {&lt;/span&gt;&lt;span class="z-variable"&gt; --accent-color&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;span class="z-constant"&gt; #&lt;/span&gt;&lt;span class="z-constant"&gt;ff6600&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;span&gt; }&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;&amp;lt;&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;style&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;&amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;meta&lt;/span&gt;&lt;span class="z-entity"&gt; name&lt;/span&gt;&lt;span&gt;=&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;custom-tag&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-entity"&gt; content&lt;/span&gt;&lt;span&gt;=&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;value&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt; &lt;code&gt;templates/apollo/body_end.html&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="html"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;&amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;script&lt;/span&gt;&lt;span class="z-entity"&gt; src&lt;/span&gt;&lt;span&gt;=&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;https://example.com/widget.js&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-entity"&gt; defer&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;span&gt;&amp;lt;&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;script&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Since these are full Tera templates, you can use conditionals, macros, and access &lt;code&gt;config&lt;/code&gt;, &lt;code&gt;page&lt;/code&gt;, and &lt;code&gt;section&lt;/code&gt; variables.&lt;/p&gt;
+&lt;h2 id="fancy-code-styling-fancy-code"&gt;&lt;a class="zola-anchor" href="#fancy-code-styling-fancy-code" aria-label="Anchor link for: fancy-code-styling-fancy-code"&gt;Fancy Code Styling (&lt;code&gt;fancy_code&lt;/code&gt;)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Enables enhanced styling for code blocks.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;/li&gt;
+&lt;li&gt;Default: true&lt;/li&gt;
+&lt;li&gt;Usage: &lt;code&gt;fancy_code = true&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This option adds the language label and a copy button.&lt;/p&gt;
+&lt;h2 id="dynamic-notes-dynamic-note"&gt;&lt;a class="zola-anchor" href="#dynamic-notes-dynamic-note" aria-label="Anchor link for: dynamic-notes-dynamic-note"&gt;Dynamic Notes (&lt;code&gt;dynamic_note&lt;/code&gt;)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Allows for the creation of togglable note sections in your content.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;/li&gt;
+&lt;li&gt;Default: true&lt;/li&gt;
+&lt;li&gt;Usage: &lt;code&gt;dynamic_note = true&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When enabled, you can create expandable/collapsible note sections in your blog posts.&lt;/p&gt;
+&lt;h2 id="character-shortcodes"&gt;&lt;a class="zola-anchor" href="#character-shortcodes" aria-label="Anchor link for: character-shortcodes"&gt;Character Shortcodes&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We support custom character shortcodes for adding dialogue and interactive characters to your blog posts. You can use them via &lt;a rel="external" href="https://www.getzola.org/documentation/content/shortcodes/"&gt;shortcodes&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="plain"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;{{ /* character(name=&amp;quot;character-name&amp;quot;, body=&amp;quot;Character dialogue text&amp;quot;) */ }}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;These are the supported parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;name&lt;/code&gt; (optional): The identifier for the character. Used to determine styling and appearance.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;body&lt;/code&gt; (optional): The dialogue text for the character. Works with inline shortcodes.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;position&lt;/code&gt; (optional): Position the character on the left or right. Values: "left" or default (right)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="character-note character-hooded character-comment character-right"&gt;
+&lt;div class="character-avatar"&gt;
 &lt;img src="https://not-matthias.github.io/apollo/images/characters/hooded.png"
 alt="hooded"
 width="80"
-height="80" />
-&lt;/div>
-&lt;div class="character-content">
-&lt;div class="character-bubble">
-&lt;p>Isn't it amazing?&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;div class="character-note character-hooded character-comment character-left">
-&lt;div class="character-avatar">
+height="80" /&gt;
+&lt;/div&gt;
+&lt;div class="character-content"&gt;
+&lt;div class="character-bubble"&gt;
+&lt;p&gt;Isn't it amazing?&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="character-note character-hooded character-comment character-left"&gt;
+&lt;div class="character-avatar"&gt;
 &lt;img src="https://not-matthias.github.io/apollo/images/characters/hooded.png"
 alt="hooded"
 width="80"
-height="80" />
-&lt;/div>
-&lt;div class="character-content">
-&lt;div class="character-bubble">
-&lt;p>Yes! And it's really easy to use&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;div class="character-note character-hooded character-comment character-right">
-&lt;div class="character-avatar">
+height="80" /&gt;
+&lt;/div&gt;
+&lt;div class="character-content"&gt;
+&lt;div class="character-bubble"&gt;
+&lt;p&gt;Yes! And it's really easy to use&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="character-note character-hooded character-comment character-right"&gt;
+&lt;div class="character-avatar"&gt;
 &lt;img src="https://not-matthias.github.io/apollo/images/characters/hooded.png"
 alt="hooded"
 width="80"
-height="80" />
-&lt;/div>
-&lt;div class="character-content">
-&lt;div class="character-bubble">
-&lt;p>We can even use multiple lines with code:&lt;/p>
-&lt;pre data-lang="rust" class="language-rust ">&lt;code class="language-rust" data-lang="rust">fn main() {
-println!(&amp;quot;Hey there!&amp;quot;);
-}
-&lt;/code>&lt;/pre>
-&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;h2 id="anchor-links">&lt;a class="zola-anchor" href="#anchor-links" aria-label="Anchor link for: anchor-links">Anchor Links&lt;/a>&lt;/h2>
-&lt;p>You can add anchor links by adding the following to your &lt;code>_index.md&lt;/code>:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">insert_anchor_links = &amp;quot;heading&amp;quot;
-&lt;/code>&lt;/pre>
-&lt;h2 id="taxonomy-sorting">&lt;a class="zola-anchor" href="#taxonomy-sorting" aria-label="Anchor link for: taxonomy-sorting">Taxonomy sorting&lt;/a>&lt;/h2>
-&lt;p>You can sort the taxonomies page with the following config:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">[extra.taxonomies]
-sort_by = &amp;quot;page_count&amp;quot; # e.g. name, page_count
-reverse = true
-&lt;/code>&lt;/pre>
-&lt;p>The &lt;code>sort_by&lt;/code> argument is directly passed to the &lt;code>sort_by&lt;/code> function:&lt;/p>
-&lt;pre data-lang="jinja" class="language-jinja ">&lt;code class="language-jinja" data-lang="jinja">{% set sort_by = config.extra.taxonomies.sort_by | default(value=&amp;quot;name&amp;quot;) %}
-{% set terms = terms | default(value=[]) | sort(attribute=sort_by) %}
-{% if config.extra.taxonomies.reverse | default(value=false) %}
-{% set terms = terms | reverse %}
-{% endif %}
-{% for term in terms %}
-&amp;lt;li&amp;gt;
-&amp;lt;a href=&amp;quot;{{ term.permalink | safe }}&amp;quot;&amp;gt;
-{{ term.name }} ({{ term.pages | length }} post{{ term.pages | length | pluralize }})
-&amp;lt;&amp;#x2F;a&amp;gt;
-&amp;lt;&amp;#x2F;li&amp;gt;
-{% endfor %}
-&lt;/code>&lt;/pre>
-&lt;p>Possible values include anything within the &lt;a href="https://www.getzola.org/documentation/templates/taxonomies/">TaxonomyTerm object&lt;/a>:&lt;/p>
-&lt;pre data-lang="rust" class="language-rust ">&lt;code class="language-rust" data-lang="rust">name: String;
-slug: String;
-path: String;
-permalink: String;
-pages: Array&amp;lt;Page&amp;gt;;
-page_count: Number;
-&lt;/code>&lt;/pre>
-&lt;p>Examples:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>name&lt;/code> to sort by name&lt;/li>
-&lt;li>&lt;code>page_count&lt;/code> to sort by page count&lt;/li>
-&lt;/ul>
-&lt;h2 id="analytics">&lt;a class="zola-anchor" href="#analytics" aria-label="Anchor link for: analytics">Analytics&lt;/a>&lt;/h2>
-&lt;p>Enable or disable analytics tracking:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">[extra.analytics]
-enabled = false
-&lt;/code>&lt;/pre>
-&lt;p>After enabling analytics, configure GoatCounter or Umami.&lt;/p>
-&lt;h3 id="goatcounter">&lt;a class="zola-anchor" href="#goatcounter" aria-label="Anchor link for: goatcounter">GoatCounter&lt;/a>&lt;/h3>
-&lt;p>Configure GoatCounter analytics:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">[extra.analytics.goatcounter]
-user = &amp;quot;your_user&amp;quot; # Your GoatCounter username
-host = &amp;quot;example.com&amp;quot; # Optional: Custom host
-&lt;/code>&lt;/pre>
-&lt;h3 id="umami-analytics">&lt;a class="zola-anchor" href="#umami-analytics" aria-label="Anchor link for: umami-analytics">Umami Analytics&lt;/a>&lt;/h3>
-&lt;p>Configure Umami analytics:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">[extra.analytics.umami]
-website_id = &amp;quot;43929cd1-1e83....&amp;quot; # Your Umami website ID
-host_url = &amp;quot;https:&amp;#x2F;&amp;#x2F;stats.mywebsite.com&amp;quot; # Optional: Custom host URL
-&lt;/code>&lt;/pre>
-&lt;h2 id="fediverse-author-attribution">&lt;a class="zola-anchor" href="#fediverse-author-attribution" aria-label="Anchor link for: fediverse-author-attribution">Fediverse Author Attribution&lt;/a>&lt;/h2>
-&lt;p>Enable fediverse author attribution to add a meta tag for fediverse platforms:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">[extra]
-fediverse = true
-fediverse_creator = &amp;quot;@user@instance.social&amp;quot;
-&lt;/code>&lt;/pre>
-&lt;ul>
-&lt;li>Type: Boolean&lt;/li>
-&lt;li>Default: false&lt;/li>
-&lt;li>Usage: &lt;code>fediverse = true&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>When enabled, this adds a &lt;code>fediverse:creator&lt;/code> meta tag to your site's HTML header, allowing fediverse platforms to attribute content to your account. Set &lt;code>fediverse_creator&lt;/code> to your fediverse handle in the format &lt;code>@user@instance&lt;/code>.&lt;/p>
-&lt;hr />
-&lt;h1 id="page-configuration">&lt;a class="zola-anchor" href="#page-configuration" aria-label="Anchor link for: page-configuration">Page configuration&lt;/a>&lt;/h1>
-&lt;h2 id="source-code-repo-view">&lt;a class="zola-anchor" href="#source-code-repo-view" aria-label="Anchor link for: source-code-repo-view">Source code (&lt;code>repo_view&lt;/code>)&lt;/a>&lt;/h2>
-&lt;p>Do you want to link to the source code of your blog post? You can turn on the &lt;code>repo_view&lt;/code> inside the &lt;code>[extra]&lt;/code> section of your blog post.&lt;/p>
-&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">[extra]
-repo_view = true
-repo_url = &amp;quot;https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;not-matthias&amp;#x2F;apollo&amp;#x2F;tree&amp;#x2F;main&amp;#x2F;content&amp;quot; # Alternatively add the repo here
-&lt;/code>&lt;/pre>
-&lt;p>The &lt;code>repo_url&lt;/code> can be set in the &lt;code>[extra]&lt;/code> section or in your &lt;code>config.toml&lt;/code>.&lt;/p>
-&lt;h2 id="mathjax-mathjax">&lt;a class="zola-anchor" href="#mathjax-mathjax" aria-label="Anchor link for: mathjax-mathjax">MathJax (&lt;code>mathjax&lt;/code>)&lt;/a>&lt;/h2>
-&lt;p>Enables MathJax for rendering mathematical equations.&lt;/p>
-&lt;ul>
-&lt;li>Type: Boolean&lt;/li>
-&lt;li>Default: false&lt;/li>
-&lt;/ul>
-&lt;p>MathJax can be enabled globally (loads on every page) or per-page (loads only where needed).&lt;/p>
-&lt;p>&lt;strong>Per-page&lt;/strong>: add to a post's front matter&lt;/p>
-&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">+++
-title = &amp;quot;My Math Post&amp;quot;
-[extra]
-mathjax = true
-+++
-&lt;/code>&lt;/pre>
-&lt;p>&lt;strong>Global&lt;/strong>: add to your &lt;code>config.toml&lt;/code>&lt;/p>
-&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">[extra]
-mathjax = true
-&lt;/code>&lt;/pre>
-&lt;p>Inline &lt;code>$...$&lt;/code> math is always enabled when MathJax is active.&lt;/p>
-&lt;p>See &lt;a href="https://github.com/not-matthias/apollo/blob/main/content/posts/math-symbol.md">math-symbol.md&lt;/a> for a full example.&lt;/p>
-&lt;h2 id="comments-comment">&lt;a class="zola-anchor" href="#comments-comment" aria-label="Anchor link for: comments-comment">Comments (&lt;code>comment&lt;/code>)&lt;/a>&lt;/h2>
-&lt;p>Enables or disables the comment system for posts.&lt;/p>
-&lt;ul>
-&lt;li>Type: Boolean&lt;/li>
-&lt;li>Default: false&lt;/li>
-&lt;li>Usage: &lt;code>comment = false&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>After making &lt;code>comment = true&lt;/code> in &lt;code>[extra]&lt;/code> section of you post, save your script from &lt;a href="https://giscus.app">Giscus&lt;/a> to &lt;code>templates/_giscus_script.html&lt;/code>.
-When enabled, this allows readers to leave comments on your blog posts. This feature has to be set for each individual post and is not supported at higher levels.&lt;/p>
-&lt;p>Example configuration in &lt;a href="https://github.com/not-matthias/apollo/blob/main/content/posts/configuration.md">content/posts/configuration.md&lt;/a>:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">+++
-title = &amp;quot;Configuring Apollo&amp;quot;
-[extra]
-comment = true
-+++
-&lt;/code>&lt;/pre>
-&lt;p>Comments via &lt;a href="https://utteranc.es">utterances&lt;/a> can be configured in &lt;code>template/_giscus_script.html&lt;/code> like this:&lt;/p>
-&lt;pre data-lang="html" class="language-html ">&lt;code class="language-html" data-lang="html">&amp;lt;script src=&amp;quot;https:&amp;#x2F;&amp;#x2F;utteranc.es&amp;#x2F;client.js&amp;quot;
-repo=&amp;quot;YOUR_NAME&amp;#x2F;YOUR_REPO&amp;quot;
-issue-term=&amp;quot;pathname&amp;quot;
-theme=&amp;quot;github-light&amp;quot;
-crossorigin=&amp;quot;anonymous&amp;quot;
-async&amp;gt;
-&amp;lt;&amp;#x2F;script&amp;gt;
-&lt;/code>&lt;/pre>
-&lt;h1 id="cards-page">&lt;a class="zola-anchor" href="#cards-page" aria-label="Anchor link for: cards-page">Cards Page&lt;/a>&lt;/h1>
-&lt;p>The &lt;code>cards.html&lt;/code> template allows you to display a list of items in a card format. This is ideal for showcasing projects, but can be used for any list of items you want to display in a visually appealing way.&lt;/p>
-&lt;p>To create a cards page, you need to create a &lt;code>_index.md&lt;/code> file in a content directory (e.g., &lt;code>content/projects&lt;/code>). The following front matter is recommended:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">+++
-title = &amp;quot;Projects&amp;quot;
-sort_by = &amp;quot;weight&amp;quot;
-template = &amp;quot;cards.html&amp;quot;
-[extra]
-cards_columns = 3
-card_media_height = 200
-+++
-&lt;/code>&lt;/pre>
-&lt;ul>
-&lt;li>&lt;code>cards_columns&lt;/code>: Set exact number of columns (2, 3, 4) or omit for default 2-column layout&lt;/li>
-&lt;li>&lt;code>card_media_height&lt;/code>: Control the height of card media area in pixels (default: 300)&lt;/li>
-&lt;/ul>
-&lt;p>Each item in the list should be a separate markdown file in the same directory. The following front matter is supported:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>title&lt;/code>: The title of the item.&lt;/li>
-&lt;li>&lt;code>description&lt;/code>: A short description of the item.&lt;/li>
-&lt;li>&lt;code>weight&lt;/code>: The order in which the item appears on the page.&lt;/li>
-&lt;li>&lt;code>local_image&lt;/code>: A path to a local image for the item's thumbnail. See the &lt;a href="https://not-matthias.github.io/apollo/posts/configuration/#local-image">Local Image&lt;/a> section for more details.&lt;/li>
-&lt;li>&lt;code>local_video&lt;/code>: A path to a local video for the item's thumbnail. See the &lt;a href="https://not-matthias.github.io/apollo/posts/configuration/#local-video">Local Video&lt;/a> section for more details.&lt;/li>
-&lt;li>&lt;code>remote_video&lt;/code>: A URL to a remote video for the item's thumbnail.&lt;/li>
-&lt;li>&lt;code>link_to&lt;/code>: A URL the card should link to.&lt;/li>
-&lt;/ul>
-&lt;h1 id="talks-page">&lt;a class="zola-anchor" href="#talks-page" aria-label="Anchor link for: talks-page">Talks Page&lt;/a>&lt;/h1>
-&lt;p>To create a talks page, you need to create a &lt;code>_index.md&lt;/code> file in the &lt;code>content/talks&lt;/code> directory. The following front matter is recommended:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">+++
-title = &amp;quot;Talks&amp;quot;
-sort_by = &amp;quot;date&amp;quot;
-template = &amp;quot;talks.html&amp;quot;
-+++
-&lt;/code>&lt;/pre>
-&lt;p>Each talk should be a separate markdown file in the &lt;code>content/talks&lt;/code> directory. The following front matter is supported:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>title&lt;/code>: The title of the talk.&lt;/li>
-&lt;li>&lt;code>description&lt;/code>: A short description of the talk.&lt;/li>
-&lt;li>&lt;code>date&lt;/code>: The date of the talk (displayed with a calendar icon).&lt;/li>
-&lt;li>&lt;code>local_image&lt;/code>: A path to a local image for the item's thumbnail. See the &lt;a href="https://not-matthias.github.io/apollo/posts/configuration/#local-image">Local Image&lt;/a> section for more details.&lt;/li>
-&lt;li>&lt;code>video&lt;/code>: A map with a &lt;code>link&lt;/code> and &lt;code>thumbnail&lt;/code> for the talk video.&lt;/li>
-&lt;li>&lt;code>organizer&lt;/code>: A map with a &lt;code>name&lt;/code> and &lt;code>link&lt;/code> for the event organizer (displayed with a location icon).&lt;/li>
-&lt;li>&lt;code>slides&lt;/code>: A URL to the presentation slides.&lt;/li>
-&lt;li>&lt;code>code&lt;/code>: A URL to the source code.&lt;/li>
-&lt;/ul>
-&lt;h1 id="local-image">&lt;a class="zola-anchor" href="#local-image" aria-label="Anchor link for: local-image">Local Image&lt;/a>&lt;/h1>
-&lt;p>The &lt;code>local_image&lt;/code> front matter parameter allows you to specify a path to a local image that will be used as the thumbnail for a page. This is particularly useful for social media previews and other places where a representative image is needed.&lt;/p>
-&lt;p>The path resolution for &lt;code>local_image&lt;/code> works as follows:&lt;/p>
-&lt;ul>
-&lt;li>If the path starts with a &lt;code>/&lt;/code>, it is treated as an absolute path from the &lt;code>content&lt;/code> directory. For example, &lt;code>local_image = "/projects/project-1.jpg"&lt;/code> will resolve to &lt;code>content/projects/project-1.jpg&lt;/code>.&lt;/li>
-&lt;li>If the path does not start with a &lt;code>/&lt;/code>, it is treated as a relative path. The theme will prepend the &lt;code>section.path&lt;/code> to the &lt;code>local_image&lt;/code> path. For example, if you are in a page at &lt;code>content/posts/my-post/index.md&lt;/code> and you set &lt;code>local_image = "thumbnail.png"&lt;/code>, the theme will look for the image at &lt;code>posts/my-post/thumbnail.png&lt;/code>.&lt;/li>
-&lt;/ul>
-&lt;h1 id="local-video">&lt;a class="zola-anchor" href="#local-video" aria-label="Anchor link for: local-video">Local Video&lt;/a>&lt;/h1>
-&lt;p>The &lt;code>local_video&lt;/code> front matter parameter allows you to specify a path to a local video file that will be displayed as the thumbnail for a page. This is particularly useful for showcasing projects with dynamic content.&lt;/p>
-&lt;p>The path resolution for &lt;code>local_video&lt;/code> works the same as &lt;code>local_image&lt;/code>:&lt;/p>
-&lt;ul>
-&lt;li>If the path starts with a &lt;code>/&lt;/code>, it is treated as an absolute path from the &lt;code>content&lt;/code> directory. For example, &lt;code>local_video = "/projects/demo.mp4"&lt;/code> will resolve to &lt;code>content/projects/demo.mp4&lt;/code>.&lt;/li>
-&lt;li>If the path does not start with a &lt;code>/&lt;/code>, it is treated as a relative path. The theme will prepend the &lt;code>section.path&lt;/code> to the &lt;code>local_video&lt;/code> path. For example, if you are in a page at &lt;code>content/projects/my-project/index.md&lt;/code> and you set &lt;code>local_video = "demo.webm"&lt;/code>, the theme will look for the video at &lt;code>projects/my-project/demo.webm&lt;/code>.&lt;/li>
-&lt;/ul>
-&lt;h2 id="remote-video">&lt;a class="zola-anchor" href="#remote-video" aria-label="Anchor link for: remote-video">Remote Video&lt;/a>&lt;/h2>
-&lt;p>The &lt;code>remote_video&lt;/code> front matter parameter allows you to specify a URL to a remote video file that will be displayed as the thumbnail for a page.&lt;/p>
-&lt;p>Example usage:&lt;/p>
-&lt;pre data-lang="toml" class="language-toml ">&lt;code class="language-toml" data-lang="toml">[extra]
-remote_video = &amp;quot;https:&amp;#x2F;&amp;#x2F;example.com&amp;#x2F;videos&amp;#x2F;demo.mp4&amp;quot;
-&lt;/code>&lt;/pre>
-&lt;p>The browser will automatically detect the video format, so you don't need to worry about specifying the MIME type.&lt;/p></content></entry><entry xml:lang="en"><title>Building Lightning-Fast Static Sites with Zola</title><published>2024-06-22T00:00:00+00:00</published><updated>2024-06-22T00:00:00+00:00</updated><author><name>
-Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/talks/building-fast-static-sites/"/><id>https://not-matthias.github.io/apollo/talks/building-fast-static-sites/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/talks/building-fast-static-sites/">&lt;p>An introduction to Zola and static site generation, demonstrating how to achieve sub-second build times and perfect Lighthouse scores.&lt;/p></content></entry><entry xml:lang="en"><title>Shortcode Example</title><published>2024-06-14T00:00:00+00:00</published><updated>2024-06-14T00:00:00+00:00</updated><author><name>
-Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/shortcode/"/><id>https://not-matthias.github.io/apollo/posts/shortcode/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/shortcode/">&lt;h2 id="note">&lt;a class="zola-anchor" href="#note" aria-label="Anchor link for: note">Note&lt;/a>&lt;/h2>
-&lt;p>Here is an example of the &lt;code>note&lt;/code> shortcode:&lt;/p>
-&lt;p>This one is static!
-&lt;div class="note-container">
-&lt;div class="note-header">
-&lt;div class="note-icon">
-&lt;p>Note!&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div class="note-content">
-&lt;p>This blog assumes basic terminal maturity&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;/p>
-&lt;p>This one is clickable!
-&lt;div class="note-container">
-&lt;button class="note-toggle">
-&lt;div class="note-icon">
-&lt;p>Quiz!&lt;/p>
-&lt;/div>
-&lt;/button>
-&lt;div class="note-content" style="display: none;">
-&lt;p>The answer to the quiz!&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;/p>
-&lt;p>Syntax:&lt;/p>
-&lt;pre>&lt;code>{{ note(header=&amp;quot;Note!&amp;quot;, body=&amp;quot;This blog assumes basic terminal maturity&amp;quot;) }}
-{{ note(clickable=true, hidden = true, header=&amp;quot;Quiz!&amp;quot;, body=&amp;quot;The answer to the quiz!&amp;quot;) }}
-&lt;/code>&lt;/pre>
-&lt;p>You can also use some HTML in the text:
-&lt;div class="note-container">
-&lt;div class="note-header">
-&lt;div class="note-icon">
-&lt;p>Note!&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div class="note-content">
-&lt;h1>This blog assumes basic terminal maturity&lt;/h1>
-&lt;/div>
-&lt;/div>
-&lt;/p>
-&lt;p>Literal shortcode:&lt;/p>
-&lt;pre>&lt;code>{{ note(header=&amp;quot;Note!&amp;quot;, body=&amp;quot;&amp;lt;h1&amp;gt;This blog assumes basic terminal maturity&amp;lt;&amp;#x2F;h1&amp;gt;&amp;quot;) }}
-&lt;/code>&lt;/pre>
-&lt;p>Pretty cool, right?&lt;/p>
-&lt;p>Finally, you can do something like this (hopefully):&lt;/p>
-&lt;div class="note-container">
-&lt;button class="note-toggle">
-&lt;div class="note-icon">
-&lt;p>Quiz!&lt;/p>
-&lt;/div>
-&lt;/button>
-&lt;div class="note-content" style="display: block;">
-&lt;h1 id="hello-this-is-markdown-inside-a-note-shortcode">Hello this is markdown inside a note shortcode&lt;/h1>
-&lt;pre data-lang="rust" class="language-rust ">&lt;code class="language-rust" data-lang="rust">fn main() {
-println!(&amp;quot;Hello World&amp;quot;);
-}
-&lt;/code>&lt;/pre>
-&lt;p>We can't call another shortcode inside a shortcode, but this is good enough.&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;p>Here is the raw markdown:&lt;/p>
-&lt;pre data-lang="markdown" class="language-markdown ">&lt;code class="language-markdown" data-lang="markdown">{{ note(clickable=true, header=&amp;quot;Quiz!&amp;quot;) }}
-# Hello this is markdown inside a note shortcode
-\`\`\`rust
-fn main() {
-println!(&amp;quot;Hello World&amp;quot;);
-}
-\`\`\`
-We can&amp;#x27;t call another shortcode inside a shortcode, but this is good enough.
-{{&amp;#x2F;* end *&amp;#x2F;}}
-&lt;/code>&lt;/pre>
-&lt;p>Finally, we have center
-&lt;div class="note-container">
-&lt;div class="note-header">
-&lt;div class="note-center">
-&lt;p>Centered Text&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div class="note-content">
-&lt;p>This is centered text&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;/p>
-&lt;pre data-lang="markdown" class="language-markdown ">&lt;code class="language-markdown" data-lang="markdown">{{ note(center=true, header=&amp;quot;Centered Text&amp;quot;, body=&amp;quot;This is centered text&amp;quot;) }}
-&lt;/code>&lt;/pre>
-&lt;p>It works good enough for me!&lt;/p></content></entry><entry xml:lang="en"><title>DevSecOps Pipeline Toolkit</title><published>2024-06-10T00:00:00+00:00</published><updated>2024-06-10T00:00:00+00:00</updated><author><name>
-Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/projects/bacteria-in-porous-media/"/><id>https://not-matthias.github.io/apollo/projects/bacteria-in-porous-media/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/projects/bacteria-in-porous-media/">&lt;p>A comprehensive DevSecOps toolkit that integrates security scanning directly into CI/CD pipelines. Features automated vulnerability detection, container scanning, infrastructure-as-code validation, and compliance checking. Built for cloud-native environments with support for multi-cloud deployments. Includes customizable security policies, detailed reporting, and automated remediation suggestions.&lt;/p></content></entry><entry xml:lang="en"><title>Kernel Fuzzing Framework</title><published>2024-03-15T00:00:00+00:00</published><updated>2024-03-15T00:00:00+00:00</updated><author><name>
+height="80" /&gt;
+&lt;/div&gt;
+&lt;div class="character-content"&gt;
+&lt;div class="character-bubble"&gt;
+&lt;p&gt;We can even use multiple lines with code:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="rust"&gt;&lt;span class="giallo-l"&gt;&lt;span class="z-keyword"&gt;fn&lt;/span&gt;&lt;span class="z-entity z-name"&gt; main&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-entity z-name"&gt; println!&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;Hey there!&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="anchor-links"&gt;&lt;a class="zola-anchor" href="#anchor-links" aria-label="Anchor link for: anchor-links"&gt;Anchor Links&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You can add anchor links by adding the following to your &lt;code&gt;_index.md&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;insert_anchor_links&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;heading&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="taxonomy-sorting"&gt;&lt;a class="zola-anchor" href="#taxonomy-sorting" aria-label="Anchor link for: taxonomy-sorting"&gt;Taxonomy sorting&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You can sort the taxonomies page with the following config:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;[&lt;/span&gt;&lt;span class="z-entity z-name"&gt;extra&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span class="z-entity z-name"&gt;taxonomies&lt;/span&gt;&lt;span&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;sort_by&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;page_count&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-punctuation z-definition z-comment"&gt; #&lt;/span&gt;&lt;span class="z-comment"&gt; e.g. name, page_count&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;reverse&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; true&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;sort_by&lt;/code&gt; argument is directly passed to the &lt;code&gt;sort_by&lt;/code&gt; function:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="jinja"&gt;&lt;span class="giallo-l"&gt;&lt;span class="z-entity"&gt;{%&lt;/span&gt;&lt;span class="z-keyword"&gt; set&lt;/span&gt;&lt;span class="z-variable z-other"&gt; sort_by&lt;/span&gt;&lt;span class="z-keyword"&gt; =&lt;/span&gt;&lt;span class="z-variable z-other"&gt; config&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span class="z-variable z-other"&gt;extra&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span class="z-variable z-other"&gt;taxonomies&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span class="z-variable z-other"&gt;sort_by&lt;/span&gt;&lt;span&gt; |&lt;/span&gt;&lt;span class="z-variable z-other"&gt; default&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span class="z-variable z-other"&gt;value&lt;/span&gt;&lt;span class="z-keyword"&gt;=&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;name&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span class="z-entity"&gt; %}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-entity"&gt;{%&lt;/span&gt;&lt;span class="z-keyword"&gt; set&lt;/span&gt;&lt;span class="z-variable z-other"&gt; terms&lt;/span&gt;&lt;span class="z-keyword"&gt; =&lt;/span&gt;&lt;span class="z-variable z-other"&gt; terms&lt;/span&gt;&lt;span&gt; |&lt;/span&gt;&lt;span class="z-variable z-other"&gt; default&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span class="z-variable z-other"&gt;value&lt;/span&gt;&lt;span class="z-keyword"&gt;=&lt;/span&gt;&lt;span&gt;[&lt;/span&gt;&lt;span&gt;]&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt; |&lt;/span&gt;&lt;span class="z-variable z-other"&gt; sort&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span class="z-variable z-other"&gt;attribute&lt;/span&gt;&lt;span class="z-keyword"&gt;=&lt;/span&gt;&lt;span class="z-variable z-other"&gt;sort_by&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span class="z-entity"&gt; %}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-entity"&gt;{%&lt;/span&gt;&lt;span class="z-keyword"&gt; if&lt;/span&gt;&lt;span class="z-variable z-other"&gt; config&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span class="z-variable z-other"&gt;extra&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span class="z-variable z-other"&gt;taxonomies&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span class="z-variable z-other"&gt;reverse&lt;/span&gt;&lt;span&gt; |&lt;/span&gt;&lt;span class="z-variable z-other"&gt; default&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span class="z-variable z-other"&gt;value&lt;/span&gt;&lt;span class="z-keyword"&gt;=&lt;/span&gt;&lt;span class="z-constant"&gt;false&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span class="z-entity"&gt; %}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-entity"&gt; {%&lt;/span&gt;&lt;span class="z-keyword"&gt; set&lt;/span&gt;&lt;span class="z-variable z-other"&gt; terms&lt;/span&gt;&lt;span class="z-keyword"&gt; =&lt;/span&gt;&lt;span class="z-variable z-other"&gt; terms&lt;/span&gt;&lt;span&gt; |&lt;/span&gt;&lt;span class="z-variable z-other"&gt; reverse&lt;/span&gt;&lt;span class="z-entity"&gt; %}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-entity"&gt;{%&lt;/span&gt;&lt;span class="z-keyword"&gt; endif&lt;/span&gt;&lt;span class="z-entity"&gt; %}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-entity"&gt;{%&lt;/span&gt;&lt;span class="z-keyword"&gt; for&lt;/span&gt;&lt;span class="z-variable z-other"&gt; term&lt;/span&gt;&lt;span class="z-keyword"&gt; in&lt;/span&gt;&lt;span class="z-variable z-other"&gt; terms&lt;/span&gt;&lt;span class="z-entity"&gt; %}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;li&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;a href=&amp;quot;&lt;/span&gt;&lt;span class="z-variable"&gt;{{&lt;/span&gt;&lt;span class="z-variable z-other"&gt; term&lt;/span&gt;&lt;span class="z-variable"&gt;.&lt;/span&gt;&lt;span class="z-variable z-other"&gt;permalink&lt;/span&gt;&lt;span class="z-variable"&gt; |&lt;/span&gt;&lt;span class="z-variable z-other"&gt; safe&lt;/span&gt;&lt;span class="z-variable"&gt; }}&lt;/span&gt;&lt;span&gt;&amp;quot;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable"&gt; {{&lt;/span&gt;&lt;span class="z-variable z-other"&gt; term&lt;/span&gt;&lt;span class="z-variable"&gt;.&lt;/span&gt;&lt;span class="z-variable z-other"&gt;name&lt;/span&gt;&lt;span class="z-variable"&gt; }}&lt;/span&gt;&lt;span&gt; (&lt;/span&gt;&lt;span class="z-variable"&gt;{{&lt;/span&gt;&lt;span class="z-variable z-other"&gt; term&lt;/span&gt;&lt;span class="z-variable"&gt;.&lt;/span&gt;&lt;span class="z-variable z-other"&gt;pages&lt;/span&gt;&lt;span class="z-variable"&gt; |&lt;/span&gt;&lt;span class="z-variable z-other"&gt; length&lt;/span&gt;&lt;span class="z-variable"&gt; }}&lt;/span&gt;&lt;span&gt; post&lt;/span&gt;&lt;span class="z-variable"&gt;{{&lt;/span&gt;&lt;span class="z-variable z-other"&gt; term&lt;/span&gt;&lt;span class="z-variable"&gt;.&lt;/span&gt;&lt;span class="z-variable z-other"&gt;pages&lt;/span&gt;&lt;span class="z-variable"&gt; |&lt;/span&gt;&lt;span class="z-variable z-other"&gt; length&lt;/span&gt;&lt;span class="z-variable"&gt; |&lt;/span&gt;&lt;span class="z-variable z-other"&gt; pluralize&lt;/span&gt;&lt;span class="z-variable"&gt; }}&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;/a&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; &amp;lt;/li&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-entity"&gt;{%&lt;/span&gt;&lt;span class="z-keyword"&gt; endfor&lt;/span&gt;&lt;span class="z-entity"&gt; %}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Possible values include anything within the &lt;a rel="external" href="https://www.getzola.org/documentation/templates/taxonomies/"&gt;TaxonomyTerm object&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="rust"&gt;&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;name&lt;/span&gt;&lt;span class="z-keyword"&gt;:&lt;/span&gt;&lt;span class="z-entity z-name"&gt; String&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;slug&lt;/span&gt;&lt;span class="z-keyword"&gt;:&lt;/span&gt;&lt;span class="z-entity z-name"&gt; String&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;path&lt;/span&gt;&lt;span class="z-keyword"&gt;:&lt;/span&gt;&lt;span class="z-entity z-name"&gt; String&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;permalink&lt;/span&gt;&lt;span class="z-keyword"&gt;:&lt;/span&gt;&lt;span class="z-entity z-name"&gt; String&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;pages&lt;/span&gt;&lt;span class="z-keyword"&gt;:&lt;/span&gt;&lt;span class="z-entity z-name"&gt; Array&lt;/span&gt;&lt;span&gt;&amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name"&gt;Page&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;page_count&lt;/span&gt;&lt;span class="z-keyword"&gt;:&lt;/span&gt;&lt;span class="z-entity z-name"&gt; Number&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;name&lt;/code&gt; to sort by name&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;page_count&lt;/code&gt; to sort by page count&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="analytics"&gt;&lt;a class="zola-anchor" href="#analytics" aria-label="Anchor link for: analytics"&gt;Analytics&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Enable or disable analytics tracking:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;[&lt;/span&gt;&lt;span class="z-entity z-name"&gt;extra&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span class="z-entity z-name"&gt;analytics&lt;/span&gt;&lt;span&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;enabled&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; false&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After enabling analytics, configure GoatCounter or Umami.&lt;/p&gt;
+&lt;h3 id="goatcounter"&gt;&lt;a class="zola-anchor" href="#goatcounter" aria-label="Anchor link for: goatcounter"&gt;GoatCounter&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Configure GoatCounter analytics:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;[&lt;/span&gt;&lt;span class="z-entity z-name"&gt;extra&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span class="z-entity z-name"&gt;analytics&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span class="z-entity z-name"&gt;goatcounter&lt;/span&gt;&lt;span&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;user&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;your_user&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-punctuation z-definition z-comment"&gt; #&lt;/span&gt;&lt;span class="z-comment"&gt; Your GoatCounter username&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;host&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;example.com&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-punctuation z-definition z-comment"&gt; #&lt;/span&gt;&lt;span class="z-comment"&gt; Optional: Custom host&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="umami-analytics"&gt;&lt;a class="zola-anchor" href="#umami-analytics" aria-label="Anchor link for: umami-analytics"&gt;Umami Analytics&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Configure Umami analytics:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;[&lt;/span&gt;&lt;span class="z-entity z-name"&gt;extra&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span class="z-entity z-name"&gt;analytics&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span class="z-entity z-name"&gt;umami&lt;/span&gt;&lt;span&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;website_id&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;43929cd1-1e83....&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-punctuation z-definition z-comment"&gt; #&lt;/span&gt;&lt;span class="z-comment"&gt; Your Umami website ID&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;host_url&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;https://stats.mywebsite.com&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-punctuation z-definition z-comment"&gt; #&lt;/span&gt;&lt;span class="z-comment"&gt; Optional: Custom host URL&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="fediverse-author-attribution"&gt;&lt;a class="zola-anchor" href="#fediverse-author-attribution" aria-label="Anchor link for: fediverse-author-attribution"&gt;Fediverse Author Attribution&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Enable fediverse author attribution to add a meta tag for fediverse platforms:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;[&lt;/span&gt;&lt;span class="z-entity z-name"&gt;extra&lt;/span&gt;&lt;span&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;fediverse&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; true&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;fediverse_creator&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;@user@instance.social&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;/li&gt;
+&lt;li&gt;Default: false&lt;/li&gt;
+&lt;li&gt;Usage: &lt;code&gt;fediverse = true&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When enabled, this adds a &lt;code&gt;fediverse:creator&lt;/code&gt; meta tag to your site's HTML header, allowing fediverse platforms to attribute content to your account. Set &lt;code&gt;fediverse_creator&lt;/code&gt; to your fediverse handle in the format &lt;code&gt;@user@instance&lt;/code&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h1 id="page-configuration"&gt;&lt;a class="zola-anchor" href="#page-configuration" aria-label="Anchor link for: page-configuration"&gt;Page configuration&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="source-code-repo-view"&gt;&lt;a class="zola-anchor" href="#source-code-repo-view" aria-label="Anchor link for: source-code-repo-view"&gt;Source code (&lt;code&gt;repo_view&lt;/code&gt;)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Do you want to link to the source code of your blog post? You can turn on the &lt;code&gt;repo_view&lt;/code&gt; inside the &lt;code&gt;[extra]&lt;/code&gt; section of your blog post.&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;[&lt;/span&gt;&lt;span class="z-entity z-name"&gt;extra&lt;/span&gt;&lt;span&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;repo_view&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; true&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;repo_url&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;https://github.com/not-matthias/apollo/tree/main/content&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-punctuation z-definition z-comment"&gt; #&lt;/span&gt;&lt;span class="z-comment"&gt; Alternatively add the repo here&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;repo_url&lt;/code&gt; can be set in the &lt;code&gt;[extra]&lt;/code&gt; section or in your &lt;code&gt;config.toml&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="mathjax-mathjax"&gt;&lt;a class="zola-anchor" href="#mathjax-mathjax" aria-label="Anchor link for: mathjax-mathjax"&gt;MathJax (&lt;code&gt;mathjax&lt;/code&gt;)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Enables MathJax for rendering mathematical equations.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;/li&gt;
+&lt;li&gt;Default: false&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;MathJax can be enabled globally (loads on every page) or per-page (loads only where needed).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Per-page&lt;/strong&gt;: add to a post's front matter&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span class="z-invalid z-illegal"&gt;+++&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;title&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;My Math Post&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;[&lt;/span&gt;&lt;span class="z-entity z-name"&gt;extra&lt;/span&gt;&lt;span&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;mathjax&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; true&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-invalid z-illegal"&gt;+++&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Global&lt;/strong&gt;: add to your &lt;code&gt;config.toml&lt;/code&gt;&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;[&lt;/span&gt;&lt;span class="z-entity z-name"&gt;extra&lt;/span&gt;&lt;span&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;mathjax&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; true&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Inline &lt;code&gt;$...$&lt;/code&gt; math is always enabled when MathJax is active.&lt;/p&gt;
+&lt;p&gt;See &lt;a rel="external" href="https://github.com/not-matthias/apollo/blob/main/content/posts/math-symbol.md"&gt;math-symbol.md&lt;/a&gt; for a full example.&lt;/p&gt;
+&lt;h2 id="comments-comment"&gt;&lt;a class="zola-anchor" href="#comments-comment" aria-label="Anchor link for: comments-comment"&gt;Comments (&lt;code&gt;comment&lt;/code&gt;)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Enables or disables the comment system for posts.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Boolean&lt;/li&gt;
+&lt;li&gt;Default: false&lt;/li&gt;
+&lt;li&gt;Usage: &lt;code&gt;comment = false&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After making &lt;code&gt;comment = true&lt;/code&gt; in &lt;code&gt;[extra]&lt;/code&gt; section of you post, save your script from &lt;a rel="external" href="https://giscus.app"&gt;Giscus&lt;/a&gt; to &lt;code&gt;templates/_giscus_script.html&lt;/code&gt;.
+When enabled, this allows readers to leave comments on your blog posts. This feature has to be set for each individual post and is not supported at higher levels.&lt;/p&gt;
+&lt;p&gt;Example configuration in &lt;a rel="external" href="https://github.com/not-matthias/apollo/blob/main/content/posts/configuration.md"&gt;content/posts/configuration.md&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span class="z-invalid z-illegal"&gt;+++&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;title&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;Configuring Apollo&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;[&lt;/span&gt;&lt;span class="z-entity z-name"&gt;extra&lt;/span&gt;&lt;span&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;comment&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; true&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-invalid z-illegal"&gt;+++&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Comments via &lt;a rel="external" href="https://utteranc.es"&gt;utterances&lt;/a&gt; can be configured in &lt;code&gt;template/_giscus_script.html&lt;/code&gt; like this:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="html"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;&amp;lt;&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;script&lt;/span&gt;&lt;span class="z-entity"&gt; src&lt;/span&gt;&lt;span&gt;=&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;https://utteranc.es/client.js&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-entity"&gt; repo&lt;/span&gt;&lt;span&gt;=&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;YOUR_NAME/YOUR_REPO&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-entity"&gt; issue-term&lt;/span&gt;&lt;span&gt;=&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;pathname&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-entity"&gt; theme&lt;/span&gt;&lt;span&gt;=&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;github-light&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-entity"&gt; crossorigin&lt;/span&gt;&lt;span&gt;=&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;anonymous&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-entity"&gt; async&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;&amp;lt;&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class="z-entity z-name z-tag"&gt;script&lt;/span&gt;&lt;span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id="cards-page"&gt;&lt;a class="zola-anchor" href="#cards-page" aria-label="Anchor link for: cards-page"&gt;Cards Page&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;The &lt;code&gt;cards.html&lt;/code&gt; template allows you to display a list of items in a card format. This is ideal for showcasing projects, but can be used for any list of items you want to display in a visually appealing way.&lt;/p&gt;
+&lt;p&gt;To create a cards page, you need to create a &lt;code&gt;_index.md&lt;/code&gt; file in a content directory (e.g., &lt;code&gt;content/projects&lt;/code&gt;). The following front matter is recommended:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span class="z-invalid z-illegal"&gt;+++&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;title&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;Projects&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;sort_by&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;weight&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;template&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;cards.html&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;[&lt;/span&gt;&lt;span class="z-entity z-name"&gt;extra&lt;/span&gt;&lt;span&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;cards_columns&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; 3&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;card_media_height&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-constant"&gt; 200&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-invalid z-illegal"&gt;+++&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cards_columns&lt;/code&gt;: Set exact number of columns (2, 3, 4) or omit for default 2-column layout&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;card_media_height&lt;/code&gt;: Control the height of card media area in pixels (default: 300)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Each item in the list should be a separate markdown file in the same directory. The following front matter is supported:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;title&lt;/code&gt;: The title of the item.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;description&lt;/code&gt;: A short description of the item.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: The order in which the item appears on the page.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;local_image&lt;/code&gt;: A path to a local image for the item's thumbnail. See the &lt;a href="https://not-matthias.github.io/apollo/posts/configuration/#local-image"&gt;Local Image&lt;/a&gt; section for more details.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;local_video&lt;/code&gt;: A path to a local video for the item's thumbnail. See the &lt;a href="https://not-matthias.github.io/apollo/posts/configuration/#local-video"&gt;Local Video&lt;/a&gt; section for more details.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;remote_video&lt;/code&gt;: A URL to a remote video for the item's thumbnail.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;link_to&lt;/code&gt;: A URL the card should link to.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="talks-page"&gt;&lt;a class="zola-anchor" href="#talks-page" aria-label="Anchor link for: talks-page"&gt;Talks Page&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;To create a talks page, you need to create a &lt;code&gt;_index.md&lt;/code&gt; file in the &lt;code&gt;content/talks&lt;/code&gt; directory. The following front matter is recommended:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span class="z-invalid z-illegal"&gt;+++&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;title&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;Talks&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;sort_by&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;date&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;template&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;talks.html&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-invalid z-illegal"&gt;+++&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Each talk should be a separate markdown file in the &lt;code&gt;content/talks&lt;/code&gt; directory. The following front matter is supported:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;title&lt;/code&gt;: The title of the talk.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;description&lt;/code&gt;: A short description of the talk.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;date&lt;/code&gt;: The date of the talk (displayed with a calendar icon).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;local_image&lt;/code&gt;: A path to a local image for the item's thumbnail. See the &lt;a href="https://not-matthias.github.io/apollo/posts/configuration/#local-image"&gt;Local Image&lt;/a&gt; section for more details.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;video&lt;/code&gt;: A map with a &lt;code&gt;link&lt;/code&gt; and &lt;code&gt;thumbnail&lt;/code&gt; for the talk video.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;organizer&lt;/code&gt;: A map with a &lt;code&gt;name&lt;/code&gt; and &lt;code&gt;link&lt;/code&gt; for the event organizer (displayed with a location icon).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;slides&lt;/code&gt;: A URL to the presentation slides.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;code&lt;/code&gt;: A URL to the source code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="local-image"&gt;&lt;a class="zola-anchor" href="#local-image" aria-label="Anchor link for: local-image"&gt;Local Image&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;The &lt;code&gt;local_image&lt;/code&gt; front matter parameter allows you to specify a path to a local image that will be used as the thumbnail for a page. This is particularly useful for social media previews and other places where a representative image is needed.&lt;/p&gt;
+&lt;p&gt;The path resolution for &lt;code&gt;local_image&lt;/code&gt; works as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If the path starts with a &lt;code&gt;/&lt;/code&gt;, it is treated as an absolute path from the &lt;code&gt;content&lt;/code&gt; directory. For example, &lt;code&gt;local_image = "/projects/project-1.jpg"&lt;/code&gt; will resolve to &lt;code&gt;content/projects/project-1.jpg&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;If the path does not start with a &lt;code&gt;/&lt;/code&gt;, it is treated as a relative path. The theme will prepend the &lt;code&gt;section.path&lt;/code&gt; to the &lt;code&gt;local_image&lt;/code&gt; path. For example, if you are in a page at &lt;code&gt;content/posts/my-post/index.md&lt;/code&gt; and you set &lt;code&gt;local_image = "thumbnail.png"&lt;/code&gt;, the theme will look for the image at &lt;code&gt;posts/my-post/thumbnail.png&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="local-video"&gt;&lt;a class="zola-anchor" href="#local-video" aria-label="Anchor link for: local-video"&gt;Local Video&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;The &lt;code&gt;local_video&lt;/code&gt; front matter parameter allows you to specify a path to a local video file that will be displayed as the thumbnail for a page. This is particularly useful for showcasing projects with dynamic content.&lt;/p&gt;
+&lt;p&gt;The path resolution for &lt;code&gt;local_video&lt;/code&gt; works the same as &lt;code&gt;local_image&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If the path starts with a &lt;code&gt;/&lt;/code&gt;, it is treated as an absolute path from the &lt;code&gt;content&lt;/code&gt; directory. For example, &lt;code&gt;local_video = "/projects/demo.mp4"&lt;/code&gt; will resolve to &lt;code&gt;content/projects/demo.mp4&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;If the path does not start with a &lt;code&gt;/&lt;/code&gt;, it is treated as a relative path. The theme will prepend the &lt;code&gt;section.path&lt;/code&gt; to the &lt;code&gt;local_video&lt;/code&gt; path. For example, if you are in a page at &lt;code&gt;content/projects/my-project/index.md&lt;/code&gt; and you set &lt;code&gt;local_video = "demo.webm"&lt;/code&gt;, the theme will look for the video at &lt;code&gt;projects/my-project/demo.webm&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="remote-video"&gt;&lt;a class="zola-anchor" href="#remote-video" aria-label="Anchor link for: remote-video"&gt;Remote Video&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;remote_video&lt;/code&gt; front matter parameter allows you to specify a URL to a remote video file that will be displayed as the thumbnail for a page.&lt;/p&gt;
+&lt;p&gt;Example usage:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="toml"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;[&lt;/span&gt;&lt;span class="z-entity z-name"&gt;extra&lt;/span&gt;&lt;span&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-variable z-other"&gt;remote_video&lt;/span&gt;&lt;span&gt; =&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt; &amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;https://example.com/videos/demo.mp4&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The browser will automatically detect the video format, so you don't need to worry about specifying the MIME type.&lt;/p&gt;</content></entry><entry xml:lang="en"><title>Building Lightning-Fast Static Sites with Zola</title><published>2024-06-22T00:00:00+00:00</published><updated>2024-06-22T00:00:00+00:00</updated><author><name>
+Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/talks/building-fast-static-sites/"/><id>https://not-matthias.github.io/apollo/talks/building-fast-static-sites/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/talks/building-fast-static-sites/">&lt;p&gt;An introduction to Zola and static site generation, demonstrating how to achieve sub-second build times and perfect Lighthouse scores.&lt;/p&gt;</content></entry><entry xml:lang="en"><title>Shortcode Example</title><published>2024-06-14T00:00:00+00:00</published><updated>2024-06-14T00:00:00+00:00</updated><author><name>
+Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/shortcode/"/><id>https://not-matthias.github.io/apollo/posts/shortcode/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/shortcode/">&lt;h2 id="note"&gt;&lt;a class="zola-anchor" href="#note" aria-label="Anchor link for: note"&gt;Note&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Here is an example of the &lt;code&gt;note&lt;/code&gt; shortcode:&lt;/p&gt;
+&lt;p&gt;This one is static!
+&lt;div class="note-container"&gt;
+&lt;div class="note-header"&gt;
+&lt;div class="note-icon"&gt;
+&lt;p&gt;Note!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="note-content"&gt;
+&lt;p&gt;This blog assumes basic terminal maturity&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;This one is clickable!
+&lt;div class="note-container"&gt;
+&lt;button class="note-toggle"&gt;
+&lt;div class="note-icon"&gt;
+&lt;p&gt;Quiz!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/button&gt;
+&lt;div class="note-content" style="display: none;"&gt;
+&lt;p&gt;The answer to the quiz!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;Syntax:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="plain"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;{{ note(header=&amp;quot;Note!&amp;quot;, body=&amp;quot;This blog assumes basic terminal maturity&amp;quot;) }}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;{{ note(clickable=true, hidden = true, header=&amp;quot;Quiz!&amp;quot;, body=&amp;quot;The answer to the quiz!&amp;quot;) }}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can also use some HTML in the text:
+&lt;div class="note-container"&gt;
+&lt;div class="note-header"&gt;
+&lt;div class="note-icon"&gt;
+&lt;p&gt;Note!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="note-content"&gt;
+&lt;h1&gt;This blog assumes basic terminal maturity&lt;/h1&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;Literal shortcode:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="plain"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;{{ note(header=&amp;quot;Note!&amp;quot;, body=&amp;quot;&amp;lt;h1&amp;gt;This blog assumes basic terminal maturity&amp;lt;/h1&amp;gt;&amp;quot;) }}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Pretty cool, right?&lt;/p&gt;
+&lt;p&gt;Finally, you can do something like this (hopefully):&lt;/p&gt;
+&lt;div class="note-container"&gt;
+&lt;button class="note-toggle"&gt;
+&lt;div class="note-icon"&gt;
+&lt;p&gt;Quiz!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/button&gt;
+&lt;div class="note-content" style="display: block;"&gt;
+&lt;h1 id="hello-this-is-markdown-inside-a-note-shortcode"&gt;Hello this is markdown inside a note shortcode&lt;/h1&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="rust"&gt;&lt;span class="giallo-l"&gt;&lt;span class="z-keyword"&gt;fn&lt;/span&gt;&lt;span class="z-entity z-name"&gt; main&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-entity z-name"&gt; println!&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;Hello World&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can't call another shortcode inside a shortcode, but this is good enough.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Here is the raw markdown:&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="markdown"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;{{ note(clickable=true, header=&amp;quot;Quiz!&amp;quot;) }}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-markup z-heading"&gt;#&lt;/span&gt;&lt;span class="z-entity z-name"&gt; Hello this is markdown inside a note shortcode&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-constant"&gt;\`&lt;/span&gt;&lt;span class="z-constant"&gt;\`&lt;/span&gt;&lt;span class="z-constant"&gt;\`&lt;/span&gt;&lt;span&gt;rust&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;fn main() {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt; println!(&amp;quot;Hello World&amp;quot;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-constant"&gt;\`&lt;/span&gt;&lt;span class="z-constant"&gt;\`&lt;/span&gt;&lt;span class="z-constant"&gt;\`&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;We can&amp;#39;t call another shortcode inside a shortcode, but this is good enough.&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;{{/* end */}}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Finally, we have center
+&lt;div class="note-container"&gt;
+&lt;div class="note-header"&gt;
+&lt;div class="note-center"&gt;
+&lt;p&gt;Centered Text&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="note-content"&gt;
+&lt;p&gt;This is centered text&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="markdown"&gt;&lt;span class="giallo-l"&gt;&lt;span&gt;{{ note(center=true, header=&amp;quot;Centered Text&amp;quot;, body=&amp;quot;This is centered text&amp;quot;) }}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It works good enough for me!&lt;/p&gt;</content></entry><entry xml:lang="en"><title>DevSecOps Pipeline Toolkit</title><published>2024-06-10T00:00:00+00:00</published><updated>2024-06-10T00:00:00+00:00</updated><author><name>
+Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/projects/bacteria-in-porous-media/"/><id>https://not-matthias.github.io/apollo/projects/bacteria-in-porous-media/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/projects/bacteria-in-porous-media/">&lt;p&gt;A comprehensive DevSecOps toolkit that integrates security scanning directly into CI/CD pipelines. Features automated vulnerability detection, container scanning, infrastructure-as-code validation, and compliance checking. Built for cloud-native environments with support for multi-cloud deployments. Includes customizable security policies, detailed reporting, and automated remediation suggestions.&lt;/p&gt;</content></entry><entry xml:lang="en"><title>Kernel Fuzzing Framework</title><published>2024-03-15T00:00:00+00:00</published><updated>2024-03-15T00:00:00+00:00</updated><author><name>
 Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/projects/project-2/"/><id>https://not-matthias.github.io/apollo/projects/project-2/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/projects/project-2/"/></entry><entry xml:lang="en"><title>Debugging Kernel Drivers: Tools and Techniques</title><published>2024-03-10T00:00:00+00:00</published><updated>2024-03-10T00:00:00+00:00</updated><author><name>
-Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/talks/debugging-kernel-drivers/"/><id>https://not-matthias.github.io/apollo/talks/debugging-kernel-drivers/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/talks/debugging-kernel-drivers/">&lt;p>This talk demonstrates advanced debugging workflows for kernel driver development, including live kernel debugging, crash dump analysis, and performance profiling.&lt;/p></content></entry><entry xml:lang="en"><title>Memory Safety Analyzer</title><published>2024-01-20T00:00:00+00:00</published><updated>2024-01-20T00:00:00+00:00</updated><author><name>
+Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/talks/debugging-kernel-drivers/"/><id>https://not-matthias.github.io/apollo/talks/debugging-kernel-drivers/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/talks/debugging-kernel-drivers/">&lt;p&gt;This talk demonstrates advanced debugging workflows for kernel driver development, including live kernel debugging, crash dump analysis, and performance profiling.&lt;/p&gt;</content></entry><entry xml:lang="en"><title>Memory Safety Analyzer</title><published>2024-01-20T00:00:00+00:00</published><updated>2024-01-20T00:00:00+00:00</updated><author><name>
 Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/projects/project-3/"/><id>https://not-matthias.github.io/apollo/projects/project-3/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/projects/project-3/"/></entry><entry xml:lang="en"><title>Binary Analysis Platform</title><published>2023-11-08T00:00:00+00:00</published><updated>2023-11-08T00:00:00+00:00</updated><author><name>
 Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/projects/project-4/"/><id>https://not-matthias.github.io/apollo/projects/project-4/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/projects/project-4/"/></entry><entry xml:lang="en"><title>Introduction to WebAssembly</title><published>2023-11-05T00:00:00+00:00</published><updated>2023-11-05T00:00:00+00:00</updated><author><name>
-Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/talks/intro-to-webassembly/"/><id>https://not-matthias.github.io/apollo/talks/intro-to-webassembly/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/talks/intro-to-webassembly/">&lt;p>A beginner-friendly introduction to WebAssembly, showing how to compile Rust code to run in the browser and achieve near-native performance for compute-intensive tasks.&lt;/p></content></entry><entry xml:lang="en"><title>Apollo</title><published>2023-10-26T00:00:00+00:00</published><updated>2023-10-26T00:00:00+00:00</updated><author><name>
-Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/projects/project-1/"/><id>https://not-matthias.github.io/apollo/projects/project-1/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/projects/project-1/">&lt;p>Apollo is a fast, elegant static site theme built for Zola. It features a clean design with light/dark mode support, responsive layouts, and excellent performance. The theme is highly customizable through a simple configuration file and includes built-in support for analytics, social links, and math rendering.&lt;/p></content></entry><entry xml:lang="en"><title>Exploit Development Framework</title><published>2023-08-12T00:00:00+00:00</published><updated>2023-08-12T00:00:00+00:00</updated><author><name>
+Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/talks/intro-to-webassembly/"/><id>https://not-matthias.github.io/apollo/talks/intro-to-webassembly/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/talks/intro-to-webassembly/">&lt;p&gt;A beginner-friendly introduction to WebAssembly, showing how to compile Rust code to run in the browser and achieve near-native performance for compute-intensive tasks.&lt;/p&gt;</content></entry><entry xml:lang="en"><title>Apollo</title><published>2023-10-26T00:00:00+00:00</published><updated>2023-10-26T00:00:00+00:00</updated><author><name>
+Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/projects/project-1/"/><id>https://not-matthias.github.io/apollo/projects/project-1/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/projects/project-1/">&lt;p&gt;Apollo is a fast, elegant static site theme built for Zola. It features a clean design with light/dark mode support, responsive layouts, and excellent performance. The theme is highly customizable through a simple configuration file and includes built-in support for analytics, social links, and math rendering.&lt;/p&gt;</content></entry><entry xml:lang="en"><title>Exploit Development Framework</title><published>2023-08-12T00:00:00+00:00</published><updated>2023-08-12T00:00:00+00:00</updated><author><name>
 Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/projects/project-5/"/><id>https://not-matthias.github.io/apollo/projects/project-5/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/projects/project-5/"/></entry><entry xml:lang="en"><title>Math Symbol Example</title><published>2023-01-06T00:00:00+00:00</published><updated>2023-01-06T00:00:00+00:00</updated><author><name>
-Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/math-symbol/"/><id>https://not-matthias.github.io/apollo/posts/math-symbol/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/math-symbol/">&lt;p>Note: This requires &lt;code>mathjax = true&lt;/code> in the page's &lt;code>[extra]&lt;/code> section (per-page) or in the site's &lt;code>config.toml&lt;/code> &lt;code>[extra]&lt;/code> section (global).&lt;/p>
-&lt;h1 id="inline-math">&lt;a class="zola-anchor" href="#inline-math" aria-label="Anchor link for: inline-math">Inline Math&lt;/a>&lt;/h1>
-&lt;ul>
-&lt;li>$(a+b)^2$ = $a^2 + 2ab + b^2$&lt;/li>
-&lt;li>A polynomial P of degree d over $\mathbb{F}_p$ is an expression of the form
+Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/math-symbol/"/><id>https://not-matthias.github.io/apollo/posts/math-symbol/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/math-symbol/">&lt;p&gt;Note: This requires &lt;code&gt;mathjax = true&lt;/code&gt; in the page's &lt;code&gt;[extra]&lt;/code&gt; section (per-page) or in the site's &lt;code&gt;config.toml&lt;/code&gt; &lt;code&gt;[extra]&lt;/code&gt; section (global).&lt;/p&gt;
+&lt;h1 id="inline-math"&gt;&lt;a class="zola-anchor" href="#inline-math" aria-label="Anchor link for: inline-math"&gt;Inline Math&lt;/a&gt;&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;$(a+b)^2$ = $a^2 + 2ab + b^2$&lt;/li&gt;
+&lt;li&gt;A polynomial P of degree d over $\mathbb{F}_p$ is an expression of the form
 $P(s) = a_0 + a_1 . s + a_2 . s^2 + ... + a_d . s^d$ for some
-$a_0,..,a_d \in \mathbb{F}_p$&lt;/li>
-&lt;/ul>
-&lt;h1 id="displayed-math">&lt;a class="zola-anchor" href="#displayed-math" aria-label="Anchor link for: displayed-math">Displayed Math&lt;/a>&lt;/h1>
-&lt;p>$$
+$a_0,..,a_d \in \mathbb{F}_p$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="displayed-math"&gt;&lt;a class="zola-anchor" href="#displayed-math" aria-label="Anchor link for: displayed-math"&gt;Displayed Math&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;$$
 p := (\sum_{k∈I}{c_k.v_k} + \delta_v.t(x))·(\sum_{k∈I}{c_k.w_k} + \delta_w.t(x)) − (\sum_{k∈I}{c_k.y_k} + \delta_y.t(x))
-$$&lt;/p></content></entry><entry xml:lang="en"><title>Markdown Test</title><published>2022-01-01T00:00:00+00:00</published><updated>2022-05-01T00:00:00+00:00</updated><author><name>
-Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/markdown/"/><id>https://not-matthias.github.io/apollo/posts/markdown/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/markdown/">&lt;h1 id="h1">&lt;a class="zola-anchor" href="#h1" aria-label="Anchor link for: h1">H1&lt;/a>&lt;/h1>
-&lt;h2 id="h2">&lt;a class="zola-anchor" href="#h2" aria-label="Anchor link for: h2">H2&lt;/a>&lt;/h2>
-&lt;h3 id="h3">&lt;a class="zola-anchor" href="#h3" aria-label="Anchor link for: h3">H3&lt;/a>&lt;/h3>
-&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet sagittis id consectetur purus ut. In pellentesque massa placerat duis ultricies. Neque laoreet suspendisse interdum consectetur libero id. Justo nec ultrices dui sapien eget mi proin. Nunc consequat interdum varius sit amet mattis vulputate. Sollicitudin tempor id eu nisl nunc mi ipsum. Non odio euismod lacinia at quis. Sit amet nisl suscipit adipiscing. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan. Sit amet consectetur adipiscing elit pellentesque habitant. Ac placerat vestibulum lectus mauris. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit sed. &lt;a href="https://www.google.com">Google&lt;/a>&lt;/p>
-&lt;p>&lt;img src="https://markdown-here.com/img/icon256.png" alt="Markdown Logo" />&lt;/p>
-&lt;h2 id="code-block">&lt;a class="zola-anchor" href="#code-block" aria-label="Anchor link for: code-block">Code Block&lt;/a>&lt;/h2>
-&lt;pre data-lang="rust" class="language-rust ">&lt;code class="language-rust" data-lang="rust">fn main() {
-println!(&amp;quot;Hello World&amp;quot;);
-}
-&lt;/code>&lt;/pre>
-&lt;pre data-linenos data-lang="rust" class="language-rust ">&lt;code class="language-rust" data-lang="rust">&lt;table>&lt;tbody>&lt;tr>&lt;td>1&lt;/td>&lt;td>fn main() {
-&lt;/td>&lt;/tr>&lt;tr>&lt;td>&lt;mark>2&lt;/mark>&lt;/td>&lt;td>&lt;mark> println!(&amp;quot;Hello World&amp;quot;);
-&lt;/mark>&lt;/td>&lt;/tr>&lt;tr>&lt;td>3&lt;/td>&lt;td>}
-&lt;/td>&lt;/tr>&lt;/tbody>&lt;/table>&lt;/code>&lt;/pre>
-&lt;h2 id="ordered-list">&lt;a class="zola-anchor" href="#ordered-list" aria-label="Anchor link for: ordered-list">Ordered List&lt;/a>&lt;/h2>
-&lt;ol>
-&lt;li>First item&lt;/li>
-&lt;li>Second item&lt;/li>
-&lt;li>Third item&lt;/li>
-&lt;/ol>
-&lt;h2 id="unordered-list">&lt;a class="zola-anchor" href="#unordered-list" aria-label="Anchor link for: unordered-list">Unordered List&lt;/a>&lt;/h2>
-&lt;ul>
-&lt;li>List item&lt;/li>
-&lt;li>Another item&lt;/li>
-&lt;li>And another item&lt;/li>
-&lt;/ul>
-&lt;h2 id="nested-list">&lt;a class="zola-anchor" href="#nested-list" aria-label="Anchor link for: nested-list">Nested list&lt;/a>&lt;/h2>
-&lt;ul>
-&lt;li>Fruit
-&lt;ul>
-&lt;li>Apple&lt;/li>
-&lt;li>Orange&lt;/li>
-&lt;li>Banana&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Dairy
-&lt;ul>
-&lt;li>Milk&lt;/li>
-&lt;li>Cheese&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="quote">&lt;a class="zola-anchor" href="#quote" aria-label="Anchor link for: quote">Quote&lt;/a>&lt;/h2>
-&lt;blockquote>
-&lt;p>Two things are infinite: the universe and human stupidity; and I'm not sure about the
-universe.&lt;br>
-— &lt;cite>Albert Einstein&lt;/cite>&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="table-inline-markdown">&lt;a class="zola-anchor" href="#table-inline-markdown" aria-label="Anchor link for: table-inline-markdown">Table Inline Markdown&lt;/a>&lt;/h2>
-&lt;table>&lt;thead>&lt;tr>&lt;th>Italics&lt;/th>&lt;th>Bold&lt;/th>&lt;th>Code&lt;/th>&lt;th>StrikeThrough&lt;/th>&lt;/tr>&lt;/thead>&lt;tbody>
-&lt;tr>&lt;td>&lt;em>italics&lt;/em>&lt;/td>&lt;td>&lt;strong>bold&lt;/strong>&lt;/td>&lt;td>&lt;code>code&lt;/code>&lt;/td>&lt;td>&lt;del>strikethrough&lt;/del>&lt;/td>&lt;/tr>
-&lt;/tbody>&lt;/table>
-&lt;h2 id="foldable-text">&lt;a class="zola-anchor" href="#foldable-text" aria-label="Anchor link for: foldable-text">Foldable Text&lt;/a>&lt;/h2>
-&lt;details>
-&lt;summary>Title 1&lt;/summary>
-&lt;p>IT'S A SECRET TO EVERYBODY.&lt;/p>
-&lt;/details>
-&lt;details>
-&lt;summary>Title 2&lt;/summary>
-&lt;p>Stay awhile, and listen!&lt;/p>
-&lt;/details>
-&lt;h2 id="code-tags">&lt;a class="zola-anchor" href="#code-tags" aria-label="Anchor link for: code-tags">Code tags&lt;/a>&lt;/h2>
-&lt;p>Lorem ipsum &lt;code>dolor&lt;/code> sit amet, &lt;code>consectetur adipiscing&lt;/code> elit.
-&lt;code>Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/code>&lt;/p></content></entry></feed>
+$$&lt;/p&gt;</content></entry><entry xml:lang="en"><title>Markdown Test</title><published>2022-01-01T00:00:00+00:00</published><updated>2022-05-01T00:00:00+00:00</updated><author><name>
+Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/markdown/"/><id>https://not-matthias.github.io/apollo/posts/markdown/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/markdown/">&lt;h1 id="h1"&gt;&lt;a class="zola-anchor" href="#h1" aria-label="Anchor link for: h1"&gt;H1&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="h2"&gt;&lt;a class="zola-anchor" href="#h2" aria-label="Anchor link for: h2"&gt;H2&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="h3"&gt;&lt;a class="zola-anchor" href="#h3" aria-label="Anchor link for: h3"&gt;H3&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet sagittis id consectetur purus ut. In pellentesque massa placerat duis ultricies. Neque laoreet suspendisse interdum consectetur libero id. Justo nec ultrices dui sapien eget mi proin. Nunc consequat interdum varius sit amet mattis vulputate. Sollicitudin tempor id eu nisl nunc mi ipsum. Non odio euismod lacinia at quis. Sit amet nisl suscipit adipiscing. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan. Sit amet consectetur adipiscing elit pellentesque habitant. Ac placerat vestibulum lectus mauris. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit sed. &lt;a rel="external" href="https://www.google.com"&gt;Google&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://markdown-here.com/img/icon256.png" alt="Markdown Logo" /&gt;&lt;/p&gt;
+&lt;h2 id="code-block"&gt;&lt;a class="zola-anchor" href="#code-block" aria-label="Anchor link for: code-block"&gt;Code Block&lt;/a&gt;&lt;/h2&gt;
+&lt;pre class="giallo z-code"&gt;&lt;code data-lang="rust"&gt;&lt;span class="giallo-l"&gt;&lt;span class="z-keyword"&gt;fn&lt;/span&gt;&lt;span class="z-entity z-name"&gt; main&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span class="z-entity z-name"&gt; println!&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;Hello World&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;pre class="giallo z-code"&gt;&lt;code data-lang="rust"&gt;&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;1&lt;/span&gt;&lt;span class="z-keyword"&gt;fn&lt;/span&gt;&lt;span class="z-entity z-name"&gt; main&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l z-hl"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;2&lt;/span&gt;&lt;span class="z-entity z-name"&gt; println!&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span class="z-string"&gt;Hello World&lt;/span&gt;&lt;span class="z-punctuation z-definition z-string"&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="giallo-l"&gt;&lt;span aria-hidden="true" class="giallo-ln"&gt;3&lt;/span&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="ordered-list"&gt;&lt;a class="zola-anchor" href="#ordered-list" aria-label="Anchor link for: ordered-list"&gt;Ordered List&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;First item&lt;/li&gt;
+&lt;li&gt;Second item&lt;/li&gt;
+&lt;li&gt;Third item&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="unordered-list"&gt;&lt;a class="zola-anchor" href="#unordered-list" aria-label="Anchor link for: unordered-list"&gt;Unordered List&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;List item&lt;/li&gt;
+&lt;li&gt;Another item&lt;/li&gt;
+&lt;li&gt;And another item&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="nested-list"&gt;&lt;a class="zola-anchor" href="#nested-list" aria-label="Anchor link for: nested-list"&gt;Nested list&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fruit
+&lt;ul&gt;
+&lt;li&gt;Apple&lt;/li&gt;
+&lt;li&gt;Orange&lt;/li&gt;
+&lt;li&gt;Banana&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Dairy
+&lt;ul&gt;
+&lt;li&gt;Milk&lt;/li&gt;
+&lt;li&gt;Cheese&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="quote"&gt;&lt;a class="zola-anchor" href="#quote" aria-label="Anchor link for: quote"&gt;Quote&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Two things are infinite: the universe and human stupidity; and I'm not sure about the
+universe.&lt;br&gt;
+— &lt;cite&gt;Albert Einstein&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="table-inline-markdown"&gt;&lt;a class="zola-anchor" href="#table-inline-markdown" aria-label="Anchor link for: table-inline-markdown"&gt;Table Inline Markdown&lt;/a&gt;&lt;/h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Italics&lt;/th&gt;&lt;th&gt;Bold&lt;/th&gt;&lt;th&gt;Code&lt;/th&gt;&lt;th&gt;StrikeThrough&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;em&gt;italics&lt;/em&gt;&lt;/td&gt;&lt;td&gt;&lt;strong&gt;bold&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;code&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;del&gt;strikethrough&lt;/del&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;h2 id="foldable-text"&gt;&lt;a class="zola-anchor" href="#foldable-text" aria-label="Anchor link for: foldable-text"&gt;Foldable Text&lt;/a&gt;&lt;/h2&gt;
+&lt;details&gt;
+&lt;summary&gt;Title 1&lt;/summary&gt;
+&lt;p&gt;IT'S A SECRET TO EVERYBODY.&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;Title 2&lt;/summary&gt;
+&lt;p&gt;Stay awhile, and listen!&lt;/p&gt;
+&lt;/details&gt;
+&lt;h2 id="code-tags"&gt;&lt;a class="zola-anchor" href="#code-tags" aria-label="Anchor link for: code-tags"&gt;Code tags&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum &lt;code&gt;dolor&lt;/code&gt; sit amet, &lt;code&gt;consectetur adipiscing&lt;/code&gt; elit.
+&lt;code&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/code&gt;&lt;/p&gt;</content></entry></feed>
