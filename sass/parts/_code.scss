@@ -197,6 +197,7 @@ pre.giallo code {
 // Giallo line numbers (Zola 0.22+)
 .giallo-ln {
   display: inline-block;
+  -webkit-user-select: none;
   user-select: none;
   min-width: 1ch;
   margin-right: 2ch;

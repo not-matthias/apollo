@@ -20,9 +20,10 @@ test.describe('Line Numbers in Code Blocks (Issue #168)', () => {
     expect(count).toBeGreaterThan(0);
 
     for (let i = 0; i < count; i++) {
-      const userSelect = await lineNumbers.nth(i).evaluate(
-        (el: Element) => getComputedStyle(el).userSelect
-      );
+      const userSelect = await lineNumbers.nth(i).evaluate((el: Element) => {
+        const cs = getComputedStyle(el) as any;
+        return cs.userSelect ?? cs.webkitUserSelect;
+      });
       expect(userSelect).toBe('none');
     }
   });
@@ -45,7 +46,8 @@ test.describe('Line Numbers in Code Blocks (Issue #168)', () => {
     expect(styles.minWidth).toBeGreaterThan(0);
   });
 
-  test('copy button does not include line numbers', async ({ page, context }) => {
+  test('copy button does not include line numbers', async ({ page, context, browserName }) => {
+    test.skip(browserName === 'webkit', 'WebKit does not support clipboard permissions');
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
 
     const firstBlock = linenosBlocks(page).first();
