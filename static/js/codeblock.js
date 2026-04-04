@@ -16,16 +16,11 @@ const changeIcon = (button, isSuccess) => {
     }, 2000);
 };
 
-// Function to get code text from tables, skipping line numbers
-const getCodeFromTable = (codeBlock) => {
-    return [...codeBlock.querySelectorAll('tr')]
-        .map(row => row.querySelector('td:last-child')?.innerText ?? '')
-        .join('');
-};
-
-// Function to get code text from non-table blocks
-const getNonTableCode = (codeBlock) => {
-    return codeBlock.textContent.trim();
+// Get code text, stripping line numbers if present
+const getCodeText = (codeBlock) => {
+    const clone = codeBlock.cloneNode(true);
+    clone.querySelectorAll('.giallo-ln').forEach(el => el.remove());
+    return clone.textContent.trim();
 };
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -66,9 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Attach event listener to copy button
         copyBtn.addEventListener('click', async () => {
-            // Determine if the code is in a table or not
-            const isTable = codeBlock.querySelector('table');
-            const codeToCopy = isTable ? getCodeFromTable(codeBlock) : getNonTableCode(codeBlock);
+            const codeToCopy = getCodeText(codeBlock);
             try {
                 await navigator.clipboard.writeText(codeToCopy);
                 changeIcon(copyBtn, true); // Show success icon
