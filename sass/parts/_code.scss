@@ -5,11 +5,6 @@
   --text-color: var(--text-0); // Color of the code text
   --label-color: #f0f0f0; // Text color of the label
 
-  --highlight-color: #f0f0f0;
-}
-
-:root.dark {
-  --highlight-color: #204e8a;
 }
 
 // Define language colors map
@@ -168,14 +163,6 @@ pre {
   padding: 1em;
   position: relative;
 
-  mark {
-    background-color: var(
-      --highlight-color
-    ) !important; // Ensure mark uses the theme background
-    padding: 0;
-    border-radius: 0px;
-  }
-
   code {
     background-color: transparent !important;
     color: var(--text-color);
@@ -183,41 +170,38 @@ pre {
     padding: 0;
     border: none;
     font-family: var(--code-font);
-
-    table {
-      margin: 0;
-      border-collapse: collapse;
-      font-family: var(--code-font);
-
-      mark {
-        display: block;
-        color: unset;
-        padding: 0;
-        background-color: var(--highlight-color) !important;
-        filter: brightness(1.2); // Example to slightly increase brightness
-      }
-    }
-
-    td,
-    th,
-    tr {
-      padding: 0;
-      border-bottom: none;
-      border: none; // Ensure no borders around rows
-    }
-
-    tbody td:first-child {
-      text-align: center;
-      user-select: none;
-      min-width: 60px;
-      border-right: none;
-    }
-
-    tbody tr:nth-child(even),
-    thead tr {
-      background-color: unset;
-    }
   }
+}
+
+// Giallo lines (Zola 0.22+)
+pre.giallo {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+pre.giallo code {
+  display: flex;
+  flex-direction: column;
+}
+
+.giallo-l {
+  padding: 0 1em;
+}
+
+// Giallo highlighted lines — background color set by giallo theme CSS files
+.z-hl {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+// Giallo line numbers (Zola 0.22+)
+.giallo-ln {
+  display: inline-block;
+  -webkit-user-select: none;
+  user-select: none;
+  min-width: 1ch;
+  margin-right: 2ch;
+  opacity: 0.8;
 }
 
 .clipboard-button,
