@@ -79,6 +79,12 @@
     align-items: center;
     gap: 12px;
     margin-top: auto;
+    flex-wrap: wrap;
+
+    @media (max-width: 640px) {
+      flex-direction: column;
+      align-items: flex-end;
+    }
   }
 
   &-links {
@@ -93,6 +99,12 @@
     gap: 4px;
     justify-content: flex-end;
     align-items: center;
+    margin-left: auto;
+
+    @media (max-width: 640px) {
+      margin-left: 0;
+      width: 100%;
+    }
   }
 
   &-tag {
