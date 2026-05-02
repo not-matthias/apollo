@@ -16,6 +16,7 @@ template = "homepage.html"
 .homepage-hero-subtitle {
     font-size: 1.25rem;
     margin-bottom: 1rem;
+}
 
 </style>
 
