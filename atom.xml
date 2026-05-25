@@ -108,6 +108,19 @@ height="80" /&gt;
 &lt;p&gt;:)&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="character-note character-hooded character-comment character-right"&gt;
+&lt;div class="character-avatar"&gt;
+&lt;img src="https://not-matthias.github.io/apollo/images/characters/hooded.png"
+alt="hooded"
+width="80"
+height="80" /&gt;
+&lt;/div&gt;
+&lt;div class="character-content"&gt;
+&lt;div class="character-bubble"&gt;
+&lt;p&gt;custom image&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;</content></entry><entry xml:lang="en"><title>Creating a Custom Homepage</title><published>2025-06-29T00:00:00+00:00</published><updated>2025-06-29T00:00:00+00:00</updated><author><name>
 Unknown</name></author><link rel="alternate" type="text/html" href="https://not-matthias.github.io/apollo/posts/custom-homepage/"/><id>https://not-matthias.github.io/apollo/posts/custom-homepage/</id><content type="html" xml:base="https://not-matthias.github.io/apollo/posts/custom-homepage/">&lt;p&gt;The Apollo theme provides a default homepage that lists your recent blog posts. However, you might want to create a custom homepage that better reflects your personality and work. This guide will walk you through the process of creating a custom homepage with the Apollo theme.&lt;/p&gt;
 &lt;h2 id="1-create-a-custom-homepage-template"&gt;&lt;a class="zola-anchor" href="#1-create-a-custom-homepage-template" aria-label="Anchor link for: 1-create-a-custom-homepage-template"&gt;1. Create a Custom Homepage Template&lt;/a&gt;&lt;/h2&gt;
