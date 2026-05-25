@@ -28,3 +28,5 @@ end program helloWorld
 Good to know, thanks buddy!
 
 {{ character(body=":)", position="left") }}
+
+{{ character(body="custom image", position="right", image="hooded.png") }}
