@@ -7,7 +7,11 @@
 
                 <div>
                     <h1 class="title">
-                        <a href="{{ post_url | safe }}">{{ page.title }}{% if page.extra.link_to %} ↗{% endif %}</a>
+                        <a href="{{ post_url | safe }}">{{ page.title }}
+                            {% if page.extra.link_to %}
+                                ↗
+                            {% endif %}
+                        </a>
 
                         {% if page.draft %}
                             <span class="draft-label">DRAFT</span>
@@ -27,7 +31,11 @@
 
                         {% if not hide_read_more %}
                             <a class="readmore" href="{{ post_url | safe }}">
-                                {% if page.extra.link_to %}Read original ⟶{% else %}Read more ⟶{% endif %}
+                                {% if page.extra.link_to %}
+                                    Read original ⟶
+                                {% else %}
+                                    Read more ⟶
+                                {% endif %}
                             </a>
                         {% endif %}
                     </div>
