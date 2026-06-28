@@ -14,6 +14,7 @@
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
     in {
+      packages.default = ./.;
       devShells.default = pkgs.mkShell {
         nativeBuildInputs = with pkgs; [
           zola
