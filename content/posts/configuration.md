@@ -418,6 +418,12 @@ Each item in the list should be a separate markdown file in the same directory. 
 - `local_video`: A path to a local video for the item's thumbnail. See the [Local Video](#local-video) section for more details.
 - `remote_video`: A URL to a remote video for the item's thumbnail.
 - `link_to`: A URL the card should link to.
+- `github`: A URL to item's github repository.
+- `demo`: A URL to item's demo deployment.
+- `card_links`: an array of items describing additional links, each containing:
+  - `url`: the link's URL,
+  - `text`: the link's text (like `"GitHub"` or `"crates.io"`),
+  - `icon`: *(optional)* a social icon, as in [Socials](#socials).
 
 # Talks Page
 
