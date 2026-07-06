@@ -79,9 +79,10 @@
                         </p>
                     {% endif %}
 
-                    {% if page.extra.github or page.extra.demo or page.extra.tags %}
+                    {%- set has_card_links = page.extra.card_links or page.extra.github or page.extra.demo -%}
+                    {% if has_card_links or page.extra.tags %}
                         <div class="card-footer">
-                            {% if page.extra.github or page.extra.demo %}
+                            {% if has_card_links %}
                                 <div class="card-links">
                                     {% if page.extra.github %}
                                         {{ components::icon_button(href=page.extra.github,
@@ -93,6 +94,11 @@
                                                                                 text="Demo",
                                                                                 icon="globe") }}
                                     {% endif %}
+                                    {%- for card_link in page.extra.card_links | default(value=[]) -%}
+                                        {{ components::icon_button(href=card_link.url,
+                                                                                text=card_link.text,
+                                                                                icon=card_link.icon | default(value="") ) }}
+                                    {%- endfor -%}
                                 </div>
                             {% endif %}
 
