@@ -71,7 +71,7 @@ jobs:
 
     - name: Comment test failure on PR
       uses: peter-evans/create-or-update-comment@v5
-      if: failure() && github.event_name == 'pull_request'
+      if: failure() && github.event_name == 'pull_request' && !github.event.pull_request.head.repo.fork
       with:
         issue-number: ${{ github.event.pull_request.number }}
         comment-id: ${{ steps.find-comment.outputs.comment-id }}
@@ -83,7 +83,7 @@ jobs:
 
     - name: Comment test success on PR
       uses: peter-evans/create-or-update-comment@v5
-      if: success() && github.event_name == 'pull_request'
+      if: success() && github.event_name == 'pull_request' && !github.event.pull_request.head.repo.fork
       with:
         issue-number: ${{ github.event.pull_request.number }}
         comment-id: ${{ steps.find-comment.outputs.comment-id }}
