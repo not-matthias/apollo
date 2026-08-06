@@ -270,7 +270,7 @@ Enable or disable analytics tracking:
 enabled = false
 ```
 
-After enabling analytics, configure GoatCounter or Umami.
+After enabling analytics, configure GoatCounter, Umami, or Google.
 
 ### GoatCounter
 
@@ -290,6 +290,15 @@ Configure Umami analytics:
 [extra.analytics.umami]
 website_id = "43929cd1-1e83...."                    # Your Umami website ID
 host_url = "https://stats.mywebsite.com"            # Optional: Custom host URL
+```
+
+### Google Analytics
+
+Configure Google Analytics:
+
+```toml
+[extra.analytics.google]
+tracking_id = "G-XXXXXXXXXX"           # Your Google Analytics measurement ID
 ```
 
 ## Fediverse Author Attribution
