@@ -1,0 +1,25 @@
+{% component image(
+path: string,
+alt: string = "",
+width: integer = 0,
+height: integer = 0,
+op: string = "fit_width",
+format: string = "avif",
+quality: integer = 80,
+loading: string = "lazy",
+decoding: string = "async",
+style: string = "",
+class: string = ""
+) %}
+{% set image_meta = get_image_metadata(path=path) %}
+{% set width = width or image_meta.width %}
+{% set height = height or image_meta.height %}
+{% set img = resize_image(path=path, width=width, height=height, op=op, format=format, quality=quality) %}
+<img aspect-ratio="{{ width }} / {{ height }}"
+     src="{{ img.url }}"
+     alt="{{ alt }}"
+     style="{{ style }}"
+     loading="{{ loading }}"
+     decoding="{{ decoding }}"
+     class="{{ class }}" />
+{% endcomponent image %}

@@ -1,0 +1,34 @@
+{% component ui.icon_button(
+href: string,
+text: string,
+icon: string = "",
+icon_svg: string = "",
+class: string = "",
+target: string = "_blank",
+rel: string = "noopener",
+disabled: bool = false,
+icon_path: string = "icons/social/"
+) %}
+{% if disabled %}
+    <span class="icon-button {{ class }} disabled" aria-disabled="true">
+        {% if icon %}
+            <img src="{{ get_url(path=icon_path ~ icon ~ '.svg') }}" alt="{{ icon }}" />
+        {% elif icon_svg %}
+            {{ icon_svg | safe }}
+        {% endif %}
+        {{ text }}
+    </span>
+{% else %}
+    <a href="{{ href }}"
+       class="icon-button {{ class }}"
+       {% if target %}target="{{ target }}"{% endif %}
+       {% if rel %}rel="{{ rel }}"{% endif %}>
+        {% if icon %}
+            <img src="{{ get_url(path=icon_path ~ icon ~ '.svg') }}" alt="{{ icon }}" />
+        {% elif icon_svg %}
+            {{ icon_svg | safe }}
+        {% endif %}
+        {{ text }}
+    </a>
+{% endif %}
+{% endcomponent ui.icon_button %}

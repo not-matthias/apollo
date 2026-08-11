@@ -15,32 +15,36 @@ comment = true
 Here is an example of the `note` shortcode:
 
 This one is static!
-{{ note(header="Note!", body="This blog assumes basic terminal maturity") }}
+{% <note header="Note!"> %}This blog assumes basic terminal maturity{% </note> %}
 
 This one is clickable!
-{{ note(clickable=true, hidden = true, header="Quiz!", body="The answer to the quiz!") }}
+{% <note clickable={true} hidden={true} header="Quiz!"> %}The answer to the quiz!{% </note> %}
 
 
 Syntax:
+{% raw %}
 ```
-{{/* note(header="Note!", body="This blog assumes basic terminal maturity") */}}
-{{/* note(clickable=true, hidden = true, header="Quiz!", body="The answer to the quiz!") */}}
+{% <note header="Note!"> %}This blog assumes basic terminal maturity{% </note> %}
+{% <note clickable={true} hidden={true} header="Quiz!"> %}The answer to the quiz!{% </note> %}
 ```
+{% endraw %}
 
 You can also use some HTML in the text:
-{{ note(header="Note!", body="<h1>This blog assumes basic terminal maturity</h1>") }}
+{% <note header="Note!"> %}<h1>This blog assumes basic terminal maturity</h1>{% </note> %}
 
 
 Literal shortcode:
+{% raw %}
 ```
-{{/* note(header="Note!", body="<h1>This blog assumes basic terminal maturity</h1>") */}}
+{% <note header="Note!"> %}<h1>This blog assumes basic terminal maturity</h1>{% </note> %}
 ```
+{% endraw %}
 
 Pretty cool, right?
 
 Finally, you can do something like this (hopefully):
 
-{% note(clickable=true, header="Quiz!") %}
+{% <note clickable={true} header="Quiz!"> %}
 
 # Hello this is markdown inside a note shortcode
 
@@ -52,12 +56,13 @@ fn main() {
 
 We can't call another shortcode inside a shortcode, but this is good enough.
 
-{% end %}
+{% </note> %}
 
 Here is the raw markdown:
 
+{% raw %}
 ```markdown
-{{/* note(clickable=true, header="Quiz!") */}}
+{% <note clickable={true} header="Quiz!"> %}
 
 # Hello this is markdown inside a note shortcode
 
@@ -69,13 +74,16 @@ fn main() {
 
 We can't call another shortcode inside a shortcode, but this is good enough.
 
-{{/* end */}}
+{% </note> %}
 ```
+{% endraw %}
 
 Finally, we have center
-{{ note(center=true, header="Centered Text", body="This is centered text") }}
+{% <note center={true} header="Centered Text"> %}This is centered text{% </note> %}
 
+{% raw %}
 ```markdown
-{{/* note(center=true, header="Centered Text", body="This is centered text") */}}
+{% <note center={true} header="Centered Text"> %}This is centered text{% </note> %}
 ```
+{% endraw %}
 It works good enough for me!

@@ -1,0 +1,66 @@
+{% component post.list_post(page: map) %}
+{% set post_url = page.extra?.link_to or page.permalink %}
+<li class="list-item">
+    <section>
+        <div class="post-header">
+            <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+
+            <div>
+                <h1 class="title">
+                    <a href="{{ post_url | safe }}">{{ page.title }}
+                        {% if page.extra?.link_to %}
+                            ↗
+                        {% endif %}
+                    </a>
+
+                    {% if page.draft %}
+                        <span class="draft-label">DRAFT</span>
+                    {% endif %}
+                </h1>
+
+                <div class="meta">
+                    <div class="description">
+                        {% if page.description %}
+                            {{ page.description }}
+                        {% elif page.summary %}
+                            {{ page.summary | safe }}&hellip;
+                        {% else %}
+                            {% set hide_read_more = true %}
+                        {% endif %}
+                    </div>
+
+                    {% if not hide_read_more %}
+                        <a class="readmore" href="{{ post_url | safe }}">
+                            {% if page.extra?.link_to %}
+                                Read original ⟶
+                            {% else %}
+                                Read more ⟶
+                            {% endif %}
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+</li>
+{% endcomponent post.list_post %}
+
+{% component post.list_posts(pages: array) %}
+<ul>
+    {%- for page in pages %}
+        {{<post.list_post page={page} />}}
+    {% endfor -%}
+</ul>
+{% endcomponent post.list_posts %}
+
+{% component post.page_header(title: string) %}
+{% if title %}
+    <div class="page-header">
+        {{ title }}
+    </div>
+{% endif %}
+{% endcomponent post.page_header %}
+
+{% component post.site_title(config: map) %}
+{{ config.title | default(value="Home") }}
+{% endcomponent post.site_title %}

@@ -12,6 +12,7 @@ The first step is to create a custom homepage template. In the root of your Zola
 You can use the following code as a starting point:
 
 ```html
+{% raw %}
 {% extends "base.html" %}
 
 {% block main_content %}
@@ -24,6 +25,7 @@ You can use the following code as a starting point:
         </article>
     </main>
 {% endblock main_content %}
+{% endraw %}
 ```
 
 This template extends the theme's `base.html` template and overrides the `main_content` block with your own content.
@@ -60,22 +62,24 @@ I'm a software engineer who loves to write about technology and programming.
 You can then display this content in your `templates/home.html` template:
 
 ```html
+{% raw %}
 {% extends "base.html" %}
 
-{% macro home_page(section) %}
+{% component home_page(section: map) %}
     <main>
         <article>
             <section class="body">
-                {{ post_macros::page_header(title=section.title) }}
+                {{<post.page_header title={section.title} />}}
                 {{ section.content | safe }}
             </section>
         </article>
     </main>
-{% endmacro home_page %}
+{% endcomponent home_page %}
 
 {% block main_content %}
-    {{ self::home_page(section=section) }}
+    {{<home_page section={section} />}}
 {% endblock main_content %}
+{% endraw %}
 ```
 
 ## 4. Displaying Posts
@@ -83,42 +87,46 @@ You can then display this content in your `templates/home.html` template:
 You can also display a list of your recent posts on your homepage. The following code shows how to display the 5 most recent posts:
 
 ```html
+{% raw %}
 {% extends "base.html" %}
 
-{% macro home_page(section) %}
+{% component home_page(section: map) %}
     <main>
         <article>
             <section class="body">
-                {{ post_macros::page_header(title=section.title) }}
+                {{<post.page_header title={section.title} />}}
                 {{ section.content | safe }}
             </section>
         </article>
     </main>
-{% endmacro home_page %}
+{% endcomponent home_page %}
 
 {% block main_content %}
-    {{ self::home_page(section=section) }}
+    {{<home_page section={section} />}}
 
     <h1>Recent articles</h1>
     <main class="post-list">
         {% set section = get_section(path="posts/_index.md") %}
-        {{ post_macros::list_posts(pages=section.pages | slice(end=5)) }}
+        {{<post.list_posts pages=section.pages[:5] />}}
     </main>
 {% endblock main_content %}
+{% endraw %}
 ```
 
-This code gets the `posts` section and then uses the `post_macros::list_posts` macro to display the 5 most recent posts.
+This code gets the `posts` section and then uses the `post.list_posts` component to display the 5 most recent posts.
 
 You can also highlight specific posts by getting them by their path:
 
 ```html
+{% raw %}
 {% set highlights = [
     get_page(path="posts/my-first-post.md"),
     get_page(path="posts/my-second-post.md"),
 ] %}
 <main class="post-list">
-    {{ post_macros::list_posts(pages=highlights) }}
+    {{<post.list_posts pages={highlights} />}}
 </main>
+{% endraw %}
 ```
 
 This is just a starting point. You can customize your homepage as much as you want.

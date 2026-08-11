@@ -72,10 +72,10 @@ test.describe('Line Numbers in Code Blocks (Issue #168)', () => {
     // Second linenos block: hl_lines=2
     const block = linenosBlocks(page).nth(1);
 
-    const hlBg = await block.locator('.giallo-l.z-hl').first().evaluate(
+    const hlBg = await block.locator('.giallo-l.z-l-hl').first().evaluate(
       (el: Element) => getComputedStyle(el).backgroundColor
     );
-    const normalBg = await block.locator('.giallo-l:not(.z-hl)').first().evaluate(
+    const normalBg = await block.locator('.giallo-l:not(.z-l-hl)').first().evaluate(
       (el: Element) => getComputedStyle(el).backgroundColor
     );
 
@@ -86,7 +86,7 @@ test.describe('Line Numbers in Code Blocks (Issue #168)', () => {
     // Third linenos block: hl_lines=2 3
     const block = linenosBlocks(page).nth(2);
 
-    const highlightedLines = block.locator('.giallo-l.z-hl');
+    const highlightedLines = block.locator('.giallo-l.z-l-hl');
     expect(await highlightedLines.count()).toBe(2);
 
     const lineNumbers = await highlightedLines.evaluateAll((els: Element[]) =>
@@ -99,7 +99,7 @@ test.describe('Line Numbers in Code Blocks (Issue #168)', () => {
     // Fourth linenos block: hl_lines=1-3
     const block = linenosBlocks(page).nth(3);
 
-    const highlightedLines = block.locator('.giallo-l.z-hl');
+    const highlightedLines = block.locator('.giallo-l.z-l-hl');
     expect(await highlightedLines.count()).toBe(3);
 
     const lineNumbers = await highlightedLines.evaluateAll((els: Element[]) =>

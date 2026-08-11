@@ -1,4 +1,3 @@
-{% import "macros/macros.html" as post_macros %}
 
 <!DOCTYPE html>
 <html lang="{{ lang }}" class="dark light">
@@ -6,7 +5,7 @@
     {% include "partials/header.html" %}
 
     <body>
-        {% include "apollo/body_start.html" ignore missing %}
+        {% include "apollo/body_start.html" %}
         <div class="left-content">
             {% block left_content %}
             {% endblock left_content %}
@@ -20,7 +19,7 @@
                 Nothing here?!
             {% endblock main_content %}
 
-            {% if page.extra.comment is defined %}
+            {% if page?.extra?.comment %}
                 {% set show_comment = page.extra.comment %}
             {% else %}
                 {% set show_comment = false %}
@@ -37,7 +36,7 @@
             {% block right_content %}
             {% endblock right_content %}
         </div>
-        {% include "apollo/body_end.html" ignore missing %}
+        {% include "apollo/body_end.html" %}
     </body>
 
 </html>

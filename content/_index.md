@@ -37,7 +37,7 @@ template = "homepage.html"
 - [Custom homepage](@/posts/custom-homepage.md)
 - [Comments](@/posts/configuration.md#comments-comment)
 - [Search functionality](@/posts/configuration.md#search-build-search-index)
-- [Characters](@/posts/configuration.md#character-shortcodes)
+- [Characters](@/posts/configuration.md#character-components)
 
 Checkout all the [options you can configure](@/posts/configuration.md) and the [example pages](@/posts/_index.md).
 

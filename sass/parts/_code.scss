@@ -190,7 +190,8 @@ pre.giallo code {
 }
 
 // Giallo highlighted lines — background color set by giallo theme CSS files
-.z-hl {
+.z-l-hl,
+.z-d-hl {
   padding-top: 2px;
   padding-bottom: 2px;
 }

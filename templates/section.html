@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
 {% block main_content %}
-    {% if section.extra.section_path -%}
+    {% if section.extra?.section_path -%}
         {% set section = get_section(path=section.extra.section_path) %}
     {% endif -%}
 
     {% block title %}
-        {{ post_macros::page_header(title=section.title) }}
+        {% if section.title %}
+            {{<post.page_header title={section.title} />}}
+        {% endif %}
     {% endblock title %}
 
     {% if section.content %}
@@ -23,7 +25,7 @@
                 {%- set show_pages = section.pages -%}
             {% endif -%}
 
-            {{ post_macros::list_posts(pages=show_pages) }}
+            {{<post.list_posts pages={show_pages} />}}
         </main>
     {% endblock post_list %}
 

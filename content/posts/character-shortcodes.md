@@ -1,11 +1,11 @@
 +++
-title = "Character Shortcodes Example"
+title = "Character Components Example"
 date = "2025-08-11"
 +++
 
-Did you know that The oldest programming language still in use is FORTRAN which was created in 1957 by John Backus? 
+This example uses the `character` component to add dialogue and interactive characters to posts.
 
-{{ character(name="hooded", body="Whaaaaaaaaaaaaaaaaaaat, that's almost 70 years ago???") }}
+{% <character name="hooded"> %}Whaaaaaaaaaaaaaaaaaaat, that's almost 70 years ago???{% </character> %}
 
 I know, it's crazy. Here's an example program:
 
@@ -16,17 +16,17 @@ STOP
 END
 ```
 
-{% character(name="hooded") %}
+{% <character name="hooded"> %}
 There's also a more modern version which is a bit easier to read:
 ```
 program helloWorld
    print *, "Hello World!"
 end program helloWorld
 ```
-{% end %}
+{% </character> %}
 
 Good to know, thanks buddy!
 
-{{ character(body=":)", position="left") }}
+{% <character position="left"> %}:){% </character> %}
 
-{{ character(body="custom image", position="right", image="hooded.png") }}
+{% <character position="right" image="hooded.png"> %}custom image{% </character> %}

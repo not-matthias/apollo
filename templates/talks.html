@@ -1,115 +1,116 @@
 {% extends "base.html" %}
 
-{% import "macros/components.html" as components %}
 
-{% macro talk_posts(pages) %}
-    <div class="talks-grid">
-        {%- for page in pages %}
-            <div class="talk-card">
-                <!-- Either link to the video or to the static page  -->
-                {% if page.extra.video.link %}
-                    {% set video_link = page.extra.video.link %}
-                {% elif page.extra.link_to %}
-                    {% set video_link = page.extra.link_to %}
-                {% else %}
-                    {% set video_link = page.permalink | safe %}
-                {% endif %}
+{% component talk_posts(pages: array, section: map) %}
+<div class="talks-grid">
+    {%- for page in pages %}
+        <div class="talk-card">
+            <!-- Either link to the video or to the static page  -->
+            {% if page.extra?.video?.link %}
+                {% set video_link = page.extra.video.link %}
+            {% elif page.extra?.link_to %}
+                {% set video_link = page.extra.link_to %}
+            {% else %}
+                {% set video_link = page.permalink | safe %}
+            {% endif %}
 
-                <a class="talk-video"
-                   href="{{ video_link }}"
-                   target="_blank"
-                   rel="noopener">
-                    <div class="talk-video">
-                        {% if page.extra.video.thumbnail %}
-                            <!-- TODO: Add srcset -->
-                            {% set image = resize_image(path=page.extra.video.thumbnail, width=640, height=360, format="webp") %}
-                            <img class="talk-image"
-                                 loading="lazy"
-                                 decoding="async"
-                                 sizes="(max-width: 640px) 100vw,
-                                        (max-width: 1024px) 50vw,
-                                        33vw"
-                                 alt="{{ page.extra.video.thumbnail.alt | default(value='Thumbnail for the talk') }}"
-                                 src="{{ image.url }}" />
-                            <div class="video-play-btn">
-                                <div class="rounded-btn">
-                                    <svg width="24"
-                                         height="24"
-                                         viewBox="0 0 24 24"
-                                         fill="currentColor"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" stroke="currentColor" clip-rule="evenodd" d="M8.00625 2.80243C8.0182 2.8104 8.03019 2.81839 8.04222 2.82642L18.591 9.8589C18.8962 10.0623 19.1792 10.251 19.3965 10.4263C19.6234 10.6092 19.8908 10.8629 20.0447 11.234C20.2481 11.7245 20.2481 12.2758 20.0447 12.7663C19.8908 13.1374 19.6234 13.391 19.3965 13.574C19.1792 13.7493 18.8962 13.9379 18.591 14.1413L8.00628 21.1978C7.63319 21.4465 7.29772 21.6702 7.01305 21.8245C6.72818 21.9789 6.33717 22.1553 5.8808 22.128C5.29705 22.0932 4.75779 21.8046 4.40498 21.3382C4.12916 20.9736 4.05905 20.5504 4.02949 20.2278C3.99994 19.9053 3.99997 19.5021 4 19.0537L4 4.98975C4 4.97529 4 4.96087 4 4.9465C3.99997 4.49811 3.99994 4.09491 4.02949 3.77249C4.05905 3.44983 4.12916 3.02663 4.40498 2.66202C4.75779 2.19565 5.29705 1.90705 5.8808 1.87219C6.33717 1.84494 6.72818 2.02135 7.01305 2.17573C7.29771 2.33 7.63317 2.55368 8.00625 2.80243Z" fill="currentColor">
-                                        </path>
-                                    </svg>
-                                </div>
+            <a class="talk-video"
+               href="{{ video_link }}"
+               target="_blank"
+               rel="noopener">
+                <div class="talk-video">
+                    {% if page.extra?.video?.thumbnail %}
+                        <!-- TODO: Add srcset -->
+                        {% set image = resize_image(path=page.extra.video.thumbnail, width=640, height=360, format="webp") %}
+                        <img class="talk-image"
+                             loading="lazy"
+                             decoding="async"
+                             sizes="(max-width: 640px) 100vw,
+                                    (max-width: 1024px) 50vw,
+                                    33vw"
+                             alt="{{ page.extra.video.thumbnail.alt | default(value='Thumbnail for the talk') }}"
+                             src="{{ image.url }}" />
+                        <div class="video-play-btn">
+                            <div class="rounded-btn">
+                                <svg width="24"
+                                     height="24"
+                                     viewBox="0 0 24 24"
+                                     fill="currentColor"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" stroke="currentColor" clip-rule="evenodd" d="M8.00625 2.80243C8.0182 2.8104 8.03019 2.81839 8.04222 2.82642L18.591 9.8589C18.8962 10.0623 19.1792 10.251 19.3965 10.4263C19.6234 10.6092 19.8908 10.8629 20.0447 11.234C20.2481 11.7245 20.2481 12.2758 20.0447 12.7663C19.8908 13.1374 19.6234 13.391 19.3965 13.574C19.1792 13.7493 18.8962 13.9379 18.591 14.1413L8.00628 21.1978C7.63319 21.4465 7.29772 21.6702 7.01305 21.8245C6.72818 21.9789 6.33717 22.1553 5.8808 22.128C5.29705 22.0932 4.75779 21.8046 4.40498 21.3382C4.12916 20.9736 4.05905 20.5504 4.02949 20.2278C3.99994 19.9053 3.99997 19.5021 4 19.0537L4 4.98975C4 4.97529 4 4.96087 4 4.9465C3.99997 4.49811 3.99994 4.09491 4.02949 3.77249C4.05905 3.44983 4.12916 3.02663 4.40498 2.66202C4.75779 2.19565 5.29705 1.90705 5.8808 1.87219C6.33717 1.84494 6.72818 2.02135 7.01305 2.17573C7.29771 2.33 7.63317 2.55368 8.00625 2.80243Z" fill="currentColor">
+                                    </path>
+                                </svg>
                             </div>
-                        {% else %}
-                            {% set image = resize_image(path='images/talks/default.webp', width=480, height=270, format="webp", quality=10) %}
-                            <img class="talk-image"
-                                 alt="Placeholder image for the talk"
-                                 src="{{ image.url }}" />
-                        {% endif %}
-
-                    </div>
-                </a>
-
-                <div class="talk-info">
-                    <h1 class="talk-title">
-                        {% if page.extra.link_to %}
-                            <a href={{ page.extra.link_to }}>{{ page.title }}</a>
-                        {% elif page.extra.video.link %}
-                            <a href={{ page.extra.video.link }}>{{ page.title }}</a>
-                        {% else %}
-                            <a href={{ page.permalink | safe }}>{{ page.title }}</a>
-                        {% endif %}
-
-                    </h1>
-
-                    <div class="talk-description">
-                        {% if page.description %}
-                            {{ page.description | truncate(length=300) }}
-                        {% endif %}
-                    </div>
-
-                    <!-- Filler element to keep the .meta at the bottom -->
-                    <div style="flex-grow: 1;">
-                    </div>
-
-                    <div class="meta">
-                        {%- if page.date %}
-                            {{ components::icon_button(href="#", text=page.date | date(format="%B %d, %Y") , icon="calendar", disabled=true, icon_path="icons/") }}
-                        {% endif -%}
-
-                        {% if page.extra.organizer.name and page.extra.organizer.link %}
-                            {{ components::icon_button(href=page.extra.organizer.link, text=page.extra.organizer.name, icon="map-pin", icon_path="icons/") }}
-                        {% endif %}
-
-                        {% if page.extra.slides %}
-                            {{ components::icon_button(href=page.extra.slides, text="Slides", icon="presentation", icon_path="icons/") }}
-                        {% endif %}
-
-                        {% if page.extra.code %}
-                            {{ components::icon_button(href=page.extra.code, text="Code", icon="code", icon_path="icons/") }}
-                        {% endif %}
-
-                        {% if page.draft %}
-                            <span class="draft-label">DRAFT</span>
-                        {% endif %}
-                    </div>
+                        </div>
+                    {% else %}
+                        {% set image = resize_image(path='images/talks/default.webp', width=480, height=270, format="webp", quality=10) %}
+                        <img class="talk-image"
+                             alt="Placeholder image for the talk"
+                             src="{{ image.url }}" />
+                    {% endif %}
 
                 </div>
-            </div>
+            </a>
 
-        {% endfor -%}
-    </div>
-{% endmacro talk_posts %}
+            <div class="talk-info">
+                <h1 class="talk-title">
+                    {% if page.extra?.link_to %}
+                        <a href={{ page.extra.link_to }}>{{ page.title }}</a>
+                    {% elif page.extra?.video?.link %}
+                        <a href={{ page.extra.video.link }}>{{ page.title }}</a>
+                    {% else %}
+                        <a href={{ page.permalink | safe }}>{{ page.title }}</a>
+                    {% endif %}
+
+                </h1>
+
+                <div class="talk-description">
+                    {% if page.description %}
+                        {{ page.description | truncate(length=300) }}
+                    {% endif %}
+                </div>
+
+                <!-- Filler element to keep the .meta at the bottom -->
+                <div style="flex-grow: 1;">
+                </div>
+
+                <div class="meta">
+                    {%- if page.date %}
+                        {{ <ui.icon_button href="#" text={page.date | date(format="%B %d, %Y") } icon="calendar" disabled={true} icon_path="icons/" />}}
+                    {% endif -%}
+
+                    {% if page.extra?.organizer?.name and page.extra?.organizer?.link %}
+                        {{<ui.icon_button href={page.extra.organizer.link} text={page.extra.organizer.name} icon="map-pin" icon_path="icons/" />}}
+                    {% endif %}
+
+                    {% if page.extra?.slides %}
+                        {{<ui.icon_button href={page.extra.slides} text="Slides" icon="presentation" icon_path="icons/" />}}
+                    {% endif %}
+
+                    {% if page.extra?.code %}
+                        {{<ui.icon_button href={page.extra.code} text="Code" icon="code" icon_path="icons/" />}}
+                    {% endif %}
+
+                    {% if page.draft %}
+                        <span class="draft-label">DRAFT</span>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+
+    {% endfor -%}
+</div>
+{% endcomponent talk_posts %}
 
 {% block main_content %}
-    {% if section.extra.section_path -%}
+    {% if section.extra?.section_path -%}
         {% set section = get_section(path=section.extra.section_path) %}
     {% endif -%}
 
-    {{ post_macros::page_header(title=section.title) }}
+    {% if section.title %}
+        {{<post.page_header title={section.title} />}}
+    {% endif %}
 
     {% if section.content %}
         <div class="section-content">
@@ -124,7 +125,7 @@
             {%- set show_pages = section.pages -%}
         {% endif -%}
 
-        {{ self::talk_posts(pages=show_pages) }}
+        {{<talk_posts pages={show_pages} section={section} />}}
     </main>
 
     {% if paginator %}

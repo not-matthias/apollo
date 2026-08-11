@@ -1,0 +1,44 @@
+{% component note(
+header: string = "",
+clickable: bool = false,
+hidden: bool = false,
+center: bool = false
+) %}
+<div class="note-container">
+{% if clickable %}
+<button class="note-toggle">
+{% if center %}
+<div class="note-center">
+{{ header | markdown | safe }}
+</div>
+{% else %}
+<div class="note-icon">
+{{ header | markdown | safe }}
+</div>
+{% endif %}
+</button>
+{% if hidden %}
+<div class="note-content" style="display: none;">
+{% else %}
+<div class="note-content" style="display: block;">
+{% endif %}
+{{ body | markdown | safe }}
+</div>
+{% else %}
+<div class="note-header">
+{% if center %}
+<div class="note-center">
+{{ header | markdown | safe }}
+</div>
+{% else %}
+<div class="note-icon">
+{{ header | markdown | safe }}
+</div>
+{% endif %}
+</div>
+<div class="note-content">
+{{ body | markdown | safe }}
+</div>
+{% endif %}
+</div>
+{% endcomponent note %}

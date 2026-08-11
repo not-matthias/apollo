@@ -1,0 +1,29 @@
+{% component character(
+name: string = "hooded",
+type: string = "comment",
+position: string = "right",
+image: string = ""
+) %}
+<div class="character-note character-{{ name }} character-{{ type }} character-{{ position }}">
+<div class="character-avatar">
+{% if image %}
+<img src="{{ get_url(path = 'images/characters/' ~ image) }}"
+     alt="{{ name }}"
+     width="80"
+     height="80" />
+{% elif name == "hooded" %}
+<img src="{{ get_url(path = 'images/characters/hooded.png') }}"
+     alt="hooded"
+     width="80"
+     height="80" />
+{% else %}
+{{ name }}
+{% endif %}
+</div>
+<div class="character-content">
+<div class="character-bubble">
+{{ body | markdown | safe }}
+</div>
+</div>
+</div>
+{% endcomponent character %}

@@ -186,31 +186,33 @@ Allows for the creation of togglable note sections in your content.
 
 When enabled, you can create expandable/collapsible note sections in your blog posts.
 
-## Character Shortcodes
+## Character Components
 
-We support custom character shortcodes for adding dialogue and interactive characters to your blog posts. You can use them via [shortcodes](https://www.getzola.org/documentation/content/shortcodes/):
+We support custom character components for adding dialogue and interactive characters to your blog posts:
+{% raw %}
 ```
-{{ /* character(name="character-name", body="Character dialogue text") */ }}
+{% <character name="character-name"> %}Character dialogue text{% </character> %}
 ```
+{% endraw %}
 
 These are the supported parameters:
 - `name` (optional): The identifier for the character. Used to determine styling and appearance.
-- `body` (optional): The dialogue text for the character. Works with inline shortcodes.
+- `body` (optional): The dialogue content passed as the component body.
 - `position` (optional): Position the character on the left or right. Values: "left" or default (right)
 
 
-{{ character(body="Isn't it amazing?") }}
+{% <character> %}Isn't it amazing?{% </character> %}
 
-{{ character(body="Yes! And it's really easy to use", position="left") }}
+{% <character position="left"> %}Yes! And it's really easy to use{% </character> %}
 
-{% character() %}
+{% <character> %}
 We can even use multiple lines with code:
 ```rust
 fn main() {
   println!("Hey there!");
 }
 ```
-{% end %}
+{% </character> %}
 
 ## Anchor Links
 
