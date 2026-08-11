@@ -388,7 +388,7 @@ comment = true
 +++
 ```
 
-Comments via [utterances](https://utteranc.es) can be configured in `template/_giscus_script.html` like this:
+Comments via [utterances](https://utteranc.es) can be configured in `templates/_giscus_script.html` like this:
 
 ```html
 <script src="https://utteranc.es/client.js"

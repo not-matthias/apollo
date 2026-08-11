@@ -1,5 +1,5 @@
 +++
-title = "Shortcode Example"
+title = "Note Component Example"
 date = "2024-06-14"
 
 [taxonomies]
@@ -12,7 +12,7 @@ comment = true
 
 ## Note
 
-Here is an example of the `note` shortcode:
+Here is an example of the `note` component:
 
 This one is static!
 {% <note header="Note!"> %}This blog assumes basic terminal maturity{% </note> %}
@@ -33,7 +33,7 @@ You can also use some HTML in the text:
 {% <note header="Note!"> %}<h1>This blog assumes basic terminal maturity</h1>{% </note> %}
 
 
-Literal shortcode:
+Literal component:
 {% raw %}
 ```
 {% <note header="Note!"> %}<h1>This blog assumes basic terminal maturity</h1>{% </note> %}
@@ -46,7 +46,7 @@ Finally, you can do something like this (hopefully):
 
 {% <note clickable={true} header="Quiz!"> %}
 
-# Hello this is markdown inside a note shortcode
+# Hello this is markdown inside a note component
 
 ```rust
 fn main() {
@@ -54,7 +54,7 @@ fn main() {
 }
 ```
 
-We can't call another shortcode inside a shortcode, but this is good enough.
+We can't call another component inside a component, but this is good enough.
 
 {% </note> %}
 
@@ -64,7 +64,7 @@ Here is the raw markdown:
 ```markdown
 {% <note clickable={true} header="Quiz!"> %}
 
-# Hello this is markdown inside a note shortcode
+# Hello this is markdown inside a note component
 
 \`\`\`rust
 fn main() {
@@ -72,7 +72,7 @@ fn main() {
 }
 \`\`\`
 
-We can't call another shortcode inside a shortcode, but this is good enough.
+We can't call another component inside a component, but this is good enough.
 
 {% </note> %}
 ```
