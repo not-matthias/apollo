@@ -189,11 +189,19 @@ pre.giallo code {
   min-height: 1lh;
 }
 
-// Giallo highlighted lines — background color set by giallo theme CSS files
+// Giallo highlighted lines — scoped by theme mode
 .z-l-hl,
-.z-d-hl {
+.z-d-hl,
+.z-hl {
+  background-color: #e0e5eb !important;
   padding-top: 2px;
   padding-bottom: 2px;
+}
+
+:root.dark .z-l-hl,
+:root.dark .z-d-hl,
+:root.dark .z-hl {
+  background-color: #2b3846 !important;
 }
 
 // Giallo line numbers (Zola 0.22+)
