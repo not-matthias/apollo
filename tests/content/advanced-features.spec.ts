@@ -84,37 +84,35 @@ test.describe('Advanced Features', () => {
   });
 
   test('code blocks are properly highlighted', async ({ page }) => {
-    await page.goto('/posts');
+    await page.goto('/posts/linenos-test');
     await helpers.waitForPageReady();
 
-    const firstPostLink = page.locator('article a, .post a, .post-title a').first();
-    if (await firstPostLink.isVisible()) {
-      await firstPostLink.click();
-      await helpers.waitForPageReady();
+    // Look for Giallo code blocks with syntax highlighting
+    const codeBlock = page.locator('pre.giallo:has(span[class*="z-l-"])').first();
+    await expect(codeBlock).toBeVisible();
 
-      // Look for code blocks
-      const codeBlocks = page.locator('pre code, .highlight, .code-block');
-      const codeCount = await codeBlocks.count();
+    // Should contain Giallo highlighted token elements
+    const highlightedElements = codeBlock.locator('span[class*="z-l-"], span[class*="z-d-"]');
+    const highlightCount = await highlightedElements.count();
+    expect(highlightCount).toBeGreaterThan(0);
 
-      if (codeCount > 0) {
-        const firstCodeBlock = codeBlocks.first();
-        await expect(firstCodeBlock).toBeVisible();
+    // Verify syntax stylesheets in document head
+    const syntaxLight = page.locator('link#syntaxLightStyle');
+    const syntaxDark = page.locator('link#syntaxDarkStyle');
+    await expect(syntaxLight).toBeAttached();
+    await expect(syntaxDark).toBeAttached();
 
-        // Code blocks should have syntax highlighting classes
-        const className = await firstCodeBlock.getAttribute('class');
-        if (className) {
-          expect(className).toMatch(/language-|hljs|highlight/);
-        }
+    // In light mode, light stylesheet is active and first token has light highlight color
+    const firstToken = highlightedElements.first();
+    const lightColor = await firstToken.evaluate((el) => window.getComputedStyle(el).color);
+    expect(lightColor).toBeTruthy();
+    expect(lightColor).not.toBe('rgba(0, 0, 0, 0)');
 
-        // Should contain highlighted elements
-        const highlightedElements = firstCodeBlock.locator('.hljs-keyword, .hljs-string, .hljs-comment, span[class*="hljs-"]');
-        const highlightCount = await highlightedElements.count();
-
-        if (highlightCount > 0) {
-          expect(highlightCount).toBeGreaterThan(0);
-        }
-      }
-    }
+    // Toggle to dark mode and verify style updates
+    await helpers.toggleTheme();
+    const darkColor = await firstToken.evaluate((el) => window.getComputedStyle(el).color);
+    expect(darkColor).toBeTruthy();
+    expect(darkColor).not.toBe(lightColor);
   });
 
   test('code copy functionality works', async ({ page }) => {

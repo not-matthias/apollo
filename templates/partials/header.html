@@ -178,8 +178,12 @@
     {% set theme = config.extra.theme | default(value="toggle") %}
 
     {# Syntax theme #}
-    {% if config.markdown.highlighting and config.markdown.highlighting.style == "class" %}
-        {% if theme == "dark" %}
+    {% if config.markdown?.highlighting and config.markdown.highlighting.style == "class" %}
+        {% if config.markdown.highlighting.theme %}
+            <link rel="stylesheet"
+                  type="text/css"
+                  href="{{ get_url(path='giallo.css') }}" />
+        {% elif theme == "dark" %}
             <link rel="stylesheet"
                   type="text/css"
                   href="{{ get_url(path='giallo-dark.css') }}" />
