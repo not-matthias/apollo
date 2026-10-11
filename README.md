@@ -68,12 +68,6 @@ menu = [
 cp -r themes/apollo/content/* content/
 ```
 
-### Nix
-
-Build the theme package with `nix build github:not-matthias/apollo`. The `result` directory contains the theme templates, styles, static assets, metadata, and license, but not the example content.
-
-When Apollo is a flake input, use `inputs.apollo.packages.${system}.default` as the theme directory.
-
 ## Configuration
 
 Checkout all the [options you can configure](./content/posts/configuration.md) and the [example pages](./content/posts/).
