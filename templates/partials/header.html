@@ -86,7 +86,7 @@
 
     {# Analytics #}
     {% if config.extra.analytics.enabled %}
-        {% if config.extra.analytics.umami.website_id %}
+        {% if config.extra.analytics.umami?.website_id %}
             {% set website_id = config.extra.analytics.umami.website_id %}
             {% set host_url = config.extra.analytics.umami.host_url | default(value="https://api-gateway.umami.dev/") %}
 
@@ -96,7 +96,7 @@
                     data-host-url="{{ host_url }}"></script>
         {% endif %}
 
-        {% if config.extra.analytics.goatcounter.user %}
+        {% if config.extra.analytics.goatcounter?.user %}
             {% set user = config.extra.analytics.goatcounter.user %}
             {% set host = config.extra.analytics.goatcounter.host | default(value="goatcounter.com") %}
 
@@ -109,7 +109,7 @@
             </noscript>
         {% endif %}
 
-        {% if config.extra.analytics.google.tracking_id %}
+        {% if config.extra.analytics.google?.tracking_id %}
             {% set tracking_id = config.extra.analytics.google.tracking_id %}
 
             <!-- Google tag (gtag.js) -->
