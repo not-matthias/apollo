@@ -44,6 +44,12 @@
       };
       pkgs = nixpkgs.legacyPackages.${system};
     in {
+      packages.default = pkgs.runCommand "apollo-theme" {} ''
+        mkdir -p "$out"
+        cp -r ${self}/templates ${self}/sass ${self}/static \
+          ${self}/theme.toml ${self}/LICENSE "$out/"
+      '';
+
       devShells.default = pkgs.mkShell {
         nativeBuildInputs = with pkgs; [
           zola
